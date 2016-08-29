@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -83,7 +83,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第九章-DOM"><a href="#第九章-DOM" class="headerlink" title="第九章 DOM"></a>第九章 DOM</h2><p>DOM（文档对象模型）是针对HTML和XML文档的一个API（应用程序编程接口)。DOM描绘了一个层次化的节点树，允许开发人员添加，移除和修改页面的一部分，DOM脱胎于<br>Netscape及微软公司创始的DHTML(动态HTML)，但现在它已经成为表现和操作页面标记的真正的跨平台、语言中立的方式。</p>
+        <h2 id="第九章-DOM"><a href="#第九章-DOM" class="headerlink" title="第九章 DOM"></a>第九章 DOM</h2><p>DOM（文档对象模型）是针对HTML和XML文档的一个API（应用程序编程接口)。DOM描绘了一个层次化的节点树，允许开发人员添加，移除和修改页面的一部分，DOM脱胎于Netscape及微软公司创始的DHTML(动态HTML)，但现在它已经成为表现和操作页面标记的真正的跨平台、语言中立的方式。</p>
 <h3 id="1-节点层次"><a href="#1-节点层次" class="headerlink" title="1.节点层次 :"></a>1.节点层次 :</h3><p>DOM可以将任何HTML或XML文档描绘成一个由多层次节点构成的结构。节点分为几种不同的类型，每种类型分别表示文档中不同的信息或标记。每个节点都有各自的特点，数据和方法，另外节点也与其他节点存在联系。节点之间构成了层次，而所有页面标记则表现为一个特定节点为根节点的树形结构。以下面HTML为例 :<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Sample Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>可以将这个简单的HTML文档表示为一个层次结构。如图所示 :</p>
 <p><img src="http://www.fanyank.com/images/hexoWeb/node.jpg" alt="node"></p>
@@ -110,16 +110,17 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(someNode.nodeType == <span class="number">1</span>)    <span class="comment">//适用于所有浏览器</span></div><div class="line">&#123;</div><div class="line">  alert(<span class="string">"Node is an element."</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>虽然 <strong>nodeType</strong> 属性有12个可取值，但是仅有3种具有使用价值：</p>
 <ul>
-<li><em>元素节点</em> : <strong>nodeType</strong> 属性值1；</li>
-<li><em>属性节点</em> : <strong>nodeType</strong> 属性值2；</li>
-<li><em>文本节点</em> : <strong>nodeType</strong> 属性值3；<br>下面我们来看看那在一段 <strong>HTML</strong> 文档里，三者的关系是怎样的：</li>
+<li>元素节点 : <strong>nodeType</strong> 属性值1；</li>
+<li>属性节点 : <strong>nodeType</strong> 属性值2；</li>
+<li>文本节点 : <strong>nodeType</strong> 属性值3；</li>
 </ul>
-<p><img src="http://www.fanyank.com/images/hexoWeb/nodeinhtml.png" alt="node in html"></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">title</span> = <span class="string">"firstEle"</span>&gt;</span>Don't forget to buy this stuff.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>下面我们来看看那在一段 <strong>HTML</strong> 文档里，三者的关系是怎样的：</p>
+<p><img src="http://www.fanyank.com/images/hexoWeb/nodeinhtml.png" alt="node in html"></p>
 <h3 id="NodeName和nodeValue属性"><a href="#NodeName和nodeValue属性" class="headerlink" title="NodeName和nodeValue属性"></a>NodeName和nodeValue属性</h3><p>要了解节点的具体信息，可以使用 <strong>nodeName</strong> 和 <strong>nodeValue</strong> 这两个属性。这两个属性的值完全取决于节点的类型。在使用这两个值以前，最好是先检测一下节点的类型。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(someNode.nodeType == <span class="number">1</span>)</div><div class="line">&#123;</div><div class="line">  value = someNode.nodeName;  <span class="comment">//nodeName的值是元素的标签名</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>nodeValue</strong> : 用来得到（和设定）一个节点的值。<br>在实际的使用过程中，如果我们想获得对象里的值（比如说是 <strong>p</strong> 标签，我们给它一个 <strong>id = “description”</strong>），下面这样做是不行的。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> des = description.nodeValue;</div><div class="line">alert(des);            <span class="comment">//null</span></div></pre></td></tr></table></figure>
-<p><strong><p></p></strong> 元素本身的 <strong>nodeValue</strong> 属性是一个空值，而你真正需要的是包含在 <strong><p></p></strong> 元素所包含的文本值。<br>包含在 <strong><p></p></strong> 元素里的文本是另一种节点，它是 <strong><p></p></strong> 元素的第一个子节点。因此，你想要得到的其实是它的第一个子节点的 <strong>nodeValue</strong> 属性值。</p>
+<p><strong>p</strong> 元素本身的 <strong>nodeValue</strong> 属性是一个空值，而你真正需要的是包含在 <strong>p</strong> 元素所包含的文本值。包含在 <strong>p</strong> 元素里的文本是另一种节点，它是 <strong>p</strong> 元素的第一个子节点。因此，你想要得到的其实是它的第一个子节点的 <strong>nodeValue</strong> 属性值。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(description.childNodes[<span class="number">0</span>].nodeValue);</div></pre></td></tr></table></figure>
 <h3 id="节点关系"><a href="#节点关系" class="headerlink" title="节点关系"></a>节点关系</h3><p>文档中所有的节点之间都存在这样或那样的关系，节点间的各种关系可以用传统的家族关系来描述，相当于把文档树比喻成家谱。在HTML中，可以将 <strong><body></body></strong> 元素看成是<strong><html></html></strong> 元素的子元素,相应地，也就可以将 <strong><html></html></strong> 元素看成是 <strong><body></body></strong> 元素的父元素，而 <strong><head></head></strong> 元素，则可以看成是 <strong><body></body></strong> 元素<br>的同胞元素，因为它们都是同一个父元素 <strong><html></html></strong> 的直接子元素。</p>
 <p><strong>childNodes</strong> 属性 :<br>每个节点都有一个 <strong>childNodes</strong> 属性，其中保存着一个 <strong>NodeList</strong> 对象。<strong>NodeList</strong> 是一种类数组对象，用于保存一组有序的节点，可以通过位置来访问这些节点。请注意，虽然可以通过方括号语法来访问NodeList的值，而且这个对象也有 <strong>length</strong> 属性，但它并不是 <strong>Array</strong> 的实例。<strong>NodeList</strong> 对象的独特之处在于，它实际上是基于DOM结构动态执行查询的结果，因此DOM结构的变化能够自动反映在 <strong>NodeList</strong> 对象中，我们常说，<strong>NodeList</strong> 是有生命、有呼吸的对象，而不是在我们第一次访问它们的某个瞬间拍摄下来的一张快照。</p>
@@ -128,7 +129,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/29/第九章-DOM/" data-id="cisg0ppf50008y8nr73h0uoe6" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/08/29/第九章-DOM/" data-id="cisg0ppf50008y8nr73h0uoe6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript-DOM/">javascript DOM</a></li></ul>
@@ -253,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/29/第八章-BOM/" data-id="cisg0ppfa000cy8nr5dl3e3ym" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/08/29/第八章-BOM/" data-id="cisg0ppfa000cy8nr5dl3e3ym" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript-BOM/">javascript BOM</a></li></ul>
@@ -309,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/29/第七章-函数表达式/" data-id="cisg0ppf70009y8nrsetyvf1b" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/08/29/第七章-函数表达式/" data-id="cisg0ppf70009y8nrsetyvf1b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-函数表达式/">JavaScript 函数表达式</a></li></ul>
@@ -446,7 +447,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/27/JavaScript-第六章/" data-id="cisg0ppep0001y8nrk1umbagb" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/08/27/JavaScript-第六章/" data-id="cisg0ppep0001y8nrk1umbagb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-面向对象程序设计/">JavaScript 面向对象程序设计</a></li></ul>
@@ -636,7 +637,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/26/JavaScript-第五章/" data-id="cisg0ppev0003y8nr9htiyqmc" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/08/26/JavaScript-第五章/" data-id="cisg0ppev0003y8nr9htiyqmc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-引用类型/">JavaScript 引用类型</a></li></ul>
@@ -686,7 +687,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/26/JavaScript-第四章/" data-id="cisg0ppej0000y8nrkxp9w02x" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/08/26/JavaScript-第四章/" data-id="cisg0ppej0000y8nrkxp9w02x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-变量，作用域，内存/">JavaScript 变量，作用域，内存</a></li></ul>
@@ -743,56 +744,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/29/JavaScript/" data-id="cisg0ppex0004y8nrt8ntl2y9" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/07/29/JavaScript/" data-id="cisg0ppex0004y8nrt8ntl2y9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-基本概念/">JavaScript 基本概念</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/29/hello-world/" class="article-date">
-  <time datetime="2016-07-29T08:04:08.000Z" itemprop="datePublished">2016-07-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/29/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/29/hello-world/" data-id="cisg0ppf10006y8nr0aixy2md" class="article-share-link">Partager</a>
-      
-      
     </footer>
   </div>
   
@@ -810,7 +766,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-函数表达式/">JavaScript 函数表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-变量，作用域，内存/">JavaScript 变量，作用域，内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-基本概念/">JavaScript 基本概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-引用类型/">JavaScript 引用类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-面向对象程序设计/">JavaScript 面向对象程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-BOM/">javascript BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-DOM/">javascript DOM</a></li></ul>
     </div>
@@ -820,7 +776,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/JavaScript-函数表达式/" style="font-size: 10px;">JavaScript 函数表达式</a> <a href="/tags/JavaScript-变量，作用域，内存/" style="font-size: 10px;">JavaScript 变量，作用域，内存</a> <a href="/tags/JavaScript-基本概念/" style="font-size: 10px;">JavaScript 基本概念</a> <a href="/tags/JavaScript-引用类型/" style="font-size: 10px;">JavaScript 引用类型</a> <a href="/tags/JavaScript-面向对象程序设计/" style="font-size: 10px;">JavaScript 面向对象程序设计</a> <a href="/tags/javascript-BOM/" style="font-size: 10px;">javascript BOM</a> <a href="/tags/javascript-DOM/" style="font-size: 10px;">javascript DOM</a>
     </div>
@@ -839,7 +795,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -876,7 +832,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
