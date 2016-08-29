@@ -14,7 +14,15 @@
 <meta property="og:description" content="第八章 BOM1. window对象 :BOM的核心对象是 window,他表示浏览器的一个实例。在浏览器中，window 对象有双重角色，它既是通过JavaScript访问浏览器窗口的一个接口，又是ECMAScript规定的 Global 对象。这意味着在网页中定义的任何一个对象，变量，函数，都以 window 作为其 Global 对象。
 2. 全局作用域 :1234567var age =">
 <meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/window对象.png">
-<meta property="og:updated_time" content="2016-08-29T01:48:56.000Z">
+<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/alert.png">
+<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/confirm.png">
+<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/prompt.png">
+<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/location.png">
+<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/navigator.jpg">
+<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/navigator1.jpg">
+<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/screen.jpg">
+<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/screen1.jpg">
+<meta property="og:updated_time" content="2016-08-29T12:19:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第八章 BOM">
 <meta name="twitter:description" content="第八章 BOM1. window对象 :BOM的核心对象是 window,他表示浏览器的一个实例。在浏览器中，window 对象有双重角色，它既是通过JavaScript访问浏览器窗口的一个接口，又是ECMAScript规定的 Global 对象。这意味着在网页中定义的任何一个对象，变量，函数，都以 window 作为其 Global 对象。
@@ -57,9 +65,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -127,12 +135,61 @@
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//和上面一样，不建议传递字符串</span></div><div class="line"><span class="comment">//推荐调用方式</span></div><div class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">"Hello world!"</span>);</div><div class="line">&#125;,<span class="number">10000</span>);</div></pre></td></tr></table></figure>
-<pre><code>调用 **setInterval** 方法后也会返回一个间歇调用ID，该ID也是用来在将来的某个时刻取消间歇调用，但是在不加干涉的情况下，间歇调用将一直进行，直到页面关闭。
-</code></pre>
+<p>调用 <strong>setInterval</strong> 方法后也会返回一个间歇调用ID，该ID也是用来在将来的某个时刻取消间歇调用，但是在不加干涉的情况下，间歇调用将一直进行，直到页面关闭。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> max = <span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> intervalId = <span class="literal">null</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">incrementNumber</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(num == max)&#123;</div><div class="line">    clearInterval(intervalId);</div><div class="line">    alert(<span class="string">"Done"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">intervalId = setInterval(incrementNumber,<span class="number">1000</span>);</div></pre></td></tr></table></figure>
+<p>需要说明的是，在开发中，很少真正的使用间歇调用，原因是后一个间歇调用可能会在前一个间歇调用之前启动。解决方法是我们可以通过超时调用来模拟间歇调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> max = <span class="number">10</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">incrementNumber</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  num++;</div><div class="line">  <span class="keyword">if</span>(num &lt; max)&#123;</div><div class="line">    setTimeout(incrementNumber,<span class="number">1000</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">else</span></div><div class="line">    alert(<span class="string">"Done"</span>);</div><div class="line">&#125;</div><div class="line">setTimeout(increment,<span class="number">1000</span>);</div></pre></td></tr></table></figure>
+<h3 id="8-系统对话框"><a href="#8-系统对话框" class="headerlink" title="8. 系统对话框 :"></a>8. 系统对话框 :</h3><ul>
+<li><strong>alert()</strong> : 这里不再赘述。</li>
+</ul>
+<p><img src="http://www.fanyank.com/images/hexoWeb/alert.png" alt="alert"></p>
+<ul>
+<li><strong>confirm()</strong> : 用户将有两个选择（确定和取消），用户点击后，可以通过检查 <strong>confirm()</strong> 方法返回的布尔值来确定用户的点击行为。</li>
+</ul>
+<p><img src="http://www.fanyank.com/images/hexoWeb/confirm.png" alt="confirm"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(confirm(<span class="string">"Are you sure"</span>))</div><div class="line">&#123;</div><div class="line">  alert(<span class="string">"I'm glad to hear you're sure!"</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">&#123;</div><div class="line">  alert(<span class="string">"I'm sorry to hear you're not sure"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>prompt()</strong> : 用于提示用户输入一些内容，提示框中除了有确定和取消按钮外，还有一个文本框来接受用户的输入。</li>
+</ul>
+<p>该方法接受两个参数，要显示给用户的文本提示和文本输入域的默认值（可以是一个空字符串）</p>
+<p>返回值：返回用户所输入的值</p>
+<p><img src="http://www.fanyank.com/images/hexoWeb/prompt.png" alt="prompt"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = prompt(<span class="string">"What's your name"</span>,<span class="string">"Michael"</span>);</div><div class="line"><span class="keyword">if</span>(result !== <span class="literal">null</span>)&#123;</div><div class="line">  alert(<span class="string">"Welcome,"</span> + result);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="9-location对象"><a href="#9-location对象" class="headerlink" title="9. location对象 :"></a>9. location对象 :</h3><p><strong>location</strong> 对象是最有用的BOM对象之一，它提供了与当前窗口加载的文档有关的信息，还提供了一些导航功能。它的作用还表现在讲URL解析为独立的片段，让开发人员可以通过不同的属性来访问这些字段。下表列出了 <strong>location</strong> 对象的所有属性。</p>
+<p><img src="http://www.fanyank.com/images/hexoWeb/location.png" alt="location"></p>
+<p>来看一个完整的URL<br><em><a href="http://www.wrox.com:8080/wileyCDA/?q=javascript#contents" target="_blank" rel="external">http://www.wrox.com:8080/wileyCDA/?q=javascript#contents</a></em><br>分解后就是：<br><strong>location.protocol:”http:”</strong><br><strong>location.href:”<a href="http://www.wrox.com”" target="_blank" rel="external">http://www.wrox.com”</a></strong><br><strong>location.host:”www.wrox.com:80”</strong><br><strong>location.post:”8080”</strong><br><strong>location.pathname:”/wileyCDA/”</strong><br><strong>location.search:”?q=javascript”</strong><br><strong>location.hash:”#contents”</strong><br>位置操作：<br>    使用 <strong>location</strong> 对象可以改变浏览器的URL。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//常用的方式有两种：</span></div><div class="line"><span class="comment">//使用assign方法</span></div><div class="line">location.assign(<span class="string">"http://www.wrox.com"</span>);</div><div class="line"><span class="comment">//使用href属性</span></div><div class="line">location.href = <span class="string">"http://www.wrox.com"</span>;</div></pre></td></tr></table></figure>
+<p>当我们修改URL后，浏览器的历史记录就会增加一条新记录，因此用户点击后退按钮时，会导航到前一个页面，要想禁用这种行为，可以使用 <strong>replace()</strong> 方法<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>You won't be able to get back here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Enjoy this page for a second , because you won't be coming back here.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">      setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        location.replace(<span class="string">"http://www.wrox.com/"</span>);</div><div class="line">      &#125;,<span class="number">1000</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>与位置有关的最后一个方法是 <strong>reload()</strong>。<br>作用是重新加载当前页面,如给方法不传递任何参数，页面就会以最有效的方法来重新加载，也就是说，页面自上次请求以来并没有改变过，页面就会从浏览器的缓存中加载，如果强制从服务器端加载，就应该给这个方法传入一个参数 <strong>true</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//可能从浏览器缓存中加载</span></div><div class="line">  location.reload();</div><div class="line"><span class="comment">//强制从服务器端加载</span></div><div class="line">  location.reload(<span class="literal">true</span>);</div></pre></td></tr></table></figure>
+<h3 id="10-navigator对象"><a href="#10-navigator对象" class="headerlink" title="10. navigator对象 :"></a>10. navigator对象 :</h3><p><strong>navigator对象</strong> 现在已成为识别客户端浏览器的标准，与其他BOM对象一样，每个浏览器的 <strong>navigator对象</strong> 也有着自己的一套属性。下表列出了存在于所有浏览器的属性和方法以及支持他们的浏览器版本。</p>
+<p><img src="http://www.fanyank.com/images/hexoWeb/navigator.jpg" alt="navigator"></p>
+<p><img src="http://www.fanyank.com/images/hexoWeb/navigator1.jpg" alt="navigator next"></p>
+<p>这些 <strong>navigator对象</strong> 的属性通常用于检测浏览器的类型。<br><em>检测插件</em> :<br>检测浏览器中是否安装了特定的插件是一种最常见的检测例程，对于非IE浏览器，可以使用 <strong>plugins数组</strong> 来达到这个目的，该数组中的每一项都包含下列属性。</p>
+<ul>
+<li><strong>name</strong> : 插件的名字。</li>
+<li><strong>description</strong> : 插件的描述。</li>
+<li><strong>filename</strong> : 插件的文件名。</li>
+<li><strong>length</strong> : 插件所处理的MIME类型数量。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//检测插件（在IE中无效）</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasPlugin</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  name = name.toLowerCase();</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; navigator.plugins.length;i++)</div><div class="line">  &#123;</div><div class="line">    <span class="keyword">if</span>(navigator.plugins[i].name.toLowerCase().indexOf(name) &gt; <span class="number">-1</span>)</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//检测Flash</span></div><div class="line">alert(hasPlugin(<span class="string">"flash"</span>));</div><div class="line"><span class="comment">//检测QuickTime</span></div><div class="line">alert(hasPlugin(<span class="string">"QuickTime"</span>));</div></pre></td></tr></table></figure>
+<p>接下来介绍检测IE中插件的方法，检测IE中的插件比较麻烦，因为IE不支持Netspace式的插件。在IE中检测插件的唯一办法就是使用专有的 <strong>ActiveXObject</strong> 类型，并尝试创建一个特定插件的实例。IE是以COM对象的方式实现插件的，而COM对象使用唯一的标识符来标识，因此，要想检查特定的插件就必须知到插件的标识符。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//检测IE中的插件</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasIEplugin</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">try</span>&#123;</div><div class="line">    <span class="keyword">new</span> ActiveXObject(name);</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">catch</span>(ex)&#123;</div><div class="line">    <span class="keyword">return</span> fasle;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//检测Flash</span></div><div class="line">alert(hasIEPlugin(<span class="string">"ShockwaveFlash.ShockwaveFlash"</span>));</div><div class="line"><span class="comment">//检测QuickTime</span></div><div class="line">alert(hasIEPlugin(<span class="string">"QuickTime.QuickTime"</span>));</div></pre></td></tr></table></figure>
+<p>最后是通用的方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//检测所有浏览器中的Flash</span></div><div class="line"><span class="comment">//ShockwaveFlash.ShockwaveFlash是Flash的标识符</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasFlash</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> result = hasPlugin(<span class="string">"Flash"</span>);</div><div class="line">  <span class="keyword">if</span>(!result)&#123;</div><div class="line">    result = hasIEplugin(<span class="string">"ShockwaveFlash.ShockwaveFlash"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"><span class="comment">//检测所有浏览器中的QuickTime</span></div><div class="line"><span class="comment">//QuickTime.QuickTime是Quick的标识符</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasQuick</span></span>&#123;</div><div class="line">  <span class="keyword">var</span> result = hasPlugin(<span class="string">"QuickTime"</span>);</div><div class="line">  <span class="keyword">if</span>(!result)</div><div class="line">  &#123;</div><div class="line">    result = hasIEplugin(<span class="string">"QuickTime.QuickTime"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"><span class="comment">//检测Flash</span></div><div class="line">alert(hasFlash());</div><div class="line"><span class="comment">//检测QuickTime</span></div><div class="line">alert(hasQuickTime());</div></pre></td></tr></table></figure>
+<h3 id="11-screen对象"><a href="#11-screen对象" class="headerlink" title="11. screen对象 :"></a>11. screen对象 :</h3><p>JavaScript有几个对象在编程中用处不大，<strong>Screen对象</strong> 就是其中一个。</p>
+<p><strong>Screen对象</strong> 基本上只用来表明客户端的能力。其中包括浏览器外部窗口的信息，如像素的宽度和高度等。每个浏览器中的 <strong>Screen对象</strong> 都包含着各不相同的属性，下表列出了所有属性及支持相应属性的浏览器。</p>
+<p><img src="http://www.fanyank.com/images/hexoWeb/screen.jpg" alt="screen"></p>
+<p><img src="http://www.fanyank.com/images/hexoWeb/screen1.jpg" alt="screen next"></p>
+<h3 id="12-history对象"><a href="#12-history对象" class="headerlink" title="12. history对象 :"></a>12. history对象 :</h3><p><strong>history对象</strong> 保存着用户上网的历史记录。因为 <strong>history</strong> 是 <strong>window</strong> 对象的属性，因此每个浏览器窗口，每个标签页甚至每个框架，都有着自己的 <strong>history对象</strong> 与特定的 <strong>window对象</strong> 相关联。出于安全性方面考虑，开发人员无法得知用户浏览过的URL，但是借助用户访问过的页面列表，可以再不知道用户实际URL的情况下实现后退和前进。<br><strong>history对象</strong> 有下列几种方法：<br>    <strong>go()</strong> : 在用户的历史记录中任意跳转，接受一个参数，该参数表示跳转页面的一个整数值（负数表示向后跳转，正数表示向前跳转）。<br>也可以给该方法传递一个字符串参数，此时浏览器会跳转到包含该字符串最近的历史记录的页面上（可能前进，也可能后退），如果历史记录不包含该字符串，那么这个方法什么也不做。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//go()方法</span></div><div class="line">history.go(<span class="number">-1</span>);       <span class="comment">//后退一页</span></div><div class="line">history.go(<span class="number">1</span>);        <span class="comment">//前进一页</span></div><div class="line">history.go(<span class="number">2</span>);        <span class="comment">//前进两页</span></div><div class="line"><span class="comment">//还可以使用两个简写的方法来代替go()方法</span></div><div class="line">history.back();       <span class="comment">//后退一页</span></div><div class="line">history.forward();     <span class="comment">//前进一页</span></div></pre></td></tr></table></figure>
+<p>除了上述几个方法外，<strong>history对象</strong> 还有一个 <strong>length</strong> 属性，保存着历史记录的数量。对于加载窗口，标签页或框架中的第一个页面而言，<strong>history.length</strong> 等于0，通过测试该属性的值可以确定用户是否一开始就打开了你的页面。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//检测用户是否一开始就打开你的页面</span></div><div class="line"><span class="keyword">if</span>(history.length == <span class="number">0</span>)</div><div class="line">&#123;</div><div class="line">  alert(<span class="string">"Welcome"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/29/第八章-BOM/" data-id="cisfd10rk0009senrmgf1d949" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/29/第八章-BOM/" data-id="cisg0ppfa000cy8nr5dl3e3ym" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript-BOM/">javascript BOM</a></li></ul>
@@ -143,9 +200,18 @@
     
 <nav id="article-nav">
   
+    <a href="/2016/08/29/第九章-DOM/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          第九章 DOM
+        
+      </div>
+    </a>
+  
   
     <a href="/2016/08/29/第七章-函数表达式/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">第七章 函数表达式</div>
     </a>
   
@@ -163,9 +229,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-函数表达式/">JavaScript 函数表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-变量，作用域，内存/">JavaScript 变量，作用域，内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-基本概念/">JavaScript 基本概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-引用类型/">JavaScript 引用类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-面向对象程序设计/">JavaScript 面向对象程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-BOM/">javascript BOM</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-函数表达式/">JavaScript 函数表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-变量，作用域，内存/">JavaScript 变量，作用域，内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-基本概念/">JavaScript 基本概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-引用类型/">JavaScript 引用类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-面向对象程序设计/">JavaScript 面向对象程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-BOM/">javascript BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-DOM/">javascript DOM</a></li></ul>
     </div>
   </div>
 
@@ -173,9 +239,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript-函数表达式/" style="font-size: 10px;">JavaScript 函数表达式</a> <a href="/tags/JavaScript-变量，作用域，内存/" style="font-size: 10px;">JavaScript 变量，作用域，内存</a> <a href="/tags/JavaScript-基本概念/" style="font-size: 10px;">JavaScript 基本概念</a> <a href="/tags/JavaScript-引用类型/" style="font-size: 10px;">JavaScript 引用类型</a> <a href="/tags/JavaScript-面向对象程序设计/" style="font-size: 10px;">JavaScript 面向对象程序设计</a> <a href="/tags/javascript-BOM/" style="font-size: 10px;">javascript BOM</a>
+      <a href="/tags/JavaScript-函数表达式/" style="font-size: 10px;">JavaScript 函数表达式</a> <a href="/tags/JavaScript-变量，作用域，内存/" style="font-size: 10px;">JavaScript 变量，作用域，内存</a> <a href="/tags/JavaScript-基本概念/" style="font-size: 10px;">JavaScript 基本概念</a> <a href="/tags/JavaScript-引用类型/" style="font-size: 10px;">JavaScript 引用类型</a> <a href="/tags/JavaScript-面向对象程序设计/" style="font-size: 10px;">JavaScript 面向对象程序设计</a> <a href="/tags/javascript-BOM/" style="font-size: 10px;">javascript BOM</a> <a href="/tags/javascript-DOM/" style="font-size: 10px;">javascript DOM</a>
     </div>
   </div>
 
@@ -192,9 +258,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/08/29/第九章-DOM/">第九章 DOM</a>
+          </li>
         
           <li>
             <a href="/2016/08/29/第八章-BOM/">第八章 BOM</a>
@@ -212,10 +282,6 @@
             <a href="/2016/08/26/JavaScript-第五章/">JavaScript 第五章</a>
           </li>
         
-          <li>
-            <a href="/2016/08/26/JavaScript-第四章/">JavaScript 第四章</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -229,7 +295,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
