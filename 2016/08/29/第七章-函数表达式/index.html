@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第七章 函数表达式 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第七章 函数表达式1. 定义函数的两种方法 ：1234567891011121314151617181920212223242526272829303132//函数声明法function sayHi()&amp;#123;  alert(&quot;Hi!&quot;);&amp;#125;//关于函数声明法，他的一个重要特征就是函数声明提升，即在执行代码之前会先读取函数声明，意味着我们可以把函数声明放在调用它语句的后面//函数表达">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第七章 函数表达式">
+<meta property="og:url" content="http://yoursite.com/2016/08/29/第七章-函数表达式/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="第七章 函数表达式1. 定义函数的两种方法 ：1234567891011121314151617181920212223242526272829303132//函数声明法function sayHi()&amp;#123;  alert(&quot;Hi!&quot;);&amp;#125;//关于函数声明法，他的一个重要特征就是函数声明提升，即在执行代码之前会先读取函数声明，意味着我们可以把函数声明放在调用它语句的后面//函数表达">
+<meta property="og:updated_time" content="2016-08-29T01:20:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第七章 函数表达式">
+<meta name="twitter:description" content="第七章 函数表达式1. 定义函数的两种方法 ：1234567891011121314151617181920212223242526272829303132//函数声明法function sayHi()&amp;#123;  alert(&quot;Hi!&quot;);&amp;#125;//关于函数声明法，他的一个重要特征就是函数声明提升，即在执行代码之前会先读取函数声明，意味着我们可以把函数声明放在调用它语句的后面//函数表达">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-第七章-函数表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/29/第七章-函数表达式/" class="article-date">
+  <time datetime="2016-08-29T00:53:44.000Z" itemprop="datePublished">2016-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      第七章 函数表达式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第七章-函数表达式"><a href="#第七章-函数表达式" class="headerlink" title="第七章 函数表达式"></a>第七章 函数表达式</h2><h3 id="1-定义函数的两种方法-："><a href="#1-定义函数的两种方法-：" class="headerlink" title="1. 定义函数的两种方法 ："></a>1. 定义函数的两种方法 ：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//函数声明法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">"Hi!"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//关于函数声明法，他的一个重要特征就是函数声明提升，即在执行代码之前会先读取函数声明，意味着我们可以把函数声明放在调用它语句的后面</span></div><div class="line"><span class="comment">//函数表达式</span></div><div class="line"><span class="keyword">var</span> sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">"Hi!"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//关于两者的区别</span></div><div class="line"><span class="comment">//这样做会报错</span></div><div class="line"><span class="keyword">if</span>(condition)&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Hi"</span>!);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Yo!"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//但这样就不会</span></div><div class="line"><span class="keyword">if</span>(condition)&#123;</div><div class="line">    sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	   alert(<span class="string">"Hi"</span>!);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span>&#123;</div><div class="line">    sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Yo!"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="2-递归"><a href="#2-递归" class="headerlink" title="2. 递归 :"></a>2. 递归 :</h3><p>递归函数是在一个函数通过名字调用自身的情况下构成的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</div><div class="line">    <span class="keyword">return</span> num;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">return</span> num * factorial(num - <span class="number">1</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//这是一个经典的递归阶乘函数，虽然这个函数表面看起来没什么问题，但下面的代码却可能导致塔出错</span></div><div class="line"><span class="keyword">var</span> anotherFactorial = factorial;</div><div class="line">factorial = <span class="literal">null</span>;</div><div class="line">alert(anotherFactorial(<span class="number">4</span>));    <span class="comment">//出错</span></div><div class="line"><span class="comment">//原因是调用anotherFactorial()时，由于必须执行factorial()，所以就会导致错误</span></div><div class="line"><span class="comment">//解决方法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</div><div class="line">    <span class="keyword">return</span> num;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">return</span> num * <span class="built_in">arguments</span>.callee(num - <span class="number">1</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//但在严格模式下不可以通过脚本来访问arguments.callee,不过可以通过命名函数表达式来达到相同的结果</span></div><div class="line"><span class="keyword">var</span> factorial(num)&#123;</div><div class="line">  <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)</div><div class="line">  &#123;</div><div class="line">    <span class="keyword">return</span> num;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">else</span></div><div class="line">  &#123;</div><div class="line">    <span class="keyword">return</span> num * f(num - <span class="number">1</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//以上代码创建了一个名为f的命名函数表达式，然后将它赋值给变量factorial,即使把函数赋值给了另一个函数，函数的名字f仍然有效，所有递归调用照样完成，这种方式在严格或非严格模式下都可以行得通</span></div></pre></td></tr></table></figure>
+<h3 id="3-闭包"><a href="#3-闭包" class="headerlink" title="3. 闭包 :"></a>3. 闭包 :</h3><ul>
+<li><strong>闭包</strong> :<br>指的是有权访问另一个函数作用域中变量的函数</li>
+<li><strong>闭包的用途</strong> :<br>可以读取函数内部的变量并对其作出修改。<br>可以让这些变量的值始终保存在内存中。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//读取变量的值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> n = <span class="number">10</span>;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(n);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> f2;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> result = f1();</div><div class="line">result();            <span class="comment">//10</span></div><div class="line"><span class="comment">//对变量的值作出修改</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> n = <span class="number">10</span>;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(n + <span class="number">1</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> f2;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> result = f1();</div><div class="line">result();            <span class="comment">//11</span></div><div class="line"><span class="comment">//或者这样对函数作出修改</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> n = <span class="number">10</span>;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">    n += <span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(n);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> f2;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> result = f1();</div><div class="line">result();               <span class="comment">//10</span></div><div class="line">add();</div><div class="line">result();               <span class="comment">//11</span></div><div class="line"><span class="comment">//在这段代码中，result实际上就是闭包f2函数。它一共运行了两次，第一次的值是10，第二次的值是11。这证明了，函数f1中的局部变量n一直保存在内存中，并没有在f1调用后被自动清除。</span></div><div class="line"><span class="comment">//为什么会这样呢？原因就在于f1是f2的父函数，而f2被赋给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖于f1，因此f1也始终在内存中，不会在调用结束后，被垃圾回收机制（garbage collection）回收。</span></div></pre></td></tr></table></figure>
+<p>在闭包模式下，<strong>this</strong> 对象有时候也可能会出现问题。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"the window"</span>;</div><div class="line"><span class="keyword">var</span> object = &#123;</div><div class="line">  name: <span class="string">"the object"</span>,</div><div class="line">  getNameFun: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">alert(object.getNameFun()());     <span class="comment">//the window</span></div></pre></td></tr></table></figure>
+<p>如果想访问对象内部的属性，只需要这样就可以了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"the window"</span>;</div><div class="line"><span class="keyword">var</span> object = &#123;</div><div class="line">  name: <span class="string">"the object"</span>,</div><div class="line">  getNameFun: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> that.name;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">alert(object.getNameFun()());     <span class="comment">//the object</span></div></pre></td></tr></table></figure>
+<h3 id="4-模仿块级作用域"><a href="#4-模仿块级作用域" class="headerlink" title="4. 模仿块级作用域 :"></a>4. 模仿块级作用域 :</h3><p>如前所述，JavaScript中没有块级作用域的概念，这意味着在 <em>块语句</em> 中定义的变量，实际上是在函数内部创建的（并不是 <em>块语句</em> 内部）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">numbers</span>(<span class="params">count</span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i &lt; <span class="number">10</span>;i++)</div><div class="line">  &#123;</div><div class="line">    alert(i);</div><div class="line">  &#125;</div><div class="line">  alert(i);    <span class="comment">//计数,i变量仍然可以被访问</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//上述即使你再块级语句下面再声明一次变量i也无济于事</span></div></pre></td></tr></table></figure>
+<p>匿名函数可以用来模仿块级作用域来解决这个问题。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//通用语法如下所示</span></div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line"><span class="comment">//这里是块级作用域</span></div><div class="line">&#125;)();   <span class="comment">//后面的括号表示声明函数后立即执行匿名函数</span></div></pre></td></tr></table></figure>
+<p>所以上述例子引用块级作用域后应该为…</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">numbers</span>(<span class="params">count</span>)</span>&#123;</div><div class="line">  (<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i &lt; <span class="number">10</span>;i++)</div><div class="line">    &#123;</div><div class="line">      alert(i);</div><div class="line">    &#125;</div><div class="line">  &#125;)();</div><div class="line">  alert(i);    <span class="comment">//导致错误</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/29/第七章-函数表达式/" data-id="cisfd10rh0008senrct1owviq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-函数表达式/">JavaScript 函数表达式</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/29/第八章-BOM/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          第八章 BOM
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/27/JavaScript-第六章/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript 第六章</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-函数表达式/">JavaScript 函数表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-变量，作用域，内存/">JavaScript 变量，作用域，内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-基本概念/">JavaScript 基本概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-引用类型/">JavaScript 引用类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-面向对象程序设计/">JavaScript 面向对象程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-BOM/">javascript BOM</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript-函数表达式/" style="font-size: 10px;">JavaScript 函数表达式</a> <a href="/tags/JavaScript-变量，作用域，内存/" style="font-size: 10px;">JavaScript 变量，作用域，内存</a> <a href="/tags/JavaScript-基本概念/" style="font-size: 10px;">JavaScript 基本概念</a> <a href="/tags/JavaScript-引用类型/" style="font-size: 10px;">JavaScript 引用类型</a> <a href="/tags/JavaScript-面向对象程序设计/" style="font-size: 10px;">JavaScript 面向对象程序设计</a> <a href="/tags/javascript-BOM/" style="font-size: 10px;">javascript BOM</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/29/第八章-BOM/">第八章 BOM</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/29/第七章-函数表达式/">第七章 函数表达式</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/27/JavaScript-第六章/">JavaScript 第六章</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/26/JavaScript-第五章/">JavaScript 第五章</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/26/JavaScript-第四章/">JavaScript 第四章</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
