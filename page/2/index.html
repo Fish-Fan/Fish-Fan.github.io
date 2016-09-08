@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>Let&#39;s learn the front-end konwledge</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Let's learn the front-end konwledge">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Let's learn the front-end konwledge">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Let's learn the front-end konwledge">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Let&#39;s learn the front-end konwledge" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -33,7 +33,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">Let&#39;s learn the front-end konwledge</a>
       </h1>
       
     </div>
@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,56 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-JavaScript-第四章" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/26/JavaScript-第四章/" class="article-date">
+  <time datetime="2016-08-26T02:04:08.000Z" itemprop="datePublished">2016-08-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/26/JavaScript-第四章/">JavaScript 第四章</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第四章-变量，作用域，内存等问题"><a href="#第四章-变量，作用域，内存等问题" class="headerlink" title="第四章 变量，作用域，内存等问题"></a>第四章 变量，作用域，内存等问题</h2><h3 id="1-基本类型和引用类型的值"><a href="#1-基本类型和引用类型的值" class="headerlink" title="1. 基本类型和引用类型的值 :"></a>1. 基本类型和引用类型的值 :</h3><p>先说一下基本概念…<br>基本类型指的是简单的数据段<br>引用类型指的是那些可能由多个值构成的对象<br>还不够清楚… 上例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();    <span class="comment">//定义了新对象</span></div><div class="line">person.name = <span class="string">"Jack"</span>;         <span class="comment">//person.name就是引用类型</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">"Jack"</span>;            <span class="comment">//name就是基本类型</span></div></pre></td></tr></table></figure></p>
+<h3 id="2-复制变量值"><a href="#2-复制变量值" class="headerlink" title="2. 复制变量值 :"></a>2. 复制变量值 :</h3><p>基本类型是按 <strong>值</strong> 传递的<br>引用类型是按 <strong>地址</strong> 传递的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//这里只列举一下按地址传递</span></div><div class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"><span class="keyword">var</span> obj1 = obj2;</div><div class="line">obj1.name = <span class="string">"Jack"</span>;</div><div class="line">alert(obj2.name);         <span class="comment">//Jack</span></div></pre></td></tr></table></figure></p>
+<h3 id="3-传递参数"><a href="#3-传递参数" class="headerlink" title="3. 传递参数 :"></a>3. 传递参数 :</h3><p>  所有的函数的参数都是按值传递的。<br>  下面举两个例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//基本类型按值传递</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">addTen</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">	num += <span class="number">10</span>；</div><div class="line">	<span class="keyword">return</span> num;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">var</span> count = <span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> result = addten(count);</div><div class="line">alert(count);      <span class="comment">//20</span></div><div class="line">alert(result);     <span class="comment">//30</span></div><div class="line"><span class="comment">//引用类型按值传递</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">	obj.name = <span class="string">"Jack"</span>;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">setname(person);</div><div class="line">alert(person.name);     <span class="comment">//Jack</span></div><div class="line"><span class="comment">//看到这里你可能会觉得这不就是按地址传递吗？</span></div><div class="line"><span class="comment">//再来看一个例子</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">   	obj.name = <span class="string">"Jack"</span>;</div><div class="line">   	obj = <span class="keyword">new</span> <span class="built_in">Object</span>();    <span class="comment">//局部变量</span></div><div class="line">   	obj.name = <span class="string">"Sam"</span>;	<span class="comment">//为局部变量赋值</span></div><div class="line">  &#125;</div><div class="line">	<span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">	setName(person);</div><div class="line">	alert(person.name);     <span class="comment">//Jack</span></div><div class="line"><span class="comment">//如你所见，输出的值仍然是Jack,这一点可以证明在函数内部确实是按值传递的。</span></div><div class="line"><span class="comment">//那么如何来理解：</span></div><div class="line"><span class="comment">//可以把函数的参数全部看作是局部变量，在函数内部执行完毕以后会被立即销毁，但是如果是引用类型的（对象），则在访问的时候看作是同一个对象。</span></div></pre></td></tr></table></figure></p>
+<h3 id="4-typeof检测数据类型"><a href="#4-typeof检测数据类型" class="headerlink" title="4. typeof检测数据类型 :"></a>4. typeof检测数据类型 :</h3><p>  <strong>typeof</strong> 操作符可以检测以一个变量的数据类型（<strong>string,number,boolean,undefined,object</strong>），但有一个特殊的例子…<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</div><div class="line">alert(<span class="keyword">typeof</span> a);    <span class="comment">//object</span></div></pre></td></tr></table></figure></p>
+<h3 id="5-执行环境和作用域"><a href="#5-执行环境和作用域" class="headerlink" title="5. 执行环境和作用域 :"></a>5. 执行环境和作用域 :</h3><p>简单的概括来说…<br>内部的可以访问外部的，外部的不可以访问内部的。<br>还需要说一点，函数的参数（<strong>arguments</strong>）也被当做变量来对待，其访问规则同上。<br>PS:如果我对下面这个 <strong>swapColor</strong> 函数使用了 <strong>arguments</strong>,他访问的到底是谁的参数？<br>关于这点，<strong>swapColor()</strong> 会现在自己的变量对象中搜索变量和函数名，如果找不到再回去搜索上一级的作用域链。也就是说，你在使用 <strong>swapColor()</strong> 里的 <strong>arguments</strong> 时，最先被搜索到的肯定是 <strong>swapColor()</strong> 里的 <strong>arguments</strong>,如果 <strong>swapColor()</strong> 函数没有参数，自然而然访问的就是上一级函数的 <strong>arguments</strong> 喽！<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = <span class="string">"Blue"</span>;     <span class="comment">//不能访问anotherColor和tempColor</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeColor</span>(<span class="params"></span>)</span>&#123;     <span class="comment">//该函数可以访问color</span></div><div class="line">  <span class="keyword">var</span> anotherColor = <span class="string">"Red"</span>;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">swapColors</span>(<span class="params"></span>)</span>&#123;  <span class="comment">//该函数可以访问color,anotherColor</span></div><div class="line">	  <span class="keyword">var</span> tempColor = anotherColor;</div><div class="line">		anotherColor = color;</div><div class="line">		color = tempColor;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="6-没有块级作用域"><a href="#6-没有块级作用域" class="headerlink" title="6. 没有块级作用域 :"></a>6. 没有块级作用域 :</h3><p>  Javascript并不像C，C++，Java那样的语言一样，由花括号封闭的代码块都有着自己的作用域。还是举例说明…<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</div><div class="line">  <span class="keyword">var</span> color = <span class="string">"Blue"</span>;</div><div class="line">&#125;</div><div class="line"> alert(color);        <span class="comment">//Blue</span></div></pre></td></tr></table></figure></p>
+<p>这个在C类语言里是绝对行不通的，因为color在if语句执行完毕后会被立即销毁，但是在JavaScript里面却行得通。所以在你写完if或者for语句时，一定要注意，里面的变量仍然存在于外部的执行环境中。或者你可以使用let关键字来申请一个块级变量（需要浏览器支持ES6标准。</p>
+<h3 id="7-管理内存"><a href="#7-管理内存" class="headerlink" title="7. 管理内存 :"></a>7. 管理内存 :</h3><p>出于安全方面的考虑，为了防止运行JavaScript的网页而耗尽全部的系统内存导致系统崩溃，编程人员需要尽可能的确保占用最少的内存而获得更好的性能，而优化内存占用的最佳方式，就是为执行中的代码只保存必要的数据，一旦数据不再有用，最好将其值设置为 <strong>null</strong> 来释放其引用—-这个做法叫做解除引用，直接上例子…<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">creatPerson</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> localPerson = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">	localPerson.name = name;</div><div class="line">	<span class="keyword">return</span> localPerson;  <span class="comment">//localPerson无需我们显示的为其解除引用，JavaScript垃圾收集机制会自动为其释放内存</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> globalPerson = creatperson(<span class="string">"Jack"</span>);</div><div class="line">globalPerson = <span class="literal">null</span>;</div><div class="line"><span class="comment">//对于globalPerson在我们无需使用它时，可以为它手动解除引用，以求代码最优性能，这里还要说的一点是解除一个值的引用，并不意味着自动回收该值所占用的内存，而是让值脱离其执行环境，以便垃圾收集机制下次运行时将其回收。</span></div></pre></td></tr></table></figure></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结 :"></a>小结 :</h3><ul>
+<li>从一个变量向另一个变量复制引用类型的值是，复制的其实是指针，因此，两个变量实际上指的是同一个对象。</li>
+<li>包含引用类型的变量实际上包含的并不是对象本身，而是一个指向该对象的指针。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/26/JavaScript-第四章/" data-id="cisuarlyt0003pknri5q7gxk1" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-变量，作用域，内存/">JavaScript 变量，作用域，内存</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -106,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/29/JavaScript/" data-id="cistqxt9r0004grnr6038rr6s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/29/JavaScript/" data-id="cisuarlyu0004pknrba03fidt" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-基本概念/">JavaScript 基本概念</a></li></ul>
@@ -132,7 +182,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-函数表达式/">JavaScript 函数表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-变量，作用域，内存/">JavaScript 变量，作用域，内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-基本概念/">JavaScript 基本概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-引用类型/">JavaScript 引用类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-面向对象程序设计/">JavaScript 面向对象程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-BOM/">javascript BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-DOM/">javascript DOM</a></li></ul>
     </div>
@@ -142,7 +192,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/tags/JavaScript-函数表达式/" style="font-size: 10px;">JavaScript 函数表达式</a> <a href="/tags/JavaScript-变量，作用域，内存/" style="font-size: 10px;">JavaScript 变量，作用域，内存</a> <a href="/tags/JavaScript-基本概念/" style="font-size: 10px;">JavaScript 基本概念</a> <a href="/tags/JavaScript-引用类型/" style="font-size: 10px;">JavaScript 引用类型</a> <a href="/tags/JavaScript-面向对象程序设计/" style="font-size: 10px;">JavaScript 面向对象程序设计</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/jQuery/" style="font-size: 20px;">jQuery</a> <a href="/tags/javascript-BOM/" style="font-size: 10px;">javascript BOM</a> <a href="/tags/javascript-DOM/" style="font-size: 10px;">javascript DOM</a>
     </div>
@@ -161,9 +211,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/09/08/each-和-each/">$.each()和.each()</a>
+          </li>
         
           <li>
             <a href="/2016/09/08/css-vertical-align/">css vertical-align</a>
@@ -181,10 +235,6 @@
             <a href="/2016/09/06/jQuery知识体系/">jQuery知识体系</a>
           </li>
         
-          <li>
-            <a href="/2016/08/29/第九章-DOM/">第九章 DOM</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -197,8 +247,8 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2016 Johnny.R<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
