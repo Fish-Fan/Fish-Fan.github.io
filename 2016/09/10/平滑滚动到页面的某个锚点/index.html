@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016/8 | Welcome abroad</title>
+  <title>平滑滚动到页面的某个锚点 | Welcome abroad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Welcome abroad">
-<meta property="og:url" content="http://yoursite.com/archives/2016/08/index.html">
+  <meta name="description" content="编写scrollTo函数来实现平滑滚动到页面的某个锚点这是自己做的一个demo。1234567891011121314151617$.scrollTo = function(selectDom,scrollTime)&amp;#123;   $(selectDom).click(function()&amp;#123;       //获取要滚动到的节点       var scrollToDom = $(thi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="平滑滚动到页面的某个锚点">
+<meta property="og:url" content="http://yoursite.com/2016/09/10/平滑滚动到页面的某个锚点/index.html">
 <meta property="og:site_name" content="Welcome abroad">
+<meta property="og:description" content="编写scrollTo函数来实现平滑滚动到页面的某个锚点这是自己做的一个demo。1234567891011121314151617$.scrollTo = function(selectDom,scrollTime)&amp;#123;   $(selectDom).click(function()&amp;#123;       //获取要滚动到的节点       var scrollToDom = $(thi">
+<meta property="og:updated_time" content="2016-09-10T07:51:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Welcome abroad">
+<meta name="twitter:title" content="平滑滚动到页面的某个锚点">
+<meta name="twitter:description" content="编写scrollTo函数来实现平滑滚动到页面的某个锚点这是自己做的一个demo。1234567891011121314151617$.scrollTo = function(selectDom,scrollTime)&amp;#123;   $(selectDom).click(function()&amp;#123;       //获取要滚动到的节点       var scrollToDom = $(thi">
   
     <link rel="alternate" href="/atom.xml" title="Welcome abroad" type="application/atom+xml">
   
@@ -59,134 +63,54 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/29/第九章-DOM/" class="archive-article-date">
-  <time datetime="2016-08-29T12:22:06.000Z" itemprop="datePublished">Aug 29</time>
+        <section id="main"><article id="post-平滑滚动到页面的某个锚点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/10/平滑滚动到页面的某个锚点/" class="article-date">
+  <time datetime="2016-09-10T07:46:03.000Z" itemprop="datePublished">2016-09-10</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/29/第九章-DOM/">第九章 DOM</a>
+    <h1 class="article-title" itemprop="name">
+      平滑滚动到页面的某个锚点
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/29/第八章-BOM/" class="archive-article-date">
-  <time datetime="2016-08-29T01:22:05.000Z" itemprop="datePublished">Aug 29</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/29/第八章-BOM/">第八章 BOM</a>
-    </h1>
-  
+        <h2 id="编写scrollTo函数来实现平滑滚动到页面的某个锚点"><a href="#编写scrollTo函数来实现平滑滚动到页面的某个锚点" class="headerlink" title="编写scrollTo函数来实现平滑滚动到页面的某个锚点"></a>编写scrollTo函数来实现平滑滚动到页面的某个锚点</h2><p>这是自己做的一个<a href="http://www.fanyank.com/scrollTo/index.html" target="_blank" rel="external">demo</a>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$.scrollTo = <span class="function"><span class="keyword">function</span>(<span class="params">selectDom,scrollTime</span>)</span>&#123;</div><div class="line">   $(selectDom).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="comment">//获取要滚动到的节点</span></div><div class="line">       <span class="keyword">var</span> scrollToDom = $(<span class="keyword">this</span>).attr(<span class="string">"page-scroll"</span>);</div><div class="line">       <span class="comment">//添加动画</span></div><div class="line">       $(<span class="string">"html,body"</span>).animate(&#123;</div><div class="line">           <span class="comment">//获取要滚动到的节点距文档(document)顶部的位置</span></div><div class="line">           scrollTop:$(scrollToDom).offset().top</div><div class="line"></div><div class="line">       &#125;,</div><div class="line">               <span class="comment">//定义动画执行的时间</span></div><div class="line">               scrollTime</div><div class="line">       );</div><div class="line">   &#125;);</div><div class="line">&#125;;</div><div class="line">$.scrollTo(<span class="string">"#navbar a"</span>,<span class="number">1000</span>);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/29/第七章-函数表达式/" class="archive-article-date">
-  <time datetime="2016-08-29T00:53:44.000Z" itemprop="datePublished">Aug 29</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/29/第七章-函数表达式/">第七章 函数表达式</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/27/JavaScript-第六章/" class="archive-article-date">
-  <time datetime="2016-08-27T01:08:19.000Z" itemprop="datePublished">Aug 27</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/10/平滑滚动到页面的某个锚点/" data-id="cisww5yxx000fn0nr7tp19clc" class="article-share-link">Partager</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/27/JavaScript-第六章/">JavaScript 第六章</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/26/JavaScript-第五章/" class="archive-article-date">
-  <time datetime="2016-08-26T02:31:54.000Z" itemprop="datePublished">Aug 26</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/26/JavaScript-第五章/">JavaScript 第五章</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/26/JavaScript-第四章/" class="archive-article-date">
-  <time datetime="2016-08-26T02:04:08.000Z" itemprop="datePublished">Aug 26</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/26/JavaScript-第四章/">JavaScript 第四章</a>
-    </h1>
   
+    <a href="/2016/09/10/inArray-查找元素在数组中的索引值/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">$.inArray()查找元素在数组中的索引值</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
