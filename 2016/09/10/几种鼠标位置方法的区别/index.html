@@ -3,20 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>jQuery知识体系 | Welcome abroad</title>
+  <title>几种鼠标位置方法的区别 | Welcome abroad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jQuery知识体系">
+  <meta name="description" content="screenX,screenY : 顾名思义，就是鼠标相对于 屏幕 的坐标位置是多少。
+clientX,clientY : 鼠标相对于客户端区的坐标位置是多少。无论你的页面怎样滚动，客户端区就那么大（就是那么一个框），其坐标值是不会随着页面的滚动而发生变化的。这一点跟 screenX,screenY 有点类似，可以放在一起记忆。
+pageX,pageY : page就是页面嘛，说白了，就是一张纸铺">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery知识体系">
-<meta property="og:url" content="http://yoursite.com/2016/09/06/jQuery知识体系/index.html">
+<meta property="og:title" content="几种鼠标位置方法的区别">
+<meta property="og:url" content="http://yoursite.com/2016/09/10/几种鼠标位置方法的区别/index.html">
 <meta property="og:site_name" content="Welcome abroad">
-<meta property="og:description" content="jQuery知识体系">
-<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/jQuery知识体系.png">
-<meta property="og:updated_time" content="2016-09-06T04:38:34.000Z">
+<meta property="og:description" content="screenX,screenY : 顾名思义，就是鼠标相对于 屏幕 的坐标位置是多少。
+clientX,clientY : 鼠标相对于客户端区的坐标位置是多少。无论你的页面怎样滚动，客户端区就那么大（就是那么一个框），其坐标值是不会随着页面的滚动而发生变化的。这一点跟 screenX,screenY 有点类似，可以放在一起记忆。
+pageX,pageY : page就是页面嘛，说白了，就是一张纸铺">
+<meta property="og:updated_time" content="2016-09-10T12:40:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery知识体系">
-<meta name="twitter:description" content="jQuery知识体系">
-<meta name="twitter:image" content="http://www.fanyank.com/images/hexoWeb/jQuery知识体系.png">
+<meta name="twitter:title" content="几种鼠标位置方法的区别">
+<meta name="twitter:description" content="screenX,screenY : 顾名思义，就是鼠标相对于 屏幕 的坐标位置是多少。
+clientX,clientY : 鼠标相对于客户端区的坐标位置是多少。无论你的页面怎样滚动，客户端区就那么大（就是那么一个框），其坐标值是不会随着页面的滚动而发生变化的。这一点跟 screenX,screenY 有点类似，可以放在一起记忆。
+pageX,pageY : page就是页面嘛，说白了，就是一张纸铺">
   
     <link rel="alternate" href="/atom.xml" title="Welcome abroad" type="application/atom+xml">
   
@@ -65,10 +69,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-jQuery知识体系" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-几种鼠标位置方法的区别" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/09/06/jQuery知识体系/" class="article-date">
-  <time datetime="2016-09-06T04:35:00.000Z" itemprop="datePublished">2016-09-06</time>
+    <a href="/2016/09/10/几种鼠标位置方法的区别/" class="article-date">
+  <time datetime="2016-09-10T12:22:58.000Z" itemprop="datePublished">2016-09-10</time>
 </a>
     
   </div>
@@ -79,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jQuery知识体系
+      几种鼠标位置方法的区别
     </h1>
   
 
@@ -87,12 +91,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="jQuery知识体系"><a href="#jQuery知识体系" class="headerlink" title="jQuery知识体系"></a>jQuery知识体系</h2><p><img src="http://www.fanyank.com/images/hexoWeb/jQuery知识体系.png" alt="jQuery知识体系"></p>
+        <p><strong>screenX,screenY</strong> : 顾名思义，就是鼠标相对于 <strong>屏幕</strong> 的坐标位置是多少。</p>
+<p><strong>clientX,clientY</strong> : 鼠标相对于客户端区的坐标位置是多少。无论你的页面怎样滚动，客户端区就那么大（就是那么一个框），其坐标值是不会随着页面的滚动而发生变化的。这一点跟 <strong>screenX,screenY</strong> 有点类似，可以放在一起记忆。</p>
+<p><strong>pageX,pageY</strong> : page就是页面嘛，说白了，就是一张纸铺在了浏览器上，那么我们的鼠标位置当然就是相对于这张纸的位置了，如果我们这张纸太大，浏览器没有办法显示完全，那么浏览器就会给页面增加一个滚动条上去，那么 <strong>我们在滚动滚动条时，当前鼠标的坐标位置当然会发生变化了。</strong></p>
+<p><strong>offset().left,offset().top</strong> : 获取元素相对于文档(document)的位置。<strong>文档也是一张纸，获取元素位置时，是相对于纸来说的，不是相对于你屏幕，也不是相对于其他任何东西。</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/jQuery知识体系/" data-id="cisx6j6i4000dolnrlefhya7q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/10/几种鼠标位置方法的区别/" data-id="cisx6j6i6000folnr4jtuc0h7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -103,19 +110,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/09/06/对未来新添加的节点绑定事件/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          对未来新添加的节点绑定事件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/08/29/第九章-DOM/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/09/10/平滑滚动到页面的某个锚点/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">第九章 DOM</div>
+      <div class="article-nav-title">平滑滚动到页面的某个锚点</div>
     </a>
   
 </nav>
