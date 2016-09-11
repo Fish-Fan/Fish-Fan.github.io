@@ -3,24 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>对未来新添加的节点绑定事件 | Welcome abroad</title>
+  <title>outerWidth()和width()的区别 | Welcome abroad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="为未来新添加的节点绑定事件以下例子只能通过点击第一个 p元素 来创建节点，点击 新生成的p元素 是不会有反应的。
-123&amp;lt;div class=&quot;container&quot;&amp;gt;    &amp;lt;p&amp;gt;点击创建一个新的p元素&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
-123$(&quot;.container p&quot;).click(function()&amp;#123;  $(this).after(&quot;&amp;lt;">
+  <meta name="description" content="outerWidth()和width()的区别outerWidth(includeMargin) : 获取元素集合中第一个元素的当前计算宽度值。包括这个元素的 padding,border,如果 includeMargin 的值被设置为 true,那么 margin 的值也将被计算在宽度之内。includeMargin 的值默认为 false。该方法不适用于 window 和 document 对">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对未来新添加的节点绑定事件">
-<meta property="og:url" content="http://yoursite.com/2016/09/06/对未来新添加的节点绑定事件/index.html">
+<meta property="og:title" content="outerWidth()和width()的区别">
+<meta property="og:url" content="http://yoursite.com/2016/09/11/outerWidth-和width-的区别/index.html">
 <meta property="og:site_name" content="Welcome abroad">
-<meta property="og:description" content="为未来新添加的节点绑定事件以下例子只能通过点击第一个 p元素 来创建节点，点击 新生成的p元素 是不会有反应的。
-123&amp;lt;div class=&quot;container&quot;&amp;gt;    &amp;lt;p&amp;gt;点击创建一个新的p元素&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
-123$(&quot;.container p&quot;).click(function()&amp;#123;  $(this).after(&quot;&amp;lt;">
-<meta property="og:updated_time" content="2016-09-06T05:01:30.000Z">
+<meta property="og:description" content="outerWidth()和width()的区别outerWidth(includeMargin) : 获取元素集合中第一个元素的当前计算宽度值。包括这个元素的 padding,border,如果 includeMargin 的值被设置为 true,那么 margin 的值也将被计算在宽度之内。includeMargin 的值默认为 false。该方法不适用于 window 和 document 对">
+<meta property="og:updated_time" content="2016-09-11T12:31:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="对未来新添加的节点绑定事件">
-<meta name="twitter:description" content="为未来新添加的节点绑定事件以下例子只能通过点击第一个 p元素 来创建节点，点击 新生成的p元素 是不会有反应的。
-123&amp;lt;div class=&quot;container&quot;&amp;gt;    &amp;lt;p&amp;gt;点击创建一个新的p元素&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
-123$(&quot;.container p&quot;).click(function()&amp;#123;  $(this).after(&quot;&amp;lt;">
+<meta name="twitter:title" content="outerWidth()和width()的区别">
+<meta name="twitter:description" content="outerWidth()和width()的区别outerWidth(includeMargin) : 获取元素集合中第一个元素的当前计算宽度值。包括这个元素的 padding,border,如果 includeMargin 的值被设置为 true,那么 margin 的值也将被计算在宽度之内。includeMargin 的值默认为 false。该方法不适用于 window 和 document 对">
   
     <link rel="alternate" href="/atom.xml" title="Welcome abroad" type="application/atom+xml">
   
@@ -69,10 +63,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-对未来新添加的节点绑定事件" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-outerWidth-和width-的区别" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/09/06/对未来新添加的节点绑定事件/" class="article-date">
-  <time datetime="2016-09-06T04:41:11.000Z" itemprop="datePublished">2016-09-06</time>
+    <a href="/2016/09/11/outerWidth-和width-的区别/" class="article-date">
+  <time datetime="2016-09-11T11:52:28.000Z" itemprop="datePublished">2016-09-11</time>
 </a>
     
   </div>
@@ -83,7 +77,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      对未来新添加的节点绑定事件
+      outerWidth()和width()的区别
     </h1>
   
 
@@ -91,17 +85,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="为未来新添加的节点绑定事件"><a href="#为未来新添加的节点绑定事件" class="headerlink" title="为未来新添加的节点绑定事件"></a>为未来新添加的节点绑定事件</h3><p>以下例子只能通过点击第一个 <strong>p元素</strong> 来创建节点，点击 <strong>新生成的p元素</strong> 是不会有反应的。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>点击创建一个新的p元素<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".container p"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="keyword">this</span>).after(<span class="string">"&lt;p&gt;点击创建一个新的p元素&lt;/p&gt;"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>使用 <strong>on()方法</strong> 或者 <strong>delegate()方法</strong> 来为未来节点绑定事件。<br>推荐使用 <strong>on()方法</strong> ,因为自jQuery1.7版本起，delegate方法被on方法所取代。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用on方法</span></div><div class="line">$(<span class="string">".container"</span>).on(<span class="string">"click"</span>,<span class="string">"p"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="keyword">this</span>).after(<span class="string">"&lt;p&gt;点击创建一个新的p元素&lt;/p&gt;"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用delegate方法</span></div><div class="line">$(<span class="string">".container"</span>).delegate(<span class="string">"p"</span>,<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="keyword">this</span>).after(<span class="string">"&lt;p&gt;点击创建一个新的p元素&lt;/p&gt;"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+        <h2 id="outerWidth-和width-的区别"><a href="#outerWidth-和width-的区别" class="headerlink" title="outerWidth()和width()的区别"></a>outerWidth()和width()的区别</h2><p><strong>outerWidth(includeMargin)</strong> : 获取元素集合中第一个元素的当前计算宽度值。包括这个元素的 <strong>padding</strong>,<strong>border</strong>,如果 <strong>includeMargin</strong> 的值被设置为 <strong>true</strong>,那么 <strong>margin</strong> 的值也将被计算在宽度之内。<strong>includeMargin</strong> 的值默认为 <strong>false</strong>。该方法不适用于 <strong>window</strong> 和 <strong>document</strong> 对象。</p>
+<p><strong>width(value)</strong> : 为匹配的元素集合中获取第一个元素的当前计算宽度值。该方法适用于计算 <strong>window</strong> 和 <strong>document</strong> 对象的宽度。当调用 <strong>.width(value)方法</strong> 的时候，这个“value”参数可以是一个字符串（数字加单位）或者是一个数字。如果这个“value”参数只提供一个数字，jQuery会 <strong>自动加上单位px</strong>。如果只提供一个字符串，任何有效的CSS尺寸都可以为宽度赋值（就像100px, 50%, 或者 auto）。</p>
+<p>另外 <strong>JS</strong> 中还提供了 <strong>document.body.clientWidth</strong> 来获取 <strong>body</strong> 的宽度，如果要使元素始终保持上下左右居中，而不随着浏览器窗口变化而变化，就可以使用该方法来实现。</p>
+<p>下面是一段使元素保持上下左右居中的代码(注意居中的元素css需设置position)。</p>
+<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">center</span>(<span class="params">node</span>)</span>{
+           centerFun(node);
+           <span class="comment">//浏览器窗口发生变化时仍然居中</span>
+          $(<span class="built_in">window</span>).resize(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+              centerFun(node);
+          });
+           <span class="comment">//滚动条滚动时仍然居中</span>
+           $(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+              centerFun(node);
+           });
+       }
+       <span class="function"><span class="keyword">function</span> <span class="title">centerFun</span>(<span class="params">node</span>)</span>{
+           <span class="keyword">var</span> windowWidth = $(<span class="built_in">window</span>).width();
+           <span class="keyword">var</span> windowHeight = $(<span class="built_in">window</span>).height();
+           <span class="keyword">var</span> scrollTop = $(<span class="built_in">document</span>).scrollTop();
+           <span class="keyword">var</span> nodeLeft = (windowWidth - node.width())/<span class="number">2</span>;
+           <span class="keyword">var</span> nodeHeight = (windowHeight - node.height())/<span class="number">2</span> + scrollTop;
+           node.css({left: nodeLeft + <span class="string">'px'</span>,top: nodeHeight + <span class="string">'px'</span>,display: <span class="string">'block'</span>});
+       }
+       center($(<span class="string">"#box"</span>));
+</code></pre>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/对未来新添加的节点绑定事件/" data-id="cisykfyli000mypnr5d9qmtgl" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/09/11/outerWidth-和width-的区别/" data-id="cisykfyl9000cypnrgx6pbmo7" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -112,19 +125,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/09/06/mouse事件的区别/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
-      <div class="article-nav-title">
-        
-          mouse事件的区别
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/09/06/jQuery知识体系/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/09/10/几种鼠标位置方法的区别/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">jQuery知识体系</div>
+      <div class="article-nav-title">几种鼠标位置方法的区别</div>
     </a>
   
 </nav>

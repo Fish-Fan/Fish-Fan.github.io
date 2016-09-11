@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,69 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-outerWidth-和width-的区别" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/11/outerWidth-和width-的区别/" class="article-date">
+  <time datetime="2016-09-11T11:52:28.000Z" itemprop="datePublished">2016-09-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/11/outerWidth-和width-的区别/">outerWidth()和width()的区别</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="outerWidth-和width-的区别"><a href="#outerWidth-和width-的区别" class="headerlink" title="outerWidth()和width()的区别"></a>outerWidth()和width()的区别</h2><p><strong>outerWidth(includeMargin)</strong> : 获取元素集合中第一个元素的当前计算宽度值。包括这个元素的 <strong>padding</strong>,<strong>border</strong>,如果 <strong>includeMargin</strong> 的值被设置为 <strong>true</strong>,那么 <strong>margin</strong> 的值也将被计算在宽度之内。<strong>includeMargin</strong> 的值默认为 <strong>false</strong>。该方法不适用于 <strong>window</strong> 和 <strong>document</strong> 对象。</p>
+<p><strong>width(value)</strong> : 为匹配的元素集合中获取第一个元素的当前计算宽度值。该方法适用于计算 <strong>window</strong> 和 <strong>document</strong> 对象的宽度。当调用 <strong>.width(value)方法</strong> 的时候，这个“value”参数可以是一个字符串（数字加单位）或者是一个数字。如果这个“value”参数只提供一个数字，jQuery会 <strong>自动加上单位px</strong>。如果只提供一个字符串，任何有效的CSS尺寸都可以为宽度赋值（就像100px, 50%, 或者 auto）。</p>
+<p>另外 <strong>JS</strong> 中还提供了 <strong>document.body.clientWidth</strong> 来获取 <strong>body</strong> 的宽度，如果要使元素始终保持上下左右居中，而不随着浏览器窗口变化而变化，就可以使用该方法来实现。</p>
+<p>下面是一段使元素保持上下左右居中的代码(注意居中的元素css需设置position)。</p>
+<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">center</span>(<span class="params">node</span>)</span>{
+           centerFun(node);
+           <span class="comment">//浏览器窗口发生变化时仍然居中</span>
+          $(<span class="built_in">window</span>).resize(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+              centerFun(node);
+          });
+           <span class="comment">//滚动条滚动时仍然居中</span>
+           $(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+              centerFun(node);
+           });
+       }
+       <span class="function"><span class="keyword">function</span> <span class="title">centerFun</span>(<span class="params">node</span>)</span>{
+           <span class="keyword">var</span> windowWidth = $(<span class="built_in">window</span>).width();
+           <span class="keyword">var</span> windowHeight = $(<span class="built_in">window</span>).height();
+           <span class="keyword">var</span> scrollTop = $(<span class="built_in">document</span>).scrollTop();
+           <span class="keyword">var</span> nodeLeft = (windowWidth - node.width())/<span class="number">2</span>;
+           <span class="keyword">var</span> nodeHeight = (windowHeight - node.height())/<span class="number">2</span> + scrollTop;
+           node.css({left: nodeLeft + <span class="string">'px'</span>,top: nodeHeight + <span class="string">'px'</span>,display: <span class="string">'block'</span>});
+       }
+       center($(<span class="string">"#box"</span>));
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/11/outerWidth-和width-的区别/" data-id="cisykfyl9000cypnrgx6pbmo7" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-几种鼠标位置方法的区别" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -84,14 +147,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>screenX,screenY</strong> : 顾名思义，就是鼠标相对于 <strong>屏幕</strong> 的坐标位置是多少。</p>
-<p><strong>clientX,clientY</strong> : 鼠标相对于客户端区的坐标位置是多少。无论你的页面怎样滚动，客户端区就那么大（就是那么一个框），其坐标值是不会随着页面的滚动而发生变化的。这一点跟 <strong>screenX,screenY</strong> 有点类似，可以放在一起记忆。</p>
+<p><strong>clientX,clientY</strong> : 鼠标相对于客户端区的坐标位置是多少。客户端区指的就是你浏览器的内容区（除去任何与你浏览的网页无关的东西，比如导航栏，工具栏，URL），无论你的页面怎样滚动，客户端区就那么大（就是那么一个框），其坐标值是不会随着页面的滚动而发生变化的。这一点跟 <strong>screenX,screenY</strong> 有点类似，可以放在一起记忆。</p>
 <p><strong>pageX,pageY</strong> : page就是页面嘛，说白了，就是一张纸铺在了浏览器上，那么我们的鼠标位置当然就是相对于这张纸的位置了，如果我们这张纸太大，浏览器没有办法显示完全，那么浏览器就会给页面增加一个滚动条上去，那么 <strong>我们在滚动滚动条时，当前鼠标的坐标位置当然会发生变化了。</strong></p>
 <p><strong>offset().left,offset().top</strong> : 获取元素相对于文档(document)的位置。<strong>文档也是一张纸，获取元素位置时，是相对于纸来说的，不是相对于你屏幕，也不是相对于其他任何东西。</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/10/几种鼠标位置方法的区别/" data-id="cisx6j6i6000folnr4jtuc0h7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/10/几种鼠标位置方法的区别/" data-id="cisykfyld000fypnrmkpgyu6m" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -130,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/10/平滑滚动到页面的某个锚点/" data-id="cisx6j6ia000jolnrz6bryhei" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/10/平滑滚动到页面的某个锚点/" data-id="cisykfyll000pypnrssebph4c" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -170,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/10/inArray-查找元素在数组中的索引值/" data-id="cisx6j6i00008olnr2f2vtjdt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/10/inArray-查找元素在数组中的索引值/" data-id="cisykfyl80009ypnr9gmkwfhl" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -210,7 +273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/10/grep-过滤数组元素/" data-id="cisx6j6hv0006olnrv855b8r6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/10/grep-过滤数组元素/" data-id="cisykfyky0004ypnrvx8f5glf" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -252,7 +315,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/08/each-和-each/" data-id="cisx6j6i2000colnrc52toy4n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/08/each-和-each/" data-id="cisykfylb000dypnrah6fagcs" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -291,7 +354,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/08/css-vertical-align/" data-id="cisx6j6i10009olnrvwrwgai9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/08/css-vertical-align/" data-id="cisykfykr0001ypnru6dynhy6" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -342,7 +405,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/mouse事件的区别/" data-id="cisx6j6i6000holnray47xx37" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/06/mouse事件的区别/" data-id="cisykfyle000hypnr56x343zx" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -386,7 +449,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/对未来新添加的节点绑定事件/" data-id="cisx6j6id000lolnrbudn3wvk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/06/对未来新添加的节点绑定事件/" data-id="cisykfyli000mypnr5d9qmtgl" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -425,90 +488,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/jQuery知识体系/" data-id="cisx6j6i4000dolnrlefhya7q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/06/jQuery知识体系/" data-id="cisykfylh000kypnr5x241g0b" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-第九章-DOM" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/29/第九章-DOM/" class="article-date">
-  <time datetime="2016-08-29T12:22:06.000Z" itemprop="datePublished">2016-08-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/29/第九章-DOM/">第九章 DOM</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第九章-DOM"><a href="#第九章-DOM" class="headerlink" title="第九章 DOM"></a>第九章 DOM</h2><p>DOM（文档对象模型）是针对HTML和XML文档的一个API（应用程序编程接口)。DOM描绘了一个层次化的节点树，允许开发人员添加，移除和修改页面的一部分，DOM脱胎于Netscape及微软公司创始的DHTML(动态HTML)，但现在它已经成为表现和操作页面标记的真正的跨平台、语言中立的方式。</p>
-<h3 id="1-节点层次"><a href="#1-节点层次" class="headerlink" title="1.节点层次 :"></a>1.节点层次 :</h3><p>DOM可以将任何HTML或XML文档描绘成一个由多层次节点构成的结构。节点分为几种不同的类型，每种类型分别表示文档中不同的信息或标记。每个节点都有各自的特点，数据和方法，另外节点也与其他节点存在联系。节点之间构成了层次，而所有页面标记则表现为一个特定节点为根节点的树形结构。以下面HTML为例 :<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Sample Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>可以将这个简单的HTML文档表示为一个层次结构。如图所示 :</p>
-<p><img src="http://www.fanyank.com/images/hexoWeb/node.jpg" alt="node"></p>
-<p>文档节点是每个文档的根节点。在这个例子中，文档结点只有一个子节点，即 <strong><html></html></strong> 元素，我们称之为文档元素。文档元素是文档的最外层元素，文档中的其他所有元索都包含在文档元素中。每个文档只能有一个文档元索。在HTML页面中，文档元索始终都是 <strong><html></html></strong> 元素。在XML中，没有预定义的元素，因此任何元素都可能成为文档元索。</p>
-<p>每一段标记都可以通过树中的一个节点来表示HTML元索通过元素节点表示，特性(attribute) 通过特性节点表示，文档类型通过文档类型节点表示，而注释则通过注释节点表示。总共有12种节点类型，这些类型都继承自一个基类型。</p>
-<h3 id="2-Node类型"><a href="#2-Node类型" class="headerlink" title="2. Node类型 :"></a>2. Node类型 :</h3><p>JavaScript中所有的节点类型都继承自 <strong>Node</strong> 类型，因此所有节点类型都共享着相同的基本属性和方法。</p>
-<h3 id="节点类型"><a href="#节点类型" class="headerlink" title="节点类型"></a>节点类型</h3><p>每个节点都有一个 <strong>nodeType</strong> 属性，用于表明节点的类型。节点类型由在 <strong>Node</strong> 类型中定义的下列12个数值来表示，任何节点必居其一 :</p>
-<ul>
-<li>Node.ELEMENT_NODE(1);</li>
-<li>Node.ATTRIBUTE_NODE(2);</li>
-<li>Node.TEXT_NODE(3);</li>
-<li>Node.CDATA_SECTION_NODE(4);</li>
-<li>Node.ENTITY_REFERENCE_NODE(5);</li>
-<li>Node.ENTITY_NODE(6);</li>
-<li>Node.PROCESSING_INSTRUCTION_NODE(7);</li>
-<li>Node.COMMENT_NODE(8);</li>
-<li>Node.DOCUMENT_NODE(9);</li>
-<li>Node.DOCUMENT_TYPE_NODE(10);</li>
-<li>Node.DOCUMENT_FRAGMENT_NODE(11);</li>
-<li>Node.NOTATION_NODE(12);<br>通过比较上面这些常量，可以很容易的确定节点的类型，例如 :</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(someNode.nodeType == Node.ELEMENT_NODE)    <span class="comment">//在IE中无效</span></div><div class="line">&#123;</div><div class="line">  alert(<span class="string">"Node is an element."</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>由于IE没有公开 <strong>Node</strong> 类型的构造函数，因此上面的代码在IE中会导致错误。为确保跨浏览器兼容，最好还是和数值进行比较。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(someNode.nodeType == <span class="number">1</span>)    <span class="comment">//适用于所有浏览器</span></div><div class="line">&#123;</div><div class="line">  alert(<span class="string">"Node is an element."</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>虽然 <strong>nodeType</strong> 属性有12个可取值，但是仅有3种具有使用价值：</p>
-<ul>
-<li>元素节点 : <strong>nodeType</strong> 属性值1；</li>
-<li>属性节点 : <strong>nodeType</strong> 属性值2；</li>
-<li>文本节点 : <strong>nodeType</strong> 属性值3；</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">title</span> = <span class="string">"firstEle"</span>&gt;</span>Don't forget to buy this stuff.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>下面我们来看看那在一段 <strong>HTML</strong> 文档里，三者的关系是怎样的：</p>
-<p><img src="http://www.fanyank.com/images/hexoWeb/nodeinhtml.png" alt="node in html"></p>
-<h3 id="NodeName和nodeValue属性"><a href="#NodeName和nodeValue属性" class="headerlink" title="NodeName和nodeValue属性"></a>NodeName和nodeValue属性</h3><p>要了解节点的具体信息，可以使用 <strong>nodeName</strong> 和 <strong>nodeValue</strong> 这两个属性。这两个属性的值完全取决于节点的类型。在使用这两个值以前，最好是先检测一下节点的类型。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(someNode.nodeType == <span class="number">1</span>)</div><div class="line">&#123;</div><div class="line">  value = someNode.nodeName;  <span class="comment">//nodeName的值是元素的标签名</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>nodeValue</strong> : 用来得到（和设定）一个节点的值。<br>在实际的使用过程中，如果我们想获得对象里的值（比如说是 <strong>p</strong> 标签，我们给它一个 <strong>id = “description”</strong>），下面这样做是不行的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> des = description.nodeValue;</div><div class="line">alert(des);            <span class="comment">//null</span></div></pre></td></tr></table></figure>
-<p><strong>p</strong> 元素本身的 <strong>nodeValue</strong> 属性是一个空值，而你真正需要的是包含在 <strong>p</strong> 元素所包含的文本值。包含在 <strong>p</strong> 元素里的文本是另一种节点，它是 <strong>p</strong> 元素的第一个子节点。因此，你想要得到的其实是它的第一个子节点的 <strong>nodeValue</strong> 属性值。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(description.childNodes[<span class="number">0</span>].nodeValue);</div></pre></td></tr></table></figure>
-<h3 id="节点关系"><a href="#节点关系" class="headerlink" title="节点关系"></a>节点关系</h3><p>文档中所有的节点之间都存在这样或那样的关系，节点间的各种关系可以用传统的家族关系来描述，相当于把文档树比喻成家谱。在HTML中，可以将 <strong><body></body></strong> 元素看成是<strong><html></html></strong> 元素的子元素,相应地，也就可以将 <strong><html></html></strong> 元素看成是 <strong><body></body></strong> 元素的父元素，而 <strong><head></head></strong> 元素，则可以看成是 <strong><body></body></strong> 元素<br>的同胞元素，因为它们都是同一个父元素 <strong><html></html></strong> 的直接子元素。</p>
-<p><strong>childNodes</strong> 属性 :<br>每个节点都有一个 <strong>childNodes</strong> 属性，其中保存着一个 <strong>NodeList</strong> 对象。<strong>NodeList</strong> 是一种类数组对象，用于保存一组有序的节点，可以通过位置来访问这些节点。请注意，虽然可以通过方括号语法来访问NodeList的值，而且这个对象也有 <strong>length</strong> 属性，但它并不是 <strong>Array</strong> 的实例。<strong>NodeList</strong> 对象的独特之处在于，它实际上是基于DOM结构动态执行查询的结果，因此DOM结构的变化能够自动反映在 <strong>NodeList</strong> 对象中，我们常说，<strong>NodeList</strong> 是有生命、有呼吸的对象，而不是在我们第一次访问它们的某个瞬间拍摄下来的一张快照。</p>
-<p>下面的例子展示了如何访问保存在<strong>NodeList</strong>中的节点：</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/29/第九章-DOM/" data-id="cisx6j6ij000polnrof7y98pf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript-DOM/">javascript DOM</a></li></ul>
 
     </footer>
   </div>
@@ -531,7 +514,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-函数表达式/">JavaScript 函数表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-变量，作用域，内存/">JavaScript 变量，作用域，内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-基本概念/">JavaScript 基本概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-引用类型/">JavaScript 引用类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-面向对象程序设计/">JavaScript 面向对象程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-BOM/">javascript BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-DOM/">javascript DOM</a></li></ul>
     </div>
@@ -541,7 +524,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/tags/JavaScript-函数表达式/" style="font-size: 10px;">JavaScript 函数表达式</a> <a href="/tags/JavaScript-变量，作用域，内存/" style="font-size: 10px;">JavaScript 变量，作用域，内存</a> <a href="/tags/JavaScript-基本概念/" style="font-size: 10px;">JavaScript 基本概念</a> <a href="/tags/JavaScript-引用类型/" style="font-size: 10px;">JavaScript 引用类型</a> <a href="/tags/JavaScript-面向对象程序设计/" style="font-size: 10px;">JavaScript 面向对象程序设计</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/jQuery/" style="font-size: 20px;">jQuery</a> <a href="/tags/javascript-BOM/" style="font-size: 10px;">javascript BOM</a> <a href="/tags/javascript-DOM/" style="font-size: 10px;">javascript DOM</a>
     </div>
@@ -560,9 +543,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/09/11/outerWidth-和width-的区别/">outerWidth()和width()的区别</a>
+          </li>
         
           <li>
             <a href="/2016/09/10/几种鼠标位置方法的区别/">几种鼠标位置方法的区别</a>
@@ -580,10 +567,6 @@
             <a href="/2016/09/10/grep-过滤数组元素/">$.grep()过滤数组元素</a>
           </li>
         
-          <li>
-            <a href="/2016/09/08/each-和-each/">$.each()和.each()</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -597,7 +580,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 Johnny.R<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
