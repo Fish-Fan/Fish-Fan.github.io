@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JSP笔记 | Welcome abroad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JSP&amp;amp;Servlet 笔记
+命名规则
+包名完全小写
+类名采用驼峰命名法
+方法名首字母小写
+
+
+文件位置
+
+
+一般所用包为：entity dao util web 这些包里全部为Java程序，位于src文件夹下。
+web文件夹下主要存放和网页相关的东西
+WEB-INF文件夹下可建一个lib文件夹，用来存放项目相关jar包
+index.jsp单独放置在WEB-INF的直接目录下，其他文件位于">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP笔记">
+<meta property="og:url" content="http://yoursite.com/2017/02/24/JSP笔记/index.html">
+<meta property="og:site_name" content="Welcome abroad">
+<meta property="og:description" content="JSP&amp;amp;Servlet 笔记
+命名规则
+包名完全小写
+类名采用驼峰命名法
+方法名首字母小写
+
+
+文件位置
+
+
+一般所用包为：entity dao util web 这些包里全部为Java程序，位于src文件夹下。
+web文件夹下主要存放和网页相关的东西
+WEB-INF文件夹下可建一个lib文件夹，用来存放项目相关jar包
+index.jsp单独放置在WEB-INF的直接目录下，其他文件位于">
+<meta property="og:updated_time" content="2017-02-24T14:13:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSP笔记">
+<meta name="twitter:description" content="JSP&amp;amp;Servlet 笔记
+命名规则
+包名完全小写
+类名采用驼峰命名法
+方法名首字母小写
+
+
+文件位置
+
+
+一般所用包为：entity dao util web 这些包里全部为Java程序，位于src文件夹下。
+web文件夹下主要存放和网页相关的东西
+WEB-INF文件夹下可建一个lib文件夹，用来存放项目相关jar包
+index.jsp单独放置在WEB-INF的直接目录下，其他文件位于">
+  
+    <link rel="alternate" href="/atom.xml" title="Welcome abroad" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Welcome abroad</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JSP笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/24/JSP笔记/" class="article-date">
+  <time datetime="2017-02-24T13:51:49.000Z" itemprop="datePublished">2017-02-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JSP笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JSP-amp-Servlet-笔记"><a href="#JSP-amp-Servlet-笔记" class="headerlink" title="JSP&amp;Servlet 笔记"></a>JSP&amp;Servlet 笔记</h2><ol>
+<li>命名规则<ul>
+<li>包名完全小写</li>
+<li>类名采用驼峰命名法</li>
+<li>方法名首字母小写</li>
+</ul>
+<ol>
+<li>文件位置</li>
+</ol>
+<ul>
+<li>一般所用包为：entity dao util web 这些包里全部为Java程序，位于src文件夹下。</li>
+<li>web文件夹下主要存放和网页相关的东西</li>
+<li>WEB-INF文件夹下可建一个lib文件夹，用来存放项目相关jar包</li>
+<li>index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所建views文件夹下。</li>
+</ul>
+<ol>
+<li>Servlet和JSP之间传值的两种方式</li>
+<li>重定向跳转<ul>
+<li>修改地址栏,在浏览器端工作</li>
+<li>传值只能依靠URL重写，且仅能是String</li>
+<li>resp.sendRedirect(“/home.jsp?error=1”);</li>
+</ul>
+</li>
+<li>请求转发跳转<ul>
+<li>地址栏不变,在服务器端工作</li>
+<li>依靠req.setAttibute()传值，值可以为任意类型</li>
+<li>缺点为会产生重复提交<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">req.getRequestDispatcher(<span class="string">"/WEB-INF/views/webjsp/list.jsp"</span>).forward(req,resp);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<ol>
+<li><p>两个Servlet之间的通信只能通过session，但可以通过session也可以间接地创建JSP和Servlet之间的通信</p>
+<ul>
+<li>使用session要在web.xml文件中配置session的存活时间<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//在web.xml中配置</div><div class="line">&lt;web-app...&gt;</div><div class="line">		&lt;servlet&gt;</div><div class="line">      ...</div><div class="line">    &lt;/servlet&gt;</div><div class="line">		&lt;session-config&gt;</div><div class="line">       &lt;session-timeout&gt;20&lt;/session-timeout&gt;</div><div class="line">    &lt;/session-config&gt;</div><div class="line">&lt;/web-app&gt;</div><div class="line">//也可以单独给某一个servlet中的seesion设置超时值，注意是以秒来计算</div><div class="line">session.setMaxInactiveInterval(20*60);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>配置上下文参数和servlet参数：</p>
+<ul>
+<li>上下文参数:<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//web.xml中配置文件</div><div class="line">		&lt;servlet&gt;...&lt;/servlet&gt;</div><div class="line">		&lt;context-param&gt;</div><div class="line">		&lt;param-name&gt;mainEmail&lt;/param-name&gt;</div><div class="line">		&lt;param-value&gt;fanyank@126.com&lt;/param-value&gt;</div><div class="line">	&lt;/context-param&gt;</div><div class="line">//servlet中调用上下文参数</div><div class="line">getServletContext().getInitParameter("mainEmail");</div><div class="line">//或者...</div><div class="line">ServletContext context = getServletContext();</div><div class="line">context.getInitParameter("mainEmail");</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>servlet参数<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//web.xml中配置文件</div><div class="line">&lt;servlet&gt;</div><div class="line">		&lt;servlet-name&gt;...&lt;/servlet-name&gt;</div><div class="line">		&lt;servlet-class&gt;...&lt;/servlet-class&gt;</div><div class="line"></div><div class="line">		&lt;init-param&gt;</div><div class="line">			&lt;param-name&gt;adminEmail&lt;/param-name&gt;</div><div class="line">			&lt;param-value&gt;fanyank@126.com&lt;/param-value&gt;</div><div class="line">		&lt;/init-param&gt;</div><div class="line">&lt;/servlet&gt;</div><div class="line">//servlet中的调用</div><div class="line">getServletConfig.getInitParameter("adminEmail");</div><div class="line">//调用过程：</div><div class="line">//容器初始化一个servlet时，会为这个容器创建唯一的一个ServletConfig，容器从DD中读取初始化参数并把键值交给ServletConfig，再把ServletConfig传递给servlet中的init()方法。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>为防止出现错误类型为500的错误：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(isbn == <span class="keyword">null</span> || <span class="string">""</span>.equals(isbn))&#123;</div><div class="line">            resp.sendError(<span class="number">404</span>);</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>将页面上请求的表单写入数据库时应采用UTF-8编码防止写入乱码的情况</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">req.setCharacterEncoding(<span class="string">"UTF-8"</span>);</div><div class="line"><span class="comment">//如果通过URL传入中文，则需进行编码</span></div><div class="line">String tagTypeName = <span class="keyword">new</span> String(req.getParameter(<span class="string">"newTagTypeName"</span>).getBytes(<span class="string">"ISO-8859-1"</span>), <span class="string">"UTF-8"</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>搜索功能应通过URL重写来传值</p>
+</li>
+<li><p>删除功能需要二次确认，然后通过JS跳转到Servlet</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".del"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">                <span class="keyword">if</span>(confirm(<span class="string">"确定要删除吗"</span>)) &#123;</div><div class="line">                    <span class="keyword">var</span> id = $(<span class="keyword">this</span>).attr(<span class="string">"rel"</span>);</div><div class="line">                    <span class="built_in">window</span>.location.href = <span class="string">"/product/del?id="</span> + id;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">            &#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>JSTL 和 EL表达式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// &lt;%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %&gt;</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">// &lt;c:forEach items="$&#123;names&#125;" var="item"&gt;</span></div><div class="line"><span class="comment">//         &lt;li&gt;$&#123;item&#125;&lt;/li&gt;</span></div><div class="line"><span class="comment">// &lt;/c:forEach&gt;</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">// &lt;c:choose&gt;</span></div><div class="line"><span class="comment">//         &lt;c:when test="$&#123;name == 'Alex'&#125;"&gt;</span></div><div class="line"><span class="comment">//             &lt;h1&gt;Hello,Alex&lt;/h1&gt;</span></div><div class="line"><span class="comment">//         &lt;/c:when&gt;</span></div><div class="line"><span class="comment">//         &lt;c:when test="$&#123;name == 'Tom'&#125;"&gt;</span></div><div class="line"><span class="comment">//             &lt;h1&gt;Hello,Tom&lt;/h1&gt;</span></div><div class="line"><span class="comment">//         &lt;/c:when&gt;</span></div><div class="line"><span class="comment">//         &lt;c:otherwise&gt;</span></div><div class="line"><span class="comment">//             &lt;h1&gt;Hello,Other&lt;/h1&gt;</span></div><div class="line"><span class="comment">//         &lt;/c:otherwise&gt;</span></div><div class="line"><span class="comment">// &lt;/c:choose&gt;</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">// &lt;c:if test="$&#123;12 &gt; 2&#125;"&gt;</span></div><div class="line"><span class="comment">//         &lt;h1&gt;Hehe&lt;/h1&gt;</span></div><div class="line"><span class="comment">// &lt;/c:if&gt;</span></div><div class="line"><span class="comment">// &lt;h1&gt; EL表达式  page-&gt;request-&gt;session-&gt;application &lt;/h1&gt;</span></div><div class="line"><span class="comment">//     &lt;h1&gt; $&#123;name&#125; &lt;/h1&gt;</span></div><div class="line"><span class="comment">//     &lt;h1&gt; $&#123;user.id&#125; &lt;/h1&gt;</span></div><div class="line"><span class="comment">//     &lt;h1&gt;$&#123;user.username&#125;&lt;/h1&gt;</span></div><div class="line"><span class="comment">//     &lt;h1&gt;$&#123;user.niceName&#125;&lt;/h1&gt;</span></div><div class="line"><span class="comment">//     &lt;h1&gt;$&#123;requestScope.name&#125;&lt;/h1&gt;</span></div><div class="line"><span class="comment">//     &lt;h1&gt;$&#123;applicationScope.name&#125;&lt;/h1&gt;</span></div><div class="line"><span class="comment">//     &lt;h1&gt;$&#123;1+1&#125;&lt;/h1&gt;</span></div><div class="line"><span class="comment">//     &lt;h1&gt;$&#123;name == 'Alex'&#125;&lt;/h1&gt;</span></div><div class="line"><span class="comment">//     &lt;h1&gt;$&#123;name eq 'Alex'&#125;&lt;/h1&gt;</span></div><div class="line"><span class="comment">//     &lt;h1&gt;$&#123;12 &gt;= 2&#125;&lt;/h1&gt;</span></div><div class="line"><span class="comment">//     &lt;h1&gt;$&#123;empty name&#125;&lt;/h1&gt;</span></div><div class="line"><span class="comment">//     &lt;h1&gt;$&#123;not empty name&#125;&lt;/h1&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>JSP</p>
+<ul>
+<li><p>JSP表达式:<br> 所有的scriptlet和表达式都放在服务方法(_jspService)中,也就是说在scriptlet中声明的变量总是局部变量</p>
+<ul>
+<li><p>JSP声明：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;% ! <span class="keyword">int</span> count = <span class="number">0</span>; %&gt;</div></pre></td></tr></table></figure>
+<p>JSP声明总是在类中定义，即独立于服务方法之外，这样也就可以使用静态变量和静态方法了</p>
+</li>
+<li>JSP九大隐式对象<ol>
+<li>application   对应servlet中    getServletContext()</li>
+<li>request   对应servlet中   request</li>
+<li>session   对应servlet中   request.getSession()</li>
+<li>pageContext   包含以上三个隐式对象</li>
+<li>out</li>
+<li>ServletConfig</li>
+<li>page</li>
+<li>response 对应servlet中 response</li>
+<li>exception</li>
+</ol>
+</li>
+<li>JSP指令(\&lt;%@  %>)<ol>
+<li>page指令</li>
+<li>taglib指令</li>
+<li>include指令</li>
+</ol>
+</li>
+<li>JSP动作(\<jsp:usebean\>)<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">  &lt;jsp:include page="nav.jsp"&gt;</div><div class="line">       &lt;jsp:param name="state" value="1"&gt;&lt;/jsp:param&gt;</div><div class="line">&lt;/jsp:include&gt;</div></pre></td></tr></table></figure>
+</jsp:usebean\></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>EL表达式中的”.”运算符和”[]”运算符:<ol>
+<li>点运算符访问性质和映射值</li>
+<li>中括号运算符若包含的是String直接量，这可以是一个<ul>
+<li>Map键</li>
+<li>bean性质</li>
+<li>List或数组中的索引<br>如果不是String直接量，先找到该量映射的值，最终得到一个映射的String直接量</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>EL隐式对象<ol>
+<li>pageScope</li>
+<li>requestScope</li>
+<li>sessionScope</li>
+<li>applicationScope</li>
+<li>param</li>
+<li>paramValues 请求参数的Map</li>
+<li>head</li>
+<li>headValue 请求头部的Map</li>
+<li>cookie</li>
+<li>initParam 上下文初始化参数</li>
+<li>pageContext</li>
+</ol>
+</li>
+<li>include指令和\<jsp:include\>标准动作<ol>
+<li>两者都对位置敏感</li>
+<li>include指令在转换时发生，\<jsp:include\>标准动作在运行时发生</jsp:include\></li>
+<li>各自语法格式<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//include指令</span></div><div class="line">&lt;%@ include file=<span class="string">"header.jsp"</span>%&gt;</div><div class="line"><span class="comment">//&lt;jsp:include标准动作&gt;</span></div><div class="line">&lt;jsp:include page=<span class="string">"header.jsp"</span>/&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</jsp:include\></li>
+</ul>
+</li>
+<li><p>如果需要对被包含的jsp文件内容进行定制，那么就只能使用jsp标准动作了</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//使用&lt;jsp:param&gt;定制包含内容</div><div class="line">// &lt;jsp:include page="header.jsp"&gt;</div><div class="line">// 		&lt;jsp:param name="subTitle" value="This is value!" /&gt;</div><div class="line">// &lt;/jsp:include&gt;</div><div class="line">//被包含的header.jsp</div><div class="line">&lt;em&gt;$&#123;param.subTitle&#125;&lt;/em&gt;</div><div class="line">//使用&lt;c:import&gt;可以达到同样的效果</div><div class="line">// &lt;c:import url="header.jsp"&gt;</div><div class="line">// 		&lt;c:param name="subTitle" value="This is value" /&gt;</div><div class="line">// &lt;/c:import&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>动作中也可以使用EL表达式</p>
+</li>
+<li>url中文传值乱码<br>将请求值设为UTF-8编码<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String tagName = <span class="keyword">new</span> String(req.getParameter(<span class="string">"tagName"</span>).getBytes(<span class="string">"ISO-8859-1"</span>),<span class="string">"UTF-8"</span>);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/24/JSP笔记/" data-id="cizjvoeos0000o4nrm2kvl37l" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/29/页面布局需要牢记的常识/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">页面布局需要牢记的常识</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-函数表达式/">JavaScript 函数表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-变量，作用域，内存/">JavaScript 变量，作用域，内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-基本概念/">JavaScript 基本概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-引用类型/">JavaScript 引用类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-面向对象程序设计/">JavaScript 面向对象程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-BOM/">javascript BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-DOM/">javascript DOM</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript-函数表达式/" style="font-size: 10px;">JavaScript 函数表达式</a> <a href="/tags/JavaScript-变量，作用域，内存/" style="font-size: 10px;">JavaScript 变量，作用域，内存</a> <a href="/tags/JavaScript-基本概念/" style="font-size: 10px;">JavaScript 基本概念</a> <a href="/tags/JavaScript-引用类型/" style="font-size: 10px;">JavaScript 引用类型</a> <a href="/tags/JavaScript-面向对象程序设计/" style="font-size: 10px;">JavaScript 面向对象程序设计</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/jQuery/" style="font-size: 20px;">jQuery</a> <a href="/tags/javascript-BOM/" style="font-size: 10px;">javascript BOM</a> <a href="/tags/javascript-DOM/" style="font-size: 10px;">javascript DOM</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/24/JSP笔记/">JSP笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/29/页面布局需要牢记的常识/">页面布局需要牢记的常识</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/22/关于一些垂直居中问题的解决方法/">关于一些垂直居中问题的解决方法</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/11/outerWidth-和width-的区别/">outerWidth()和width()的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/10/几种鼠标位置方法的区别/">几种鼠标位置方法的区别</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Johnny.R<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
