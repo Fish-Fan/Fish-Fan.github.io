@@ -3,14 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: JavaScript 引用类型 | Welcome abroad</title>
+  <title>JDBC笔记 | Welcome abroad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Welcome abroad">
-<meta property="og:url" content="http://yoursite.com/tags/JavaScript-引用类型/index.html">
+  <meta name="description" content="JDBC笔记
+JDBC获取新插入数据自动生成的ID
+1234567891011121314public static &amp;lt;T&amp;gt; T executeInsert(String sql, ResultSetHandler&amp;lt;T&amp;gt; resultSetHandler,Object...param)&amp;#123;        Connection connection = Connect">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDBC笔记">
+<meta property="og:url" content="http://yoursite.com/2017/02/24/JDBC笔记/index.html">
 <meta property="og:site_name" content="Welcome abroad">
+<meta property="og:description" content="JDBC笔记
+JDBC获取新插入数据自动生成的ID
+1234567891011121314public static &amp;lt;T&amp;gt; T executeInsert(String sql, ResultSetHandler&amp;lt;T&amp;gt; resultSetHandler,Object...param)&amp;#123;        Connection connection = Connect">
+<meta property="og:updated_time" content="2017-02-24T14:21:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Welcome abroad">
+<meta name="twitter:title" content="JDBC笔记">
+<meta name="twitter:description" content="JDBC笔记
+JDBC获取新插入数据自动生成的ID
+1234567891011121314public static &amp;lt;T&amp;gt; T executeInsert(String sql, ResultSetHandler&amp;lt;T&amp;gt; resultSetHandler,Object...param)&amp;#123;        Connection connection = Connect">
   
     <link rel="alternate" href="/atom.xml" title="Welcome abroad" type="application/atom+xml">
   
@@ -59,39 +69,70 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/08/26/JavaScript-第五章/" class="archive-article-date">
-  <time datetime="2016-08-26T02:31:54.000Z" itemprop="datePublished">Aug 26</time>
+        <section id="main"><article id="post-JDBC笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/24/JDBC笔记/" class="article-date">
+  <time datetime="2017-02-24T14:20:15.000Z" itemprop="datePublished">2017-02-24</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/26/JavaScript-第五章/">JavaScript 第五章</a>
+    <h1 class="article-title" itemprop="name">
+      JDBC笔记
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JDBC笔记"><a href="#JDBC笔记" class="headerlink" title="JDBC笔记"></a>JDBC笔记</h2><ol>
+<li><p>JDBC获取新插入数据自动生成的ID</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">executeInsert</span><span class="params">(String sql, ResultSetHandler&lt;T&gt; resultSetHandler,Object...param)</span></span>&#123;</div><div class="line">        Connection connection = ConnectionManage.getConnection();</div><div class="line">        QueryRunner runner = <span class="keyword">new</span> QueryRunner();</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> runner.insert(connection,sql,resultSetHandler,param);</div><div class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">finally</span> &#123;</div><div class="line">            close(connection);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"><span class="comment">//返回自动生成的键值</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>ConnectionManager类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConnectionMananger</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</div><div class="line">            Connection connection = DriverManager.getConnection(<span class="string">"jdbc:mysql:///RUNOOB"</span>,<span class="string">"root"</span>,<span class="string">"****"</span>);</div><div class="line">            <span class="keyword">return</span> connection;</div><div class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/24/JDBC笔记/" data-id="cizjwpndd0000tcnrd70zuoek" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDBC/">JDBC</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/24/linux命令/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          linux命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/24/JSP笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JSP笔记</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
