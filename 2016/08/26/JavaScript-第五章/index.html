@@ -1,93 +1,213 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>JavaScript 第五章 | Welcome abroad</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第五章 引用类型引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。1. 创建对象的两种方法 :1234567891011121314//使用object类型var person = new Object();//等价于var person = &amp;#123;&amp;#125;;person.name = &quot;Jack&quot;;person.age = 29;//使用对象字面量表示">
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="JavaScript 第五章"/>
+
+
+
+
+  <meta name="keywords" content="JavaScript 引用类型," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Welcome abroad">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.2.x" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2016/08/26/JavaScript-第五章/"/>
+
+
+<meta name="description" content="第五章 引用类型引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。1. 创建对象的两种方法 :1234567891011121314//使用object类型var person = new Object();//等价于var person = &amp;#123;&amp;#125;;person.name = &quot;Jack&quot;;person.age = 29;//使用对象字面量表示">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 第五章">
 <meta property="og:url" content="http://yoursite.com/2016/08/26/JavaScript-第五章/index.html">
 <meta property="og:site_name" content="Welcome abroad">
 <meta property="og:description" content="第五章 引用类型引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。1. 创建对象的两种方法 :1234567891011121314//使用object类型var person = new Object();//等价于var person = &amp;#123;&amp;#125;;person.name = &quot;Jack&quot;;person.age = 29;//使用对象字面量表示">
 <meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/特殊字符序列表.png">
-<meta property="og:updated_time" content="2016-08-29T13:41:28.000Z">
+<meta property="og:updated_time" content="2017-02-25T10:04:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 第五章">
 <meta name="twitter:description" content="第五章 引用类型引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。1. 创建对象的两种方法 :1234567891011121314//使用object类型var person = new Object();//等价于var person = &amp;#123;&amp;#125;;person.name = &quot;Jack&quot;;person.age = 29;//使用对象字面量表示">
 <meta name="twitter:image" content="http://www.fanyank.com/images/hexoWeb/特殊字符序列表.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Welcome abroad" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    search: {
+      enable: true,
+      path: "/search.xml",
+    },
+    navbar: {
+      enable: true
+    },
+    fancybox: {
+      enable: true
+    },
+    toc: {
+      enable: true
+    },
+  };
+</script>
+
+
+
   
 
-</head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Welcome abroad</a>
-      </h1>
+
+    <title> JavaScript 第五章 · Welcome abroad </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Welcome abroad</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-JavaScript-第五章" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/26/JavaScript-第五章/" class="article-date">
-  <time datetime="2016-08-26T02:31:54.000Z" itemprop="datePublished">2016-08-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
   
-    <h1 class="article-title" itemprop="name">
-      JavaScript 第五章
-    </h1>
-  
+</nav>
 
-      </header>
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Welcome abroad</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
     
-    <div class="article-entry" itemprop="articleBody">
+      <a class="mobile-menu-item" href="/">
+        
+        
+          Home
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/archives/">
+        
+        
+          Archives
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/tags">
+        
+        
+          Tags
+        
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          JavaScript 第五章
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Aug 26, 2016
+        </span>
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第五章-引用类型"><span class="toc-text">第五章 引用类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。"><span class="toc-text">引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-创建对象的两种方法"><span class="toc-text">1. 创建对象的两种方法 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-数组"><span class="toc-text">2. 数组 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-栈方法"><span class="toc-text">3. 栈方法 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-队列方法"><span class="toc-text">4. 队列方法 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-重排序方法"><span class="toc-text">5. 重排序方法 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-操作方法"><span class="toc-text">6. 操作方法 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-位置方法"><span class="toc-text">7. 位置方法 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-迭代方法"><span class="toc-text">8. 迭代方法 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-缩小方法"><span class="toc-text">9. 缩小方法 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-Date类型"><span class="toc-text">10. Date类型 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-RegExp类型"><span class="toc-text">11. RegExp类型 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-Function类型"><span class="toc-text">12. Function类型 :</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-基本包装类型"><span class="toc-text">13. 基本包装类型 :</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字符方法"><span class="toc-text">字符方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串操作方法"><span class="toc-text">字符串操作方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-单体内置对象"><span class="toc-text">14. 单体内置对象 :</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
       
         <h2 id="第五章-引用类型"><a href="#第五章-引用类型" class="headerlink" title="第五章 引用类型"></a>第五章 引用类型</h2><h4 id="引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。"><a href="#引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。" class="headerlink" title="引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。"></a>引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。</h4><h3 id="1-创建对象的两种方法"><a href="#1-创建对象的两种方法" class="headerlink" title="1. 创建对象的两种方法 :"></a>1. 创建对象的两种方法 :</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用object类型</span></div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();<span class="comment">//等价于var person = &#123;&#125;;</span></div><div class="line">person.name = <span class="string">"Jack"</span>;</div><div class="line">person.age = <span class="number">29</span>;</div><div class="line"><span class="comment">//使用对象字面量表示法（优点是使用大量属性时无需重复写对象名）</span></div><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  name : <span class="string">"Jack"</span>,</div><div class="line">  age : <span class="number">29</span></div><div class="line">&#125;<span class="comment">//注意属性之间用逗号隔开，最后一个属性后面没有逗号</span></div><div class="line"><span class="comment">//另外在使用对象字面量表示法时，属性名也可以使用字符串(这样属性名就变成可读的哦)</span></div><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  <span class="string">"name"</span> : <span class="string">"Jack"</span>,</div><div class="line">  <span class="string">"age"</span> : <span class="number">29</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="2-数组"><a href="#2-数组" class="headerlink" title="2. 数组 :"></a>2. 数组 :</h3><p>在JavaScript中你可以用数组来表是任何一种数据，甚至在同一个数组中时也是如此，并且JavaScript数组的长度是动态调整的，你可以在任何时候给数组添加值或者删除值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建数组的方法</span></div><div class="line"><span class="keyword">var</span> colors = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"><span class="keyword">var</span> colors = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">20</span>);</div><div class="line"><span class="keyword">var</span> colors = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"Blue"</span>,<span class="string">"Green"</span>,<span class="string">"Red"</span>);</div><div class="line"><span class="comment">//利用上述方法new操作符可以省略</span></div><div class="line"><span class="comment">//更为常见的是使用字面量表示法</span></div><div class="line"><span class="keyword">var</span> colors = [<span class="string">"Blue"</span>,<span class="string">"Green"</span>,<span class="string">"Red"</span>];</div><div class="line"><span class="comment">//数组的length属性并不是只读的，你可以用它来删除数组项或新增数组项</span></div><div class="line"><span class="keyword">var</span> colors = [<span class="string">"Blue"</span>,<span class="string">"Green"</span>,<span class="string">"Red"</span>];</div><div class="line">colors.length = <span class="number">2</span>;       <span class="comment">//删除了Red项</span></div><div class="line">colors[colors.length] = <span class="string">"Red"</span>;</div><div class="line">colors[colors.length] = <span class="string">"Yellow"</span>;   <span class="comment">//随时为数组增添项</span></div></pre></td></tr></table></figure></p>
 <h3 id="3-栈方法"><a href="#3-栈方法" class="headerlink" title="3. 栈方法 :"></a>3. 栈方法 :</h3><ul>
 <li><strong>push()</strong> : <strong>push()</strong> 方法接收任意个参数，并把他们逐个添加到数组的末尾，最后返回修改后 <em>数组的长度</em>。</li>
@@ -242,136 +362,158 @@
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/26/JavaScript-第五章/" data-id="cizjwpndp0004tcnrk6crrppk" class="article-share-link">Share</a>
+
+    
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-引用类型/">JavaScript 引用类型</a></li></ul>
 
-    </footer>
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/weixin.jpg" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.jpg" title="alipay">
+        </label>
+      
+    </div>
   </div>
-  
+
     
-<nav id="article-nav">
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript-引用类型/">JavaScript 引用类型</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/08/27/JavaScript-第六章/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">JavaScript 第六章</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/08/26/JavaScript-第四章/">
+        <span class="next-text nav-default">JavaScript 第四章</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
   
-    <a href="/2016/08/27/JavaScript-第六章/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          JavaScript 第六章
-        
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Johnny.R</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
       </div>
-    </a>
-  
-  
-    <a href="/2016/08/26/JavaScript-第四章/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JavaScript 第四章</div>
-    </a>
-  
-</nav>
+    </div>
 
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
     
 
-  
+
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-函数表达式/">JavaScript 函数表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-变量，作用域，内存/">JavaScript 变量，作用域，内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-基本概念/">JavaScript 基本概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-引用类型/">JavaScript 引用类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-面向对象程序设计/">JavaScript 面向对象程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-BOM/">javascript BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-DOM/">javascript DOM</a></li></ul>
-    </div>
-  </div>
+  
+
+
+
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/JDBC/" style="font-size: 10px;">JDBC</a> <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/JavaScript-函数表达式/" style="font-size: 10px;">JavaScript 函数表达式</a> <a href="/tags/JavaScript-变量，作用域，内存/" style="font-size: 10px;">JavaScript 变量，作用域，内存</a> <a href="/tags/JavaScript-基本概念/" style="font-size: 10px;">JavaScript 基本概念</a> <a href="/tags/JavaScript-引用类型/" style="font-size: 10px;">JavaScript 引用类型</a> <a href="/tags/JavaScript-面向对象程序设计/" style="font-size: 10px;">JavaScript 面向对象程序设计</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/jQuery/" style="font-size: 20px;">jQuery</a> <a href="/tags/javascript-BOM/" style="font-size: 10px;">javascript BOM</a> <a href="/tags/javascript-DOM/" style="font-size: 10px;">javascript DOM</a>
-    </div>
-  </div>
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
-    </div>
-  </div>
-
-
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/02/24/linux命令/">linux命令</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/24/JDBC笔记/">JDBC笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/24/JSP笔记/">JSP笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/29/页面布局需要牢记的常识/">页面布局需要牢记的常识</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/22/关于一些垂直居中问题的解决方法/">关于一些垂直居中问题的解决方法</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 Johnny.R<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <script type="text/javascript" src="/js/src/even.js?v=2.2.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.2.x"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
-</body>
+  </body>
 </html>

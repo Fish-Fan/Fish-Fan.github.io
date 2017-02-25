@@ -1,226 +1,367 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>页面布局需要牢记的常识 | Welcome abroad</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="定位问题中的displaydisplay 为 block 时，默认宽度是100%，一旦我们将它设置为 inline-block 那么它的宽度将由内部的内容来决定或者我们也可以手动来为其设置宽度。同样，当我们让一个元素 浮动起来 的时候，其宽度也会由内部的内容来决定（也可以进行手动设置），由于元素浮动，必然会导致父元素高度宽度为 0，我们这时候就需要给父元素加上 overflow:hidden 了，">
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="页面布局需要牢记的常识"/>
+
+
+
+
+  <meta name="keywords" content="css," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Welcome abroad">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.2.x" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2016/09/29/页面布局需要牢记的常识/"/>
+
+
+<meta name="description" content="定位问题中的displaydisplay 为 block 时，默认宽度是100%，一旦我们将它设置为 inline-block 那么它的宽度将由内部的内容来决定或者我们也可以手动来为其设置宽度。同样，当我们让一个元素 浮动起来 的时候，其宽度也会由内部的内容来决定（也可以进行手动设置），由于元素浮动，必然会导致父元素高度宽度为 0，我们这时候就需要给父元素加上 overflow:hidden 了，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="页面布局需要牢记的常识">
 <meta property="og:url" content="http://yoursite.com/2016/09/29/页面布局需要牢记的常识/index.html">
 <meta property="og:site_name" content="Welcome abroad">
 <meta property="og:description" content="定位问题中的displaydisplay 为 block 时，默认宽度是100%，一旦我们将它设置为 inline-block 那么它的宽度将由内部的内容来决定或者我们也可以手动来为其设置宽度。同样，当我们让一个元素 浮动起来 的时候，其宽度也会由内部的内容来决定（也可以进行手动设置），由于元素浮动，必然会导致父元素高度宽度为 0，我们这时候就需要给父元素加上 overflow:hidden 了，">
-<meta property="og:updated_time" content="2016-09-29T11:04:55.000Z">
+<meta property="og:updated_time" content="2017-02-25T10:03:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="页面布局需要牢记的常识">
 <meta name="twitter:description" content="定位问题中的displaydisplay 为 block 时，默认宽度是100%，一旦我们将它设置为 inline-block 那么它的宽度将由内部的内容来决定或者我们也可以手动来为其设置宽度。同样，当我们让一个元素 浮动起来 的时候，其宽度也会由内部的内容来决定（也可以进行手动设置），由于元素浮动，必然会导致父元素高度宽度为 0，我们这时候就需要给父元素加上 overflow:hidden 了，">
-  
-    <link rel="alternate" href="/atom.xml" title="Welcome abroad" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    search: {
+      enable: true,
+      path: "/search.xml",
+    },
+    navbar: {
+      enable: true
+    },
+    fancybox: {
+      enable: true
+    },
+    toc: {
+      enable: true
+    },
+  };
+</script>
+
+
+
   
 
-</head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Welcome abroad</a>
-      </h1>
+
+    <title> 页面布局需要牢记的常识 · Welcome abroad </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Welcome abroad</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-页面布局需要牢记的常识" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/29/页面布局需要牢记的常识/" class="article-date">
-  <time datetime="2016-09-29T10:46:15.000Z" itemprop="datePublished">2016-09-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
   
-    <h1 class="article-title" itemprop="name">
-      页面布局需要牢记的常识
-    </h1>
-  
+</nav>
 
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Welcome abroad</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      <a class="mobile-menu-item" href="/">
+        
+        
+          Home
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/archives/">
+        
+        
+          Archives
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/tags">
+        
+        
+          Tags
+        
+      </a>
+    
+  </nav>
+</div>
       </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          页面布局需要牢记的常识
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 29, 2016
+        </span>
+      </div>
+    </header>
+
     
-    <div class="article-entry" itemprop="articleBody">
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#定位问题中的display"><span class="toc-text">定位问题中的display</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件化问题"><span class="toc-text">组件化问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于定位中的absolute"><span class="toc-text">关于定位中的absolute</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
       
-        <h3 id="定位问题中的display"><a href="#定位问题中的display" class="headerlink" title="定位问题中的display"></a>定位问题中的display</h3><p><strong>display</strong> 为 <strong>block</strong> 时，默认宽度是100%，一旦我们将它设置为 <strong>inline-block</strong> 那么它的宽度将由内部的内容来决定或者我们也可以手动来为其设置宽度。<br>同样，当我们让一个元素 <strong>浮动起来</strong> 的时候，其宽度也会由内部的内容来决定（也可以进行手动设置），由于元素浮动，必然会导致父元素高度宽度为 <strong>0</strong>，我们这时候就需要给父元素加上 <strong>overflow:hidden</strong> 了，但是加上去之后，浮出来的部分如果超出父元素，就会被隐藏，我们经常会看到网页当中的一些 <strong>hover</strong> 效果就是鼠标放上去之后里面的内容是溢出父元素的，如果想实现这种效果，那么我们肯定就不能再使用 <strong>overflow:hidden</strong> 了，也就是不能使用浮动布局了，只能由 <strong>position</strong> 定位来进行实现。</p>
+        <h3 id="定位问题中的display"><a href="#定位问题中的display" class="headerlink" title="定位问题中的display"></a>定位问题中的display</h3><p><strong>display</strong> 为 <strong>block</strong> 时，默认宽度是100%，一旦我们将它设置为 <strong>inline-block</strong> 那么它的宽度将由内部的内容来决定或者我们也可以手动来为其设置宽度。<br>同样，当我们让一个元素 <strong>浮动起来</strong> 的时候，其宽度也会由内部的内容来决定（也可以进行手动设置），由于元素浮动，必然会导致父元素高度宽度为 <strong>0</strong>，我们这时候就需要给父元素加上 <strong>overflow:hidden</strong> 了，但是加上去之后，浮出来的部分如果超出父元素，就会被隐藏，我们经常会看到网页当中的一些 <strong>hover</strong> 效果就是鼠标放上去之后里面的内容是溢出父元素的，如果想实现这种效果，那么我们肯定就不能再使用 <strong>overflow:hidden</strong> 了，也就是不能使用浮动布局了，只能由 <strong>position</strong> 定位来进行实现。<br><a id="more"></a></p>
 <h3 id="组件化问题"><a href="#组件化问题" class="headerlink" title="组件化问题"></a>组件化问题</h3><p>当有两个或两个以上的元素构成一个组件时，我们最好给这个组件外部套上一个 <strong>包裹层</strong>，方便以后对组件进行定位。</p>
 <h3 id="关于定位中的absolute"><a href="#关于定位中的absolute" class="headerlink" title="关于定位中的absolute"></a>关于定位中的absolute</h3><p>将一个元素的 <strong>position</strong> 属性设置为 <strong>absolute</strong> 后，仅仅是是该元素脱离了标准文档流，但是对该元素的进一步定位我们还需要使用 <strong>top left</strong> 等坐标，并且对于该元素来说虽然脱离标准文档流，但是它仍然在其父元素内部，如果父元素有 <strong>overflow:hidden</strong> 那么该元素相对于父元素的 <strong>溢出部分</strong> 还是会隐藏的。</p>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/29/页面布局需要牢记的常识/" data-id="cizjwpnes0011tcnrft6f9p5t" class="article-share-link">Share</a>
+
+    
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
 
-    </footer>
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/weixin.jpg" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.jpg" title="alipay">
+        </label>
+      
+    </div>
   </div>
-  
+
     
-<nav id="article-nav">
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/css/">css</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/02/24/JSP笔记/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">JSP笔记</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/09/22/关于一些垂直居中问题的解决方法/">
+        <span class="next-text nav-default">关于一些垂直居中问题的解决方法</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
   
-    <a href="/2017/02/24/JSP笔记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          JSP笔记
-        
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Johnny.R</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
       </div>
-    </a>
-  
-  
-    <a href="/2016/09/22/关于一些垂直居中问题的解决方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">关于一些垂直居中问题的解决方法</div>
-    </a>
-  
-</nav>
+    </div>
 
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
     
 
-  
+
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-函数表达式/">JavaScript 函数表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-变量，作用域，内存/">JavaScript 变量，作用域，内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-基本概念/">JavaScript 基本概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-引用类型/">JavaScript 引用类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-面向对象程序设计/">JavaScript 面向对象程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-BOM/">javascript BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-DOM/">javascript DOM</a></li></ul>
-    </div>
-  </div>
+  
+
+
+
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/JDBC/" style="font-size: 10px;">JDBC</a> <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/JavaScript-函数表达式/" style="font-size: 10px;">JavaScript 函数表达式</a> <a href="/tags/JavaScript-变量，作用域，内存/" style="font-size: 10px;">JavaScript 变量，作用域，内存</a> <a href="/tags/JavaScript-基本概念/" style="font-size: 10px;">JavaScript 基本概念</a> <a href="/tags/JavaScript-引用类型/" style="font-size: 10px;">JavaScript 引用类型</a> <a href="/tags/JavaScript-面向对象程序设计/" style="font-size: 10px;">JavaScript 面向对象程序设计</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/jQuery/" style="font-size: 20px;">jQuery</a> <a href="/tags/javascript-BOM/" style="font-size: 10px;">javascript BOM</a> <a href="/tags/javascript-DOM/" style="font-size: 10px;">javascript DOM</a>
-    </div>
-  </div>
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
-    </div>
-  </div>
-
-
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/02/24/linux命令/">linux命令</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/24/JDBC笔记/">JDBC笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/24/JSP笔记/">JSP笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/29/页面布局需要牢记的常识/">页面布局需要牢记的常识</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/22/关于一些垂直居中问题的解决方法/">关于一些垂直居中问题的解决方法</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 Johnny.R<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <script type="text/javascript" src="/js/src/even.js?v=2.2.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.2.x"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
-</body>
+  </body>
 </html>

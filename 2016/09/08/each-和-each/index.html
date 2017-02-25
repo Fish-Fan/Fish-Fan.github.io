@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>$.each()和.each() | Welcome abroad</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="$.each()和.each()$.each() : 可以循环遍历任何集合，比如对象和数组。语法格式为 jQuery.each( collection, callback(indexInArray, valueOfElement) )。
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="$.each()和.each()"/>
+
+
+
+
+  <meta name="keywords" content="jQuery," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Welcome abroad">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.2.x" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2016/09/08/each-和-each/"/>
+
+
+<meta name="description" content="$.each()和.each()$.each() : 可以循环遍历任何集合，比如对象和数组。语法格式为 jQuery.each( collection, callback(indexInArray, valueOfElement) )。
 1234567891011121314151617181920212223var arr = [&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;,&quot;赵六&quot;];var obj = &amp;#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="$.each()和.each()">
@@ -13,218 +42,331 @@
 <meta property="og:site_name" content="Welcome abroad">
 <meta property="og:description" content="$.each()和.each()$.each() : 可以循环遍历任何集合，比如对象和数组。语法格式为 jQuery.each( collection, callback(indexInArray, valueOfElement) )。
 1234567891011121314151617181920212223var arr = [&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;,&quot;赵六&quot;];var obj = &amp;#">
-<meta property="og:updated_time" content="2016-09-08T12:59:26.000Z">
+<meta property="og:updated_time" content="2017-02-25T10:04:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="$.each()和.each()">
 <meta name="twitter:description" content="$.each()和.each()$.each() : 可以循环遍历任何集合，比如对象和数组。语法格式为 jQuery.each( collection, callback(indexInArray, valueOfElement) )。
 1234567891011121314151617181920212223var arr = [&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;,&quot;赵六&quot;];var obj = &amp;#">
-  
-    <link rel="alternate" href="/atom.xml" title="Welcome abroad" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    search: {
+      enable: true,
+      path: "/search.xml",
+    },
+    navbar: {
+      enable: true
+    },
+    fancybox: {
+      enable: true
+    },
+    toc: {
+      enable: true
+    },
+  };
+</script>
+
+
+
   
 
-</head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Welcome abroad</a>
-      </h1>
+
+    <title> $.each()和.each() · Welcome abroad </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Welcome abroad</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-each-和-each" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/08/each-和-each/" class="article-date">
-  <time datetime="2016-09-08T12:15:20.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
   
-    <h1 class="article-title" itemprop="name">
-      $.each()和.each()
-    </h1>
-  
+</nav>
 
-      </header>
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Welcome abroad</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
     
-    <div class="article-entry" itemprop="articleBody">
+      <a class="mobile-menu-item" href="/">
+        
+        
+          Home
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/archives/">
+        
+        
+          Archives
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/tags">
+        
+        
+          Tags
+        
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          $.each()和.each()
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 8, 2016
+        </span>
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#each-和-each"><span class="toc-text">$.each()和.each()</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
       
         <h2 id="each-和-each"><a href="#each-和-each" class="headerlink" title="$.each()和.each()"></a>$.each()和.each()</h2><p><strong>$.each()</strong> : 可以循环遍历任何集合，比如对象和数组。语法格式为 <code>jQuery.each( collection, callback(indexInArray, valueOfElement) )。</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">"张三"</span>,<span class="string">"李四"</span>,<span class="string">"王五"</span>,<span class="string">"赵六"</span>];</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  name : <span class="string">"张三"</span>,</div><div class="line">  age : <span class="number">28</span>,</div><div class="line">  sex : <span class="string">"男"</span>,</div><div class="line">  country : <span class="string">"中国"</span>,</div><div class="line">  city : <span class="string">"上海"</span></div><div class="line">&#125;;</div><div class="line">$.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">index,val</span>)</span>&#123;</div><div class="line">  $(<span class="string">"#div"</span>).append(<span class="string">"该数组第"</span> + index + <span class="string">"个元素是"</span> + val + <span class="string">"&lt;br&gt;"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//该数组第0个元素是张三</span></div><div class="line"><span class="comment">//该数组第1个元素是李四</span></div><div class="line"><span class="comment">//该数组第2个元素是王五</span></div><div class="line"><span class="comment">//该数组第3个元素是赵六</span></div><div class="line">$.each(obj,<span class="function"><span class="keyword">function</span>(<span class="params">i,val</span>)</span>&#123;</div><div class="line">  $(<span class="string">"#obj"</span>).append(<span class="string">"属性"</span> + i + <span class="string">"的值是"</span> + val + <span class="string">"&lt;br&gt;"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//属性name的值是张三</span></div><div class="line"><span class="comment">//属性age的值是28</span></div><div class="line"><span class="comment">//属性sex的值是男</span></div><div class="line"><span class="comment">//属性country的值是中国</span></div><div class="line"><span class="comment">//属性city的值是上海</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p><strong>.each()</strong> : 可以循环遍历选中的子元素。语法格式为 <code>.each( function(index, Element) )。</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//.each()</span></div><div class="line"><span class="keyword">var</span> arr = $(<span class="string">"li"</span>);</div><div class="line">arr.each(<span class="function"><span class="keyword">function</span>(<span class="params">index,item</span>)</span>&#123;</div><div class="line">            <span class="comment">//item == this</span></div><div class="line">            $(item).css(<span class="string">"color"</span>,<span class="string">"red"</span>);</div><div class="line">            <span class="keyword">if</span>(index == <span class="number">4</span>)&#123;</div><div class="line">                $(item).text(<span class="string">"循环到这里停止"</span>);</div><div class="line">                <span class="comment">//使用return false 退出循环</span></div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;);</div></pre></td></tr></table></figure>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/08/each-和-each/" data-id="cizjwpndy0009tcnrkx42298c" class="article-share-link">Share</a>
+
+    
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
 
-    </footer>
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/weixin.jpg" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.jpg" title="alipay">
+        </label>
+      
+    </div>
   </div>
-  
+
     
-<nav id="article-nav">
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery/">jQuery</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/09/10/grep-过滤数组元素/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">$.grep()过滤数组元素</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/09/08/css-vertical-align/">
+        <span class="next-text nav-default">css vertical-align</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
   
-    <a href="/2016/09/10/grep-过滤数组元素/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          $.grep()过滤数组元素
-        
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Johnny.R</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
       </div>
-    </a>
-  
-  
-    <a href="/2016/09/08/css-vertical-align/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">css vertical-align</div>
-    </a>
-  
-</nav>
+    </div>
 
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
     
 
-  
+
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/">JDBC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-函数表达式/">JavaScript 函数表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-变量，作用域，内存/">JavaScript 变量，作用域，内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-基本概念/">JavaScript 基本概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-引用类型/">JavaScript 引用类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-面向对象程序设计/">JavaScript 面向对象程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-BOM/">javascript BOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-DOM/">javascript DOM</a></li></ul>
-    </div>
-  </div>
+  
+
+
+
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/JDBC/" style="font-size: 10px;">JDBC</a> <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/JavaScript-函数表达式/" style="font-size: 10px;">JavaScript 函数表达式</a> <a href="/tags/JavaScript-变量，作用域，内存/" style="font-size: 10px;">JavaScript 变量，作用域，内存</a> <a href="/tags/JavaScript-基本概念/" style="font-size: 10px;">JavaScript 基本概念</a> <a href="/tags/JavaScript-引用类型/" style="font-size: 10px;">JavaScript 引用类型</a> <a href="/tags/JavaScript-面向对象程序设计/" style="font-size: 10px;">JavaScript 面向对象程序设计</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/jQuery/" style="font-size: 20px;">jQuery</a> <a href="/tags/javascript-BOM/" style="font-size: 10px;">javascript BOM</a> <a href="/tags/javascript-DOM/" style="font-size: 10px;">javascript DOM</a>
-    </div>
-  </div>
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
-    </div>
-  </div>
-
-
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/02/24/linux命令/">linux命令</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/24/JDBC笔记/">JDBC笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/24/JSP笔记/">JSP笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/29/页面布局需要牢记的常识/">页面布局需要牢记的常识</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/22/关于一些垂直居中问题的解决方法/">关于一些垂直居中问题的解决方法</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 Johnny.R<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <script type="text/javascript" src="/js/src/even.js?v=2.2.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.2.x"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
-</body>
+  </body>
 </html>
