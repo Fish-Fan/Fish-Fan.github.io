@@ -58,7 +58,7 @@ index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所�
 web文件夹下主要存放和网页相关的东西
 WEB-INF文件夹下可建一个lib文件夹，用来存放项目相关jar包
 index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所建">
-<meta property="og:updated_time" content="2017-02-27T09:54:35.000Z">
+<meta property="og:updated_time" content="2017-02-27T12:35:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSP笔记">
 <meta name="twitter:description" content="JSP&amp;amp;Servlet 笔记命名规则
@@ -224,7 +224,7 @@ index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所�
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JSP-amp-Servlet-笔记"><span class="toc-text">JSP&Servlet 笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命名规则"><span class="toc-text">命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件位置"><span class="toc-text">文件位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet和JSP之间传值的两种方式"><span class="toc-text">Servlet和JSP之间传值的两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两个Servlet之间的通信只能通过session，但可以通过session也可以间接地创建JSP和Servlet之间的通信"><span class="toc-text">两个Servlet之间的通信只能通过session，但可以通过session也可以间接地创建JSP和Servlet之间的通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置上下文参数和servlet参数："><span class="toc-text">配置上下文参数和servlet参数：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为防止出现错误类型为500的错误："><span class="toc-text">为防止出现错误类型为500的错误：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将页面上请求的表单写入数据库时应采用UTF-8编码防止写入乱码的情况"><span class="toc-text">将页面上请求的表单写入数据库时应采用UTF-8编码防止写入乱码的情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搜索功能应通过URL重写来传值"><span class="toc-text">搜索功能应通过URL重写来传值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除功能需要二次确认，然后通过JS跳转到Servlet"><span class="toc-text">删除功能需要二次确认，然后通过JS跳转到Servlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSTL-和-EL表达式"><span class="toc-text">JSTL 和 EL表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSP"><span class="toc-text">JSP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动作中也可以使用EL表达式"><span class="toc-text">动作中也可以使用EL表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#url中文传值乱码"><span class="toc-text">url中文传值乱码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EL隐式对象"><span class="toc-text">EL隐式对象</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JSP-amp-Servlet-笔记"><span class="toc-text">JSP&Servlet 笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命名规则"><span class="toc-text">命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件位置"><span class="toc-text">文件位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet和JSP之间传值的两种方式"><span class="toc-text">Servlet和JSP之间传值的两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两个Servlet之间的通信只能通过session，但可以通过session也可以间接地创建JSP和Servlet之间的通信"><span class="toc-text">两个Servlet之间的通信只能通过session，但可以通过session也可以间接地创建JSP和Servlet之间的通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置上下文参数和servlet参数："><span class="toc-text">配置上下文参数和servlet参数：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为防止出现错误类型为500的错误："><span class="toc-text">为防止出现错误类型为500的错误：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将页面上请求的表单写入数据库时应采用UTF-8编码防止写入乱码的情况"><span class="toc-text">将页面上请求的表单写入数据库时应采用UTF-8编码防止写入乱码的情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搜索功能应通过URL重写来传值"><span class="toc-text">搜索功能应通过URL重写来传值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除功能需要二次确认，然后通过JS跳转到Servlet"><span class="toc-text">删除功能需要二次确认，然后通过JS跳转到Servlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSTL-和-EL表达式"><span class="toc-text">JSTL 和 EL表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSP"><span class="toc-text">JSP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动作中也可以使用EL表达式"><span class="toc-text">动作中也可以使用EL表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#url中文传值乱码"><span class="toc-text">url中文传值乱码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EL隐式对象"><span class="toc-text">EL隐式对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#建立自己的错误界面"><span class="toc-text">建立自己的错误界面</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -377,6 +377,7 @@ index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所�
 </li>
 </ul>
 <p>EL表达式示例，<strong>${person.name}</strong>，就上式来说，点运算符左边可以是一个Map或一个Bean，点运算符右边可以是一个映射键或者Bean性质(${getName()}).</p>
+<h3 id="建立自己的错误界面"><a href="#建立自己的错误界面" class="headerlink" title="建立自己的错误界面"></a>建立自己的错误界面</h3><p>如果用户访问你的网站出现了一些错误，并且不希望访问你网站的用户看到你的栈跟踪记录，也不想让用户得到一个404的错误代码，那么就可以用一个优雅的方式去解决这些问题。<br>在 <strong>DD中(web.xml)</strong> 中进行一下配置:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">error-page</span>&gt;</span></div><div class="line">	//根据HTTP状态声明错误页面</div><div class="line">	<span class="tag">&lt;<span class="name">error-code</span>&gt;</span>404<span class="tag">&lt;/<span class="name">error-code</span>&gt;</span></div><div class="line">	//根据抛出错误类型来声明错误页面</div><div class="line">	<span class="tag">&lt;<span class="name">exception-type</span>&gt;</span>java.lang.ArithmeticException<span class="tag">&lt;/<span class="name">exception-type</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">location</span>&gt;</span>/notFound.jsp<span class="tag">&lt;/<span class="name">location</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">error-page</span>&gt;</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -391,7 +392,7 @@ index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所�
       
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
-    <label class="reward-button" for="reward">赞赏支持</label>
+    <label class="reward-button" for="reward">Reward</label>
     <div class="qr-code">
       
       
