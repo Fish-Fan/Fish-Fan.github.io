@@ -58,7 +58,7 @@ index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所�
 web文件夹下主要存放和网页相关的东西
 WEB-INF文件夹下可建一个lib文件夹，用来存放项目相关jar包
 index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所建">
-<meta property="og:updated_time" content="2017-02-25T10:01:51.000Z">
+<meta property="og:updated_time" content="2017-02-27T09:54:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSP笔记">
 <meta name="twitter:description" content="JSP&amp;amp;Servlet 笔记命名规则
@@ -224,7 +224,7 @@ index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所�
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JSP-amp-Servlet-笔记"><span class="toc-text">JSP&Servlet 笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命名规则"><span class="toc-text">命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件位置"><span class="toc-text">文件位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet和JSP之间传值的两种方式"><span class="toc-text">Servlet和JSP之间传值的两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两个Servlet之间的通信只能通过session，但可以通过session也可以间接地创建JSP和Servlet之间的通信"><span class="toc-text">两个Servlet之间的通信只能通过session，但可以通过session也可以间接地创建JSP和Servlet之间的通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置上下文参数和servlet参数："><span class="toc-text">配置上下文参数和servlet参数：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为防止出现错误类型为500的错误："><span class="toc-text">为防止出现错误类型为500的错误：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将页面上请求的表单写入数据库时应采用UTF-8编码防止写入乱码的情况"><span class="toc-text">将页面上请求的表单写入数据库时应采用UTF-8编码防止写入乱码的情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搜索功能应通过URL重写来传值"><span class="toc-text">搜索功能应通过URL重写来传值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除功能需要二次确认，然后通过JS跳转到Servlet"><span class="toc-text">删除功能需要二次确认，然后通过JS跳转到Servlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSTL-和-EL表达式"><span class="toc-text">JSTL 和 EL表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSP"><span class="toc-text">JSP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动作中也可以使用EL表达式"><span class="toc-text">动作中也可以使用EL表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#url中文传值乱码"><span class="toc-text">url中文传值乱码</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JSP-amp-Servlet-笔记"><span class="toc-text">JSP&Servlet 笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命名规则"><span class="toc-text">命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件位置"><span class="toc-text">文件位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet和JSP之间传值的两种方式"><span class="toc-text">Servlet和JSP之间传值的两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两个Servlet之间的通信只能通过session，但可以通过session也可以间接地创建JSP和Servlet之间的通信"><span class="toc-text">两个Servlet之间的通信只能通过session，但可以通过session也可以间接地创建JSP和Servlet之间的通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置上下文参数和servlet参数："><span class="toc-text">配置上下文参数和servlet参数：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为防止出现错误类型为500的错误："><span class="toc-text">为防止出现错误类型为500的错误：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将页面上请求的表单写入数据库时应采用UTF-8编码防止写入乱码的情况"><span class="toc-text">将页面上请求的表单写入数据库时应采用UTF-8编码防止写入乱码的情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搜索功能应通过URL重写来传值"><span class="toc-text">搜索功能应通过URL重写来传值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除功能需要二次确认，然后通过JS跳转到Servlet"><span class="toc-text">删除功能需要二次确认，然后通过JS跳转到Servlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSTL-和-EL表达式"><span class="toc-text">JSTL 和 EL表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSP"><span class="toc-text">JSP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动作中也可以使用EL表达式"><span class="toc-text">动作中也可以使用EL表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#url中文传值乱码"><span class="toc-text">url中文传值乱码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EL隐式对象"><span class="toc-text">EL隐式对象</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -339,6 +339,44 @@ index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所�
 </li>
 </ol>
 <h3 id="动作中也可以使用EL表达式"><a href="#动作中也可以使用EL表达式" class="headerlink" title="动作中也可以使用EL表达式"></a>动作中也可以使用EL表达式</h3><h3 id="url中文传值乱码"><a href="#url中文传值乱码" class="headerlink" title="url中文传值乱码"></a>url中文传值乱码</h3><p>将请求值设为UTF-8编码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String tagName = <span class="keyword">new</span> String(req.getParameter(<span class="string">"tagName"</span>).getBytes(<span class="string">"ISO-8859-1"</span>),<span class="string">"UTF-8"</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="EL隐式对象"><a href="#EL隐式对象" class="headerlink" title="EL隐式对象"></a>EL隐式对象</h3><ul>
+<li>作用域属性Map<ol>
+<li>pageScope</li>
+<li>requestScope</li>
+<li>sessionScope</li>
+<li>applicationScope</li>
+</ol>
+</li>
+<li><p>请求参数Map</p>
+<ol>
+<li><p>param<br>关于该隐式对象的一个小应用</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//当前jsp页面中</div><div class="line">&lt;jsp:include page="header.jsp"&gt;</div><div class="line">	&lt;jsp:param name="subTitle" value="This is this page subTitle"&gt;</div><div class="line">&lt;/jsp:inlude&gt;</div><div class="line">//header.jsp中</div><div class="line">//接受传过来的param</div><div class="line">&lt;p&gt;$&#123;param.subTitle&#125;&lt;/p&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>paramValues</p>
+</li>
+</ol>
+</li>
+<li><p>请求头部Map</p>
+<ol>
+<li>header</li>
+<li>headValue</li>
+</ol>
+</li>
+<li><p>上下文初始化参数的Map(<strong>${initParam.mainEmail}</strong>)</p>
+<ol>
+<li>initParam</li>
+</ol>
+</li>
+<li>该隐式对象不是映射（Map）,他是对pageContext对象的实际引用(JavaBean)<ol>
+<li>pageContext</li>
+</ol>
+</li>
+<li>其他的隐式对象<ol>
+<li>cookie</li>
+</ol>
+</li>
+</ul>
+<p>EL表达式示例，<strong>${person.name}</strong>，就上式来说，点运算符左边可以是一个Map或一个Bean，点运算符右边可以是一个映射键或者Bean性质(${getName()}).</p>
 
       
     </div>
