@@ -42,14 +42,14 @@
 <meta property="og:site_name" content="Welcome abroad">
 <meta property="og:description" content="第九章 DOMDOM（文档对象模型）是针对HTML和XML文档的一个API（应用程序编程接口)。DOM描绘了一个层次化的节点树，允许开发人员添加，移除和修改页面的一部分，DOM脱胎于Netscape及微软公司创始的DHTML(动态HTML)，但现在它已经成为表现和操作页面标记的真正的跨平台、语言中立的方式。
 1.节点层次 :DOM可以将任何HTML或XML文档描绘成一个由多层次节点构成的结构。节点">
-<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/node.jpg">
-<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/nodeinhtml.png">
-<meta property="og:updated_time" content="2017-02-25T10:02:42.000Z">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/DOM%E6%A0%91.png">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/P.png">
+<meta property="og:updated_time" content="2017-05-04T12:55:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第九章 DOM">
 <meta name="twitter:description" content="第九章 DOMDOM（文档对象模型）是针对HTML和XML文档的一个API（应用程序编程接口)。DOM描绘了一个层次化的节点树，允许开发人员添加，移除和修改页面的一部分，DOM脱胎于Netscape及微软公司创始的DHTML(动态HTML)，但现在它已经成为表现和操作页面标记的真正的跨平台、语言中立的方式。
 1.节点层次 :DOM可以将任何HTML或XML文档描绘成一个由多层次节点构成的结构。节点">
-<meta name="twitter:image" content="http://www.fanyank.com/images/hexoWeb/node.jpg">
+<meta name="twitter:image" content="http://ok2crkjlq.bkt.clouddn.com/DOM%E6%A0%91.png">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
@@ -214,7 +214,7 @@
 <h3 id="1-节点层次"><a href="#1-节点层次" class="headerlink" title="1.节点层次 :"></a>1.节点层次 :</h3><p>DOM可以将任何HTML或XML文档描绘成一个由多层次节点构成的结构。节点分为几种不同的类型，每种类型分别表示文档中不同的信息或标记。每个节点都有各自的特点，数据和方法，另外节点也与其他节点存在联系。节点之间构成了层次，而所有页面标记则表现为一个特定节点为根节点的树形结构。以下面HTML为例 :<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Sample Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>可以将这个简单的HTML文档表示为一个层次结构。如图所示 :</p>
-<p><img src="http://www.fanyank.com/images/hexoWeb/node.jpg" alt="node"></p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/DOM%E6%A0%91.png" alt="node"></p>
 <p>文档节点是每个文档的根节点。在这个例子中，文档结点只有一个子节点，即 <strong><html></html></strong> 元素，我们称之为文档元素。文档元素是文档的最外层元素，文档中的其他所有元索都包含在文档元素中。每个文档只能有一个文档元索。在HTML页面中，文档元索始终都是 <strong><html></html></strong> 元素。在XML中，没有预定义的元素，因此任何元素都可能成为文档元索。</p>
 <p>每一段标记都可以通过树中的一个节点来表示HTML元索通过元素节点表示，特性(attribute) 通过特性节点表示，文档类型通过文档类型节点表示，而注释则通过注释节点表示。总共有12种节点类型，这些类型都继承自一个基类型。</p>
 <h3 id="2-Node类型"><a href="#2-Node类型" class="headerlink" title="2. Node类型 :"></a>2. Node类型 :</h3><p>JavaScript中所有的节点类型都继承自 <strong>Node</strong> 类型，因此所有节点类型都共享着相同的基本属性和方法。</p>
@@ -244,7 +244,7 @@
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">title</span> = <span class="string">"firstEle"</span>&gt;</span>Don't forget to buy this stuff.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>下面我们来看看那在一段 <strong>HTML</strong> 文档里，三者的关系是怎样的：</p>
-<p><img src="http://www.fanyank.com/images/hexoWeb/nodeinhtml.png" alt="node in html"></p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/P.png" alt="node in html"></p>
 <h3 id="NodeName和nodeValue属性"><a href="#NodeName和nodeValue属性" class="headerlink" title="NodeName和nodeValue属性"></a>NodeName和nodeValue属性</h3><p>要了解节点的具体信息，可以使用 <strong>nodeName</strong> 和 <strong>nodeValue</strong> 这两个属性。这两个属性的值完全取决于节点的类型。在使用这两个值以前，最好是先检测一下节点的类型。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(someNode.nodeType == <span class="number">1</span>)</div><div class="line">&#123;</div><div class="line">  value = someNode.nodeName;  <span class="comment">//nodeName的值是元素的标签名</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>nodeValue</strong> : 用来得到（和设定）一个节点的值。<br>在实际的使用过程中，如果我们想获得对象里的值（比如说是 <strong>p</strong> 标签，我们给它一个 <strong>id = “description”</strong>），下面这样做是不行的。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> des = description.nodeValue;</div><div class="line">alert(des);            <span class="comment">//null</span></div></pre></td></tr></table></figure>

@@ -42,21 +42,21 @@
 <meta property="og:site_name" content="Welcome abroad">
 <meta property="og:description" content="第八章 BOM1. window对象 :BOM的核心对象是 window,他表示浏览器的一个实例。在浏览器中，window 对象有双重角色，它既是通过JavaScript访问浏览器窗口的一个接口，又是ECMAScript规定的 Global 对象。这意味着在网页中定义的任何一个对象，变量，函数，都以 window 作为其 Global 对象。
 2. 全局作用域 :1234567var age =">
-<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/window对象.png">
-<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/alert.png">
-<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/confirm.png">
-<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/prompt.png">
-<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/location.png">
-<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/navigator.jpg">
-<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/navigator1.jpg">
-<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/screen.jpg">
-<meta property="og:image" content="http://www.fanyank.com/images/hexoWeb/screen1.jpg">
-<meta property="og:updated_time" content="2017-02-25T10:02:19.000Z">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/windowopen.PNG">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-06-14%20%E4%B8%8B%E5%8D%8811.28.48.png">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-06-14%20%E4%B8%8B%E5%8D%8811.30.39.png">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-06-14%20%E4%B8%8B%E5%8D%8811.41.08.png">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/location.png">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/navigator1.jpg">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/navigator2.jpg">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/Screen1.jpg">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/Screen.jpg">
+<meta property="og:updated_time" content="2017-05-04T12:52:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第八章 BOM">
 <meta name="twitter:description" content="第八章 BOM1. window对象 :BOM的核心对象是 window,他表示浏览器的一个实例。在浏览器中，window 对象有双重角色，它既是通过JavaScript访问浏览器窗口的一个接口，又是ECMAScript规定的 Global 对象。这意味着在网页中定义的任何一个对象，变量，函数，都以 window 作为其 Global 对象。
 2. 全局作用域 :1234567var age =">
-<meta name="twitter:image" content="http://www.fanyank.com/images/hexoWeb/window对象.png">
+<meta name="twitter:image" content="http://ok2crkjlq.bkt.clouddn.com/windowopen.PNG">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
@@ -238,7 +238,7 @@
 <h3 id="6-导航和打开窗口"><a href="#6-导航和打开窗口" class="headerlink" title="6. 导航和打开窗口 :"></a>6. 导航和打开窗口 :</h3><p><strong>window.open()</strong> 方法接收4个参数 : 要加载的URL，窗口目标，一个特性字符串以及一个表示新页面是否取代浏览器历史记录中当前加载页面的布尔值。通常只需传入一个参数，最后一个参数只在不打开新窗口的情况下使用。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//等同于&lt;a href = "http://www.fanyank.com" target = "topFrame"&gt;&lt;/a&gt;</span></div><div class="line"><span class="built_in">window</span>.open(<span class="string">"http://www.fanyank.com"</span>,<span class="string">"topFrame"</span>);</div></pre></td></tr></table></figure>
 <p>调用这行代码，就如同用户点击了 <em>href</em> 属性为 <em><a href="http://www.fanyank.com/" target="_blank" rel="external">http://www.fanyank.com/</a></em> , <strong>target</strong> 属性为 <em>”topFrame”</em> 的链接，如果有一个名叫“topFrame”的框架或者窗口，就会在该窗口或框架中加载这个URL；否则，就会创建一个名叫“topFrame”的新窗口。<br>如果利用该方法创建了一个新窗口，那么那么第三个参数就是用来调整新窗口的各项属性的，如果没有第三个参数，将会创建一个默认的新窗口。<br>第三个参数是一个逗号分隔的设置字符串，下表列出了可以出现在这个字符串的设置选项。</p>
-<p><img src="http://www.fanyank.com/images/hexoWeb/window对象.png" alt="window对象"></p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/windowopen.PNG" alt="window对象"></p>
 <p><strong>注意 ：整个特性字符串中不允许出现空格</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.open(<span class="string">"http://www.fanyank.com/"</span>,<span class="string">"newWindow"</span>,</div><div class="line"><span class="string">"height=400,width=400,top=10,left=10,resizable=yes"</span>);</div></pre></td></tr></table></figure>
 <p>这行代码会打开一个新的可以调节大小的窗口，窗口的初始大小为400*400像素，并且距离屏幕上边和左边各10像素。</p>
@@ -262,29 +262,29 @@
 <h3 id="8-系统对话框"><a href="#8-系统对话框" class="headerlink" title="8. 系统对话框 :"></a>8. 系统对话框 :</h3><ul>
 <li><strong>alert()</strong> : 这里不再赘述。</li>
 </ul>
-<p><img src="http://www.fanyank.com/images/hexoWeb/alert.png" alt="alert"></p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-06-14%20%E4%B8%8B%E5%8D%8811.28.48.png" alt="alert"></p>
 <ul>
 <li><strong>confirm()</strong> : 用户将有两个选择（确定和取消），用户点击后，可以通过检查 <strong>confirm()</strong> 方法返回的布尔值来确定用户的点击行为。</li>
 </ul>
-<p><img src="http://www.fanyank.com/images/hexoWeb/confirm.png" alt="confirm"></p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-06-14%20%E4%B8%8B%E5%8D%8811.30.39.png" alt="confirm"></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(confirm(<span class="string">"Are you sure"</span>))</div><div class="line">&#123;</div><div class="line">  alert(<span class="string">"I'm glad to hear you're sure!"</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">&#123;</div><div class="line">  alert(<span class="string">"I'm sorry to hear you're not sure"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
 <li><strong>prompt()</strong> : 用于提示用户输入一些内容，提示框中除了有确定和取消按钮外，还有一个文本框来接受用户的输入。</li>
 </ul>
 <p>该方法接受两个参数，要显示给用户的文本提示和文本输入域的默认值（可以是一个空字符串）</p>
 <p>返回值：返回用户所输入的值</p>
-<p><img src="http://www.fanyank.com/images/hexoWeb/prompt.png" alt="prompt"></p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-06-14%20%E4%B8%8B%E5%8D%8811.41.08.png" alt="prompt"></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = prompt(<span class="string">"What's your name"</span>,<span class="string">"Michael"</span>);</div><div class="line"><span class="keyword">if</span>(result !== <span class="literal">null</span>)&#123;</div><div class="line">  alert(<span class="string">"Welcome,"</span> + result);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="9-location对象"><a href="#9-location对象" class="headerlink" title="9. location对象 :"></a>9. location对象 :</h3><p><strong>location</strong> 对象是最有用的BOM对象之一，它提供了与当前窗口加载的文档有关的信息，还提供了一些导航功能。它的作用还表现在讲URL解析为独立的片段，让开发人员可以通过不同的属性来访问这些字段。下表列出了 <strong>location</strong> 对象的所有属性。</p>
-<p><img src="http://www.fanyank.com/images/hexoWeb/location.png" alt="location"></p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/location.png" alt="location"></p>
 <p>来看一个完整的URL<br><em><a href="http://www.wrox.com:8080/wileyCDA/?q=javascript#contents" target="_blank" rel="external">http://www.wrox.com:8080/wileyCDA/?q=javascript#contents</a></em><br>分解后就是：<br><strong>location.protocol:”http:”</strong><br><strong>location.href:”<a href="http://www.wrox.com”" target="_blank" rel="external">http://www.wrox.com”</a></strong><br><strong>location.host:”www.wrox.com:80”</strong><br><strong>location.post:”8080”</strong><br><strong>location.pathname:”/wileyCDA/”</strong><br><strong>location.search:”?q=javascript”</strong><br><strong>location.hash:”#contents”</strong><br>位置操作：<br>    使用 <strong>location</strong> 对象可以改变浏览器的URL。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//常用的方式有两种：</span></div><div class="line"><span class="comment">//使用assign方法</span></div><div class="line">location.assign(<span class="string">"http://www.wrox.com"</span>);</div><div class="line"><span class="comment">//使用href属性</span></div><div class="line">location.href = <span class="string">"http://www.wrox.com"</span>;</div></pre></td></tr></table></figure>
 <p>当我们修改URL后，浏览器的历史记录就会增加一条新记录，因此用户点击后退按钮时，会导航到前一个页面，要想禁用这种行为，可以使用 <strong>replace()</strong> 方法<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>You won't be able to get back here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Enjoy this page for a second , because you won't be coming back here.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">      setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        location.replace(<span class="string">"http://www.wrox.com/"</span>);</div><div class="line">      &#125;,<span class="number">1000</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>与位置有关的最后一个方法是 <strong>reload()</strong>。<br>作用是重新加载当前页面,如给方法不传递任何参数，页面就会以最有效的方法来重新加载，也就是说，页面自上次请求以来并没有改变过，页面就会从浏览器的缓存中加载，如果强制从服务器端加载，就应该给这个方法传入一个参数 <strong>true</strong>。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//可能从浏览器缓存中加载</span></div><div class="line">  location.reload();</div><div class="line"><span class="comment">//强制从服务器端加载</span></div><div class="line">  location.reload(<span class="literal">true</span>);</div></pre></td></tr></table></figure>
 <h3 id="10-navigator对象"><a href="#10-navigator对象" class="headerlink" title="10. navigator对象 :"></a>10. navigator对象 :</h3><p><strong>navigator对象</strong> 现在已成为识别客户端浏览器的标准，与其他BOM对象一样，每个浏览器的 <strong>navigator对象</strong> 也有着自己的一套属性。下表列出了存在于所有浏览器的属性和方法以及支持他们的浏览器版本。</p>
-<p><img src="http://www.fanyank.com/images/hexoWeb/navigator.jpg" alt="navigator"></p>
-<p><img src="http://www.fanyank.com/images/hexoWeb/navigator1.jpg" alt="navigator next"></p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/navigator1.jpg" alt="navigator"></p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/navigator2.jpg" alt="navigator next"></p>
 <p>这些 <strong>navigator对象</strong> 的属性通常用于检测浏览器的类型。<br><em>检测插件</em> :<br>检测浏览器中是否安装了特定的插件是一种最常见的检测例程，对于非IE浏览器，可以使用 <strong>plugins数组</strong> 来达到这个目的，该数组中的每一项都包含下列属性。</p>
 <ul>
 <li><strong>name</strong> : 插件的名字。</li>
@@ -299,8 +299,8 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//检测所有浏览器中的Flash</span></div><div class="line"><span class="comment">//ShockwaveFlash.ShockwaveFlash是Flash的标识符</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasFlash</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> result = hasPlugin(<span class="string">"Flash"</span>);</div><div class="line">  <span class="keyword">if</span>(!result)&#123;</div><div class="line">    result = hasIEplugin(<span class="string">"ShockwaveFlash.ShockwaveFlash"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"><span class="comment">//检测所有浏览器中的QuickTime</span></div><div class="line"><span class="comment">//QuickTime.QuickTime是Quick的标识符</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasQuick</span></span>&#123;</div><div class="line">  <span class="keyword">var</span> result = hasPlugin(<span class="string">"QuickTime"</span>);</div><div class="line">  <span class="keyword">if</span>(!result)</div><div class="line">  &#123;</div><div class="line">    result = hasIEplugin(<span class="string">"QuickTime.QuickTime"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"><span class="comment">//检测Flash</span></div><div class="line">alert(hasFlash());</div><div class="line"><span class="comment">//检测QuickTime</span></div><div class="line">alert(hasQuickTime());</div></pre></td></tr></table></figure>
 <h3 id="11-screen对象"><a href="#11-screen对象" class="headerlink" title="11. screen对象 :"></a>11. screen对象 :</h3><p>JavaScript有几个对象在编程中用处不大，<strong>Screen对象</strong> 就是其中一个。</p>
 <p><strong>Screen对象</strong> 基本上只用来表明客户端的能力。其中包括浏览器外部窗口的信息，如像素的宽度和高度等。每个浏览器中的 <strong>Screen对象</strong> 都包含着各不相同的属性，下表列出了所有属性及支持相应属性的浏览器。</p>
-<p><img src="http://www.fanyank.com/images/hexoWeb/screen.jpg" alt="screen"></p>
-<p><img src="http://www.fanyank.com/images/hexoWeb/screen1.jpg" alt="screen next"></p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/Screen1.jpg" alt="screen"></p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/Screen.jpg" alt="screen next"></p>
 <h3 id="12-history对象"><a href="#12-history对象" class="headerlink" title="12. history对象 :"></a>12. history对象 :</h3><p><strong>history对象</strong> 保存着用户上网的历史记录。因为 <strong>history</strong> 是 <strong>window</strong> 对象的属性，因此每个浏览器窗口，每个标签页甚至每个框架，都有着自己的 <strong>history对象</strong> 与特定的 <strong>window对象</strong> 相关联。出于安全性方面考虑，开发人员无法得知用户浏览过的URL，但是借助用户访问过的页面列表，可以再不知道用户实际URL的情况下实现后退和前进。<br><strong>history对象</strong> 有下列几种方法：<br>    <strong>go()</strong> : 在用户的历史记录中任意跳转，接受一个参数，该参数表示跳转页面的一个整数值（负数表示向后跳转，正数表示向前跳转）。<br>也可以给该方法传递一个字符串参数，此时浏览器会跳转到包含该字符串最近的历史记录的页面上（可能前进，也可能后退），如果历史记录不包含该字符串，那么这个方法什么也不做。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//go()方法</span></div><div class="line">history.go(<span class="number">-1</span>);       <span class="comment">//后退一页</span></div><div class="line">history.go(<span class="number">1</span>);        <span class="comment">//前进一页</span></div><div class="line">history.go(<span class="number">2</span>);        <span class="comment">//前进两页</span></div><div class="line"><span class="comment">//还可以使用两个简写的方法来代替go()方法</span></div><div class="line">history.back();       <span class="comment">//后退一页</span></div><div class="line">history.forward();     <span class="comment">//前进一页</span></div></pre></td></tr></table></figure>
 <p>除了上述几个方法外，<strong>history对象</strong> 还有一个 <strong>length</strong> 属性，保存着历史记录的数量。对于加载窗口，标签页或框架中的第一个页面而言，<strong>history.length</strong> 等于0，通过测试该属性的值可以确定用户是否一开始就打开了你的页面。</p>
