@@ -195,7 +195,7 @@
         
 
         
-          <h2 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h2><ul>
+          <h1 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h1><h2 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h2><h3 id="1-首页"><a href="#1-首页" class="headerlink" title="1.首页"></a>1.首页</h3><ul>
 <li><p>首页截屏<br><img src="http://ok2crkjlq.bkt.clouddn.com/IMG_3651.PNG?imageView2/1/w/240/h/440/q/75|imageslim" alt="首页理想图"></p>
 </li>
 <li><p>接口路径: /index</p>
@@ -210,22 +210,22 @@
 </ul>
 </li>
 </ul>
-<h2 id="用户端订单结算"><a href="#用户端订单结算" class="headerlink" title="用户端订单结算"></a>用户端订单结算</h2><ul>
-<li><p>用户端结算截屏<br><img src="http://ok2crkjlq.bkt.clouddn.com/IMG_3652.PNG?imageView2/1/w/240/h/440/q/75|imageslim" alt="用户端界面理想图"></p>
+<h3 id="2-用户端订单结算"><a href="#2-用户端订单结算" class="headerlink" title="2.用户端订单结算"></a>2.用户端订单结算</h3><ul>
+<li><p>用户端结算截屏<br><img src="http://ok2crkjlq.bkt.clouddn.com/02411671B11021DE13767DA6AC5C8395.png?imageView2/1/w/240/h/440/q/75|imageslim" alt="用户端界面理想图"></p>
 </li>
 <li><p>接口路径 /api/order/pay</p>
 </li>
 <li><p>调用方式<br>用户在商家界面选好商品之后，点击去结算按钮，将用户购物车数据以POST方式提交至上述路径中，后台完成数据存储及转换后，<strong>返回一个订单数据，然后将页面跳转至订单结算页面</strong>(这部分工作已完成)，前端只需设计订单结算页面及接受订单结算数据即可，<strong>接受数据采用传统的方式接受，不采用Ajax</strong></p>
 </li>
 <li><p>订单结算界面所需数据</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//返回数据</div><div class="line">&#123;"username":"fanyank",</div><div class="line">  "phoneNum":"17638918399",</div><div class="line">  "isNoName":true,                                        /*是否匿名购买*/</div><div class="line">  "sumMoney":34.0,                                        /*订单总计*/</div><div class="line">  "address":"天津市西青区天津工业大学软件园4号楼",</div><div class="line">  "generateTime":"2017-07-08 09:54:07",</div><div class="line">  "status":1,</div><div class="line">  "foodList":[</div><div class="line">    &#123;"foodName":"皮蛋瘦肉粥", "price":10,"count":1&#125;,</div><div class="line">    &#123;"foodName":"扁豆焖面","price":14,"count":1&#125;,</div><div class="line">    &#123;"foodName":"葱花饼","price":10,"count":1&#125;],</div><div class="line">  "user":&#123;"id":1,</div><div class="line">    "username":"fanyank",</div><div class="line">    "password":"123123",</div><div class="line">    "email":"fanyank@126.com",</div><div class="line">    "avatar":"http://static.galileo.xiaojukeji.com/static/tms/default_header.png",</div><div class="line">    "phoneNum":"17638918399",</div><div class="line">    "weixin":"weixin",</div><div class="line">    "lastAddress":"天津市西青区天津工业大学软件园4号楼"          /*用户上次订单地址*/</div><div class="line">  &#125;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//返回数据</div><div class="line">&#123;"id":13,"username":"fanyank","phoneNum":"17638918399","isNoName":true,"sumMoney":46.0,"userId":1,"address":"天津市西青区天津工业大学软件园4号楼","generateTime":"2017-07-10 18:48:26","status":0,"foodList":[&#123;"id":18,"foodId":8,"foodName":"拍黄瓜","orderId":13,"foodCount":1&#125;,&#123;"id":19,"foodId":9,"foodName":"红豆薏米粥套餐","orderId":13,"foodCount":1&#125;],"shop":&#123;"id":1,"name":"百牌可乐","avatar":"http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg","gradeCook":3.0,"gradeServer":4.0,"monthlyCounts":109,"introduce":"这是一家以可乐为主的商家","deliveryTime":30,"specialMsg":"蜂鸟专送","contact":"19088889231","address":"西青区精武镇18号","openTime":"7:00-21:00","reportCount":0,"distance":1.9,"minPrice":30,"likeCount":0,"deliveryMoney":3.0,"ranke":89.0&#125;&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//提交数据</div><div class="line">//数据从购物车获取，已实现</div></pre></td></tr></table></figure>
-<h2 id="商家收藏"><a href="#商家收藏" class="headerlink" title="商家收藏"></a>商家收藏</h2><ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//提交数据</div><div class="line">&#123;</div><div class="line">  "id": 1,</div><div class="line">  "isNoName": true,</div><div class="line">  "address": "XXX"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="3-商家收藏"><a href="#3-商家收藏" class="headerlink" title="3.商家收藏"></a>3.商家收藏</h3><ul>
 <li><p>商家收藏截屏<br><img src="http://ok2crkjlq.bkt.clouddn.com/IMG_3656.PNG?imageView2/1/w/240/h/440/q/75|imageslim" alt="商家收藏界面理想图"></p>
 </li>
-<li><p>接口路径 /user/{id}/like</p>
+<li><p>接口路径 /user/like</p>
 </li>
 <li><p>调用方式 Ajax GET</p>
 </li>
@@ -234,7 +234,7 @@
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//返回数据</div><div class="line">[&#123;</div><div class="line">    "id":2,</div><div class="line">    "name":"百圣格",</div><div class="line">    "avatar":"http://ok2crkjlq.bkt.clouddn.com/5e9434f27f5c4793e72d1ce229e8epng.png",</div><div class="line">    "gradeCook":2.0,                                            /*美味指数*/</div><div class="line">    "gradeServer":5.0,                                          /*服务指数*/</div><div class="line">    "monthlyCounts":2029,</div><div class="line">    "introduce":"专注炸鸡10年",                                   /*商家公告板*/</div><div class="line">    "deliveryTime":38,</div><div class="line">    "specialMsg":"蜂鸟专送",</div><div class="line">    "contact":"15522970982",</div><div class="line">    "address":"天津市西青区天津工业大学西苑食堂一楼",</div><div class="line">    "openTime":"10:00-22:00",</div><div class="line">    "reportCount":0,                                             /*被举报次数*/</div><div class="line">    "distance":0.4,</div><div class="line">    "minPrice":10,                                               /*最低起送费*/</div><div class="line">    "likeCount":0,</div><div class="line">    "deliveryMoney":2.0,                                         /*配送费*/</div><div class="line">    "ranke":70.0                                                 /*评分高于周围商家率*/</div><div class="line">&#125;]</div></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//提交数据</div><div class="line">//无需提交数据，后台从路径中获取userId</div></pre></td></tr></table></figure>
-<h2 id="用户端搜索界面"><a href="#用户端搜索界面" class="headerlink" title="用户端搜索界面"></a>用户端搜索界面</h2><ul>
+<h3 id="4-用户端搜索界面"><a href="#4-用户端搜索界面" class="headerlink" title="4.用户端搜索界面"></a>4.用户端搜索界面</h3><ul>
 <li><p>界面截屏<br><img src="http://ok2crkjlq.bkt.clouddn.com/IMG_3658.PNG?imageView2/1/w/240/h/440/q/75|imageslim" alt="用户端搜索界面理想图"></p>
 </li>
 <li><p>接口路径 /search</p>
@@ -245,7 +245,7 @@
 </li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/*暂未实现*/</div></pre></td></tr></table></figure>
-<h2 id="用户评价界面"><a href="#用户评价界面" class="headerlink" title="用户评价界面"></a>用户评价界面</h2><ul>
+<h3 id="5-用户评价界面"><a href="#5-用户评价界面" class="headerlink" title="5.用户评价界面"></a>5.用户评价界面</h3><ul>
 <li><p>界面截屏<br><img src="http://ok2crkjlq.bkt.clouddn.com/IMG_3659.PNG?imageView2/1/w/240/h/440/q/75|imageslim" alt="用户评价界面理想如"></p>
 </li>
 <li><p>接口路径 /user/reward/{orderId}</p>
@@ -255,23 +255,44 @@
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">//提交数据规范</div><div class="line">&#123;</div><div class="line">  "foodRewardList": [&#123;</div><div class="line">      "shop_food_id": 1,</div><div class="line">      "shop_id": 1,</div><div class="line">      "user_id": 1,</div><div class="line">      "username": "xxx",</div><div class="line">      "avatar": "xxx",</div><div class="line">      "reward_msg": "xxx",</div><div class="line">      "order_id": 1,</div><div class="line">      "reward_type": 0                           /*0:好,1:一般,2:差*/</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      "shop_food_id": 1,</div><div class="line">      "shop_id": 1,</div><div class="line">      "user_id": 1,</div><div class="line">      "username": "xxx",</div><div class="line">      "avatar": "xxx",</div><div class="line">      "reward_msg": "xxx",</div><div class="line">      "order_id": 1,</div><div class="line">      "reward_type": 0                           /*0:好,1:一般,2:差*/</div><div class="line">    &#125;],</div><div class="line">    "shopReward": &#123;</div><div class="line">      "user_id": 1,</div><div class="line">      "username": "xxx",</div><div class="line">      "avatar": "xxx",</div><div class="line">      "reward_msg": "xxx",</div><div class="line">      "shop_id": 1,</div><div class="line">      "order_id": 1,</div><div class="line">      "reward_type": 0                            /*0:好,1:一般,2:差*/</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">//返回数据</div><div class="line">&#123;"username":"fanyank",</div><div class="line">  "phoneNum":"17638918399",</div><div class="line">  "isNoName":true,                                        /*是否匿名购买*/</div><div class="line">  "sumMoney":34.0,                                        /*订单总计*/</div><div class="line">  "address":"天津市西青区天津工业大学软件园4号楼",</div><div class="line">  "generateTime":"2017-07-08 09:54:07",</div><div class="line">  "status":1,</div><div class="line">  "foodList":[</div><div class="line">    &#123;"foodName":"皮蛋瘦肉粥", "price":10,"count":1&#125;,</div><div class="line">    &#123;"foodName":"扁豆焖面","price":14,"count":1&#125;,</div><div class="line">    &#123;"foodName":"葱花饼","price":10,"count":1&#125;],</div><div class="line">  "user":&#123;"id":1,</div><div class="line">    "username":"fanyank",</div><div class="line">    "password":"123123",</div><div class="line">    "email":"fanyank@126.com",</div><div class="line">    "avatar":"http://static.galileo.xiaojukeji.com/static/tms/default_header.png",</div><div class="line">    "phoneNum":"17638918399",</div><div class="line">    "weixin":"weixin",</div><div class="line">    "lastAddress":"天津市西青区天津工业大学软件园4号楼"          /*用户上次订单地址*/</div><div class="line">&#125;&#125;</div></pre></td></tr></table></figure>
-<h2 id="用户管理地址界面"><a href="#用户管理地址界面" class="headerlink" title="用户管理地址界面"></a>用户管理地址界面</h2><ul>
+<h3 id="6-用户管理地址界面"><a href="#6-用户管理地址界面" class="headerlink" title="6.用户管理地址界面"></a>6.用户管理地址界面</h3><ul>
 <li><p>界面截屏<br><img src="http://ok2crkjlq.bkt.clouddn.com/0E9891EFDAEBAFB2A38A46D921A4BB32.png?imageView2/1/w/240/h/440/q/75|imageslim" alt="用户管理地址理想图"></p>
 </li>
-<li><p>接口路径 /user/{id}/profile/address</p>
+<li><p>接口路径 /user/profile/address</p>
 </li>
 <li><p>调用方式<br><strong>通过Ajax.GET方式获取到用户的所用配送地址</strong>，界面应有删除，增加，修改配送地址的子类功能。子类功能的实现全部通过POST方式进行提交，分别对应下列路径</p>
 <ol>
-<li>/user/{id}/profile/delete_address/{addressId}    删除</li>
-<li>/user/{id}/profile/add_address                   增加</li>
-<li>/user/{id}/profile/update_address/{addressId}    修改</li>
+<li>/user/profile/address/delete/{addressId}    删除</li>
+<li>/user/profile/address/add                   增加</li>
+<li>/user/profile/address/update/{addressId}    修改</li>
 </ol>
 </li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//下列是前端需要提交的数据规范</div><div class="line">//删除</div><div class="line">&#123;</div><div class="line">  "address_id": 1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//下列是前端需要提交的数据规范</div><div class="line">//删除</div><div class="line">&#123;</div><div class="line">  "addressId": 1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//增加</div><div class="line">&#123;</div><div class="line">  "user_id": 1,</div><div class="line">  "user_address": "xxx"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//更新</div><div class="line">&#123;</div><div class="line">  "address_id": 1,</div><div class="line">  "user_address": "xxx"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//更新</div><div class="line">&#123;</div><div class="line">  "id": 1,</div><div class="line">  "address_id": 1,</div><div class="line">  "user_address": "xxx"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//返回数据</div><div class="line">&#123;</div><div class="line">  "result": "success"                        /*success为操作成功,error为操作失败*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="7-查看历史订单界面"><a href="#7-查看历史订单界面" class="headerlink" title="7.查看历史订单界面"></a>7.查看历史订单界面</h3><ul>
+<li><p>界面截屏<br><img src="http://ok2crkjlq.bkt.clouddn.com/IMG_3652.PNG?imageView2/1/w/240/h/440/q/75|imageslim" alt="界面截屏理想图"></p>
+</li>
+<li><p>接口路径 /api/order/history</p>
+</li>
+<li><p>调用方式 Ajax.GET</p>
+</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[&#123;<span class="attr">"id"</span>:<span class="number">1</span>,<span class="attr">"username"</span>:<span class="string">"fanyank"</span>,<span class="attr">"phoneNum"</span>:<span class="string">"17638918391"</span>,<span class="attr">"isNoName"</span>:<span class="literal">false</span>,<span class="attr">"sumMoney"</span>:<span class="number">100.0</span>,<span class="attr">"userId"</span>:<span class="number">1</span>,<span class="attr">"deliveryTime"</span>:<span class="string">"39"</span>,<span class="attr">"grade"</span>:<span class="number">5</span>,<span class="attr">"foodList"</span>:[&#123;<span class="attr">"id"</span>:<span class="number">1</span>,<span class="attr">"foodId"</span>:<span class="number">3</span>,<span class="attr">"foodName"</span>:<span class="string">"葱花饼"</span>,<span class="attr">"orderId"</span>:<span class="number">1</span>,<span class="attr">"foodCount"</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">"id"</span>:<span class="number">2</span>,<span class="attr">"foodId"</span>:<span class="number">2</span>,<span class="attr">"foodName"</span>:<span class="string">"扁豆焖面"</span>,<span class="attr">"orderId"</span>:<span class="number">1</span>,<span class="attr">"foodCount"</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">"id"</span>:<span class="number">3</span>,<span class="attr">"foodId"</span>:<span class="number">1</span>,<span class="attr">"foodName"</span>:<span class="string">"皮蛋瘦肉粥"</span>,<span class="attr">"orderId"</span>:<span class="number">1</span>,<span class="attr">"foodCount"</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">"id"</span>:<span class="number">4</span>,<span class="attr">"foodId"</span>:<span class="number">4</span>,<span class="attr">"foodName"</span>:<span class="string">"VC无限橙果汁"</span>,<span class="attr">"orderId"</span>:<span class="number">1</span>,<span class="attr">"foodCount"</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">"id"</span>:<span class="number">5</span>,<span class="attr">"foodId"</span>:<span class="number">5</span>,<span class="attr">"foodName"</span>:<span class="string">"娃娃菜炖豆腐"</span>,<span class="attr">"orderId"</span>:<span class="number">1</span>,<span class="attr">"foodCount"</span>:<span class="number">1</span>&#125;],<span class="attr">"shop"</span>:&#123;<span class="attr">"id"</span>:<span class="number">1</span>,<span class="attr">"name"</span>:<span class="string">"百牌可乐"</span>,<span class="attr">"avatar"</span>:<span class="string">"http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg"</span>,<span class="attr">"gradeCook"</span>:<span class="number">3.0</span>,<span class="attr">"gradeServer"</span>:<span class="number">4.0</span>,<span class="attr">"monthlyCounts"</span>:<span class="number">109</span>,<span class="attr">"introduce"</span>:<span class="string">"这是一家以可乐为主的商家"</span>,<span class="attr">"deliveryTime"</span>:<span class="number">30</span>,<span class="attr">"specialMsg"</span>:<span class="string">"蜂鸟专送"</span>,<span class="attr">"contact"</span>:<span class="string">"19088889231"</span>,<span class="attr">"address"</span>:<span class="string">"西青区精武镇18号"</span>,<span class="attr">"openTime"</span>:<span class="string">"7:00-21:00"</span>,<span class="attr">"reportCount"</span>:<span class="number">0</span>,<span class="attr">"distance"</span>:<span class="number">1.9</span>,<span class="attr">"minPrice"</span>:<span class="number">30</span>,<span class="attr">"likeCount"</span>:<span class="number">0</span>,<span class="attr">"deliveryMoney"</span>:<span class="number">3.0</span>,<span class="attr">"ranke"</span>:<span class="number">89.0</span>&#125;&#125;,&#123;<span class="attr">"id"</span>:<span class="number">2</span>,<span class="attr">"username"</span>:<span class="string">"fanyank"</span>,<span class="attr">"phoneNum"</span>:<span class="string">"17638918391"</span>,<span class="attr">"isNoName"</span>:<span class="literal">false</span>,<span class="attr">"sumMoney"</span>:<span class="number">12.0</span>,<span class="attr">"userId"</span>:<span class="number">1</span>,<span class="attr">"deliveryTime"</span>:<span class="string">"38"</span>,<span class="attr">"grade"</span>:<span class="number">3</span>,<span class="attr">"foodList"</span>:[],<span class="attr">"shop"</span>:&#123;<span class="attr">"id"</span>:<span class="number">1</span>,<span class="attr">"name"</span>:<span class="string">"百牌可乐"</span>,<span class="attr">"avatar"</span>:<span class="string">"http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg"</span>,<span class="attr">"gradeCook"</span>:<span class="number">3.0</span>,<span class="attr">"gradeServer"</span>:<span class="number">4.0</span>,<span class="attr">"monthlyCounts"</span>:<span class="number">109</span>,<span class="attr">"introduce"</span>:<span class="string">"这是一家以可乐为主的商家"</span>,<span class="attr">"deliveryTime"</span>:<span class="number">30</span>,<span class="attr">"specialMsg"</span>:<span class="string">"蜂鸟专送"</span>,<span class="attr">"contact"</span>:<span class="string">"19088889231"</span>,<span class="attr">"address"</span>:<span class="string">"西青区精武镇18号"</span>,<span class="attr">"openTime"</span>:<span class="string">"7:00-21:00"</span>,<span class="attr">"reportCount"</span>:<span class="number">0</span>,<span class="attr">"distance"</span>:<span class="number">1.9</span>,<span class="attr">"minPrice"</span>:<span class="number">30</span>,<span class="attr">"likeCount"</span>:<span class="number">0</span>,<span class="attr">"deliveryMoney"</span>:<span class="number">3.0</span>,<span class="attr">"ranke"</span>:<span class="number">89.0</span>&#125;&#125;,&#123;<span class="attr">"id"</span>:<span class="number">13</span>,<span class="attr">"username"</span>:<span class="string">"fanyank"</span>,<span class="attr">"phoneNum"</span>:<span class="string">"17638918399"</span>,<span class="attr">"isNoName"</span>:<span class="literal">true</span>,<span class="attr">"sumMoney"</span>:<span class="number">46.0</span>,<span class="attr">"userId"</span>:<span class="number">1</span>,<span class="attr">"address"</span>:<span class="string">"天津市西青区天津工业大学软件园4号楼"</span>,<span class="attr">"generateTime"</span>:<span class="string">"2017-07-10 18:48:26"</span>,<span class="attr">"status"</span>:<span class="number">0</span>,<span class="attr">"foodList"</span>:[&#123;<span class="attr">"id"</span>:<span class="number">18</span>,<span class="attr">"foodId"</span>:<span class="number">8</span>,<span class="attr">"foodName"</span>:<span class="string">"拍黄瓜"</span>,<span class="attr">"orderId"</span>:<span class="number">13</span>,<span class="attr">"foodCount"</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">"id"</span>:<span class="number">19</span>,<span class="attr">"foodId"</span>:<span class="number">9</span>,<span class="attr">"foodName"</span>:<span class="string">"红豆薏米粥套餐"</span>,<span class="attr">"orderId"</span>:<span class="number">13</span>,<span class="attr">"foodCount"</span>:<span class="number">1</span>&#125;],<span class="attr">"shop"</span>:&#123;<span class="attr">"id"</span>:<span class="number">1</span>,<span class="attr">"name"</span>:<span class="string">"百牌可乐"</span>,<span class="attr">"avatar"</span>:<span class="string">"http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg"</span>,<span class="attr">"gradeCook"</span>:<span class="number">3.0</span>,<span class="attr">"gradeServer"</span>:<span class="number">4.0</span>,<span class="attr">"monthlyCounts"</span>:<span class="number">109</span>,<span class="attr">"introduce"</span>:<span class="string">"这是一家以可乐为主的商家"</span>,<span class="attr">"deliveryTime"</span>:<span class="number">30</span>,<span class="attr">"specialMsg"</span>:<span class="string">"蜂鸟专送"</span>,<span class="attr">"contact"</span>:<span class="string">"19088889231"</span>,<span class="attr">"address"</span>:<span class="string">"西青区精武镇18号"</span>,<span class="attr">"openTime"</span>:<span class="string">"7:00-21:00"</span>,<span class="attr">"reportCount"</span>:<span class="number">0</span>,<span class="attr">"distance"</span>:<span class="number">1.9</span>,<span class="attr">"minPrice"</span>:<span class="number">30</span>,<span class="attr">"likeCount"</span>:<span class="number">0</span>,<span class="attr">"deliveryMoney"</span>:<span class="number">3.0</span>,<span class="attr">"ranke"</span>:<span class="number">89.0</span>&#125;&#125;,&#123;<span class="attr">"id"</span>:<span class="number">14</span>,<span class="attr">"username"</span>:<span class="string">"fanyank"</span>,<span class="attr">"phoneNum"</span>:<span class="string">"17638918399"</span>,<span class="attr">"isNoName"</span>:<span class="literal">true</span>,<span class="attr">"sumMoney"</span>:<span class="number">37.0</span>,<span class="attr">"userId"</span>:<span class="number">1</span>,<span class="attr">"address"</span>:<span class="string">"天津市西青区天津工业大学软件园4号楼"</span>,<span class="attr">"generateTime"</span>:<span class="string">"2017-07-10 21:41:44"</span>,<span class="attr">"status"</span>:<span class="number">0</span>,<span class="attr">"foodList"</span>:[&#123;<span class="attr">"id"</span>:<span class="number">20</span>,<span class="attr">"foodId"</span>:<span class="number">9</span>,<span class="attr">"foodName"</span>:<span class="string">"红豆薏米粥套餐"</span>,<span class="attr">"orderId"</span>:<span class="number">14</span>,<span class="attr">"foodCount"</span>:<span class="number">1</span>&#125;],<span class="attr">"shop"</span>:&#123;<span class="attr">"id"</span>:<span class="number">1</span>,<span class="attr">"name"</span>:<span class="string">"百牌可乐"</span>,<span class="attr">"avatar"</span>:<span class="string">"http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg"</span>,<span class="attr">"gradeCook"</span>:<span class="number">3.0</span>,<span class="attr">"gradeServer"</span>:<span class="number">4.0</span>,<span class="attr">"monthlyCounts"</span>:<span class="number">109</span>,<span class="attr">"introduce"</span>:<span class="string">"这是一家以可乐为主的商家"</span>,<span class="attr">"deliveryTime"</span>:<span class="number">30</span>,<span class="attr">"specialMsg"</span>:<span class="string">"蜂鸟专送"</span>,<span class="attr">"contact"</span>:<span class="string">"19088889231"</span>,<span class="attr">"address"</span>:<span class="string">"西青区精武镇18号"</span>,<span class="attr">"openTime"</span>:<span class="string">"7:00-21:00"</span>,<span class="attr">"reportCount"</span>:<span class="number">0</span>,<span class="attr">"distance"</span>:<span class="number">1.9</span>,<span class="attr">"minPrice"</span>:<span class="number">30</span>,<span class="attr">"likeCount"</span>:<span class="number">0</span>,<span class="attr">"deliveryMoney"</span>:<span class="number">3.0</span>,<span class="attr">"ranke"</span>:<span class="number">89.0</span>&#125;&#125;,&#123;<span class="attr">"id"</span>:<span class="number">15</span>,<span class="attr">"username"</span>:<span class="string">"fanyank"</span>,<span class="attr">"phoneNum"</span>:<span class="string">"17638918399"</span>,<span class="attr">"isNoName"</span>:<span class="literal">true</span>,<span class="attr">"sumMoney"</span>:<span class="number">32.0</span>,<span class="attr">"userId"</span>:<span class="number">1</span>,<span class="attr">"address"</span>:<span class="string">"天津市西青区天津工业大学软件园4号楼"</span>,<span class="attr">"generateTime"</span>:<span class="string">"2017-07-10 21:54:53"</span>,<span class="attr">"status"</span>:<span class="number">0</span>,<span class="attr">"foodList"</span>:[&#123;<span class="attr">"id"</span>:<span class="number">21</span>,<span class="attr">"foodId"</span>:<span class="number">2</span>,<span class="attr">"foodName"</span>:<span class="string">"扁豆焖面"</span>,<span class="attr">"orderId"</span>:<span class="number">15</span>,<span class="attr">"foodCount"</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">"id"</span>:<span class="number">22</span>,<span class="attr">"foodId"</span>:<span class="number">3</span>,<span class="attr">"foodName"</span>:<span class="string">"葱花饼"</span>,<span class="attr">"orderId"</span>:<span class="number">15</span>,<span class="attr">"foodCount"</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">"id"</span>:<span class="number">23</span>,<span class="attr">"foodId"</span>:<span class="number">4</span>,<span class="attr">"foodName"</span>:<span class="string">"VC无限橙果汁"</span>,<span class="attr">"orderId"</span>:<span class="number">15</span>,<span class="attr">"foodCount"</span>:<span class="number">1</span>&#125;],<span class="attr">"shop"</span>:&#123;<span class="attr">"id"</span>:<span class="number">1</span>,<span class="attr">"name"</span>:<span class="string">"百牌可乐"</span>,<span class="attr">"avatar"</span>:<span class="string">"http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg"</span>,<span class="attr">"gradeCook"</span>:<span class="number">3.0</span>,<span class="attr">"gradeServer"</span>:<span class="number">4.0</span>,<span class="attr">"monthlyCounts"</span>:<span class="number">109</span>,<span class="attr">"introduce"</span>:<span class="string">"这是一家以可乐为主的商家"</span>,<span class="attr">"deliveryTime"</span>:<span class="number">30</span>,<span class="attr">"specialMsg"</span>:<span class="string">"蜂鸟专送"</span>,<span class="attr">"contact"</span>:<span class="string">"19088889231"</span>,<span class="attr">"address"</span>:<span class="string">"西青区精武镇18号"</span>,<span class="attr">"openTime"</span>:<span class="string">"7:00-21:00"</span>,<span class="attr">"reportCount"</span>:<span class="number">0</span>,<span class="attr">"distance"</span>:<span class="number">1.9</span>,<span class="attr">"minPrice"</span>:<span class="number">30</span>,<span class="attr">"likeCount"</span>:<span class="number">0</span>,<span class="attr">"deliveryMoney"</span>:<span class="number">3.0</span>,<span class="attr">"ranke"</span>:<span class="number">89.0</span>&#125;&#125;]</div></pre></td></tr></table></figure>
+<h3 id="8-等待支付界面"><a href="#8-等待支付界面" class="headerlink" title="8.等待支付界面"></a>8.等待支付界面</h3><ul>
+<li><p>界面截图<br><img src="http://ok2crkjlq.bkt.clouddn.com/E67CA448B2024EF1001BAD4437E0CAEB.png?imageView2/1/w/240/h/440/q/75|imageslim" alt="等待支付界面理想图"></p>
+</li>
+<li><p>接口路径 /api/order/pay/wait</p>
+</li>
+<li><p>JSP命名 waitPay.jsp</p>
+</li>
+<li><p>调用方式 Ajax.POST</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//返回数据</div><div class="line">&#123;</div><div class="line">  "success"                                 /*成功*/</div><div class="line">  "error"                                   /*失败*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//提交数据</div><div class="line">&#123;</div><div class="line">  "result": "true"                          /*"true"为支付成功,"false"为支付失败*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
         
       
@@ -313,7 +334,7 @@
           <h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><h3 id="行内元素水平居中"><a href="#行内元素水平居中" class="headerlink" title="行内元素水平居中"></a>行内元素水平居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="块级元素水平居中"><a href="#块级元素水平居中" class="headerlink" title="块级元素水平居中"></a>块级元素水平居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2017/03/07/全面解决各种居中问题/" class="read-more-link">Read more..</a>
+            <a href="/2017/03/07/全面解决各种居中问题/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -360,7 +381,7 @@
 <li><strong>After-throwing</strong>: 在方法抛出异常之后调用通知</li>
 <li><strong>Around</strong>: 通知包裹了被通知的方法，在被通知的方法调用之前和调用之后执行自定义行为<h3 id="连接点"><a href="#连接点" class="headerlink" title="连接点"></a>连接点</h3>连接点是在应用执行过程中 <strong>能够插入切面的一个点</strong>，这个点可以是调用方法时，抛出异常时，甚至是修改一个字段时。切面代码可以利用这些点插入到应用的正常流程之中，并添加新的行为。
           <div class="read-more">
-            <a href="/2017/03/06/面向切面的Spring/" class="read-more-link">Read more..</a>
+            <a href="/2017/03/06/面向切面的Spring/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -448,7 +469,7 @@
 <h3 id="通过构造器注入"><a href="#通过构造器注入" class="headerlink" title="通过构造器注入"></a>通过构造器注入</h3><p>在 <strong>springTest.xml</strong> 中配置：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;bean id="duke" class="类的完全限定名"&gt;</div><div class="line">  &lt;constructor-arg value="15"&gt;</div><div class="line">  &lt;!--如果需要传入引用对象--&gt;</div><div class="line">  &lt;constructor-arg ref="引用对象在xml中的id"</div><div class="line">&lt;/bean&gt;</div></pre></td></tr></table></figure></p>
 <p><strong>main</strong> 方法中配置:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ApplicationContext ctx = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"springTest.xml"</span>);</div><div class="line">        User user = (User) ctx.getBean(<span class="string">"tom"</span>);</div><div class="line">        user.sayAge();</div></pre></td></tr></table></figure></p>
           <div class="read-more">
-            <a href="/2017/03/02/Spring-装配Bean/" class="read-more-link">Read more..</a>
+            <a href="/2017/03/02/Spring-装配Bean/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -497,7 +518,7 @@
 <li><p>tomcat命令</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> ./startup.sh</div><div class="line">./shutdown.sh</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2017/02/24/linux命令/" class="read-more-link">Read more..</a>
+            <a href="/2017/02/24/linux命令/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -541,7 +562,7 @@
 </li>
 </ol>
           <div class="read-more">
-            <a href="/2017/02/24/JDBC笔记/" class="read-more-link">Read more..</a>
+            <a href="/2017/02/24/JDBC笔记/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -591,7 +612,7 @@
 <li>WEB-INF文件夹下可建一个lib文件夹，用来存放项目相关jar包</li>
 <li>index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所建views文件夹下。
           <div class="read-more">
-            <a href="/2017/02/24/JSP笔记/" class="read-more-link">Read more..</a>
+            <a href="/2017/02/24/JSP笔记/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -632,7 +653,7 @@
         
           <h3 id="定位问题中的display"><a href="#定位问题中的display" class="headerlink" title="定位问题中的display"></a>定位问题中的display</h3><p><strong>display</strong> 为 <strong>block</strong> 时，默认宽度是100%，一旦我们将它设置为 <strong>inline-block</strong> 那么它的宽度将由内部的内容来决定或者我们也可以手动来为其设置宽度。<br>同样，当我们让一个元素 <strong>浮动起来</strong> 的时候，其宽度也会由内部的内容来决定（也可以进行手动设置），由于元素浮动，必然会导致父元素高度宽度为 <strong>0</strong>，我们这时候就需要给父元素加上 <strong>overflow:hidden</strong> 了，但是加上去之后，浮出来的部分如果超出父元素，就会被隐藏，我们经常会看到网页当中的一些 <strong>hover</strong> 效果就是鼠标放上去之后里面的内容是溢出父元素的，如果想实现这种效果，那么我们肯定就不能再使用 <strong>overflow:hidden</strong> 了，也就是不能使用浮动布局了，只能由 <strong>position</strong> 定位来进行实现。<br>
           <div class="read-more">
-            <a href="/2016/09/29/页面布局需要牢记的常识/" class="read-more-link">Read more..</a>
+            <a href="/2016/09/29/页面布局需要牢记的常识/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -675,7 +696,7 @@
 <h3 id="多行文字垂直居中"><a href="#多行文字垂直居中" class="headerlink" title="多行文字垂直居中"></a>多行文字垂直居中</h3><ul>
 <li><strong>文字外部容器高度不固定</strong> : 给多行文字上下设置 <strong>padding</strong> 值即可。<br>以下是实现代码和效果图。
           <div class="read-more">
-            <a href="/2016/09/22/关于一些垂直居中问题的解决方法/" class="read-more-link">Read more..</a>
+            <a href="/2016/09/22/关于一些垂直居中问题的解决方法/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -694,7 +715,7 @@
     
     
       <a class="next" href="/page/2/">
-        <span class="next-text">Next</span>
+        <span class="next-text">下一页</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -739,11 +760,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   
   <span class="theme-info">
-    Theme - 
+    主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 

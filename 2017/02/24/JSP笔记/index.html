@@ -222,7 +222,7 @@ index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所�
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
+    <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JSP-amp-Servlet-笔记"><span class="toc-text">JSP&Servlet 笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命名规则"><span class="toc-text">命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件位置"><span class="toc-text">文件位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet和JSP之间传值的两种方式"><span class="toc-text">Servlet和JSP之间传值的两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两个Servlet之间的通信只能通过session，但可以通过session也可以间接地创建JSP和Servlet之间的通信"><span class="toc-text">两个Servlet之间的通信只能通过session，但可以通过session也可以间接地创建JSP和Servlet之间的通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置上下文参数和servlet参数："><span class="toc-text">配置上下文参数和servlet参数：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为防止出现错误类型为500的错误："><span class="toc-text">为防止出现错误类型为500的错误：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将页面上请求的表单写入数据库时应采用UTF-8编码防止写入乱码的情况"><span class="toc-text">将页面上请求的表单写入数据库时应采用UTF-8编码防止写入乱码的情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搜索功能应通过URL重写来传值"><span class="toc-text">搜索功能应通过URL重写来传值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除功能需要二次确认，然后通过JS跳转到Servlet"><span class="toc-text">删除功能需要二次确认，然后通过JS跳转到Servlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSTL-和-EL表达式"><span class="toc-text">JSTL 和 EL表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSP"><span class="toc-text">JSP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动作中也可以使用EL表达式"><span class="toc-text">动作中也可以使用EL表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#url中文传值乱码"><span class="toc-text">url中文传值乱码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EL隐式对象"><span class="toc-text">EL隐式对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#建立自己的错误界面"><span class="toc-text">建立自己的错误界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie中文乱码解决"><span class="toc-text">cookie中文乱码解决</span></a></li></ol></li></ol>
     </div>
@@ -396,7 +396,7 @@ index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所�
       
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
-    <label class="reward-button" for="reward">Reward</label>
+    <label class="reward-button" for="reward">赞赏支持</label>
     <div class="qr-code">
       
       
@@ -429,13 +429,13 @@ index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所�
       <a class="prev" href="/2017/02/24/JDBC笔记/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">JDBC笔记</span>
-        <span class="prev-text nav-mobile">Prev</span>
+        <span class="prev-text nav-mobile">上一篇</span>
       </a>
     
     
       <a class="next" href="/2016/09/29/页面布局需要牢记的常识/">
         <span class="next-text nav-default">页面布局需要牢记的常识</span>
-        <span class="prev-text nav-mobile">Next</span>
+        <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -488,11 +488,11 @@ index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所�
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   
   <span class="theme-info">
-    Theme - 
+    主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
