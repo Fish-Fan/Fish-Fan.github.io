@@ -70,7 +70,7 @@ slider内容及图片(未完成)
 <meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/E67CA448B2024EF1001BAD4437E0CAEB.png?imageView2/1/w/240/h/440/q/75|imageslim">
 <meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/screencapture-kaidian-ele-me-guide-1499842563273.png?imageView2/1/w/1100/h/1000/q/75|imageslim">
 <meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/screencapture-kaidian-ele-me-steps-store-1499842580751.png?imageView2/1/w/1100/h/1519/q/75|imageslim">
-<meta property="og:updated_time" content="2017-07-13T03:50:14.000Z">
+<meta property="og:updated_time" content="2017-07-13T08:17:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ele后端接口文档及说明">
 <meta name="twitter:description" content="客户端用户1.首页
@@ -314,14 +314,15 @@ slider内容及图片(未完成)
 <ol>
 <li>/user/profile/address/delete/{addressId}    删除</li>
 <li>/user/profile/address/add                   增加</li>
-<li>/user/profile/address/update/{addressId}    修改</li>
+<li>/user/profile/address/update/    修改</li>
 </ol>
 </li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//返回的地址列表</div><div class="line">[&#123;"id":1,</div><div class="line">  "userId":1,</div><div class="line">  "username":"fanyank",</div><div class="line">  "phoneNum":"17638918399",</div><div class="line">  "userAddress":"天津市西青区天津工业大学软件园C区"&#125;,</div><div class="line">  &#123;"id":2,</div><div class="line">    "userId":1,</div><div class="line">    "username":"fanyank",</div><div class="line">    "phoneNum":"17638918399",</div><div class="line">    "userAddress":"天津市西青区天津工业大学软件园4号楼"</div><div class="line">&#125;]</div></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//下列是前端需要提交的数据规范</div><div class="line">//删除</div><div class="line">&#123;</div><div class="line">  "id": 1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//增加</div><div class="line">&#123;</div><div class="line">  "user_id": 1,</div><div class="line">  "user_address": "xxx"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//更新</div><div class="line">&#123;</div><div class="line">  "id": 1,</div><div class="line">  "address_id": 1,</div><div class="line">  "user_address": "xxx"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//增加</div><div class="line">&#123;</div><div class="line">  "userId": 1,</div><div class="line">  "userAddress": "xxx"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//增加返回数据</div><div class="line">&#123;</div><div class="line">  "id": 1,</div><div class="line">  "userId": 1,</div><div class="line">  "userAddress": "XXX"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//更新</div><div class="line">&#123;</div><div class="line">  "id": 1,</div><div class="line">  "addressId": 1,</div><div class="line">  "userAddress": "xxx"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//返回数据</div><div class="line">&#123;</div><div class="line">  "result": "success"                        /*success为操作成功,error为操作失败*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="7-查看历史订单界面"><a href="#7-查看历史订单界面" class="headerlink" title="7.查看历史订单界面"></a>7.查看历史订单界面</h3><ul>
 <li><p>界面截屏<br><img src="http://ok2crkjlq.bkt.clouddn.com/IMG_3652.PNG?imageView2/1/w/240/h/440/q/75|imageslim" alt="界面截屏理想图"></p>
@@ -405,7 +406,7 @@ slider内容及图片(未完成)
       
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
-    <label class="reward-button" for="reward">赞赏支持</label>
+    <label class="reward-button" for="reward">Reward</label>
     <div class="qr-code">
       
       
