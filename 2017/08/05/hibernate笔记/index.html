@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="hibernate笔记"/>
+
+
+
+
+  <meta name="keywords" content="数据库," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Welcome abroad">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.2.x" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/08/05/hibernate笔记/"/>
+
+
+<meta name="description" content="一对一一对一主键关联1.XML配置
+
+必须双向关联
+被关联方主键生成策略为外键生成策略
+被关联方one-to-one需设置constrained=“true”约束">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hibernate笔记">
+<meta property="og:url" content="http://yoursite.com/2017/08/05/hibernate笔记/index.html">
+<meta property="og:site_name" content="Welcome abroad">
+<meta property="og:description" content="一对一一对一主键关联1.XML配置
+
+必须双向关联
+被关联方主键生成策略为外键生成策略
+被关联方one-to-one需设置constrained=“true”约束">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-05%20%E4%B8%8B%E5%8D%882.51.37.png">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-07%20%E4%B8%8A%E5%8D%889.07.08.png">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-07%20%E4%B8%8A%E5%8D%889.21.51.png">
+<meta property="og:updated_time" content="2017-08-07T01:50:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hibernate笔记">
+<meta name="twitter:description" content="一对一一对一主键关联1.XML配置
+
+必须双向关联
+被关联方主键生成策略为外键生成策略
+被关联方one-to-one需设置constrained=“true”约束">
+<meta name="twitter:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-05%20%E4%B8%8B%E5%8D%882.51.37.png">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    search: {
+      enable: true,
+      path: "/search.xml",
+    },
+    navbar: {
+      enable: true
+    },
+    fancybox: {
+      enable: true
+    },
+    toc: {
+      enable: true
+    },
+  };
+</script>
+
+
+
+  
+
+
+
+    <title> hibernate笔记 · Welcome abroad </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Welcome abroad</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Welcome abroad</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      <a class="mobile-menu-item" href="/">
+        
+        
+          Home
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/archives/">
+        
+        
+          Archives
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/tags">
+        
+        
+          Tags
+        
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          hibernate笔记
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Aug 5, 2017
+        </span>
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一对一"><span class="toc-text">一对一</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一对一主键关联"><span class="toc-text">一对一主键关联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一对一外键关联"><span class="toc-text">一对一外键关联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一对多关联"><span class="toc-text">一对多关联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多对多关联"><span class="toc-text">多对多关联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java注解总结"><span class="toc-text">Java注解总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML配置总结"><span class="toc-text">XML配置总结</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h2 id="一对一"><a href="#一对一" class="headerlink" title="一对一"></a>一对一</h2><h3 id="一对一主键关联"><a href="#一对一主键关联" class="headerlink" title="一对一主键关联"></a>一对一主键关联</h3><p>1.XML配置</p>
+<ul>
+<li>必须双向关联</li>
+<li>被关联方主键生成策略为外键生成策略</li>
+<li>被关联方one-to-one需设置constrained=“true”约束<a id="more"></a>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--Person表映射--&gt;</span></div><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE hibernate-mapping PUBLIC</span></div><div class="line">        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"</div><div class="line">        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span> <span class="attr">package</span>=<span class="string">"com.kaishengit.pojo"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"Person"</span> <span class="attr">table</span>=<span class="string">"person"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"id"</span> <span class="attr">name</span>=<span class="string">"id"</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">generator</span> <span class="attr">class</span>=<span class="string">"native"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"personName"</span> <span class="attr">column</span>=<span class="string">"person_name"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">one-to-one</span> <span class="attr">name</span>=<span class="string">"card"</span> <span class="attr">cascade</span>=<span class="string">"all"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--Card表映射--&gt;</span></div><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE hibernate-mapping PUBLIC</span></div><div class="line">        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"</div><div class="line">        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span> <span class="attr">package</span>=<span class="string">"com.kaishengit.pojo"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"Card"</span> <span class="attr">table</span>=<span class="string">"card"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"id"</span> <span class="attr">name</span>=<span class="string">"id"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">generator</span> <span class="attr">class</span>=<span class="string">"foreign"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"property"</span>&gt;</span>person<span class="tag">&lt;/<span class="name">param</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">generator</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"cardNum"</span> <span class="attr">column</span>=<span class="string">"card_num"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">one-to-one</span> <span class="attr">name</span>=<span class="string">"person"</span> <span class="attr">constrained</span>=<span class="string">"true"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>2.Java注解配置</p>
+<ul>
+<li>主控方使用@PrimaryKeyJoinColumn</li>
+<li>被控方在@OneToOne中要加上(mappedBy = “card”)<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//基于注解的配置</span></div><div class="line"><span class="meta">@Entity</span></div><div class="line"><span class="meta">@Table</span>(name = <span class="string">"person"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line">    <span class="meta">@Id</span></div><div class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.AUTO)</div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line"></div><div class="line">    <span class="meta">@Column</span>(name = <span class="string">"person_name"</span>)</div><div class="line">    <span class="keyword">private</span> String personName;</div><div class="line"></div><div class="line">    <span class="comment">//共享主键关联使用PrimaryKeyJoinColumn</span></div><div class="line">    <span class="meta">@OneToOne</span>(cascade = CascadeType.ALL)</div><div class="line">    <span class="meta">@PrimaryKeyJoinColumn</span></div><div class="line">    <span class="keyword">private</span> Card card;</div><div class="line">  &#125;</div><div class="line"></div><div class="line"><span class="meta">@Entity</span></div><div class="line"><span class="meta">@Table</span>(name = <span class="string">"card"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Card</span> </span>&#123;</div><div class="line">    <span class="meta">@Id</span></div><div class="line">    <span class="meta">@GenericGenerator</span>(name = <span class="string">"generator"</span>,strategy = <span class="string">"foreign"</span>,</div><div class="line">            parameters = <span class="meta">@org</span>.hibernate.annotations.Parameter(name = <span class="string">"property"</span>,value = <span class="string">"person"</span>))</div><div class="line">    <span class="meta">@GeneratedValue</span>(generator = <span class="string">"generator"</span>)</div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line"></div><div class="line">    <span class="meta">@Column</span>(name = <span class="string">"card_num"</span>)</div><div class="line">    <span class="keyword">private</span> String cardNum;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//必须设置OneToOne,mappedBy为自己在对方中的属性名</span></div><div class="line">    <span class="meta">@OneToOne</span>(mappedBy = <span class="string">"card"</span>)</div><div class="line">    <span class="keyword">private</span> Person person;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="一对一外键关联"><a href="#一对一外键关联" class="headerlink" title="一对一外键关联"></a>一对一外键关联</h3><p>数据库结构<br><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-05%20%E4%B8%8B%E5%8D%882.51.37.png" alt="数据库结构"><br>1.XML配置</p>
+<ul>
+<li>各自主键生成策略无外键约束</li>
+<li>主控方(含外键的一方)使用many-to-one,并且要加上unique=”true”约束</li>
+<li>被控方使用one-to-one,并且要加上property-ref=”passageContent”</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--Passage表--&gt;</span></div><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE hibernate-mapping PUBLIC</span></div><div class="line">        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"</div><div class="line">        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span> <span class="attr">package</span>=<span class="string">"com.kaishengit.pojo"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"Passage"</span> <span class="attr">table</span>=<span class="string">"passage"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">generator</span> <span class="attr">class</span>=<span class="string">"native"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"title"</span> <span class="attr">column</span>=<span class="string">"title"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">many-to-one</span> <span class="attr">name</span>=<span class="string">"passageContent"</span> <span class="attr">column</span>=<span class="string">"content_id"</span> <span class="attr">class</span>=<span class="string">"PassageContent"</span> <span class="attr">unique</span>=<span class="string">"true"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--PassageContent表--&gt;</span></div><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE hibernate-mapping PUBLIC</span></div><div class="line">        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"</div><div class="line">        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span> <span class="attr">package</span>=<span class="string">"com.kaishengit.pojo"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"PassageContent"</span> <span class="attr">table</span>=<span class="string">"passage_content"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">generator</span> <span class="attr">class</span>=<span class="string">"native"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"content"</span> <span class="attr">column</span>=<span class="string">"content"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">one-to-one</span> <span class="attr">name</span>=<span class="string">"passage"</span> <span class="attr">class</span>=<span class="string">"Passage"</span> <span class="attr">property-ref</span>=<span class="string">"passageContent"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>2.Java注解配置</p>
+<ul>
+<li>区别于XML配置，这里全部采用@OneToOne</li>
+<li>主控方使用@JoinColumn(name = “content_id”)</li>
+<li>被控方使用@OneToOne(mappedBy = “passageContent”),mappedBy相当于XML中的property-ref,是一个反向声明</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Entity</span></div><div class="line"><span class="meta">@Table</span>(name = <span class="string">"passage"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Passage</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Id</span></div><div class="line">    <span class="meta">@GeneratedValue</span></div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line">    <span class="keyword">private</span> String title;</div><div class="line"></div><div class="line">    <span class="meta">@OneToOne</span></div><div class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"content_id"</span>)</div><div class="line">    <span class="keyword">private</span> PassageContent passageContent;</div><div class="line">  &#125;</div><div class="line"></div><div class="line"><span class="meta">@Entity</span></div><div class="line"><span class="meta">@Table</span>(name = <span class="string">"passage_content"</span>)</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PassageContent</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Id</span></div><div class="line">    <span class="meta">@GeneratedValue</span></div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line">    <span class="keyword">private</span> String content;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@OneToOne</span>(mappedBy = <span class="string">"passageContent"</span>)</div><div class="line">    <span class="keyword">private</span> Passage passage;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="一对多关联"><a href="#一对多关联" class="headerlink" title="一对多关联"></a>一对多关联</h3><ul>
+<li>保存时先保存一端，再保存多端<br>数据库结构<br><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-07%20%E4%B8%8A%E5%8D%889.07.08.png" alt="一对多关联"><br>1.XML配置</li>
+<li>一端在set中要指明表及关联的键(即table和key属性),并且要放弃关系维护<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--Address表--&gt;</span></div><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE hibernate-mapping PUBLIC</span></div><div class="line">        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"</div><div class="line">        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span> <span class="attr">package</span>=<span class="string">"com.kaishengit.pojo"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"Address"</span> <span class="attr">table</span>=<span class="string">"address"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">generator</span> <span class="attr">class</span>=<span class="string">"native"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"cityName"</span> <span class="attr">column</span>=<span class="string">"city_name"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"address"</span> <span class="attr">column</span>=<span class="string">"address"</span>/&gt;</span></div><div class="line">        <span class="comment">&lt;!--</span></div><div class="line">            多对一</div><div class="line">            name: 属性名称</div><div class="line">            class: 属性的类型</div><div class="line">            column: 外键的名称</div><div class="line">            lazy: false表示关闭延时加载</div><div class="line">            fetch: join 使用连接查询对象</div><div class="line">        --&gt;</div><div class="line">        <span class="tag">&lt;<span class="name">many-to-one</span> <span class="attr">name</span>=<span class="string">"user"</span> <span class="attr">class</span>=<span class="string">"User"</span> <span class="attr">column</span>=<span class="string">"user_id"</span> <span class="attr">lazy</span>=<span class="string">"false"</span> <span class="attr">fetch</span>=<span class="string">"join"</span>&gt;</span><span class="tag">&lt;/<span class="name">many-to-one</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--User表--&gt;</span></div><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE hibernate-mapping PUBLIC</span></div><div class="line">        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"</div><div class="line">        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span> <span class="attr">package</span>=<span class="string">"com.kaishengit.pojo"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"User"</span> <span class="attr">table</span>=<span class="string">"user"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">cache</span> <span class="attr">usage</span>=<span class="string">"read-only"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">generator</span> <span class="attr">class</span>=<span class="string">"native"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">column</span>=<span class="string">"username"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">set</span> <span class="attr">name</span>=<span class="string">"addressSet"</span> <span class="attr">table</span>=<span class="string">"address"</span> <span class="attr">cascade</span>=<span class="string">"delete"</span> <span class="attr">inverse</span>=<span class="string">"true"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">key</span> <span class="attr">column</span>=<span class="string">"user_id"</span>&gt;</span><span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">one-to-many</span> <span class="attr">class</span>=<span class="string">"Address"</span>&gt;</span><span class="tag">&lt;/<span class="name">one-to-many</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">set</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2.Java注解配置</p>
+<ul>
+<li>ManyToOne端要加上JoinColumn,OneToMany要加上mappedBy</li>
+<li>如需级联操作，一端还需加上Cascade<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Entity</span></div><div class="line"><span class="meta">@Table</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Address</span> </span>&#123;</div><div class="line">    <span class="meta">@Id</span></div><div class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.AUTO)</div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line"></div><div class="line">    <span class="meta">@Column</span>(name = <span class="string">"city_name"</span>)</div><div class="line">    <span class="keyword">private</span> String cityName;</div><div class="line">    <span class="keyword">private</span> String address;</div><div class="line"></div><div class="line">    <span class="meta">@ManyToOne</span></div><div class="line">    <span class="meta">@JoinColumn</span>(name = <span class="string">"user_id"</span>)</div><div class="line">    <span class="keyword">private</span> User user;</div><div class="line">  &#125;</div><div class="line"></div><div class="line"><span class="meta">@Entity</span></div><div class="line"><span class="meta">@Table</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line">    <span class="meta">@Id</span></div><div class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.AUTO)</div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line">    <span class="keyword">private</span> String username;</div><div class="line"></div><div class="line">    <span class="meta">@OneToMany</span>(mappedBy = <span class="string">"user"</span>)</div><div class="line">    <span class="meta">@Cascade</span>(CascadeType.DELETE)</div><div class="line">    <span class="keyword">private</span> Set&lt;Address&gt; addressSet;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="多对多关联"><a href="#多对多关联" class="headerlink" title="多对多关联"></a>多对多关联</h3><p>数据库结构<br><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-07%20%E4%B8%8A%E5%8D%889.21.51.png" alt="多对对关联"><br>1.XML配置<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--Student表--&gt;</span></div><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE hibernate-mapping PUBLIC</span></div><div class="line">        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"</div><div class="line">        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span> <span class="attr">package</span>=<span class="string">"com.kaishengit.pojo"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"Student"</span> <span class="attr">table</span>=<span class="string">"student"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">generator</span> <span class="attr">class</span>=<span class="string">"native"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"studentName"</span> <span class="attr">column</span>=<span class="string">"student_name"</span>/&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">set</span> <span class="attr">name</span>=<span class="string">"teacherSet"</span> <span class="attr">table</span>=<span class="string">"student_teacher_real"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">key</span> <span class="attr">column</span>=<span class="string">"student_id"</span>&gt;</span><span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">many-to-many</span> <span class="attr">class</span>=<span class="string">"Teacher"</span> <span class="attr">column</span>=<span class="string">"teacher_id"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">set</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--Teacher表--&gt;</span></div><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE hibernate-mapping PUBLIC</span></div><div class="line">        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"</div><div class="line">        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span> <span class="attr">package</span>=<span class="string">"com.kaishengit.pojo"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"Teacher"</span> <span class="attr">table</span>=<span class="string">"teacher"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">generator</span> <span class="attr">class</span>=<span class="string">"native"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"teacherName"</span> <span class="attr">column</span>=<span class="string">"teacher_name"</span>/&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">set</span> <span class="attr">name</span>=<span class="string">"studentSet"</span> <span class="attr">table</span>=<span class="string">"student_teacher_real"</span> <span class="attr">inverse</span>=<span class="string">"true"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">key</span> <span class="attr">column</span>=<span class="string">"teacher_id"</span>&gt;</span><span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">many-to-many</span> <span class="attr">class</span>=<span class="string">"Student"</span> <span class="attr">column</span>=<span class="string">"student_id"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">set</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>2.Java注解配置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Entity</span></div><div class="line"><span class="meta">@Table</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Id</span></div><div class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.AUTO)</div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    <span class="meta">@Column</span>(name = <span class="string">"student_name"</span>)</div><div class="line">    <span class="keyword">private</span> String studentName;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.id = id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@ManyToMany</span></div><div class="line">    <span class="meta">@JoinTable</span>(name = <span class="string">"student_teacher_real"</span>,joinColumns = &#123;<span class="meta">@JoinColumn</span>(name = <span class="string">"student_id"</span>)&#125;,inverseJoinColumns = &#123;<span class="meta">@JoinColumn</span>(name = <span class="string">"teacher_id"</span>)&#125;)</div><div class="line">    <span class="keyword">private</span> Set&lt;Teacher&gt; teacherSet;</div><div class="line">  &#125;</div><div class="line"></div><div class="line"><span class="meta">@Entity</span></div><div class="line"><span class="meta">@Table</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Teacher</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Id</span></div><div class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.AUTO)</div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line"></div><div class="line">    <span class="meta">@Column</span>(name = <span class="string">"teacher_name"</span>)</div><div class="line">    <span class="keyword">private</span> String teacherName;</div><div class="line"></div><div class="line">    <span class="meta">@ManyToMany</span>(mappedBy = <span class="string">"teacherSet"</span>)</div><div class="line">    <span class="keyword">private</span> Set&lt;Student&gt; studentSet;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Java注解总结"><a href="#Java注解总结" class="headerlink" title="Java注解总结"></a>Java注解总结</h3><ul>
+<li>如果是主键关联，那么就使用@PrimaryKeyJoinColumn,只要声明@JoinColumn,@PrimaryKeyJoinColumn,@JoinTable的都属于主控方，外键通常也就存储在主控方，对应的含有mappedBy的都为被控方。</li>
+<li>一对一关联不管是主键关联还是外键关联，基于注解都是OneToOne</li>
+</ul>
+<h3 id="XML配置总结"><a href="#XML配置总结" class="headerlink" title="XML配置总结"></a>XML配置总结</h3><ul>
+<li>一对一主键关联时，由于被控方的主键是主控方的外键，所以被控方的OneToOne标签中需要加constrained=”true”约束</li>
+<li>被控方通常需要设置inverse=”true”放弃关系维护</li>
+<li><one-to-many><many-to-many>这样的标签放置在<set>集合内部</set></many-to-many></one-to-many></li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/weixin.jpg" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.jpg" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/">数据库</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2017/07/26/Mybatis延迟加载及二级缓存问题/">
+        <span class="next-text nav-default">Mybatis延迟加载及二级缓存问题</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Johnny.R</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.2.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.2.x"></script>
+
+  </body>
+</html>

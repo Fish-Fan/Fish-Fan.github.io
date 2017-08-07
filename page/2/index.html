@@ -175,6 +175,47 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2016/09/29/页面布局需要牢记的常识/">页面布局需要牢记的常识</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 29, 2016
+        </span>
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="定位问题中的display"><a href="#定位问题中的display" class="headerlink" title="定位问题中的display"></a>定位问题中的display</h3><p><strong>display</strong> 为 <strong>block</strong> 时，默认宽度是100%，一旦我们将它设置为 <strong>inline-block</strong> 那么它的宽度将由内部的内容来决定或者我们也可以手动来为其设置宽度。<br>同样，当我们让一个元素 <strong>浮动起来</strong> 的时候，其宽度也会由内部的内容来决定（也可以进行手动设置），由于元素浮动，必然会导致父元素高度宽度为 <strong>0</strong>，我们这时候就需要给父元素加上 <strong>overflow:hidden</strong> 了，但是加上去之后，浮出来的部分如果超出父元素，就会被隐藏，我们经常会看到网页当中的一些 <strong>hover</strong> 效果就是鼠标放上去之后里面的内容是溢出父元素的，如果想实现这种效果，那么我们肯定就不能再使用 <strong>overflow:hidden</strong> 了，也就是不能使用浮动布局了，只能由 <strong>position</strong> 定位来进行实现。<br>
+          <div class="read-more">
+            <a href="/2016/09/29/页面布局需要牢记的常识/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2016/09/22/关于一些垂直居中问题的解决方法/">关于一些垂直居中问题的解决方法</a>
         
       </h1>
@@ -201,7 +242,7 @@
 <h3 id="多行文字垂直居中"><a href="#多行文字垂直居中" class="headerlink" title="多行文字垂直居中"></a>多行文字垂直居中</h3><ul>
 <li><strong>文字外部容器高度不固定</strong> : 给多行文字上下设置 <strong>padding</strong> 值即可。<br>以下是实现代码和效果图。
           <div class="read-more">
-            <a href="/2016/09/22/关于一些垂直居中问题的解决方法/" class="read-more-link">Read more..</a>
+            <a href="/2016/09/22/关于一些垂直居中问题的解决方法/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -242,7 +283,7 @@
         
           <h2 id="outerWidth-和width-的区别"><a href="#outerWidth-和width-的区别" class="headerlink" title="outerWidth()和width()的区别"></a>outerWidth()和width()的区别</h2><p><strong>outerWidth(includeMargin)</strong> : 获取元素集合中第一个元素的当前计算宽度值。包括这个元素的 <strong>padding</strong>,<strong>border</strong>,如果 <strong>includeMargin</strong> 的值被设置为 <strong>true</strong>,那么 <strong>margin</strong> 的值也将被计算在宽度之内。<strong>includeMargin</strong> 的值默认为 <strong>false</strong>。该方法不适用于 <strong>window</strong> 和 <strong>document</strong> 对象。<br>
           <div class="read-more">
-            <a href="/2016/09/11/outerWidth-和width-的区别/" class="read-more-link">Read more..</a>
+            <a href="/2016/09/11/outerWidth-和width-的区别/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -284,7 +325,7 @@
           <p><strong>screenX,screenY</strong> : 顾名思义，就是鼠标相对于 <strong>屏幕</strong> 的坐标位置是多少。</p>
 <p><strong>clientX,clientY</strong> : 鼠标相对于客户端区的坐标位置是多少。客户端区指的就是你浏览器的内容区（除去任何与你浏览的网页无关的东西，比如导航栏，工具栏，URL），无论你的页面怎样滚动，客户端区就那么大（就是那么一个框），其坐标值是不会随着页面的滚动而发生变化的。这一点跟 <strong>screenX,screenY</strong> 有点类似，可以放在一起记忆。<br>
           <div class="read-more">
-            <a href="/2016/09/10/几种鼠标位置方法的区别/" class="read-more-link">Read more..</a>
+            <a href="/2016/09/10/几种鼠标位置方法的区别/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -439,7 +480,7 @@
           <h2 id="each-和-each"><a href="#each-和-each" class="headerlink" title="$.each()和.each()"></a>$.each()和.each()</h2><p><strong>$.each()</strong> : 可以循环遍历任何集合，比如对象和数组。语法格式为 <code>jQuery.each( collection, callback(indexInArray, valueOfElement) )。</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">"张三"</span>,<span class="string">"李四"</span>,<span class="string">"王五"</span>,<span class="string">"赵六"</span>];</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  name : <span class="string">"张三"</span>,</div><div class="line">  age : <span class="number">28</span>,</div><div class="line">  sex : <span class="string">"男"</span>,</div><div class="line">  country : <span class="string">"中国"</span>,</div><div class="line">  city : <span class="string">"上海"</span></div><div class="line">&#125;;</div><div class="line">$.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">index,val</span>)</span>&#123;</div><div class="line">  $(<span class="string">"#div"</span>).append(<span class="string">"该数组第"</span> + index + <span class="string">"个元素是"</span> + val + <span class="string">"&lt;br&gt;"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//该数组第0个元素是张三</span></div><div class="line"><span class="comment">//该数组第1个元素是李四</span></div><div class="line"><span class="comment">//该数组第2个元素是王五</span></div><div class="line"><span class="comment">//该数组第3个元素是赵六</span></div><div class="line">$.each(obj,<span class="function"><span class="keyword">function</span>(<span class="params">i,val</span>)</span>&#123;</div><div class="line">  $(<span class="string">"#obj"</span>).append(<span class="string">"属性"</span> + i + <span class="string">"的值是"</span> + val + <span class="string">"&lt;br&gt;"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//属性name的值是张三</span></div><div class="line"><span class="comment">//属性age的值是28</span></div><div class="line"><span class="comment">//属性sex的值是男</span></div><div class="line"><span class="comment">//属性country的值是中国</span></div><div class="line"><span class="comment">//属性city的值是上海</span></div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2016/09/08/each-和-each/" class="read-more-link">Read more..</a>
+            <a href="/2016/09/08/each-和-each/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -520,52 +561,7 @@
 </li>
 <li><p><strong>mouseenter</strong> : 在鼠标移动到选取的元素上时触发事件。</p>
           <div class="read-more">
-            <a href="/2016/09/06/mouse事件的区别/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/09/06/对未来新添加的节点绑定事件/">对未来新添加的节点绑定事件</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Sep 6, 2016
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h3 id="为未来新添加的节点绑定事件"><a href="#为未来新添加的节点绑定事件" class="headerlink" title="为未来新添加的节点绑定事件"></a>为未来新添加的节点绑定事件</h3><p>以下例子只能通过点击第一个 <strong>p元素</strong> 来创建节点，点击 <strong>新生成的p元素</strong> 是不会有反应的。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>点击创建一个新的p元素<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".container p"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="keyword">this</span>).after(<span class="string">"&lt;p&gt;点击创建一个新的p元素&lt;/p&gt;"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>使用 <strong>on()方法</strong> 或者 <strong>delegate()方法</strong> 来为未来节点绑定事件。<br>推荐使用 <strong>on()方法</strong> ,因为自jQuery1.7版本起，delegate方法被on方法所取代。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用on方法</span></div><div class="line">$(<span class="string">".container"</span>).on(<span class="string">"click"</span>,<span class="string">"p"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="keyword">this</span>).after(<span class="string">"&lt;p&gt;点击创建一个新的p元素&lt;/p&gt;"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-          <div class="read-more">
-            <a href="/2016/09/06/对未来新添加的节点绑定事件/" class="read-more-link">Read more..</a>
+            <a href="/2016/09/06/mouse事件的区别/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -584,12 +580,12 @@
     
       <a class="prev" href="/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text">Prev</span>
+        <span class="prev-text">上一页</span>
       </a>
     
     
       <a class="next" href="/page/3/">
-        <span class="next-text">Next</span>
+        <span class="next-text">下一页</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -634,11 +630,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   
   <span class="theme-info">
-    Theme - 
+    主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 

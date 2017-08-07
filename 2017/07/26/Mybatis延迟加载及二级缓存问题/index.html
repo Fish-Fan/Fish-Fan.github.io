@@ -34,16 +34,16 @@
 <link rel="canonical" href="http://yoursite.com/2017/07/26/Mybatis延迟加载及二级缓存问题/"/>
 
 
-<meta name="description" content="延迟加载延迟加载处理的是N+1性能问题，所谓N+1性能问题指的是映射集合(resultMap)内存在级联时，我们需要的数据少于数据库查出来的数据。这样就会造成数据库多查出来的数据白白被浪费掉，同时也加大了数据库那边的负担，这是我们最不希望看到的。Mybatis为此引入了延迟加载。延迟加载的的过程就是一开始并不取出所有的级联数据，只有当使用到级联数据时，Mybatis才会发送SQL去取回数据。123">
+<meta name="description" content="延迟加载延迟加载处理的是N+1性能问题，所谓N+1性能问题指的是映射集合(resultMap)内存在级联时，我们需要的数据少于数据库查出来的数据。这样就会造成数据库多查出来的数据白白被浪费掉，同时也加大了数据库那边的负担，这是我们最不希望看到的。Mybatis为此引入了延迟加载。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mybatis延迟加载及二级缓存问题">
 <meta property="og:url" content="http://yoursite.com/2017/07/26/Mybatis延迟加载及二级缓存问题/index.html">
 <meta property="og:site_name" content="Welcome abroad">
-<meta property="og:description" content="延迟加载延迟加载处理的是N+1性能问题，所谓N+1性能问题指的是映射集合(resultMap)内存在级联时，我们需要的数据少于数据库查出来的数据。这样就会造成数据库多查出来的数据白白被浪费掉，同时也加大了数据库那边的负担，这是我们最不希望看到的。Mybatis为此引入了延迟加载。延迟加载的的过程就是一开始并不取出所有的级联数据，只有当使用到级联数据时，Mybatis才会发送SQL去取回数据。123">
-<meta property="og:updated_time" content="2017-07-26T14:30:12.000Z">
+<meta property="og:description" content="延迟加载延迟加载处理的是N+1性能问题，所谓N+1性能问题指的是映射集合(resultMap)内存在级联时，我们需要的数据少于数据库查出来的数据。这样就会造成数据库多查出来的数据白白被浪费掉，同时也加大了数据库那边的负担，这是我们最不希望看到的。Mybatis为此引入了延迟加载。">
+<meta property="og:updated_time" content="2017-07-26T14:32:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mybatis延迟加载及二级缓存问题">
-<meta name="twitter:description" content="延迟加载延迟加载处理的是N+1性能问题，所谓N+1性能问题指的是映射集合(resultMap)内存在级联时，我们需要的数据少于数据库查出来的数据。这样就会造成数据库多查出来的数据白白被浪费掉，同时也加大了数据库那边的负担，这是我们最不希望看到的。Mybatis为此引入了延迟加载。延迟加载的的过程就是一开始并不取出所有的级联数据，只有当使用到级联数据时，Mybatis才会发送SQL去取回数据。123">
+<meta name="twitter:description" content="延迟加载延迟加载处理的是N+1性能问题，所谓N+1性能问题指的是映射集合(resultMap)内存在级联时，我们需要的数据少于数据库查出来的数据。这样就会造成数据库多查出来的数据白白被浪费掉，同时也加大了数据库那边的负担，这是我们最不希望看到的。Mybatis为此引入了延迟加载。">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
@@ -195,7 +195,7 @@
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
+    <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#延迟加载"><span class="toc-text">延迟加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二级缓存"><span class="toc-text">二级缓存</span></a></li></ol>
     </div>
@@ -204,7 +204,7 @@
 
     <div class="post-content">
       
-        <h2 id="延迟加载"><a href="#延迟加载" class="headerlink" title="延迟加载"></a>延迟加载</h2><p>延迟加载处理的是N+1性能问题，所谓N+1性能问题指的是映射集合(resultMap)内存在级联时，我们需要的数据少于数据库查出来的数据。这样就会造成数据库多查出来的数据白白被浪费掉，同时也加大了数据库那边的负担，这是我们最不希望看到的。<br>Mybatis为此引入了延迟加载。<br>延迟加载的的过程就是一开始并不取出所有的级联数据，只有当使用到级联数据时，Mybatis才会发送SQL去取回数据。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//通过配置文件开启全局延迟加载</div><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE configuration</span></div><div class="line">        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"</div><div class="line">        "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">settings</span>&gt;</span></div><div class="line">        ...</div><div class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"lazyLoadingEnabled"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></div><div class="line">        ...</div><div class="line">    <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure></p>
+        <h2 id="延迟加载"><a href="#延迟加载" class="headerlink" title="延迟加载"></a>延迟加载</h2><p>延迟加载处理的是N+1性能问题，所谓N+1性能问题指的是映射集合(resultMap)内存在级联时，我们需要的数据少于数据库查出来的数据。这样就会造成数据库多查出来的数据白白被浪费掉，同时也加大了数据库那边的负担，这是我们最不希望看到的。<br>Mybatis为此引入了延迟加载。<br><a id="more"></a><br>延迟加载的的过程就是一开始并不取出所有的级联数据，只有当使用到级联数据时，Mybatis才会发送SQL去取回数据。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//通过配置文件开启全局延迟加载</div><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE configuration</span></div><div class="line">        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"</div><div class="line">        "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">settings</span>&gt;</span></div><div class="line">        ...</div><div class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"lazyLoadingEnabled"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></div><div class="line">        ...</div><div class="line">    <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>由于Mybatis在默认的情况下是按层级延迟加载的，所以当我们使用级联中某个层级中的数据时，会把该层级上所有的数据全部查询出来.这时就要用到aggressiveLazyLoading配置了.</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE configuration</span></div><div class="line">        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"</div><div class="line">        "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</div><div class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">settings</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"mapUnderscoreToCamelCase"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></div><div class="line">        <span class="comment">&lt;!--开启全局延迟加载--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"lazyLoadingEnabled"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></div><div class="line">        <span class="comment">&lt;!--禁用层级自动加载--&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"aggressiveLazyLoading"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>按照上述配置完毕之后，我们就可以完全按需加载数据了。<br>但是又因为如果这么做的话所有的级联都需要去发送多条SQL语句进行查询，这样速度就会变慢，我们有时候会经常将某两个或者某几个级联放在一条SQL语句进行一次查询，这样的情况也是最常见的情况，我们可以使用局部延迟加载来解决上述问题。</p>
@@ -257,10 +257,16 @@
         
   <nav class="post-nav">
     
+      <a class="prev" href="/2017/08/05/hibernate笔记/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">hibernate笔记</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
     
       <a class="next" href="/2017/07/09/ele后端接口文档及说明/">
         <span class="next-text nav-default">ele后端接口文档及说明</span>
-        <span class="prev-text nav-mobile">Next</span>
+        <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -313,11 +319,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   
   <span class="theme-info">
-    Theme - 
+    主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
