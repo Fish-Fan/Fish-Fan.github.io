@@ -197,10 +197,11 @@
         
 
         
-          <h2 id="安装zookeeper"><a href="#安装zookeeper" class="headerlink" title="安装zookeeper"></a>安装zookeeper</h2><ol>
-<li>下载并解压zookeeper[<a href="https://zookeeper.apache.org/">https://zookeeper.apache.org/</a>]</li>
-<li>在zookeeper根目录下新建data文件夹</li>
-<li><p>修改配置文件 conf/zoo.cfg</p>
+          <h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p><img src="http://ok2crkjlq.bkt.clouddn.com/dubbo-architecture.jpg" alt="dubbo架构"></p>
+<ul>
+<li>服务容器负责启动，加载，运行服务提供者</li>
+<li>服务提供者在启动时，向注册中心注册自己提供的服务</li>
+<li>服务消费者在启动时，向注册中心订阅自己需要的服务
           <div class="read-more">
             <a href="/2017/08/08/搭建dubbo项目/" class="read-more-link">Read more..</a>
           </div>
