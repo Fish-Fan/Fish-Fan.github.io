@@ -193,45 +193,17 @@
       
         
         
+          
+        
 
         
           <h2 id="安装zookeeper"><a href="#安装zookeeper" class="headerlink" title="安装zookeeper"></a>安装zookeeper</h2><ol>
-<li>下载并解压zookeeper[<a href="https://zookeeper.apache.org/" target="_blank" rel="external">https://zookeeper.apache.org/</a>]</li>
+<li>下载并解压zookeeper[<a href="https://zookeeper.apache.org/">https://zookeeper.apache.org/</a>]</li>
 <li>在zookeeper根目录下新建data文件夹</li>
 <li><p>修改配置文件 conf/zoo.cfg</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"># The number of milliseconds of each tick</div><div class="line">tickTime=2000</div><div class="line"># The number of ticks that the initial</div><div class="line"># synchronization phase can take</div><div class="line">initLimit=10</div><div class="line"># The number of ticks that can pass between</div><div class="line"># sending a request and getting an acknowledgement</div><div class="line">syncLimit=5</div><div class="line"># the directory where the snapshot is stored.</div><div class="line"># do not use /tmp for storage, /tmp here is just</div><div class="line"># example sakes.</div><div class="line"># 在这里放置新添加的data文件夹的完整路径</div><div class="line">dataDir=/Users/yanfeng-mac/Documents/Java/zookeeper-3.4.9/dateTemp</div><div class="line"># the port at which the clients will connect</div><div class="line"># 注册中心端口号</div><div class="line">clientPort=2181</div><div class="line"># the maximum number of client connections.</div><div class="line"># increase this if you need to handle more clients</div><div class="line">#maxClientCnxns=60</div><div class="line">#</div><div class="line"># Be sure to read the maintenance section of the</div><div class="line"># administrator guide before turning on autopurge.</div><div class="line">#</div><div class="line"># http://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_maintenance</div><div class="line">#</div><div class="line"># The number of snapshots to retain in dataDir</div><div class="line">#autopurge.snapRetainCount=3</div><div class="line"># Purge task interval in hours</div><div class="line"># Set to &quot;0&quot; to disable auto purge feature</div><div class="line">#autopurge.purgeInterval=1</div></pre></td></tr></table></figure>
-</li>
-<li><p>运行bin/zkServer.sh(windows下双击zkServer.cmd)以启动zookeeper服务</p>
-</li>
-<li>运行bin/zkCli.sh进入监控中心</li>
-<li>输入ls /以显示监控中心所有运行项目(初始状态下只有zookeeper)</li>
-</ol>
-<h2 id="启动dubbo"><a href="#启动dubbo" class="headerlink" title="启动dubbo"></a>启动dubbo</h2><ol>
-<li><p>从github上获取dubbo源码并编译</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn clean package -DskipTests=true</div></pre></td></tr></table></figure>
-</li>
-<li><p>修改duboo/dubbo-admin/src/main/webapp/WEB-INF/dubbo.properties文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dubbo.registry.address=zookeeper://127.0.0.1:2181</div><div class="line">dubbo.admin.root.password=root</div><div class="line">dubbo.admin.guest.password=guest</div></pre></td></tr></table></figure>
-</li>
-<li><p>在dubbo/dubbo-admin/中执行命令 mvn jetty:run</p>
-</li>
-<li>访问localhost:8080,账号root,密码root进入dubbo控制中心页面</li>
-</ol>
-<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-08%20%E4%B8%8B%E5%8D%889.45.44.png?imageView2/1/w/370/h/230/q/75|imageslim" alt="项目结构"></p>
-<ul>
-<li>controller<br>web应用的控制层，用来接收请求和发送响应，在分布式应用中需要将这一层独立拿出来部署在一台或多台服务器上，因为在应对高并发的情况下，所有请求的session都将存储在服务器的内存中，会很快使内存溢出而导致服务器挂掉。<br>在分布式的场景中处于一下地位:<br><img src="http://ok2crkjlq.bkt.clouddn.com/AF776841-0697-498B-86CB-E78A5AAFC46D.png" alt="控制层的在分布式场景中的地位"><br>该子项目需要dubbo的spring配置文件<br>application-consumer.xml<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></div><div class="line">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">       <span class="attr">xmlns:dubbo</span>=<span class="string">"http://code.alibabatech.com/schema/dubbo"</span></div><div class="line">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"</span>&gt;</div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dubbo:application</span> <span class="attr">name</span>=<span class="string">"dubboDEMO"</span>/&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- 使用multicast广播注册中心暴露发现服务地址 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dubbo:registry</span> <span class="attr">address</span>=<span class="string">"zookeeper://127.0.0.1:2181"</span> /&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- 生成远程服务代理，可以和本地bean一样使用demoService --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dubbo:reference</span> <span class="attr">id</span>=<span class="string">"demoService"</span> <span class="attr">interface</span>=<span class="string">"com.kaishengit.DemoService"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>该子项目需要添加dubbo的三个依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>dubbo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.sgroschupf<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>zkclient<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.zookeeper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>zookeeper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<ul>
-<li>parent<br>是所有子项目的父项目，用来控制子项目的版本依赖</li>
-<li>service<br>业务接口，控制层需要添加该层的依赖，该子项目中只进行接口的声明。</li>
-<li>service_impl<br>接口的实现类，服务的提供者，需要添加dubbo的三个依赖<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>dubbo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.sgroschupf<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>zkclient<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.zookeeper<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>zookeeper<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>还需要在resources文件夹下添加spring配置文件<br>applicationContext-dubbo.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></div><div class="line">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xmlns:dubbo</span>=<span class="string">"http://code.alibabatech.com/schema/dubbo"</span></div><div class="line">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"</span>&gt;</div><div class="line"></div><div class="line">    <span class="comment">&lt;!--注册Dubbo服务--&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!--dubbo注册的应用名称--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dubbo:application</span> <span class="attr">name</span>=<span class="string">"dubboDEMO"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!--配置zookeeper注册中心地址--&gt;</span></div><div class="line">    <span class="comment">&lt;!--由于在本机测试，故IP为127.0.0.1--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dubbo:registry</span> <span class="attr">address</span>=<span class="string">"zookeeper://127.0.0.1:2181"</span>/&gt;</span></div><div class="line">    <span class="comment">&lt;!--服务提供者的端口号--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dubbo:protocol</span> <span class="attr">name</span>=<span class="string">"dubbo"</span> <span class="attr">port</span>=<span class="string">"20881"</span>/&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!--注册服务到dubbo--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dubbo:service</span> <span class="attr">interface</span>=<span class="string">"com.kaishengit.DemoService"</span> <span class="attr">ref</span>=<span class="string">"demoServiceImpl"</span>/&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>applicationContext-provider.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></div><div class="line">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">       <span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></div><div class="line">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"</span>&gt;</div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- 配置自动扫描 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.kaishengit"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 排除@Controller注解的类 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">context:exclude-filter</span> <span class="attr">type</span>=<span class="string">"annotation"</span> <span class="attr">expression</span>=<span class="string">"org.springframework.stereotype.Controller"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></div></pre></td></tr></table></figure></p>
-
+          <div class="read-more">
+            <a href="/2017/08/08/搭建dubbo项目/" class="read-more-link">Read more..</a>
+          </div>
         
       
     </div>
@@ -275,7 +247,7 @@
 <li>被关联方主键生成策略为外键生成策略</li>
 <li>被关联方one-to-one需设置constrained=“true”约束
           <div class="read-more">
-            <a href="/2017/08/05/hibernate笔记/" class="read-more-link">阅读更多</a>
+            <a href="/2017/08/05/hibernate笔记/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -316,7 +288,7 @@
         
           <h2 id="延迟加载"><a href="#延迟加载" class="headerlink" title="延迟加载"></a>延迟加载</h2><p>延迟加载处理的是N+1性能问题，所谓N+1性能问题指的是映射集合(resultMap)内存在级联时，我们需要的数据少于数据库查出来的数据。这样就会造成数据库多查出来的数据白白被浪费掉，同时也加大了数据库那边的负担，这是我们最不希望看到的。<br>Mybatis为此引入了延迟加载。<br>
           <div class="read-more">
-            <a href="/2017/07/26/Mybatis延迟加载及二级缓存问题/" class="read-more-link">阅读更多</a>
+            <a href="/2017/07/26/Mybatis延迟加载及二级缓存问题/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -364,7 +336,7 @@
 </li>
 </ul>
           <div class="read-more">
-            <a href="/2017/07/09/ele后端接口文档及说明/" class="read-more-link">阅读更多</a>
+            <a href="/2017/07/09/ele后端接口文档及说明/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -406,7 +378,7 @@
           <h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><h3 id="行内元素水平居中"><a href="#行内元素水平居中" class="headerlink" title="行内元素水平居中"></a>行内元素水平居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="块级元素水平居中"><a href="#块级元素水平居中" class="headerlink" title="块级元素水平居中"></a>块级元素水平居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2017/03/07/全面解决各种居中问题/" class="read-more-link">阅读更多</a>
+            <a href="/2017/03/07/全面解决各种居中问题/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -453,7 +425,7 @@
 <li><strong>After-throwing</strong>: 在方法抛出异常之后调用通知</li>
 <li><strong>Around</strong>: 通知包裹了被通知的方法，在被通知的方法调用之前和调用之后执行自定义行为<h3 id="连接点"><a href="#连接点" class="headerlink" title="连接点"></a>连接点</h3>连接点是在应用执行过程中 <strong>能够插入切面的一个点</strong>，这个点可以是调用方法时，抛出异常时，甚至是修改一个字段时。切面代码可以利用这些点插入到应用的正常流程之中，并添加新的行为。
           <div class="read-more">
-            <a href="/2017/03/06/面向切面的Spring/" class="read-more-link">阅读更多</a>
+            <a href="/2017/03/06/面向切面的Spring/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -541,7 +513,7 @@
 <h3 id="通过构造器注入"><a href="#通过构造器注入" class="headerlink" title="通过构造器注入"></a>通过构造器注入</h3><p>在 <strong>springTest.xml</strong> 中配置：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;bean id="duke" class="类的完全限定名"&gt;</div><div class="line">  &lt;constructor-arg value="15"&gt;</div><div class="line">  &lt;!--如果需要传入引用对象--&gt;</div><div class="line">  &lt;constructor-arg ref="引用对象在xml中的id"</div><div class="line">&lt;/bean&gt;</div></pre></td></tr></table></figure></p>
 <p><strong>main</strong> 方法中配置:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ApplicationContext ctx = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"springTest.xml"</span>);</div><div class="line">        User user = (User) ctx.getBean(<span class="string">"tom"</span>);</div><div class="line">        user.sayAge();</div></pre></td></tr></table></figure></p>
           <div class="read-more">
-            <a href="/2017/03/02/Spring-装配Bean/" class="read-more-link">阅读更多</a>
+            <a href="/2017/03/02/Spring-装配Bean/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -590,7 +562,7 @@
 <li><p>tomcat命令</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> ./startup.sh</div><div class="line">./shutdown.sh</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2017/02/24/linux命令/" class="read-more-link">阅读更多</a>
+            <a href="/2017/02/24/linux命令/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -634,7 +606,7 @@
 </li>
 </ol>
           <div class="read-more">
-            <a href="/2017/02/24/JDBC笔记/" class="read-more-link">阅读更多</a>
+            <a href="/2017/02/24/JDBC笔记/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -653,7 +625,7 @@
     
     
       <a class="next" href="/page/2/">
-        <span class="next-text">下一页</span>
+        <span class="next-text">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -698,11 +670,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   
   <span class="theme-info">
-    主题 - 
+    Theme - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
