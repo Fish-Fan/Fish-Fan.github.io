@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="zookeeper集群配置"/>
+
+
+
+
+  <meta name="keywords" content="Java分布式," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Welcome abroad">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.2.x" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/08/10/zookeeper集群配置/"/>
+
+
+<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182831. 在vmware中克隆虚拟机(开启Root账号并配置JDK)2. 将虚拟机的IP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zookeeper集群配置">
+<meta property="og:url" content="http://yoursite.com/2017/08/10/zookeeper集群配置/index.html">
+<meta property="og:site_name" content="Welcome abroad">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182831. 在vmware中克隆虚拟机(开启Root账号并配置JDK)2. 将虚拟机的IP">
+<meta property="og:updated_time" content="2017-08-10T03:46:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="zookeeper集群配置">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182831. 在vmware中克隆虚拟机(开启Root账号并配置JDK)2. 将虚拟机的IP">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    search: {
+      enable: true,
+      path: "/search.xml",
+    },
+    navbar: {
+      enable: true
+    },
+    fancybox: {
+      enable: true
+    },
+    toc: {
+      enable: true
+    },
+  };
+</script>
+
+
+
+  
+
+
+
+    <title> zookeeper集群配置 · Welcome abroad </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Welcome abroad</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Welcome abroad</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      <a class="mobile-menu-item" href="/">
+        
+        
+          Home
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/archives/">
+        
+        
+          Archives
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/tags">
+        
+        
+          Tags
+        
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          zookeeper集群配置
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Aug 10, 2017
+        </span>
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line">1. 在vmware中克隆虚拟机(开启Root账号并配置JDK)</div><div class="line">2. 将虚拟机的IP地址设置为静态</div><div class="line">	vim /etc/network/interfaces</div><div class="line">	-----------------------------------</div><div class="line">	iface ens33 inet static</div><div class="line">	address 192.168.135.136</div><div class="line">	netmask 255.255.255.0</div><div class="line">	gateway 192.168.135.2</div><div class="line">3. 修改DNS服务器</div><div class="line">	vim /etc/resolv.conf</div><div class="line">	-----------------------------------</div><div class="line">	nameserver 223.5.5.5</div><div class="line">4. 重启网络</div><div class="line">	/etc/init.d/networking restart</div><div class="line">5. 将zookeeper拷贝到/usr/local</div><div class="line">	mv zookeeper-3.4.9 /user/local</div><div class="line">6. 将zookeeper文件夹进行重命名</div><div class="line">	cd /usr/local</div><div class="line">	mv zookeeper-3.4.9 zk</div><div class="line">7. 在zookeeper的文件夹中创建data文件夹</div><div class="line">	cd /zk</div><div class="line">	mkdir data</div><div class="line">8. 修改zookeeper的配置文件</div><div class="line">	cd conf</div><div class="line">	cp zoo_sample.cfg zoo.cfg</div><div class="line">	vim zoo.cfg</div><div class="line">	-----------------------------</div><div class="line">	dataDir=/usr/local/zk/data</div><div class="line">9. 启动zookeeper</div><div class="line">	cd bin</div><div class="line">	zkServer.sh start</div><div class="line">10. 查看zk的状态</div><div class="line">	zkServer.sh status</div><div class="line">11. 查看zk的进程号</div><div class="line">	jps</div><div class="line">12. 停止zk</div><div class="line">	zkServer.sh stop</div><div class="line">13. 伪分布式的zk</div><div class="line">	zk    2181   2888  3888   2069</div><div class="line">	zk-2  2182   2889  3889   2106 (L)</div><div class="line">	zk-3  2183   2890  3890	  2157</div><div class="line">14. 在data目录中创建myid文件，内容为zk服务的id（1，2，3）</div><div class="line">	cd data</div><div class="line">	touch myid</div><div class="line">	vim myid</div><div class="line">	---------------</div><div class="line">	1</div><div class="line">15. 去zk的配置文件中开启集群模式</div><div class="line">	cd conf</div><div class="line">	vim zoo.cfg</div><div class="line">	---------------------------------</div><div class="line">	server.1=127.0.0.1:2888:3888</div><div class="line">	server.2=127.0.0.1:2889:3889</div><div class="line">	server.3=127.0.0.1:2890:3890</div><div class="line"></div><div class="line">	127.0.0.1是zk所在服务器的ip地址，2888是和leader沟通的端口，3888是选举端口</div><div class="line">16. 设置Linux的开机启动zk集群</div><div class="line">	vim /etc/rc.local</div><div class="line">	------------------------------</div><div class="line">	export JAVA_HOME=/usr/local/jdk8</div><div class="line">	/usr/local/zk/bin/zkServer.sh start</div><div class="line">	/usr/local/zk-2/bin/zkServer.sh start</div><div class="line">	/usr/local/zk-3/bin/zkServer.sh start</div><div class="line">17. 将dubbo-admin项目打包成war</div><div class="line">18. 将war放入到tomcat的webapps目录中</div><div class="line">	mv dubbo-admin /usr/local/tomcat8/webapps</div><div class="line">19. 给tomcat的bin目录添加执行权限</div><div class="line">	chmod -R u+x bin</div><div class="line">20. 启动tomcat</div><div class="line">	cd bin</div><div class="line">	startup.sh</div><div class="line">21. 关闭tomcat</div><div class="line">	cd bin</div><div class="line">	shupdown.sh</div><div class="line">22. 修改duboo-admin的配置文件dubbo.properties</div><div class="line">	vim duboo.properties</div><div class="line">	-----------------------</div><div class="line">	dubbo.registry.address=zookeeper://192.168.135.136:2181?backup=192.168.135.136:2182,192.168.135.136:2183</div><div class="line">23. 启动tomcat</div><div class="line">24. 让tomcat随操作系统启动</div><div class="line">	vim /etc/rc.local</div><div class="line">	-----------------------------</div><div class="line">	/usr/local/tomcat8/bin/startup.sh</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/weixin.jpg" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.jpg" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Java分布式/">Java分布式</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2017/08/08/搭建dubbo项目/">
+        <span class="next-text nav-default">搭建dubbo项目</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Johnny.R</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.2.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.2.x"></script>
+
+  </body>
+</html>

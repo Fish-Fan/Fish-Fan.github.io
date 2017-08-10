@@ -175,6 +175,50 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2017/02/24/JDBC笔记/">JDBC笔记</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Feb 24, 2017
+        </span>
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="JDBC笔记"><a href="#JDBC笔记" class="headerlink" title="JDBC笔记"></a>JDBC笔记</h2><ol>
+<li>JDBC获取新插入数据自动生成的ID<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">executeInsert</span><span class="params">(String sql, ResultSetHandler&lt;T&gt; resultSetHandler,Object...param)</span></span>&#123;</div><div class="line">        Connection connection = ConnectionManage.getConnection();</div><div class="line">        QueryRunner runner = <span class="keyword">new</span> QueryRunner();</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">return</span> runner.insert(connection,sql,resultSetHandler,param);</div><div class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">finally</span> &#123;</div><div class="line">            close(connection);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"><span class="comment">//返回自动生成的键值</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+          <div class="read-more">
+            <a href="/2017/02/24/JDBC笔记/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2017/02/24/JSP笔记/">JSP笔记</a>
         
       </h1>
@@ -532,43 +576,6 @@
           <div class="read-more">
             <a href="/2016/09/08/each-和-each/" class="read-more-link">阅读更多</a>
           </div>
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/09/08/css-vertical-align/">css vertical-align</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Sep 8, 2016
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h2 id="对css中vertical-align属性的理解"><a href="#对css中vertical-align属性的理解" class="headerlink" title="对css中vertical-align属性的理解 :"></a>对css中vertical-align属性的理解 :</h2><p>这里提供一个 <a href="http://www.zhangxinxu.com/wordpress/2010/05/%E6%88%91%E5%AF%B9css-vertical-align%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3%E4%B8%8E%E8%AE%A4%E8%AF%86%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank" rel="external">传送门</a> ,大家可以进去看一下张鑫旭学长的详细解释。</p>
-
         
       
     </div>
