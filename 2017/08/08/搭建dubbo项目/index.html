@@ -51,7 +51,7 @@
 <meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/dubbo-architecture.jpg">
 <meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-08-08%20%E4%B8%8B%E5%8D%889.45.44.png?imageView2/1/w/370/h/230/q/75|imageslim">
 <meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/AF776841-0697-498B-86CB-E78A5AAFC46D.png">
-<meta property="og:updated_time" content="2017-08-09T01:15:58.000Z">
+<meta property="og:updated_time" content="2017-08-10T03:00:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建dubbo项目">
 <meta name="twitter:description" content="总览
@@ -211,7 +211,7 @@
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
+    <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总览"><span class="toc-text">总览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装zookeeper"><span class="toc-text">安装zookeeper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动dubbo"><span class="toc-text">启动dubbo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目结构"><span class="toc-text">项目结构</span></a></li></ol>
     </div>
@@ -233,7 +233,7 @@
 <li>在zookeeper根目录下新建data文件夹</li>
 <li>修改配置文件 conf/zoo.cfg</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"># The number of milliseconds of each tick</div><div class="line">tickTime=2000</div><div class="line"># The number of ticks that the initial</div><div class="line"># synchronization phase can take</div><div class="line">initLimit=10</div><div class="line"># The number of ticks that can pass between</div><div class="line"># sending a request and getting an acknowledgement</div><div class="line">syncLimit=5</div><div class="line"># the directory where the snapshot is stored.</div><div class="line"># do not use /tmp for storage, /tmp here is just</div><div class="line"># example sakes.</div><div class="line"># 在这里放置新添加的data文件夹的完整路径</div><div class="line">dataDir=/Users/yanfeng-mac/Documents/Java/zookeeper-3.4.9/dateTemp</div><div class="line"># the port at which the clients will connect</div><div class="line"># 注册中心端口号</div><div class="line">clientPort=2181</div><div class="line"># the maximum number of client connections.</div><div class="line"># increase this if you need to handle more clients</div><div class="line">#maxClientCnxns=60</div><div class="line">#</div><div class="line"># Be sure to read the maintenance section of the</div><div class="line"># administrator guide before turning on autopurge.</div><div class="line">#</div><div class="line"># http://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_maintenance</div><div class="line">#</div><div class="line"># The number of snapshots to retain in dataDir</div><div class="line">#autopurge.snapRetainCount=3</div><div class="line"># Purge task interval in hours</div><div class="line"># Set to &quot;0&quot; to disable auto purge feature</div><div class="line">#autopurge.purgeInterval=1</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"># The number of milliseconds of each tick</div><div class="line">tickTime=2000</div><div class="line"># The number of ticks that the initial</div><div class="line"># synchronization phase can take</div><div class="line">initLimit=10</div><div class="line"># The number of ticks that can pass between</div><div class="line"># sending a request and getting an acknowledgement</div><div class="line">syncLimit=5</div><div class="line"># the directory where the snapshot is stored.</div><div class="line"># do not use /tmp for storage, /tmp here is just</div><div class="line"># example sakes.</div><div class="line"># 在这里放置新添加的data文件夹的完整路径</div><div class="line">dataDir=/Users/yanfeng-mac/Documents/Java/zookeeper-3.4.9/data</div><div class="line"># the port at which the clients will connect</div><div class="line"># 注册中心端口号</div><div class="line">clientPort=2181</div><div class="line"># the maximum number of client connections.</div><div class="line"># increase this if you need to handle more clients</div><div class="line">#maxClientCnxns=60</div><div class="line">#</div><div class="line"># Be sure to read the maintenance section of the</div><div class="line"># administrator guide before turning on autopurge.</div><div class="line">#</div><div class="line"># http://zookeeper.apache.org/doc/current/zookeeperAdmin.html#sc_maintenance</div><div class="line">#</div><div class="line"># The number of snapshots to retain in dataDir</div><div class="line">#autopurge.snapRetainCount=3</div><div class="line"># Purge task interval in hours</div><div class="line"># Set to &quot;0&quot; to disable auto purge feature</div><div class="line">#autopurge.purgeInterval=1</div></pre></td></tr></table></figure>
 <ol>
 <li>运行bin/zkServer.sh(windows下双击zkServer.cmd)以启动zookeeper服务</li>
 <li>运行bin/zkCli.sh进入监控中心</li>
@@ -313,7 +313,7 @@
     
       <a class="next" href="/2017/08/05/hibernate笔记/">
         <span class="next-text nav-default">hibernate笔记</span>
-        <span class="prev-text nav-mobile">Next</span>
+        <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -366,11 +366,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   
   <span class="theme-info">
-    Theme - 
+    主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
