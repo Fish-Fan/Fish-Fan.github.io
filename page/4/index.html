@@ -175,6 +175,48 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2016/08/26/JavaScript-第四章/">JavaScript 第四章</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Aug 26, 2016
+        </span>
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="第四章-变量，作用域，内存等问题"><a href="#第四章-变量，作用域，内存等问题" class="headerlink" title="第四章 变量，作用域，内存等问题"></a>第四章 变量，作用域，内存等问题</h2><h3 id="1-基本类型和引用类型的值"><a href="#1-基本类型和引用类型的值" class="headerlink" title="1. 基本类型和引用类型的值 :"></a>1. 基本类型和引用类型的值 :</h3><p>先说一下基本概念…<br>基本类型指的是简单的数据段<br>引用类型指的是那些可能由多个值构成的对象<br>还不够清楚… 上例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();    <span class="comment">//定义了新对象</span></div><div class="line">person.name = <span class="string">"Jack"</span>;         <span class="comment">//person.name就是引用类型</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">"Jack"</span>;            <span class="comment">//name就是基本类型</span></div></pre></td></tr></table></figure></p>
+<h3 id="2-复制变量值"><a href="#2-复制变量值" class="headerlink" title="2. 复制变量值 :"></a>2. 复制变量值 :</h3><p>基本类型是按 <strong>值</strong> 传递的<br>引用类型是按 <strong>地址</strong> 传递的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//这里只列举一下按地址传递</span></div><div class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"><span class="keyword">var</span> obj1 = obj2;</div><div class="line">obj1.name = <span class="string">"Jack"</span>;</div><div class="line">alert(obj2.name);         <span class="comment">//Jack</span></div></pre></td></tr></table></figure></p>
+          <div class="read-more">
+            <a href="/2016/08/26/JavaScript-第四章/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2016/07/29/JavaScript/">JavaScript</a>
         
       </h1>
@@ -206,7 +248,7 @@
 <li><p>在函数内部使用严格格式：在函数内部添加</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="meta">	"use strict"</span></div><div class="line">	<span class="comment">//这里书写函数代码</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2016/07/29/JavaScript/" class="read-more-link">阅读更多</a>
+            <a href="/2016/07/29/JavaScript/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -225,7 +267,7 @@
     
       <a class="prev" href="/page/3/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text">上一页</span>
+        <span class="prev-text">Prev</span>
       </a>
     
     
@@ -270,11 +312,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   
   <span class="theme-info">
-    主题 - 
+    Theme - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 

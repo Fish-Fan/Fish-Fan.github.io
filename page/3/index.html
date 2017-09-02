@@ -175,6 +175,48 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2016/09/08/each-和-each/">$.each()和.each()</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 8, 2016
+        </span>
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="each-和-each"><a href="#each-和-each" class="headerlink" title="$.each()和.each()"></a>$.each()和.each()</h2><p><strong>$.each()</strong> : 可以循环遍历任何集合，比如对象和数组。语法格式为 <code>jQuery.each( collection, callback(indexInArray, valueOfElement) )。</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">"张三"</span>,<span class="string">"李四"</span>,<span class="string">"王五"</span>,<span class="string">"赵六"</span>];</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  name : <span class="string">"张三"</span>,</div><div class="line">  age : <span class="number">28</span>,</div><div class="line">  sex : <span class="string">"男"</span>,</div><div class="line">  country : <span class="string">"中国"</span>,</div><div class="line">  city : <span class="string">"上海"</span></div><div class="line">&#125;;</div><div class="line">$.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">index,val</span>)</span>&#123;</div><div class="line">  $(<span class="string">"#div"</span>).append(<span class="string">"该数组第"</span> + index + <span class="string">"个元素是"</span> + val + <span class="string">"&lt;br&gt;"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//该数组第0个元素是张三</span></div><div class="line"><span class="comment">//该数组第1个元素是李四</span></div><div class="line"><span class="comment">//该数组第2个元素是王五</span></div><div class="line"><span class="comment">//该数组第3个元素是赵六</span></div><div class="line">$.each(obj,<span class="function"><span class="keyword">function</span>(<span class="params">i,val</span>)</span>&#123;</div><div class="line">  $(<span class="string">"#obj"</span>).append(<span class="string">"属性"</span> + i + <span class="string">"的值是"</span> + val + <span class="string">"&lt;br&gt;"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//属性name的值是张三</span></div><div class="line"><span class="comment">//属性age的值是28</span></div><div class="line"><span class="comment">//属性sex的值是男</span></div><div class="line"><span class="comment">//属性country的值是中国</span></div><div class="line"><span class="comment">//属性city的值是上海</span></div></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2016/09/08/each-和-each/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2016/09/08/css-vertical-align/">css vertical-align</a>
         
       </h1>
@@ -239,7 +281,7 @@
 </li>
 <li><p><strong>mouseenter</strong> : 在鼠标移动到选取的元素上时触发事件。</p>
           <div class="read-more">
-            <a href="/2016/09/06/mouse事件的区别/" class="read-more-link">阅读更多</a>
+            <a href="/2016/09/06/mouse事件的区别/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -284,7 +326,7 @@
 <p>使用 <strong>on()方法</strong> 或者 <strong>delegate()方法</strong> 来为未来节点绑定事件。<br>推荐使用 <strong>on()方法</strong> ,因为自jQuery1.7版本起，delegate方法被on方法所取代。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用on方法</span></div><div class="line">$(<span class="string">".container"</span>).on(<span class="string">"click"</span>,<span class="string">"p"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="keyword">this</span>).after(<span class="string">"&lt;p&gt;点击创建一个新的p元素&lt;/p&gt;"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2016/09/06/对未来新添加的节点绑定事件/" class="read-more-link">阅读更多</a>
+            <a href="/2016/09/06/对未来新添加的节点绑定事件/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -363,7 +405,7 @@
           <h2 id="第九章-DOM"><a href="#第九章-DOM" class="headerlink" title="第九章 DOM"></a>第九章 DOM</h2><p>DOM（文档对象模型）是针对HTML和XML文档的一个API（应用程序编程接口)。DOM描绘了一个层次化的节点树，允许开发人员添加，移除和修改页面的一部分，DOM脱胎于Netscape及微软公司创始的DHTML(动态HTML)，但现在它已经成为表现和操作页面标记的真正的跨平台、语言中立的方式。</p>
 <h3 id="1-节点层次"><a href="#1-节点层次" class="headerlink" title="1.节点层次 :"></a>1.节点层次 :</h3><p>DOM可以将任何HTML或XML文档描绘成一个由多层次节点构成的结构。节点分为几种不同的类型，每种类型分别表示文档中不同的信息或标记。每个节点都有各自的特点，数据和方法，另外节点也与其他节点存在联系。节点之间构成了层次，而所有页面标记则表现为一个特定节点为根节点的树形结构。以下面HTML为例 :<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Sample Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
           <div class="read-more">
-            <a href="/2016/08/29/第九章-DOM/" class="read-more-link">阅读更多</a>
+            <a href="/2016/08/29/第九章-DOM/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -405,7 +447,7 @@
           <h2 id="第八章-BOM"><a href="#第八章-BOM" class="headerlink" title="第八章 BOM"></a>第八章 BOM</h2><h3 id="1-window对象"><a href="#1-window对象" class="headerlink" title="1. window对象 :"></a>1. window对象 :</h3><p>BOM的核心对象是 <strong>window</strong>,他表示浏览器的一个实例。在浏览器中，<strong>window</strong> 对象有双重角色，它既是通过JavaScript访问浏览器窗口的一个接口，又是ECMAScript规定的 <strong>Global</strong> 对象。这意味着在网页中定义的任何一个对象，变量，函数，都以 <strong>window</strong> 作为其 <strong>Global</strong> 对象。</p>
 <h3 id="2-全局作用域"><a href="#2-全局作用域" class="headerlink" title="2. 全局作用域 :"></a>2. 全局作用域 :</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> age = <span class="number">29</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayAge</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.age);</div><div class="line">&#125;</div><div class="line">alert(<span class="built_in">window</span>.age);     <span class="comment">//29</span></div><div class="line">sayAge();              <span class="comment">//29</span></div><div class="line"><span class="built_in">window</span>.sayAge();       <span class="comment">//29</span></div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2016/08/29/第八章-BOM/" class="read-more-link">阅读更多</a>
+            <a href="/2016/08/29/第八章-BOM/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -446,7 +488,7 @@
         
           <h2 id="第七章-函数表达式"><a href="#第七章-函数表达式" class="headerlink" title="第七章 函数表达式"></a>第七章 函数表达式</h2><h3 id="1-定义函数的两种方法-："><a href="#1-定义函数的两种方法-：" class="headerlink" title="1. 定义函数的两种方法 ："></a>1. 定义函数的两种方法 ：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//函数声明法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">"Hi!"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//关于函数声明法，他的一个重要特征就是函数声明提升，即在执行代码之前会先读取函数声明，意味着我们可以把函数声明放在调用它语句的后面</span></div><div class="line"><span class="comment">//函数表达式</span></div><div class="line"><span class="keyword">var</span> sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">"Hi!"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//关于两者的区别</span></div><div class="line"><span class="comment">//这样做会报错</span></div><div class="line"><span class="keyword">if</span>(condition)&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Hi"</span>!);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Yo!"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//但这样就不会</span></div><div class="line"><span class="keyword">if</span>(condition)&#123;</div><div class="line">    sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	   alert(<span class="string">"Hi"</span>!);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span>&#123;</div><div class="line">    sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Yo!"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2016/08/29/第七章-函数表达式/" class="read-more-link">阅读更多</a>
+            <a href="/2016/08/29/第七章-函数表达式/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -487,7 +529,7 @@
         
           <h2 id="第六章-面向对象程序设计"><a href="#第六章-面向对象程序设计" class="headerlink" title="第六章 面向对象程序设计"></a>第六章 面向对象程序设计</h2><h3 id="1-理解对象"><a href="#1-理解对象" class="headerlink" title="1. 理解对象 :"></a>1. 理解对象 :</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建对象的第一种方法</span></div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">person.name = <span class="string">"Jack"</span>;</div><div class="line">person.age = <span class="number">29</span>;</div><div class="line">person.job = <span class="string">"Software Enjineer"</span>;</div><div class="line">person.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.name);</div><div class="line">&#125;;</div><div class="line"><span class="comment">//创建对象的第二种方法（常用的方法）</span></div><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  name: <span class="string">"Jack"</span>,</div><div class="line">  age: <span class="number">29</span>,</div><div class="line">  job: <span class="string">"Software Enjineer"</span>,</div><div class="line">  sayName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">alert(<span class="keyword">this</span>.name);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2016/08/27/JavaScript-第六章/" class="read-more-link">阅读更多</a>
+            <a href="/2016/08/27/JavaScript-第六章/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -528,49 +570,7 @@
         
           <h2 id="第五章-引用类型"><a href="#第五章-引用类型" class="headerlink" title="第五章 引用类型"></a>第五章 引用类型</h2><h4 id="引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。"><a href="#引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。" class="headerlink" title="引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。"></a>引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。</h4><h3 id="1-创建对象的两种方法"><a href="#1-创建对象的两种方法" class="headerlink" title="1. 创建对象的两种方法 :"></a>1. 创建对象的两种方法 :</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用object类型</span></div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();<span class="comment">//等价于var person = &#123;&#125;;</span></div><div class="line">person.name = <span class="string">"Jack"</span>;</div><div class="line">person.age = <span class="number">29</span>;</div><div class="line"><span class="comment">//使用对象字面量表示法（优点是使用大量属性时无需重复写对象名）</span></div><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  name : <span class="string">"Jack"</span>,</div><div class="line">  age : <span class="number">29</span></div><div class="line">&#125;<span class="comment">//注意属性之间用逗号隔开，最后一个属性后面没有逗号</span></div><div class="line"><span class="comment">//另外在使用对象字面量表示法时，属性名也可以使用字符串(这样属性名就变成可读的哦)</span></div><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  <span class="string">"name"</span> : <span class="string">"Jack"</span>,</div><div class="line">  <span class="string">"age"</span> : <span class="number">29</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2016/08/26/JavaScript-第五章/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/08/26/JavaScript-第四章/">JavaScript 第四章</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Aug 26, 2016
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="第四章-变量，作用域，内存等问题"><a href="#第四章-变量，作用域，内存等问题" class="headerlink" title="第四章 变量，作用域，内存等问题"></a>第四章 变量，作用域，内存等问题</h2><h3 id="1-基本类型和引用类型的值"><a href="#1-基本类型和引用类型的值" class="headerlink" title="1. 基本类型和引用类型的值 :"></a>1. 基本类型和引用类型的值 :</h3><p>先说一下基本概念…<br>基本类型指的是简单的数据段<br>引用类型指的是那些可能由多个值构成的对象<br>还不够清楚… 上例子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();    <span class="comment">//定义了新对象</span></div><div class="line">person.name = <span class="string">"Jack"</span>;         <span class="comment">//person.name就是引用类型</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">"Jack"</span>;            <span class="comment">//name就是基本类型</span></div></pre></td></tr></table></figure></p>
-<h3 id="2-复制变量值"><a href="#2-复制变量值" class="headerlink" title="2. 复制变量值 :"></a>2. 复制变量值 :</h3><p>基本类型是按 <strong>值</strong> 传递的<br>引用类型是按 <strong>地址</strong> 传递的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//这里只列举一下按地址传递</span></div><div class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line"><span class="keyword">var</span> obj1 = obj2;</div><div class="line">obj1.name = <span class="string">"Jack"</span>;</div><div class="line">alert(obj2.name);         <span class="comment">//Jack</span></div></pre></td></tr></table></figure></p>
-          <div class="read-more">
-            <a href="/2016/08/26/JavaScript-第四章/" class="read-more-link">阅读更多</a>
+            <a href="/2016/08/26/JavaScript-第五章/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -589,12 +589,12 @@
     
       <a class="prev" href="/page/2/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text">上一页</span>
+        <span class="prev-text">Prev</span>
       </a>
     
     
       <a class="next" href="/page/4/">
-        <span class="next-text">下一页</span>
+        <span class="next-text">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -639,11 +639,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   
   <span class="theme-info">
-    主题 - 
+    Theme - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
