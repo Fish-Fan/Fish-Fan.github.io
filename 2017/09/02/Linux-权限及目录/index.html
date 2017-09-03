@@ -57,7 +57,7 @@
 <meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-02%20%E4%B8%8A%E5%8D%889.34.06.png">
 <meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-02%20%E4%B8%8A%E5%8D%8810.41.46.png">
 <meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-02%20%E4%B8%8A%E5%8D%8810.36.25.png">
-<meta property="og:updated_time" content="2017-09-02T02:47:00.000Z">
+<meta property="og:updated_time" content="2017-09-03T07:50:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux-权限及目录">
 <meta name="twitter:description" content="磁盘的组成
@@ -222,7 +222,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘的组成"><span class="toc-text">磁盘的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开机流程"><span class="toc-text">开机流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件权限"><span class="toc-text">文件权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#改变文件属性与权限"><span class="toc-text">改变文件属性与权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目录的权限"><span class="toc-text">目录的权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux目录解释"><span class="toc-text">Linux目录解释</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#磁盘的组成"><span class="toc-text">磁盘的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开机流程"><span class="toc-text">开机流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件权限"><span class="toc-text">文件权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#改变文件属性与权限"><span class="toc-text">改变文件属性与权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目录的权限"><span class="toc-text">目录的权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件默认权限"><span class="toc-text">文件默认权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux目录解释"><span class="toc-text">Linux目录解释</span></a></li></ol>
     </div>
   </div>
 
@@ -274,6 +274,9 @@
 <li><p>x: 具有进入该目录的权限</p>
 </li>
 </ul>
+<h3 id="文件默认权限"><a href="#文件默认权限" class="headerlink" title="文件默认权限"></a>文件默认权限</h3><p><strong>umask</strong> 即为 <strong>目前用户在新建文件或目录时的权限默认值</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">umask</span></div><div class="line">0022</div></pre></td></tr></table></figure></p>
+<p>主要看umask的后三位，为022<br>新建文件： 默认权限都是666，那么减去umask值即为当前角色新建文件的初始权限，这里user为rw-,group为r–,others为r–<br>新建目录: 默认权限为777,同样减去umask值即为当前角色新建目录的初始权限，这里user为rwx,group为r-x,others为r-x</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//更改<span class="built_in">umask</span>为 000</div><div class="line"><span class="built_in">umask</span> 000</div></pre></td></tr></table></figure>
 <h3 id="Linux目录解释"><a href="#Linux目录解释" class="headerlink" title="Linux目录解释"></a>Linux目录解释</h3><p><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-02%20%E4%B8%8A%E5%8D%8810.36.25.png" alt="Linux主要目录结构"></p>
 <ul>
 <li><p>/bin: 包含不是系统级别的常用操作命令,如chmod,chown,date,mv,mkdir</p>
@@ -355,6 +358,12 @@
         
         
   <nav class="post-nav">
+    
+      <a class="prev" href="/2017/09/03/Linux文件查找和压缩/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Linux文件查找和压缩</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
     
     
       <a class="next" href="/2017/08/10/zookeeper集群配置/">

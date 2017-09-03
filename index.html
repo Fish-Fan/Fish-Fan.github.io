@@ -175,6 +175,49 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2017/09/03/Linux文件查找和压缩/">Linux文件查找和压缩</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 3, 2017
+        </span>
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="查找命令"><a href="#查找命令" class="headerlink" title="查找命令"></a>查找命令</h3><p>查找命令的完整文件名可用 <strong>which</strong> 或 <strong>type</strong>，这两个命令都是通过PATH变量来查找文件名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">which</span> ifconfig</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">type</span> ifconfig</div></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2017/09/03/Linux文件查找和压缩/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2017/09/02/Linux-权限及目录/">Linux-权限及目录</a>
         
       </h1>
@@ -560,49 +603,6 @@
 <h3 id="任务二中关于网页上阴影效果的实现"><a href="#任务二中关于网页上阴影效果的实现" class="headerlink" title="任务二中关于网页上阴影效果的实现"></a>任务二中关于网页上阴影效果的实现</h3><p>这个属于CSS3的范畴，但是也需要你们去掌握，主要是一些特效，实现的效果看起来比较炫酷，会多少是多少，<a href="http://www.runoob.com/css3/css3-tutorial.html" target="_blank" rel="external">学习地址1</a>,<a href="http://www.w3school.com.cn/css3/index.asp" target="_blank" rel="external">学习地址2</a>,另外，还提供一个工具类的<a href="http://www.cssmatic.com/box-shadow" target="_blank" rel="external">网站</a>，帮助你快速实现阴影效果.</p>
 <h3 id="任务二导航栏的定位"><a href="#任务二导航栏的定位" class="headerlink" title="任务二导航栏的定位"></a>任务二导航栏的定位</h3><p>这个需要用到CSS中的 <strong>position属性</strong>,请大家自行百度学习，深刻理解相对定位，绝对定位以及固定定位(fixed)</p>
 
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/03/02/Spring-装配Bean/">Spring 装配Bean</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Mar 2, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="普通装配方式"><a href="#普通装配方式" class="headerlink" title="普通装配方式"></a>普通装配方式</h2><h3 id="声明Bean"><a href="#声明Bean" class="headerlink" title="声明Bean"></a>声明Bean</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.age = age;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayAge</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"age-&gt;"</span> + age);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="通过构造器注入"><a href="#通过构造器注入" class="headerlink" title="通过构造器注入"></a>通过构造器注入</h3><p>在 <strong>springTest.xml</strong> 中配置：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;bean id="duke" class="类的完全限定名"&gt;</div><div class="line">  &lt;constructor-arg value="15"&gt;</div><div class="line">  &lt;!--如果需要传入引用对象--&gt;</div><div class="line">  &lt;constructor-arg ref="引用对象在xml中的id"</div><div class="line">&lt;/bean&gt;</div></pre></td></tr></table></figure></p>
-<p><strong>main</strong> 方法中配置:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ApplicationContext ctx = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"springTest.xml"</span>);</div><div class="line">        User user = (User) ctx.getBean(<span class="string">"tom"</span>);</div><div class="line">        user.sayAge();</div></pre></td></tr></table></figure></p>
-          <div class="read-more">
-            <a href="/2017/03/02/Spring-装配Bean/" class="read-more-link">Read more..</a>
-          </div>
         
       
     </div>
