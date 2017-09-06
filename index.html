@@ -193,79 +193,18 @@
       
         
         
+          
+        
 
         
           <h3 id="什么是bash"><a href="#什么是bash" class="headerlink" title="什么是bash"></a>什么是bash</h3><p>  在知道这个问题的答案之前需要先知道什么是shell,shell可以从以下几点来描述:</p>
 <ul>
 <li>shell将我们输入的命令与操作系统内核通信，然后内核控制硬件执行某些操作</li>
 <li>shell是给用户操作系统的接口，shell可以调用其他应用程序(如chmod,chown,vi等)来调用内核工作</li>
-<li>shell有多个版本，Linux使用的版本为”Bourne Again SHell”,简称 <strong>bash</strong></li>
-</ul>
-<h3 id="变量的显示与设置"><a href="#变量的显示与设置" class="headerlink" title="变量的显示与设置"></a>变量的显示与设置</h3><ol>
-<li><p>显示:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>设置:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myname=fanyank</div><div class="line">若要追加变量内容</div><div class="line">myname=<span class="string">"<span class="variable">$myname</span>"</span>master</div></pre></td></tr></table></figure>
-</li>
-<li><p>若该变量需要在其他子线程中执行，需要将变量设置为环境变量</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> myname</div></pre></td></tr></table></figure>
-</li>
-<li><p>取消变量:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">unset</span> myname</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="变量通过键盘进行读取"><a href="#变量通过键盘进行读取" class="headerlink" title="变量通过键盘进行读取"></a>变量通过键盘进行读取</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">read</span> [-pt] 变量</div></pre></td></tr></table></figure>
-<ul>
-<li>[-p]: 后接提示符，如”Please enter you name: “</li>
-<li>[-t]: 后接等待的秒数，超时后将退出</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">eg: <span class="built_in">read</span> -p <span class="string">"Please enter your name: "</span> -t 30 myname</div></pre></td></tr></table></figure>
-<h3 id="变量的声明"><a href="#变量的声明" class="headerlink" title="变量的声明:"></a>变量的声明:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">declare</span> [-aixr] 变量</div></pre></td></tr></table></figure>
-<ul>
-<li>[-a]: 将变量定义为数组</li>
-<li>[-i]: 将变量定义为整型</li>
-<li>[-x]: 将变量声明为环境变量，相当于export</li>
-<li>[-r]: 将变量改为只读(read only)</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sum=10+20                     </div><div class="line"><span class="built_in">echo</span> <span class="variable">$sum</span>             //输出为10+20</div><div class="line"><span class="built_in">declare</span> -i sum1=10+20</div><div class="line"><span class="built_in">echo</span> <span class="variable">$sum1</span>            //输出为30</div></pre></td></tr></table></figure>
-<h3 id="变量内容的删除，替代和替换"><a href="#变量内容的删除，替代和替换" class="headerlink" title="变量内容的删除，替代和替换"></a>变量内容的删除，替代和替换</h3><ol>
-<li>删除</li>
-</ol>
-<ul>
-<li>从前向后删除:<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">从前向后删除符合关键字的最短数据</div><div class="line"><span class="variable">$&#123;变量#关键字&#125;</span></div><div class="line">eg: <span class="variable">$&#123;path#/*bin:&#125;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">从前向后删除符合关键字的最长数据</div><div class="line"><span class="variable">$&#123;变量##关键字&#125;</span></div><div class="line">eg: <span class="variable">$&#123;path##/*bin:&#125;</span></div></pre></td></tr></table></figure>
-<ul>
-<li>从后向前删除:<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">从后向前删除符合关键系的最短数据</div><div class="line"><span class="variable">$&#123;变量%关键字&#125;</span></div><div class="line">eg: <span class="variable">$&#123;path%:*bin&#125;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">从后向前删除符合关键系的最长数据</div><div class="line"><span class="variable">$&#123;变量%关键字&#125;</span></div><div class="line">eg: <span class="variable">$&#123;path%%:*bin&#125;</span></div></pre></td></tr></table></figure>
-<ol>
-<li>替换<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$&#123;变量/旧字符串/新字符串&#125;</span></div><div class="line">将变量path匹配到的第一个bin替换为bin</div><div class="line"><span class="variable">$&#123;path/bin/BIN&#125;</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$&#123;变量//旧字符串/新字符串&#125;</span></div><div class="line">将变量path匹配到的所以bin替换为bin</div><div class="line"><span class="variable">$&#123;path//bin/BIN&#125;</span></div></pre></td></tr></table></figure>
-<h3 id="命令别名"><a href="#命令别名" class="headerlink" title="命令别名"></a>命令别名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">eg: <span class="built_in">alias</span> rm=<span class="string">"rm -i"</span></div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">查询当前定义的所有别名</div><div class="line"><span class="built_in">alias</span></div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">取消别名</div><div class="line"><span class="built_in">unalias</span> 别名</div></pre></td></tr></table></figure>
-<h3 id="历史命令"><a href="#历史命令" class="headerlink" title="历史命令"></a>历史命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">列出所有历史命令</div><div class="line"><span class="built_in">history</span></div><div class="line">列出最近n条命令</div><div class="line"><span class="built_in">history</span> [n]</div><div class="line">清楚所有历史命令</div><div class="line"><span class="built_in">history</span> [-c]</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">执行第number个命令</div><div class="line">!number</div><div class="line">执行上一个命令</div><div class="line">!!</div><div class="line">执行以al开头的命令</div><div class="line">!al</div></pre></td></tr></table></figure>
-<h3 id="数据流重定向"><a href="#数据流重定向" class="headerlink" title="数据流重定向"></a>数据流重定向</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">将原本输出到屏幕上的数据流输出到~/filename文件中</div><div class="line">ll / &gt; ~/filename</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">将原本输出到屏幕上的数据流追加到~/filename文件中</div><div class="line">ll / &gt;&gt; ~/filename</div></pre></td></tr></table></figure>
-<h3 id="命令执行判断依据"><a href="#命令执行判断依据" class="headerlink" title="命令执行判断依据:"></a>命令执行判断依据:</h3><ul>
-<li><p>考虑命令相关性的连接命令执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cmd ; cmd</div><div class="line">eg: g++ pointer.cpp -o ./out/pointer.out ; <span class="built_in">cd</span> out ; ./pointer.out ; <span class="built_in">cd</span> ../</div></pre></td></tr></table></figure>
-</li>
-<li><p>相关联的命令执行:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cmd1 &amp;&amp; cmd2</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>只有当 <strong>cmd1</strong> 成功执行时，执行 <strong>cmd2</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cmd1 || cmd2</div></pre></td></tr></table></figure>
-<p>只有当 <strong>cmd1</strong> 执行失败时，执行 <strong>cmd2</strong></p>
-
+<li>shell有多个版本，Linux使用的版本为”Bourne Again SHell”,简称 <strong>bash</strong>
+          <div class="read-more">
+            <a href="/2017/09/06/bash的使用/" class="read-more-link">Read more..</a>
+          </div>
         
       
     </div>
