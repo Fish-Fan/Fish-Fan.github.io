@@ -175,6 +175,53 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2017/09/07/Linux管道命令/">Linux管道命令</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 7, 2017
+        </span>
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cut <span class="_">-d</span> <span class="string">'分隔符'</span> <span class="_">-f</span> fields</div><div class="line">cut -c 字符范围</div></pre></td></tr></table></figure>
+<ul>
+<li>[-d]: 后接分隔字符，与-f一起使用</li>
+<li>[-f]: 根据-d将信息分解成数段，-f后接取第n段</li>
+<li>[-c]: 以字符为单位取出固定字符区间</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">eg: <span class="built_in">echo</span> <span class="variable">$PATH</span> | cut <span class="_">-d</span> <span class="string">':'</span> <span class="_">-f</span> 5</div><div class="line">eg: <span class="built_in">export</span> | cut -c 12-</div></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2017/09/07/Linux管道命令/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2017/09/06/bash的使用/">bash的使用</a>
         
       </h1>
@@ -555,53 +602,6 @@
 <h3 id="块级元素水平居中"><a href="#块级元素水平居中" class="headerlink" title="块级元素水平居中"></a>块级元素水平居中</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="read-more">
             <a href="/2017/03/07/全面解决各种居中问题/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/03/06/面向切面的Spring/">面向切面的Spring</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Mar 6, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="定义AOP术语"><a href="#定义AOP术语" class="headerlink" title="定义AOP术语"></a>定义AOP术语</h2><h3 id="通知"><a href="#通知" class="headerlink" title="通知"></a>通知</h3><p>通知定义了切面是什么以及何时使用切面。Spring切面可以应用5种类型的通知:</p>
-<ol>
-<li><strong>Before</strong>: 在方法被调用之前通知</li>
-<li><strong>After</strong>: 在方法完成之后调用通知，无论方法是否执行成功</li>
-<li><strong>After-returning</strong>: 在方法成功执行之后调用通知</li>
-<li><strong>After-throwing</strong>: 在方法抛出异常之后调用通知</li>
-<li><strong>Around</strong>: 通知包裹了被通知的方法，在被通知的方法调用之前和调用之后执行自定义行为<h3 id="连接点"><a href="#连接点" class="headerlink" title="连接点"></a>连接点</h3>连接点是在应用执行过程中 <strong>能够插入切面的一个点</strong>，这个点可以是调用方法时，抛出异常时，甚至是修改一个字段时。切面代码可以利用这些点插入到应用的正常流程之中，并添加新的行为。
-          <div class="read-more">
-            <a href="/2017/03/06/面向切面的Spring/" class="read-more-link">Read more..</a>
           </div>
         
       
