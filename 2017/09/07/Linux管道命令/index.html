@@ -52,7 +52,7 @@
 [-c]: 以字符为单位取出固定字符区间
 
 12eg: echo $PATH | cut -d &apos;:&apos; -f 5eg: export | cut -c 12-">
-<meta property="og:updated_time" content="2017-09-07T10:55:39.000Z">
+<meta property="og:updated_time" content="2017-09-10T12:57:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux管道命令">
 <meta name="twitter:description" content="cut12cut -d &apos;分隔符&apos; -f fieldscut -c 字符范围
@@ -215,7 +215,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#cut"><span class="toc-text">cut</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grep"><span class="toc-text">grep</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort"><span class="toc-text">sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uniq"><span class="toc-text">uniq</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wc"><span class="toc-text">wc</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#cut"><span class="toc-text">cut</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grep"><span class="toc-text">grep</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort"><span class="toc-text">sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uniq"><span class="toc-text">uniq</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wc"><span class="toc-text">wc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双向重定向-tee"><span class="toc-text">双向重定向: tee</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tr-删除一段信息的文字或进行文字信息的替换"><span class="toc-text">tr: 删除一段信息的文字或进行文字信息的替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#减号”-“"><span class="toc-text">减号”-“</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#test命令的测试功能"><span class="toc-text">test命令的测试功能:</span></a></li></ol>
     </div>
   </div>
 
@@ -265,6 +265,24 @@
 <li>[-m]: 仅列出字符数</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">统计man.config文件</div><div class="line">eg: cat /etc/man.config | wc</div><div class="line">统计登录系统的总人次</div><div class="line">eg: last | cut <span class="_">-d</span> <span class="string">" "</span> <span class="_">-f</span> 1 | grep -v <span class="string">"wtmp"</span> | grep [a-zA-Z] | wc <span class="_">-l</span></div></pre></td></tr></table></figure>
+<h3 id="双向重定向-tee"><a href="#双向重定向-tee" class="headerlink" title="双向重定向: tee"></a>双向重定向: tee</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tee [<span class="_">-a</span>] file</div></pre></td></tr></table></figure>
+<ul>
+<li>[-a]: 将数据累加至file中</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">将最近登录的信息写入至last.list中,在屏幕上只显示登录名</div><div class="line">eg: last | tee last.list | cut <span class="_">-d</span> <span class="string">':'</span> <span class="_">-f</span>1</div><div class="line">将列表信息累加至homefile中，并在屏幕上显示</div><div class="line">eg: ls / | tee <span class="_">-a</span> homefile</div></pre></td></tr></table></figure>
+<h3 id="tr-删除一段信息的文字或进行文字信息的替换"><a href="#tr-删除一段信息的文字或进行文字信息的替换" class="headerlink" title="tr: 删除一段信息的文字或进行文字信息的替换"></a>tr: 删除一段信息的文字或进行文字信息的替换</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tr [-ds] SET1</div></pre></td></tr></table></figure>
+<ul>
+<li>[-d]: 删除SET1字符串</li>
+<li>[-s]: 替换掉重复的字符串</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">将显示信息的小写全部转换为大写</div><div class="line">eg: last | tr <span class="string">'[a-z]'</span> <span class="string">'[A-Z]'</span></div><div class="line">将/etc/passwd输出的信息中的<span class="string">':'</span>删除</div><div class="line">eg: cat /etc/passwd | tr <span class="_">-d</span> <span class="string">':'</span></div></pre></td></tr></table></figure>
+<h3 id="减号”-“"><a href="#减号”-“" class="headerlink" title="减号”-“"></a>减号”-“</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">省略了中间创建的压缩文件，直接通过管道将流传给下一个命令处理</div><div class="line">eg: tar -cvf - /home | tar -xvf -</div></pre></td></tr></table></figure>
+<h3 id="test命令的测试功能"><a href="#test命令的测试功能" class="headerlink" title="test命令的测试功能:"></a>test命令的测试功能:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">test</span> [-efd] 文件名</div></pre></td></tr></table></figure>
+<ul>
+<li>[-e]: 文件是否存在</li>
+<li>[-f]: 文件是否存在且为文件</li>
+<li>[-d]: 文件是否存在且为文件夹</li>
+</ul>
 
       
     </div>
@@ -279,7 +297,7 @@
       
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
-    <label class="reward-button" for="reward">赞赏支持</label>
+    <label class="reward-button" for="reward">Reward</label>
     <div class="qr-code">
       
       
@@ -308,6 +326,12 @@
         
         
   <nav class="post-nav">
+    
+      <a class="prev" href="/2017/09/10/Linux的Shell-Script/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Linux的Shell Script</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
     
     
       <a class="next" href="/2017/09/06/bash的使用/">

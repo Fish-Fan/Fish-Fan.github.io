@@ -48,7 +48,8 @@ shell有多个版本，Linux使用的版本为”Bourne Again SHell”,简称 ba
 shell将我们输入的命令与操作系统内核通信，然后内核控制硬件执行某些操作
 shell是给用户操作系统的接口，shell可以调用其他应用程序(如chmod,chown,vi等)来调用内核工作
 shell有多个版本，Linux使用的版本为”Bourne Again SHell”,简称 bash">
-<meta property="og:updated_time" content="2017-09-06T11:35:29.000Z">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-10%20%E4%B8%8B%E5%8D%888.43.24.png">
+<meta property="og:updated_time" content="2017-09-10T12:55:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bash的使用">
 <meta name="twitter:description" content="什么是bash  在知道这个问题的答案之前需要先知道什么是shell,shell可以从以下几点来描述:
@@ -56,6 +57,7 @@ shell有多个版本，Linux使用的版本为”Bourne Again SHell”,简称 ba
 shell将我们输入的命令与操作系统内核通信，然后内核控制硬件执行某些操作
 shell是给用户操作系统的接口，shell可以调用其他应用程序(如chmod,chown,vi等)来调用内核工作
 shell有多个版本，Linux使用的版本为”Bourne Again SHell”,简称 bash">
+<meta name="twitter:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-10%20%E4%B8%8B%E5%8D%888.43.24.png">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
@@ -209,7 +211,7 @@ shell有多个版本，Linux使用的版本为”Bourne Again SHell”,简称 ba
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是bash"><span class="toc-text">什么是bash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的显示与设置"><span class="toc-text">变量的显示与设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量通过键盘进行读取"><span class="toc-text">变量通过键盘进行读取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的声明"><span class="toc-text">变量的声明:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量内容的删除，替代和替换"><span class="toc-text">变量内容的删除，替代和替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令别名"><span class="toc-text">命令别名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#历史命令"><span class="toc-text">历史命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据流重定向"><span class="toc-text">数据流重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令执行判断依据"><span class="toc-text">命令执行判断依据:</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是bash"><span class="toc-text">什么是bash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bash的环境配置文件"><span class="toc-text">bash的环境配置文件:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的显示与设置"><span class="toc-text">变量的显示与设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量通过键盘进行读取"><span class="toc-text">变量通过键盘进行读取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的声明"><span class="toc-text">变量的声明:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量内容的删除，替代和替换"><span class="toc-text">变量内容的删除，替代和替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令别名"><span class="toc-text">命令别名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#历史命令"><span class="toc-text">历史命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据流重定向"><span class="toc-text">数据流重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令执行判断依据"><span class="toc-text">命令执行判断依据:</span></a></li></ol>
     </div>
   </div>
 
@@ -221,13 +223,28 @@ shell有多个版本，Linux使用的版本为”Bourne Again SHell”,简称 ba
 <li>shell将我们输入的命令与操作系统内核通信，然后内核控制硬件执行某些操作</li>
 <li>shell是给用户操作系统的接口，shell可以调用其他应用程序(如chmod,chown,vi等)来调用内核工作</li>
 <li>shell有多个版本，Linux使用的版本为”Bourne Again SHell”,简称 <strong>bash</strong><a id="more"></a>
-<h3 id="变量的显示与设置"><a href="#变量的显示与设置" class="headerlink" title="变量的显示与设置"></a>变量的显示与设置</h3><ol>
-<li>显示:<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
 </li>
 </ul>
+<h3 id="bash的环境配置文件"><a href="#bash的环境配置文件" class="headerlink" title="bash的环境配置文件:"></a>bash的环境配置文件:</h3><p>系统内有一些环境配置文件，让bash在启动时读取这些配置文件，以方便我们一进入bash就有一堆有用的变量(之前定义的变量都会在注销之后消失)</p>
+<ul>
+<li>login shell需要的配置文件:</li>
+</ul>
 <ol>
+<li>/etc/profile: 系统要读的配置文件</li>
+<li>~/.bash_profile或~/.bash_login或~/.profile,这几个文件是用户进行个人设置时需要写入的文件</li>
+</ol>
+<p>流程图:<br><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-10%20%E4%B8%8B%E5%8D%888.43.24.png" alt="流程图"></p>
+<ul>
+<li><p>no-login shell需要的配置文件:<br>仅会读取~/.bashrc</p>
+</li>
+<li><p>source 读取环境配置文件命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> 配置文件名</div><div class="line">这样不用重启便可以读取到最新配置文件的内容</div><div class="line">eg: <span class="built_in">source</span> ~/.bashrc</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="变量的显示与设置"><a href="#变量的显示与设置" class="headerlink" title="变量的显示与设置"></a>变量的显示与设置</h3><ol>
+<li><p>显示:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></div></pre></td></tr></table></figure>
+</li>
 <li><p>设置:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myname=fanyank</div><div class="line">若要追加变量内容</div><div class="line">myname=<span class="string">"<span class="variable">$myname</span>"</span>master</div></pre></td></tr></table></figure>
 </li>
@@ -237,7 +254,21 @@ shell有多个版本，Linux使用的版本为”Bourne Again SHell”,简称 ba
 <li><p>取消变量:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">unset</span> myname</div></pre></td></tr></table></figure>
 </li>
+<li><p>变量声明注意事项:</p>
+</li>
 </ol>
+<ul>
+<li>变量声明中含有命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">变量=$(命令)</div><div class="line">eg: version=$(uname -r)</div></pre></td></tr></table></figure>
+<ul>
+<li>为了增加变量内容</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">eg: PATH=<span class="variable">$&#123;PATH&#125;</span>:/home/bin</div><div class="line">或</div><div class="line">eg: PATH=<span class="string">"<span class="variable">$PATH</span>"</span>:/home/bin</div></pre></td></tr></table></figure>
+<ul>
+<li>变量声明中有运算</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">eg: num=$((<span class="variable">$num</span> + 1))</div></pre></td></tr></table></figure>
 <h3 id="变量通过键盘进行读取"><a href="#变量通过键盘进行读取" class="headerlink" title="变量通过键盘进行读取"></a>变量通过键盘进行读取</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">read</span> [-pt] 变量</div></pre></td></tr></table></figure>
 <ul>
 <li>[-p]: 后接提示符，如”Please enter you name: “</li>
@@ -302,7 +333,7 @@ shell有多个版本，Linux使用的版本为”Bourne Again SHell”,简称 ba
       
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
-    <label class="reward-button" for="reward">赞赏支持</label>
+    <label class="reward-button" for="reward">Reward</label>
     <div class="qr-code">
       
       

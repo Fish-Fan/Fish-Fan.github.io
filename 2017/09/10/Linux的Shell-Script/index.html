@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Linux的Shell Script"/>
+
+
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Welcome abroad">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.2.x" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/09/10/Linux的Shell-Script/"/>
+
+
+<meta name="description" content="起步注意事项 :
+
+命令，参数间的多个空白都会被忽略掉
+空白行也会被忽略掉，[tab]所得空白等于[space]所得空白
+如果得到一个Enter符号(CR),就尝试执行该命令
+“#”号后面为注释">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux的Shell Script">
+<meta property="og:url" content="http://yoursite.com/2017/09/10/Linux的Shell-Script/index.html">
+<meta property="og:site_name" content="Welcome abroad">
+<meta property="og:description" content="起步注意事项 :
+
+命令，参数间的多个空白都会被忽略掉
+空白行也会被忽略掉，[tab]所得空白等于[space]所得空白
+如果得到一个Enter符号(CR),就尝试执行该命令
+“#”号后面为注释">
+<meta property="og:updated_time" content="2017-09-10T12:44:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux的Shell Script">
+<meta name="twitter:description" content="起步注意事项 :
+
+命令，参数间的多个空白都会被忽略掉
+空白行也会被忽略掉，[tab]所得空白等于[space]所得空白
+如果得到一个Enter符号(CR),就尝试执行该命令
+“#”号后面为注释">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    search: {
+      enable: true,
+      path: "/search.xml",
+    },
+    navbar: {
+      enable: true
+    },
+    fancybox: {
+      enable: true
+    },
+    toc: {
+      enable: true
+    },
+  };
+</script>
+
+
+
+  
+
+
+
+    <title> Linux的Shell Script · Welcome abroad </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Welcome abroad</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+      
+        <li class="menu-search">
+          <form>
+            <i class="iconfont icon-search" id="open-search"></i>
+            <input type="text" class="search-input" id="search-input" />
+            <i class="iconfont icon-close" id="close-search"></i>
+          </form>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Welcome abroad</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      <a class="mobile-menu-item" href="/">
+        
+        
+          Home
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/archives/">
+        
+        
+          Archives
+        
+      </a>
+    
+      <a class="mobile-menu-item" href="/tags">
+        
+        
+          Tags
+        
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Linux的Shell Script
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 10, 2017
+        </span>
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#起步"><span class="toc-text">起步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断符号"><span class="toc-text">判断符号:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shell-script默认变量"><span class="toc-text">shell script默认变量:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shift变量偏移"><span class="toc-text">shift变量偏移:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if…then…"><span class="toc-text">if…then…</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#case…esac"><span class="toc-text">case…esac</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#function"><span class="toc-text">function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环loop"><span class="toc-text">循环loop:</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><p><strong>注意事项</strong> :</p>
+<ol>
+<li>命令，参数间的多个空白都会被忽略掉</li>
+<li>空白行也会被忽略掉，[tab]所得空白等于[space]所得空白</li>
+<li>如果得到一个Enter符号(CR),就尝试执行该命令</li>
+<li>“#”号后面为注释<a id="more"></a>
+</li>
+</ol>
+<p><strong>执行方法</strong> :</p>
+<ol>
+<li>直接命令执行(.sh文件必须具有rx权限)</li>
+<li><p>以bash进程来执行(有r权限即可执行),该种执行方式在子进程中执行，所以声明的变量在父进程中访问不到</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">eg: bash shell.sh</div><div class="line">或</div><div class="line">eg: sh shell.sh</div></pre></td></tr></table></figure>
+</li>
+<li><p>用source执行,该种执行方式是使用父进程执行，故声明的变量可以访问</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">eg: <span class="built_in">source</span> shell.sh</div><div class="line">或</div><div class="line">eg: . shell.sh</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="判断符号"><a href="#判断符号" class="headerlink" title="判断符号:"></a>判断符号:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">判断result变量是否等于Y</div><div class="line">[ <span class="string">"<span class="variable">$result</span>"</span> == <span class="string">"Y"</span> ]</div></pre></td></tr></table></figure>
+<h3 id="shell-script默认变量"><a href="#shell-script默认变量" class="headerlink" title="shell script默认变量:"></a>shell script默认变量:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">eg: shell.sh opt1 opt2</div><div class="line">       <span class="variable">$0</span>    <span class="variable">$1</span>   <span class="variable">$2</span></div></pre></td></tr></table></figure>
+<ul>
+<li><strong>$#</strong>: 后接参数的个数</li>
+<li><strong>$@</strong>: 代表”$1”,”$2”…<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">eg: <span class="built_in">echo</span> <span class="string">"All parameters are '<span class="variable">$@</span>'"</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="shift变量偏移"><a href="#shift变量偏移" class="headerlink" title="shift变量偏移:"></a>shift变量偏移:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">从前往后偏移number个变量</div><div class="line"><span class="built_in">shift</span> [number]</div></pre></td></tr></table></figure>
+<h3 id="if…then…"><a href="#if…then…" class="headerlink" title="if…then…"></a>if…then…</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if [条件判断式] ; then</div><div class="line">  ...</div><div class="line">else</div><div class="line">  ...</div><div class="line">fi</div></pre></td></tr></table></figure>
+<p>多重条件判断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if [条件判断式] ; then</div><div class="line">  ...</div><div class="line">elif [条件判断式] ; then</div><div class="line">  ...</div><div class="line">else</div><div class="line">  ...</div><div class="line">fi</div></pre></td></tr></table></figure>
+<p>举个例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if [ &quot;$result&quot; == &quot;Y&quot; ] || [ &quot;$result&quot; == &quot;y&quot; ] ; then</div><div class="line">  echo &quot;ok&quot;</div><div class="line">fi</div></pre></td></tr></table></figure>
+<h3 id="case…esac"><a href="#case…esac" class="headerlink" title="case…esac"></a>case…esac</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">case $变量名称 in</div><div class="line">  &quot;变量内容1&quot;)</div><div class="line">   ...</div><div class="line">   ;;</div><div class="line"></div><div class="line">   &quot;变量内容2&quot;)</div><div class="line">   ...</div><div class="line">   ;;</div><div class="line"></div><div class="line">   *)</div><div class="line">   ...</div><div class="line">   ;;</div><div class="line">esac</div></pre></td></tr></table></figure>
+<h3 id="function"><a href="#function" class="headerlink" title="function"></a>function</h3><p><strong>function</strong> 拥有内置变量$0,$1,$2…,与shell script一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function name () &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>举个例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function printit() &#123;</div><div class="line">  echo &quot;Your choice is $1&quot;</div><div class="line">&#125;</div><div class="line"></div><div class="line">#调用</div><div class="line">printit 1</div></pre></td></tr></table></figure>
+<h3 id="循环loop"><a href="#循环loop" class="headerlink" title="循环loop:"></a>循环loop:</h3><ul>
+<li>while循环<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">while [condition]</div><div class="line">do</div><div class="line">...</div><div class="line">done</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>举个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">while [ &quot;$yn&quot; != &quot;yes&quot; -a &quot;$yn&quot; != &quot;YES&quot; ]</div><div class="line">do</div><div class="line">  echo &quot;Input yes/YES&quot;</div><div class="line">done</div><div class="line">`</div></pre></td></tr></table></figure>
+<ul>
+<li>for循环(第一种形式)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for var in con1 con2 con3</div><div class="line">do</div><div class="line">...</div><div class="line">done</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>举个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">users=$(last | cut -d &apos; &apos; -f1)</div><div class="line">for username in $users</div><div class="line">do</div><div class="line"> echo &quot;$username&quot;</div><div class="line">done</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for i in $(seq 1 100)</div><div class="line">do</div><div class="line"> echo &quot;$i&quot;</div><div class="line">done</div></pre></td></tr></table></figure>
+<ul>
+<li>for循环(第二种形式)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for ((...;...;...))</div><div class="line">do</div><div class="line">...</div><div class="line">done</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>举个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">read -p &quot;Input a num: &quot; num</div><div class="line">s=0</div><div class="line">for ((i=1;i&lt;=$num;i=i+1))</div><div class="line">do</div><div class="line">  s=$(($s+$i))</div><div class="line">done</div><div class="line">echo &quot;the sum is $s&quot;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">Reward</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/weixin.jpg" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.jpg" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/">Linux</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2017/09/07/Linux管道命令/">
+        <span class="next-text nav-default">Linux管道命令</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2017
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Johnny.R</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.2.x"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.2.x"></script>
+
+  </body>
+</html>
