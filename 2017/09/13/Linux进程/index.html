@@ -12,12 +12,12 @@
 
 
 
-  <meta name="description" content="mouse事件的区别"/>
+  <meta name="description" content="Linux进程"/>
 
 
 
 
-  <meta name="keywords" content="jQuery," />
+  <meta name="keywords" content="：Linux," />
 
 
 
@@ -31,28 +31,28 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/2016/09/06/mouse事件的区别/"/>
+<link rel="canonical" href="http://yoursite.com/2017/09/13/Linux进程/"/>
 
 
-<meta name="description" content="mouseover和mouseenter事件的区别
-mouseover : 在鼠标移动到选取的元素及其子元素上触发事件，意味着在从选取元素进入到子元素时或者从子元素进入到选取元素时也会触发事件。
+<meta name="description" content="程序和进程eg: /bin/bash 为程序，我们每个人登录时都会运行该程序，运行该程序系统就会产生进程如下图所示(图片来源于鸟哥的私房菜)
 
-mouseenter : 在鼠标移动到选取的元素上时触发事件。">
+父进程与子进程之间的调用Linux的进程调用通常称为 fork-and-exec 流程，进程都会通过父进程以复制(fork)的方式产生一个一模一样的子进程，然后被复制出来的子进程再以exec的方式执行实际要进行的程序，最终称为一个子进程的存在如下图所示(图">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mouse事件的区别">
-<meta property="og:url" content="http://yoursite.com/2016/09/06/mouse事件的区别/index.html">
+<meta property="og:title" content="Linux进程">
+<meta property="og:url" content="http://yoursite.com/2017/09/13/Linux进程/index.html">
 <meta property="og:site_name" content="Welcome abroad">
-<meta property="og:description" content="mouseover和mouseenter事件的区别
-mouseover : 在鼠标移动到选取的元素及其子元素上触发事件，意味着在从选取元素进入到子元素时或者从子元素进入到选取元素时也会触发事件。
+<meta property="og:description" content="程序和进程eg: /bin/bash 为程序，我们每个人登录时都会运行该程序，运行该程序系统就会产生进程如下图所示(图片来源于鸟哥的私房菜)
 
-mouseenter : 在鼠标移动到选取的元素上时触发事件。">
-<meta property="og:updated_time" content="2017-02-25T10:05:34.000Z">
+父进程与子进程之间的调用Linux的进程调用通常称为 fork-and-exec 流程，进程都会通过父进程以复制(fork)的方式产生一个一模一样的子进程，然后被复制出来的子进程再以exec的方式执行实际要进行的程序，最终称为一个子进程的存在如下图所示(图">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/program_process.gif">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/fork-and-exec.gif">
+<meta property="og:updated_time" content="2017-09-13T08:09:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mouse事件的区别">
-<meta name="twitter:description" content="mouseover和mouseenter事件的区别
-mouseover : 在鼠标移动到选取的元素及其子元素上触发事件，意味着在从选取元素进入到子元素时或者从子元素进入到选取元素时也会触发事件。
+<meta name="twitter:title" content="Linux进程">
+<meta name="twitter:description" content="程序和进程eg: /bin/bash 为程序，我们每个人登录时都会运行该程序，运行该程序系统就会产生进程如下图所示(图片来源于鸟哥的私房菜)
 
-mouseenter : 在鼠标移动到选取的元素上时触发事件。">
+父进程与子进程之间的调用Linux的进程调用通常称为 fork-and-exec 流程，进程都会通过父进程以复制(fork)的方式产生一个一模一样的子进程，然后被复制出来的子进程再以exec的方式执行实际要进行的程序，最终称为一个子进程的存在如下图所示(图">
+<meta name="twitter:image" content="http://ok2crkjlq.bkt.clouddn.com/program_process.gif">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
@@ -89,7 +89,7 @@ mouseenter : 在鼠标移动到选取的元素上时触发事件。">
 
 
 
-    <title> mouse事件的区别 · Welcome abroad </title>
+    <title> Linux进程 · Welcome abroad </title>
   </head>
 
   <body>
@@ -190,13 +190,13 @@ mouseenter : 在鼠标移动到选取的元素上时触发事件。">
     <header class="post-header">
       <h1 class="post-title">
         
-          mouse事件的区别
+          Linux进程
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          Sep 6, 2016
+          Sep 13, 2017
         </span>
       </div>
     </header>
@@ -206,27 +206,25 @@ mouseenter : 在鼠标移动到选取的元素上时触发事件。">
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mouseover和mouseenter事件的区别"><span class="toc-text">mouseover和mouseenter事件的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mouseout和mouseleave事件的区别"><span class="toc-text">mouseout和mouseleave事件的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-text">小结 :</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#程序和进程"><span class="toc-text">程序和进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#父进程与子进程之间的调用"><span class="toc-text">父进程与子进程之间的调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程查看"><span class="toc-text">进程查看</span></a></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <h2 id="mouseover和mouseenter事件的区别"><a href="#mouseover和mouseenter事件的区别" class="headerlink" title="mouseover和mouseenter事件的区别"></a>mouseover和mouseenter事件的区别</h2><ul>
-<li><p><strong>mouseover</strong> : 在鼠标移动到选取的元素及其子元素上触发事件，意味着在从选取元素进入到子元素时或者从子元素进入到选取元素时也会触发事件。</p>
+        <h3 id="程序和进程"><a href="#程序和进程" class="headerlink" title="程序和进程"></a>程序和进程</h3><p>eg: /bin/bash 为程序，我们每个人登录时都会运行该程序，运行该程序系统就会产生进程<br>如下图所示(图片来源于鸟哥的私房菜)</p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/program_process.gif" alt="图片来源于鸟哥的私房菜"></p>
+<h3 id="父进程与子进程之间的调用"><a href="#父进程与子进程之间的调用" class="headerlink" title="父进程与子进程之间的调用"></a>父进程与子进程之间的调用</h3><p>Linux的进程调用通常称为 <strong>fork-and-exec</strong> 流程，进程都会通过父进程以复制(fork)的方式产生一个一模一样的子进程，然后被复制出来的子进程再以exec的方式执行实际要进行的程序，最终称为一个子进程的存在<br>如下图所示(图片来源于鸟哥的私房菜)</p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/fork-and-exec.gif" alt="图片来源于鸟哥的私房菜"></p>
+<h3 id="进程查看"><a href="#进程查看" class="headerlink" title="进程查看"></a>进程查看</h3><ol>
+<li><p>静态查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">查看自己的bash相关进程</div><div class="line">ps <span class="_">-l</span></div><div class="line">查看系统所有进程</div><div class="line">ps aux</div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>mouseenter</strong> : 在鼠标移动到选取的元素上时触发事件。</p>
-<a id="more"></a>
+<li><p>动态查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">top</div></pre></td></tr></table></figure>
 </li>
-</ul>
-<h2 id="mouseout和mouseleave事件的区别"><a href="#mouseout和mouseleave事件的区别" class="headerlink" title="mouseout和mouseleave事件的区别"></a>mouseout和mouseleave事件的区别</h2><ul>
-<li><p><strong>mouseout</strong> : 在鼠标离开选取元素及其子元素时触发事件，意味着从子元素离开进入到选取元素时也会触发事件。</p>
-</li>
-<li><p><strong>mouseleave</strong> : 在鼠标离开选取元素时触发事件。</p>
-</li>
-</ul>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结 :"></a>小结 :</h3><p><strong>mouseover</strong> 和 <strong>mouseout</strong> 是一对事件。<br><strong>mouseenter</strong> 和 <strong>mouseleave</strong> 是一对事件。</p>
+</ol>
 
       
     </div>
@@ -263,7 +261,7 @@ mouseenter : 在鼠标移动到选取的元素上时触发事件。">
       <footer class="post-footer">
         <div class="post-tags">
           
-            <a href="/tags/jQuery/">jQuery</a>
+            <a href="/tags/：Linux/">：Linux</a>
           
         </div>
 
@@ -271,15 +269,9 @@ mouseenter : 在鼠标移动到选取的元素上时触发事件。">
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2016/09/08/css-vertical-align/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">css vertical-align</span>
-        <span class="prev-text nav-mobile">Prev</span>
-      </a>
     
-    
-      <a class="next" href="/2016/09/06/对未来新添加的节点绑定事件/">
-        <span class="next-text nav-default">对未来新添加的节点绑定事件</span>
+      <a class="next" href="/2017/09/13/Linux用户账号与分组/">
+        <span class="next-text nav-default">Linux用户账号与分组</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
