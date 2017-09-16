@@ -175,6 +175,50 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2017/09/16/Java字符串优化/">Java字符串优化</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 16, 2017
+        </span>
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="加号运算符优于StringBuffer的情况"><a href="#加号运算符优于StringBuffer的情况" class="headerlink" title="加号运算符优于StringBuffer的情况"></a>加号运算符优于StringBuffer的情况</h3><ul>
+<li>代码:</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">  String a = <span class="string">"a"</span>;</div><div class="line">  String b = <span class="string">"b"</span>;</div><div class="line">  String c = <span class="string">"c"</span>;</div><div class="line"></div><div class="line">  <span class="keyword">long</span> start = System.currentTimeMillis();</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">100000000</span>;i++) &#123;</div><div class="line">    String str = a + b + c;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  System.out.println(<span class="string">"加号运算符-&gt; "</span> + (System.currentTimeMillis() - start) + <span class="string">" ms"</span>);</div><div class="line"></div><div class="line">  start = System.currentTimeMillis();</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">100000000</span>;i++) &#123;</div><div class="line">    StringBuffer str = <span class="keyword">new</span> StringBuffer();</div><div class="line">    str.append(a);</div><div class="line">    str.append(b);</div><div class="line">    str.append(c);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  System.out.println(<span class="string">"StringBuffer-&gt; "</span> + (System.currentTimeMillis() - start) + <span class="string">" ms"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2017/09/16/Java字符串优化/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2017/09/13/Linux进程/">Linux进程</a>
         
       </h1>
@@ -564,51 +608,6 @@
 <li>服务消费者在启动时，向注册中心订阅自己需要的服务
           <div class="read-more">
             <a href="/2017/08/08/搭建dubbo项目/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/08/05/hibernate笔记/">hibernate笔记</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Aug 5, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="一对一"><a href="#一对一" class="headerlink" title="一对一"></a>一对一</h2><h3 id="一对一主键关联"><a href="#一对一主键关联" class="headerlink" title="一对一主键关联"></a>一对一主键关联</h3><p>1.XML配置</p>
-<ul>
-<li>必须双向关联</li>
-<li>被关联方主键生成策略为外键生成策略</li>
-<li>被关联方one-to-one需设置constrained=“true”约束
-          <div class="read-more">
-            <a href="/2017/08/05/hibernate笔记/" class="read-more-link">Read more..</a>
           </div>
         
       
