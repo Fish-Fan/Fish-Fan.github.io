@@ -45,7 +45,8 @@
 从形式上看，封装将数据和行为组合在一个包中，并对对象的使用者隐藏了数据的实现方式
 实现封装的关键在于绝对不能让类中的方法直接访问其他类的实例域，程序仅通过对象的方法同对象的数据进行交互">
 <meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-19%20%E4%B8%8B%E5%8D%887.44.31.png">
-<meta property="og:updated_time" content="2017-09-19T12:00:34.000Z">
+<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-09%20%E4%B8%8B%E5%8D%884.37.32.png">
+<meta property="og:updated_time" content="2017-10-09T09:18:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java面向对象">
 <meta name="twitter:description" content="封装
@@ -205,7 +206,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#封装"><span class="toc-text">封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象变量和对象"><span class="toc-text">对象变量和对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更改器方法和访问器方法"><span class="toc-text">更改器方法和访问器方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐式参数与显式参数"><span class="toc-text">隐式参数与显式参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#final实例域"><span class="toc-text">final实例域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法参数"><span class="toc-text">方法参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重载"><span class="toc-text">重载</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#封装"><span class="toc-text">封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象变量和对象"><span class="toc-text">对象变量和对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更改器方法和访问器方法"><span class="toc-text">更改器方法和访问器方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐式参数与显式参数"><span class="toc-text">隐式参数与显式参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#final实例域"><span class="toc-text">final实例域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法参数"><span class="toc-text">方法参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重载"><span class="toc-text">重载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无参构造器"><span class="toc-text">无参构造器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包"><span class="toc-text">包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this和super"><span class="toc-text">this和super</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是多态"><span class="toc-text">什么是多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是动态绑定"><span class="toc-text">什么是动态绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在覆盖一个方法时，子类方法不能低于父类方法的可见性"><span class="toc-text">在覆盖一个方法时，子类方法不能低于父类方法的可见性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象类和抽象方法"><span class="toc-text">抽象类和抽象方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在Java中，只有基本类型不是对象，所有的数组类型-包括基本类型数组-都扩展了Object类"><span class="toc-text">在Java中，只有基本类型不是对象，所有的数组类型(包括基本类型数组)都扩展了Object类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hashcode"><span class="toc-text">hashcode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包装器对象"><span class="toc-text">包装器对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取Class对象"><span class="toc-text">获取Class对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取对象的实例"><span class="toc-text">获取对象的实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#垃圾回收"><span class="toc-text">垃圾回收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口中的自动声明"><span class="toc-text">接口中的自动声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#每个类只能有一个超类，但是却可以实现多个接口"><span class="toc-text">每个类只能有一个超类，但是却可以实现多个接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口的默认实现"><span class="toc-text">接口的默认实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决接口冲突"><span class="toc-text">解决接口冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现Comparator接口来进行排序"><span class="toc-text">实现Comparator接口来进行排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用lambda表达式"><span class="toc-text">使用lambda表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lambda表达式的作用域"><span class="toc-text">lambda表达式的作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是函数式接口"><span class="toc-text">什么是函数式接口</span></a></li></ol>
     </div>
   </div>
 
@@ -241,6 +242,85 @@
 <li>Java允许重载任何方法</li>
 <li>要完整的描述一个方法，需要指出方法名以及参数类型，这叫做方法的签名，返回类型不是方法签名的一部分(<strong>这意味不能有两个名字，参数相同但是返回值不同的方法</strong>)</li>
 </ul>
+<h3 id="无参构造器"><a href="#无参构造器" class="headerlink" title="无参构造器"></a>无参构造器</h3><p>只有当一个类没有任何构造器时，系统才会给一个默认的无参构造器，该构造器将实例域设置为默认值(null,false,0)</p>
+<h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><p>如果在源文件中没有 <strong>package</strong> 语句，这个源文件中的类将被放置在一个默认包中，默认包是一个没有名字的包</p>
+<h3 id="this和super"><a href="#this和super" class="headerlink" title="this和super"></a>this和super</h3><ol>
+<li>this有两个用途:</li>
+</ol>
+<ul>
+<li>引用隐式参数</li>
+<li>调用该类其他的构造器(调用其他构造器的语句应作为该构造器的第一条语句出现)</li>
+</ul>
+<ol>
+<li>super有两个用途</li>
+</ol>
+<ul>
+<li>调用超类方法(为了区分本类方法和超类方法)</li>
+<li>调用超类的构造器</li>
+</ul>
+<h3 id="什么是多态"><a href="#什么是多态" class="headerlink" title="什么是多态"></a>什么是多态</h3><p>一个对象变量可以被指示为多种实际类型的现象被称为 <strong>多态</strong>。</p>
+<h3 id="什么是动态绑定"><a href="#什么是动态绑定" class="headerlink" title="什么是动态绑定"></a>什么是动态绑定</h3><p>在运行时能够自动的选择调用哪种方法的现象称为 <strong>动态绑定</strong>。</p>
+<h3 id="在覆盖一个方法时，子类方法不能低于父类方法的可见性"><a href="#在覆盖一个方法时，子类方法不能低于父类方法的可见性" class="headerlink" title="在覆盖一个方法时，子类方法不能低于父类方法的可见性"></a>在覆盖一个方法时，子类方法不能低于父类方法的可见性</h3><h3 id="抽象类和抽象方法"><a href="#抽象类和抽象方法" class="headerlink" title="抽象类和抽象方法"></a>抽象类和抽象方法</h3><ul>
+<li>包含一个或多个抽象方法的类必须声明为抽象类，但是抽象类不一定需要包含抽象方法</li>
+<li>抽象类可以包含具体的数据和方法</li>
+<li>抽象方法充当着 <strong>占位的角色</strong>，他们的具体实现在子类中，子类在继承抽象类是面临两个选择：</li>
+</ul>
+<ol>
+<li>子类仍然标记为抽象类</li>
+<li>子类不被标记为抽象类，但是需要 <strong>定义全部的抽象方法</strong></li>
+</ol>
+<ul>
+<li>不能构造抽象类的对象，但是可以声明抽象类的变量</li>
+</ul>
+<h3 id="在Java中，只有基本类型不是对象，所有的数组类型-包括基本类型数组-都扩展了Object类"><a href="#在Java中，只有基本类型不是对象，所有的数组类型-包括基本类型数组-都扩展了Object类" class="headerlink" title="在Java中，只有基本类型不是对象，所有的数组类型(包括基本类型数组)都扩展了Object类"></a>在Java中，只有基本类型不是对象，所有的数组类型(包括基本类型数组)都扩展了Object类</h3><h3 id="hashcode"><a href="#hashcode" class="headerlink" title="hashcode"></a>hashcode</h3><ul>
+<li>散列码(hash code)是由对象导出的一个整型值</li>
+<li>字符串的散列码由内容导出，如果两字符串内容相同，那么其导出的散列码也相同</li>
+<li>Object类默认hashcode()方法导出对象的存储地址</li>
+</ul>
+<h3 id="包装器对象"><a href="#包装器对象" class="headerlink" title="包装器对象"></a>包装器对象</h3><p><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-09%20%E4%B8%8B%E5%8D%884.37.32.png" alt="==和equals"><br>需要注意各种包装器中valueOf()方法的实现，其中Integer、Short、Byte、Character、Long这几个类的valueOf方法的实现是类似的，Double、Float的valueOf()方法的实现是类似的。</p>
+<p>Integer、Short、Byte、Character、Long这几个类的valueOf方法实现如下,该种实现会使数值在[-128,127]之间的对象指向同一块内存区域。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(i &gt;= -<span class="number">128</span> &amp;&amp; i &lt;= IntegerCache.high)</div><div class="line">            <span class="keyword">return</span> IntegerCache.cache[i + <span class="number">128</span>];</div><div class="line">        <span class="keyword">else</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Integer(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Double、Float的valueOf()方法的实现如下,每次都会返回一个新对象。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Double <span class="title">valueOf</span><span class="params">(<span class="keyword">double</span> d)</span> </span>&#123;</div><div class="line">       <span class="keyword">return</span> <span class="keyword">new</span> Double(d);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>那么布尔类型的valueOf()实现是怎样的呢?<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title">valueOf</span><span class="params">(<span class="keyword">boolean</span> b)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> (b ? TRUE : FALSE);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这就意味着下面这段代码输出为true,true。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Boolean i1 = <span class="keyword">false</span>;</div><div class="line">        Boolean i2 = <span class="keyword">false</span>;</div><div class="line">        Boolean i3 = <span class="keyword">true</span>;</div><div class="line">        Boolean i4 = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">        System.out.println(i1==i2);</div><div class="line">        System.out.println(i3==i4);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="获取Class对象"><a href="#获取Class对象" class="headerlink" title="获取Class对象"></a>获取Class对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>. Random generator = <span class="keyword">new</span> Random();</div><div class="line">   Class cl = generator.getClass();</div><div class="line"></div><div class="line"><span class="number">2</span>. String className = <span class="string">"java.util.Random"</span>;</div><div class="line">   Class cl = Class.forName(className);</div><div class="line"></div><div class="line"><span class="number">3</span>. Class cl = Random.class;</div></pre></td></tr></table></figure>
+<h3 id="获取对象的实例"><a href="#获取对象的实例" class="headerlink" title="获取对象的实例"></a>获取对象的实例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object m = Class.forName(s).newInstance();</div></pre></td></tr></table></figure>
+<h3 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h3><ul>
+<li>使用 <strong>finalize()</strong> 方法释放”特殊的内存区域”，通常该区域为其他语言申请得来的内存。</li>
+<li>通过 <strong>new 操作符</strong> 创建出来的对象Java会自动回收。</li>
+</ul>
+<h3 id="接口中的自动声明"><a href="#接口中的自动声明" class="headerlink" title="接口中的自动声明"></a>接口中的自动声明</h3><ul>
+<li>接口中的所有方法自动属于 <strong>public</strong>,不必显示声明，但在实现接口提供的方法时，必须把方法显示的声明为 <strong>public</strong></li>
+<li>接口中的域将被自动设为 <strong>public static final</strong></li>
+</ul>
+<h3 id="每个类只能有一个超类，但是却可以实现多个接口"><a href="#每个类只能有一个超类，但是却可以实现多个接口" class="headerlink" title="每个类只能有一个超类，但是却可以实现多个接口"></a>每个类只能有一个超类，但是却可以实现多个接口</h3><h3 id="接口的默认实现"><a href="#接口的默认实现" class="headerlink" title="接口的默认实现"></a>接口的默认实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Comparable</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">default</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(T other)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="解决接口冲突"><a href="#解决接口冲突" class="headerlink" title="解决接口冲突"></a>解决接口冲突</h3><ul>
+<li><p>情景一： A接口和B接口中都有一个fun()方法，但返回值不同，那么C类就不可能同时实现A接口和B接口，因为接口的设计本身就存在问题</p>
+</li>
+<li><p>情景二： A接口和B接口中都有一个fun()方法，返回值和方法参数都相同，那么C类就可以同时实现A接口和B接口，即使可以实现，但是接口的设计还是存在问题</p>
+</li>
+<li><p>情景三： A接口中有fun()方法，超类F中也有fun()方法，那么C类同时继承F类并实现A接口时，会覆盖超类中的fun()方法而不会去实现A接口中的fun()方法(类优先的原则)</p>
+</li>
+</ul>
+<h3 id="实现Comparator接口来进行排序"><a href="#实现Comparator接口来进行排序" class="headerlink" title="实现Comparator接口来进行排序"></a>实现Comparator接口来进行排序</h3><p>Comparator接口中比较器声明如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Comparator</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">int</span> <span class="title">compare</span><span class="params">(T first,T second)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>实现按长度比较字符串，可以定义一个Comparator<string>类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LengthComparator</span> <span class="title">implments</span> <span class="title">Comparator</span>&lt;<span class="title">String</span>&gt; </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(String s1,String s2)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> s1.length() - s2.length();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></string></p>
+<p>实际调用:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1.普通调用</span></div><div class="line">Comparator&lt;String&gt; comp = <span class="keyword">new</span> LengthComparator();</div><div class="line"><span class="keyword">if</span>(comp.compare(word[i],word[j]) &gt; <span class="number">0</span>) &#123;</div><div class="line">  ...</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//2.比较器调用</span></div><div class="line">Arrays.sort(arr,<span class="keyword">new</span> LengthComparator());</div></pre></td></tr></table></figure></p>
+<h3 id="使用lambda表达式"><a href="#使用lambda表达式" class="headerlink" title="使用lambda表达式"></a>使用lambda表达式</h3><p>上述例子可以修改如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Arrays.sort(arr,(s1,s2) -&gt; s1.length() - s2.length());</div></pre></td></tr></table></figure></p>
+<h3 id="lambda表达式的作用域"><a href="#lambda表达式的作用域" class="headerlink" title="lambda表达式的作用域"></a>lambda表达式的作用域</h3><p>lambda表达式有三个组成部分：</p>
+<ul>
+<li>一个代码块</li>
+<li>参数</li>
+<li>自由变量的值，这里指非参数而且不在代码中定义的变量(主要讨论它)</li>
+</ul>
+<ol>
+<li>要确保该值只能被引用，而不会被改变</li>
+<li>该值在lambda外部必须是最终变量</li>
+<li><p>lambda表达式的体与嵌套块有相同的作用域，要避免命名冲突</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//该例子存在命名冲突</span></div><div class="line">Path first = Path.get(<span class="string">"/usr/bin"</span>);</div><div class="line">Comparator&lt;String&gt; comp = (first,second) -&gt; first.length() - second.length();</div></pre></td></tr></table></figure>
+</li>
+<li><p>在lambda表达式中使用this关键字时，this所指与平常无异(即this为创建lambda表达式方法的对象)</p>
+</li>
+</ol>
+<h3 id="什么是函数式接口"><a href="#什么是函数式接口" class="headerlink" title="什么是函数式接口"></a>什么是函数式接口</h3><p>对于只有一个抽象方法的接口，需要这种接口对象时，就可以提供一个lambda表达式，这种接口成为 <strong>函数式接口</strong></p>
 
       
     </div>
