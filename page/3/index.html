@@ -175,6 +175,55 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2017/02/24/linux命令/">linux命令</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Feb 24, 2017
+        </span>
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><ol>
+<li><p>本地向远程服务器发送war包</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp jdk-8u121-linux-x64.tar.gz root@115.28.148.172:~</div></pre></td></tr></table></figure>
+</li>
+<li><p>项目打包</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn clean package</div></pre></td></tr></table></figure>
+</li>
+<li><p>tomcat命令</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> ./startup.sh</div><div class="line">./shutdown.sh</div></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2017/02/24/linux命令/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2017/02/24/JDBC笔记/">JDBC笔记</a>
         
       </h1>
@@ -534,48 +583,6 @@
           <h2 id="grep-过滤数组元素"><a href="#grep-过滤数组元素" class="headerlink" title="$.grep()过滤数组元素"></a>$.grep()过滤数组元素</h2><p><strong>$.grep()</strong> : 查找满足过滤函数的数组元素，原始数组不受影响。语法格式为<code>jQuery.grep( array, function(elementOfArray, indexInArray) [, invert ] )</code>。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"><span class="keyword">var</span> newArr = $.grep(arr,<span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</div><div class="line">  <span class="comment">//返回数组中大于3的元素</span></div><div class="line">  <span class="keyword">return</span> val &gt; <span class="number">3</span>;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(newArr);</div><div class="line"><span class="comment">//4,5</span></div><div class="line">newArr = $.grep(arr,<span class="function"><span class="keyword">function</span>(<span class="params">val,index</span>)</span>&#123;</div><div class="line">  <span class="comment">//返回数组中值大于3且索引值大于3的数</span></div><div class="line">  <span class="keyword">return</span> val &gt; <span class="number">3</span> &amp;&amp; index &gt; <span class="number">3</span>;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(newArr);</div><div class="line"><span class="comment">//5</span></div><div class="line">newArr = $.grep(arr,<span class="function"><span class="keyword">function</span>(<span class="params">val,index</span>)</span>&#123;</div><div class="line">  <span class="comment">//invert参数如果没有设置或者设置为false,那么返回由true项组成的数组，这里设置了invert的值为true,返回由false项组成的数组，也就是返回数组中元素大于等于4的元素。</span></div><div class="line">  <span class="keyword">return</span> val &lt; <span class="number">4</span>;</div><div class="line">&#125;,<span class="literal">true</span>);</div><div class="line"><span class="built_in">console</span>.log(newArr);</div><div class="line"><span class="comment">//4,5</span></div></pre></td></tr></table></figure>
 
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/09/08/each-和-each/">$.each()和.each()</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Sep 8, 2016
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="each-和-each"><a href="#each-和-each" class="headerlink" title="$.each()和.each()"></a>$.each()和.each()</h2><p><strong>$.each()</strong> : 可以循环遍历任何集合，比如对象和数组。语法格式为 <code>jQuery.each( collection, callback(indexInArray, valueOfElement) )。</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">"张三"</span>,<span class="string">"李四"</span>,<span class="string">"王五"</span>,<span class="string">"赵六"</span>];</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  name : <span class="string">"张三"</span>,</div><div class="line">  age : <span class="number">28</span>,</div><div class="line">  sex : <span class="string">"男"</span>,</div><div class="line">  country : <span class="string">"中国"</span>,</div><div class="line">  city : <span class="string">"上海"</span></div><div class="line">&#125;;</div><div class="line">$.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">index,val</span>)</span>&#123;</div><div class="line">  $(<span class="string">"#div"</span>).append(<span class="string">"该数组第"</span> + index + <span class="string">"个元素是"</span> + val + <span class="string">"&lt;br&gt;"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//该数组第0个元素是张三</span></div><div class="line"><span class="comment">//该数组第1个元素是李四</span></div><div class="line"><span class="comment">//该数组第2个元素是王五</span></div><div class="line"><span class="comment">//该数组第3个元素是赵六</span></div><div class="line">$.each(obj,<span class="function"><span class="keyword">function</span>(<span class="params">i,val</span>)</span>&#123;</div><div class="line">  $(<span class="string">"#obj"</span>).append(<span class="string">"属性"</span> + i + <span class="string">"的值是"</span> + val + <span class="string">"&lt;br&gt;"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//属性name的值是张三</span></div><div class="line"><span class="comment">//属性age的值是28</span></div><div class="line"><span class="comment">//属性sex的值是男</span></div><div class="line"><span class="comment">//属性country的值是中国</span></div><div class="line"><span class="comment">//属性city的值是上海</span></div></pre></td></tr></table></figure>
-          <div class="read-more">
-            <a href="/2016/09/08/each-和-each/" class="read-more-link">Read more..</a>
-          </div>
         
       
     </div>

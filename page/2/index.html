@@ -175,6 +175,55 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2017/09/02/Linux-权限及目录/">Linux-权限及目录</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 2, 2017
+        </span>
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="磁盘的组成"><a href="#磁盘的组成" class="headerlink" title="磁盘的组成"></a>磁盘的组成</h3><ol>
+<li>主要由盘片，机械手臂，磁头和主轴马达组成</li>
+<li>盘片可分出扇区和柱面两个单位，扇区每个为 <strong>512bytes</strong></li>
+<li>每个磁盘的第一个扇区非常重要，记录了两个功能<ul>
+<li>主引导分区(Master Boot Record),安装引导加载程序，大小为 <strong>446bytes</strong></li>
+<li>分区表(partition table),记录硬盘分区状况，分区表有以下几个要点<ul>
+<li>硬盘默认的分区表仅能写入四组分区信息</li>
+<li>四组分区信息我们称为主(master)和扩展(extend)分区，扩展分区只能有 <strong>一个</strong>，且扩展分区又可分为逻辑分区(无个数限制)</li>
+<li>分区的最小单位为柱面
+          <div class="read-more">
+            <a href="/2017/09/02/Linux-权限及目录/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2017/08/10/zookeeper集群配置/">zookeeper集群配置</a>
         
       </h1>
@@ -553,55 +602,6 @@
 <p><strong>main</strong> 方法中配置:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ApplicationContext ctx = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"springTest.xml"</span>);</div><div class="line">        User user = (User) ctx.getBean(<span class="string">"tom"</span>);</div><div class="line">        user.sayAge();</div></pre></td></tr></table></figure></p>
           <div class="read-more">
             <a href="/2017/03/02/Spring-装配Bean/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/02/24/linux命令/">linux命令</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Feb 24, 2017
-        </span>
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><ol>
-<li><p>本地向远程服务器发送war包</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp jdk-8u121-linux-x64.tar.gz root@115.28.148.172:~</div></pre></td></tr></table></figure>
-</li>
-<li><p>项目打包</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mvn clean package</div></pre></td></tr></table></figure>
-</li>
-<li><p>tomcat命令</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> ./startup.sh</div><div class="line">./shutdown.sh</div></pre></td></tr></table></figure>
-          <div class="read-more">
-            <a href="/2017/02/24/linux命令/" class="read-more-link">Read more..</a>
           </div>
         
       
