@@ -46,7 +46,7 @@
 实现封装的关键在于绝对不能让类中的方法直接访问其他类的实例域，程序仅通过对象的方法同对象的数据进行交互">
 <meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-19%20%E4%B8%8B%E5%8D%887.44.31.png">
 <meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-09%20%E4%B8%8B%E5%8D%884.37.32.png">
-<meta property="og:updated_time" content="2017-10-16T13:39:57.000Z">
+<meta property="og:updated_time" content="2017-10-27T07:23:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java面向对象">
 <meta name="twitter:description" content="封装
@@ -204,9 +204,9 @@
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
+    <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#封装"><span class="toc-text">封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象变量和对象"><span class="toc-text">对象变量和对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更改器方法和访问器方法"><span class="toc-text">更改器方法和访问器方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐式参数与显式参数"><span class="toc-text">隐式参数与显式参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#final实例域"><span class="toc-text">final实例域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法参数"><span class="toc-text">方法参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重载"><span class="toc-text">重载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无参构造器"><span class="toc-text">无参构造器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包"><span class="toc-text">包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this和super"><span class="toc-text">this和super</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是多态"><span class="toc-text">什么是多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是动态绑定"><span class="toc-text">什么是动态绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在覆盖一个方法时，子类方法不能低于父类方法的可见性"><span class="toc-text">在覆盖一个方法时，子类方法不能低于父类方法的可见性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象类和抽象方法"><span class="toc-text">抽象类和抽象方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在Java中，只有基本类型不是对象，所有的数组类型-包括基本类型数组-都扩展了Object类"><span class="toc-text">在Java中，只有基本类型不是对象，所有的数组类型(包括基本类型数组)都扩展了Object类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hashcode"><span class="toc-text">hashcode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包装器对象"><span class="toc-text">包装器对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取Class对象"><span class="toc-text">获取Class对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取对象的实例"><span class="toc-text">获取对象的实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#垃圾回收"><span class="toc-text">垃圾回收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口中的自动声明"><span class="toc-text">接口中的自动声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#每个类只能有一个超类，但是却可以实现多个接口"><span class="toc-text">每个类只能有一个超类，但是却可以实现多个接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口的默认实现"><span class="toc-text">接口的默认实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决接口冲突"><span class="toc-text">解决接口冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现Comparator接口来进行排序"><span class="toc-text">实现Comparator接口来进行排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用lambda表达式"><span class="toc-text">使用lambda表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lambda表达式的作用域"><span class="toc-text">lambda表达式的作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是函数式接口"><span class="toc-text">什么是函数式接口</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#封装"><span class="toc-text">封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象变量和对象"><span class="toc-text">对象变量和对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更改器方法和访问器方法"><span class="toc-text">更改器方法和访问器方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐式参数与显式参数"><span class="toc-text">隐式参数与显式参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#final实例域"><span class="toc-text">final实例域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法参数"><span class="toc-text">方法参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重载"><span class="toc-text">重载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无参构造器"><span class="toc-text">无参构造器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包"><span class="toc-text">包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this和super"><span class="toc-text">this和super</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是多态"><span class="toc-text">什么是多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是动态绑定"><span class="toc-text">什么是动态绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在覆盖一个方法时，子类方法不能低于父类方法的可见性"><span class="toc-text">在覆盖一个方法时，子类方法不能低于父类方法的可见性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象类和抽象方法"><span class="toc-text">抽象类和抽象方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在Java中，只有基本类型不是对象，所有的数组类型-包括基本类型数组-都扩展了Object类"><span class="toc-text">在Java中，只有基本类型不是对象，所有的数组类型(包括基本类型数组)都扩展了Object类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hashcode"><span class="toc-text">hashcode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包装器对象"><span class="toc-text">包装器对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取Class对象"><span class="toc-text">获取Class对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取对象的实例"><span class="toc-text">获取对象的实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#垃圾回收"><span class="toc-text">垃圾回收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口中的自动声明"><span class="toc-text">接口中的自动声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#每个类只能有一个超类，但是却可以实现多个接口"><span class="toc-text">每个类只能有一个超类，但是却可以实现多个接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口的默认实现"><span class="toc-text">接口的默认实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决接口冲突"><span class="toc-text">解决接口冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现Comparator接口来进行排序"><span class="toc-text">实现Comparator接口来进行排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用lambda表达式"><span class="toc-text">使用lambda表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lambda表达式的作用域"><span class="toc-text">lambda表达式的作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是函数式接口"><span class="toc-text">什么是函数式接口</span></a></li></ol>
     </div>
   </div>
 
@@ -237,6 +237,24 @@
 <li>一个方法 <strong>不能让对象参数引用一个新的对象</strong></li>
 <li>对象引用实际上是按值传递的</li>
 </ul>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ol>
+<li>子类继承父类的成员变量<br>当子类继承了某个类之后，便可以使用父类中的成员变量，但并不是完全继承父类的成员变量</li>
+</ol>
+<ul>
+<li>能够继承父类的public和protected成员变量；不能够继承父类的private成员变量；</li>
+<li>对于父类的包访问权限成员变量，如果子类和父类在同一个包下，则子类能够继承；否则，子类不能够继承；</li>
+<li>对于子类可以继承的父类成员变量，如果在子类中出现了同名称的成员变量，则会发生隐藏现象，即子类的成员变量会屏蔽掉父类的同名成员变量。如果要在子类中访问父类中同名成员变量，需要使用super关键字来进行引用。</li>
+</ul>
+<ol>
+<li>子类继承父类的方法<br>同样的，子类也不是完全继承父类的所有方法</li>
+</ol>
+<ul>
+<li>能够继承父类的public和protected成员方法；不能够继承父类的private成员方法；</li>
+<li>对于父类的包访问权限成员方法，如果子类和父类在同一个包下，则子类能够继承；否则，子类不能够继承；</li>
+<li>对于子类可以继承的父类成员方法，如果在子类中出现了同名称的成员方法，则称为覆盖，即子类的成员方法会覆盖掉父类的同名成员方法。如果要在子类中访问父类中同名成员方法，需要使用super关键字来进行引用。</li>
+</ul>
+<p><strong>注意：隐藏和覆盖是不同的。隐藏是针对成员变量和静态方法的，而覆盖是针对普通方法的。</strong></p>
+<p>引用自<a href="http://www.cnblogs.com/dolphin0520/p/3803432.html" target="_blank" rel="external">http://www.cnblogs.com/dolphin0520/p/3803432.html</a></p>
 <h3 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h3><ul>
 <li>多个方法有相同的名字，不同的参数(与域修饰符，返回值无关)</li>
 <li>Java允许重载任何方法</li>
@@ -258,8 +276,10 @@
 <li>调用超类方法(为了区分本类方法和超类方法)</li>
 <li>调用超类的构造器</li>
 </ul>
-<h3 id="什么是多态"><a href="#什么是多态" class="headerlink" title="什么是多态"></a>什么是多态</h3><p>一个对象变量可以被指示为多种实际类型的现象被称为 <strong>多态</strong>。</p>
-<h3 id="什么是动态绑定"><a href="#什么是动态绑定" class="headerlink" title="什么是动态绑定"></a>什么是动态绑定</h3><p>在运行时能够自动的选择调用哪种方法的现象称为 <strong>动态绑定</strong>。</p>
+<h3 id="什么是多态"><a href="#什么是多态" class="headerlink" title="什么是多态"></a>什么是多态</h3><p>一个对象变量可以被指示为多种实际类型的现象被称为 <strong>多态</strong>。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span></span>&#123;</div><div class="line">  <span class="keyword">int</span> count=<span class="number">2</span>;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span> </span>&#123;</div><div class="line">    System.out.println(<span class="keyword">this</span>.count);</div><div class="line">  &#125;</div><div class="line"> &#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Derived</span> <span class="keyword">extends</span> <span class="title">Base</span></span>&#123;</div><div class="line"><span class="keyword">int</span> count=<span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span> </span>&#123;</div><div class="line">  System.out.println(<span class="keyword">this</span>.count);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    Base base = <span class="keyword">new</span> Derived();</div><div class="line">    System.out.println(base.count);      <span class="comment">//2</span></div><div class="line">    base.display();                      <span class="comment">//20</span></div><div class="line"></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>要弄清楚这个过程，首先需要知道什么叫做绑定<br>将一个方法调用和一个方法主体关联起来叫做 <strong>绑定</strong>，程序执行前进行绑定，叫做前期绑定(C语言只有一个方法调用，就是前期绑定),上述程序之所以让人迷惑，就是因为前期绑定，为了解决这种冲突，引出了后期绑定。<br>后期绑定的含义就是运行时根据对象的类型进行绑定，后期绑定也叫做动态绑定，如果一种语言想实现动态绑定，那么就必须有某种机制。以便在运行时判断对象的类型。<br>Java的做法是除了 <strong>static和final</strong>，其他所有的方法全部都是动态绑定。</p>
+<p>如你所见，base变量在运行期间是Derived类的行为，但是访问base域时却是Base的域，这是因为动态绑定的存在，使得原本Base类的普通方法(非private,static::注:非private是因为private被自动认为是final方法)被覆盖掉，所以表现出来的行为就是Derived类的行为。</p>
+<h3 id="什么是动态绑定"><a href="#什么是动态绑定" class="headerlink" title="什么是动态绑定"></a>什么是动态绑定</h3><p>见上</p>
 <h3 id="在覆盖一个方法时，子类方法不能低于父类方法的可见性"><a href="#在覆盖一个方法时，子类方法不能低于父类方法的可见性" class="headerlink" title="在覆盖一个方法时，子类方法不能低于父类方法的可见性"></a>在覆盖一个方法时，子类方法不能低于父类方法的可见性</h3><h3 id="抽象类和抽象方法"><a href="#抽象类和抽象方法" class="headerlink" title="抽象类和抽象方法"></a>抽象类和抽象方法</h3><ul>
 <li>包含一个或多个抽象方法的类必须声明为抽象类，但是抽象类不一定需要包含抽象方法</li>
 <li>抽象类可以包含具体的数据和方法</li>
@@ -368,13 +388,13 @@
       <a class="prev" href="/2017/10/16/Java面向对象2/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">Java面向对象2</span>
-        <span class="prev-text nav-mobile">Prev</span>
+        <span class="prev-text nav-mobile">上一篇</span>
       </a>
     
     
       <a class="next" href="/2017/09/19/Java基本程序设计结构/">
         <span class="next-text nav-default">Java基本程序设计结构</span>
-        <span class="prev-text nav-mobile">Next</span>
+        <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -427,11 +447,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   
   <span class="theme-info">
-    Theme - 
+    主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
