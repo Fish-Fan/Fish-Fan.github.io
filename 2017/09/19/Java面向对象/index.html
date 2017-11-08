@@ -10,6 +10,11 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
 
 
   <meta name="description" content="Java面向对象"/>
@@ -17,45 +22,30 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="Java, Welcome abroad" />
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Welcome abroad">
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.2.x" />
+
+
+  <link rel="alternate" href="/default" title="Welcome abroad">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
 
 
 
 <link rel="canonical" href="http://yoursite.com/2017/09/19/Java面向对象/"/>
 
 
-<meta name="description" content="封装
-从形式上看，封装将数据和行为组合在一个包中，并对对象的使用者隐藏了数据的实现方式
-实现封装的关键在于绝对不能让类中的方法直接访问其他类的实例域，程序仅通过对象的方法同对象的数据进行交互">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java面向对象">
-<meta property="og:url" content="http://yoursite.com/2017/09/19/Java面向对象/index.html">
-<meta property="og:site_name" content="Welcome abroad">
-<meta property="og:description" content="封装
-从形式上看，封装将数据和行为组合在一个包中，并对对象的使用者隐藏了数据的实现方式
-实现封装的关键在于绝对不能让类中的方法直接访问其他类的实例域，程序仅通过对象的方法同对象的数据进行交互">
-<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-19%20%E4%B8%8B%E5%8D%887.44.31.png">
-<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-09%20%E4%B8%8B%E5%8D%884.37.32.png">
-<meta property="og:updated_time" content="2017-10-27T07:23:43.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java面向对象">
-<meta name="twitter:description" content="封装
-从形式上看，封装将数据和行为组合在一个包中，并对对象的使用者隐藏了数据的实现方式
-实现封装的关键在于绝对不能让类中的方法直接访问其他类的实例域，程序仅通过对象的方法同对象的数据进行交互">
-<meta name="twitter:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-19%20%E4%B8%8B%E5%8D%887.44.31.png">
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
 
 
 
@@ -64,41 +54,86 @@
 
 
 
-
-<script type="text/javascript">
-  var themeConfig = {
-    search: {
-      enable: true,
-      path: "/search.xml",
-    },
-    navbar: {
-      enable: true
-    },
-    fancybox: {
-      enable: true
-    },
-    toc: {
-      enable: true
-    },
-  };
-</script>
-
-
-
   
 
 
 
-    <title> Java面向对象 · Welcome abroad </title>
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> Java面向对象 - Welcome abroad </title>
   </head>
 
-  <body>
-    <div class="container">
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Welcome abroad</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">Welcome abroad</a>
 </div>
 
-<nav class="site-nav">
+<nav class="site-navbar">
   
     <ul id="menu" class="menu">
       
@@ -106,7 +141,7 @@
           <a class="menu-item-link" href="/">
             
             
-              Home
+              首页
             
           </a>
         </li>
@@ -115,7 +150,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              Archives
+              归档
             
           </a>
         </li>
@@ -124,61 +159,15 @@
           <a class="menu-item-link" href="/tags">
             
             
-              Tags
+              标签
             
           </a>
-        </li>
-      
-      
-        <li class="menu-search">
-          <form>
-            <i class="iconfont icon-search" id="open-search"></i>
-            <input type="text" class="search-input" id="search-input" />
-            <i class="iconfont icon-close" id="close-search"></i>
-          </form>
         </li>
       
     </ul>
   
 </nav>
 
-<div class="mobile-navbar">
-  <div class="mobile-header">
-    <div class="mobile-header-logo">
-      <a href="/." class="logo">Welcome abroad</a>
-    </div>
-
-    <div class="mobile-header-icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-  <nav class="mobile-menu">
-    
-      <a class="mobile-menu-item" href="/">
-        
-        
-          Home
-        
-      </a>
-    
-      <a class="mobile-menu-item" href="/archives/">
-        
-        
-          Archives
-        
-      </a>
-    
-      <a class="mobile-menu-item" href="/tags">
-        
-        
-          Tags
-        
-      </a>
-    
-  </nav>
-</div>
       </header>
 
       <main id="main" class="main">
@@ -196,8 +185,10 @@
 
       <div class="post-meta">
         <span class="post-time">
-          Sep 19, 2017
+          2017-09-19
         </span>
+        
+        
       </div>
     </header>
 
@@ -238,21 +229,21 @@
 <li>对象引用实际上是按值传递的</li>
 </ul>
 <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ol>
-<li>子类继承父类的成员变量<br>当子类继承了某个类之后，便可以使用父类中的成员变量，但并不是完全继承父类的成员变量</li>
-</ol>
+<li><p>子类继承父类的成员变量<br>当子类继承了某个类之后，便可以使用父类中的成员变量，但并不是完全继承父类的成员变量</p>
 <ul>
 <li>能够继承父类的public和protected成员变量；不能够继承父类的private成员变量；</li>
 <li>对于父类的包访问权限成员变量，如果子类和父类在同一个包下，则子类能够继承；否则，子类不能够继承；</li>
 <li>对于子类可以继承的父类成员变量，如果在子类中出现了同名称的成员变量，则会发生隐藏现象，即子类的成员变量会屏蔽掉父类的同名成员变量。如果要在子类中访问父类中同名成员变量，需要使用super关键字来进行引用。</li>
 </ul>
-<ol>
-<li>子类继承父类的方法<br>同样的，子类也不是完全继承父类的所有方法</li>
-</ol>
+</li>
+<li><p>子类继承父类的方法<br>同样的，子类也不是完全继承父类的所有方法</p>
 <ul>
 <li>能够继承父类的public和protected成员方法；不能够继承父类的private成员方法；</li>
 <li>对于父类的包访问权限成员方法，如果子类和父类在同一个包下，则子类能够继承；否则，子类不能够继承；</li>
 <li>对于子类可以继承的父类成员方法，如果在子类中出现了同名称的成员方法，则称为覆盖，即子类的成员方法会覆盖掉父类的同名成员方法。如果要在子类中访问父类中同名成员方法，需要使用super关键字来进行引用。</li>
 </ul>
+</li>
+</ol>
 <p><strong>注意：隐藏和覆盖是不同的。隐藏是针对成员变量和静态方法的，而覆盖是针对普通方法的。</strong></p>
 <p>引用自<a href="http://www.cnblogs.com/dolphin0520/p/3803432.html" target="_blank" rel="external">http://www.cnblogs.com/dolphin0520/p/3803432.html</a></p>
 <h3 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h3><ul>
@@ -263,19 +254,17 @@
 <h3 id="无参构造器"><a href="#无参构造器" class="headerlink" title="无参构造器"></a>无参构造器</h3><p>只有当一个类没有任何构造器时，系统才会给一个默认的无参构造器，该构造器将实例域设置为默认值(null,false,0)</p>
 <h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><p>如果在源文件中没有 <strong>package</strong> 语句，这个源文件中的类将被放置在一个默认包中，默认包是一个没有名字的包</p>
 <h3 id="this和super"><a href="#this和super" class="headerlink" title="this和super"></a>this和super</h3><ol>
-<li>this有两个用途:</li>
-</ol>
-<ul>
+<li>this有两个用途:<ul>
 <li>引用隐式参数</li>
 <li>调用该类其他的构造器(调用其他构造器的语句应作为该构造器的第一条语句出现)</li>
 </ul>
-<ol>
-<li>super有两个用途</li>
-</ol>
-<ul>
+</li>
+<li>super有两个用途<ul>
 <li>调用超类方法(为了区分本类方法和超类方法)</li>
 <li>调用超类的构造器</li>
 </ul>
+</li>
+</ol>
 <h3 id="什么是多态"><a href="#什么是多态" class="headerlink" title="什么是多态"></a>什么是多态</h3><p>一个对象变量可以被指示为多种实际类型的现象被称为 <strong>多态</strong>。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span></span>&#123;</div><div class="line">  <span class="keyword">int</span> count=<span class="number">2</span>;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span> </span>&#123;</div><div class="line">    System.out.println(<span class="keyword">this</span>.count);</div><div class="line">  &#125;</div><div class="line"> &#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Derived</span> <span class="keyword">extends</span> <span class="title">Base</span></span>&#123;</div><div class="line"><span class="keyword">int</span> count=<span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span> </span>&#123;</div><div class="line">  System.out.println(<span class="keyword">this</span>.count);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    Base base = <span class="keyword">new</span> Derived();</div><div class="line">    System.out.println(base.count);      <span class="comment">//2</span></div><div class="line">    base.display();                      <span class="comment">//20</span></div><div class="line"></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>要弄清楚这个过程，首先需要知道什么叫做绑定<br>将一个方法调用和一个方法主体关联起来叫做 <strong>绑定</strong>，程序执行前进行绑定，叫做前期绑定(C语言只有一个方法调用，就是前期绑定),上述程序之所以让人迷惑，就是因为前期绑定，为了解决这种冲突，引出了后期绑定。<br>后期绑定的含义就是运行时根据对象的类型进行绑定，后期绑定也叫做动态绑定，如果一种语言想实现动态绑定，那么就必须有某种机制。以便在运行时判断对象的类型。<br>Java的做法是除了 <strong>static和final</strong>，其他所有的方法全部都是动态绑定。</p>
 <p>如你所见，base变量在运行期间是Derived类的行为，但是访问base域时却是Base的域，这是因为动态绑定的存在，使得原本Base类的普通方法(非private,static::注:非private是因为private被自动认为是final方法)被覆盖掉，所以表现出来的行为就是Derived类的行为。</p>
@@ -283,13 +272,11 @@
 <h3 id="在覆盖一个方法时，子类方法不能低于父类方法的可见性"><a href="#在覆盖一个方法时，子类方法不能低于父类方法的可见性" class="headerlink" title="在覆盖一个方法时，子类方法不能低于父类方法的可见性"></a>在覆盖一个方法时，子类方法不能低于父类方法的可见性</h3><h3 id="抽象类和抽象方法"><a href="#抽象类和抽象方法" class="headerlink" title="抽象类和抽象方法"></a>抽象类和抽象方法</h3><ul>
 <li>包含一个或多个抽象方法的类必须声明为抽象类，但是抽象类不一定需要包含抽象方法</li>
 <li>抽象类可以包含具体的数据和方法</li>
-<li>抽象方法充当着 <strong>占位的角色</strong>，他们的具体实现在子类中，子类在继承抽象类是面临两个选择：</li>
-</ul>
-<ol>
+<li>抽象方法充当着 <strong>占位的角色</strong>，他们的具体实现在子类中，子类在继承抽象类是面临两个选择：<ol>
 <li>子类仍然标记为抽象类</li>
 <li>子类不被标记为抽象类，但是需要 <strong>定义全部的抽象方法</strong></li>
 </ol>
-<ul>
+</li>
 <li>不能构造抽象类的对象，但是可以声明抽象类的变量</li>
 </ul>
 <h3 id="在Java中，只有基本类型不是对象，所有的数组类型-包括基本类型数组-都扩展了Object类"><a href="#在Java中，只有基本类型不是对象，所有的数组类型-包括基本类型数组-都扩展了Object类" class="headerlink" title="在Java中，只有基本类型不是对象，所有的数组类型(包括基本类型数组)都扩展了Object类"></a>在Java中，只有基本类型不是对象，所有的数组类型(包括基本类型数组)都扩展了Object类</h3><h3 id="hashcode"><a href="#hashcode" class="headerlink" title="hashcode"></a>hashcode</h3><ul>
@@ -375,12 +362,13 @@
 
     
       <footer class="post-footer">
-        <div class="post-tags">
-          
-            <a href="/tags/Java/">Java</a>
-          
-        </div>
-
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Java/">Java</a>
+            
+          </div>
+        
         
         
   <nav class="post-nav">
@@ -402,6 +390,7 @@
 
       </footer>
     
+
   </article>
 
 
@@ -411,7 +400,8 @@
     
   </div>
 
-        </div>  
+
+        </div>
       </main>
 
       <footer id="footer" class="footer">
@@ -442,6 +432,9 @@
     
     
     
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
   </div>
 
 
@@ -449,7 +442,7 @@
   <span class="power-by">
     由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
-  
+  <span class="division">|</span>
   <span class="theme-info">
     主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
@@ -469,6 +462,7 @@
     <span class="author">Johnny.R</span>
   </span>
 </div>
+
       </footer>
 
       <div class="back-to-top" id="back-to-top">
@@ -477,6 +471,8 @@
     </div>
 
     
+  
+
 
 
     
@@ -491,11 +487,16 @@
   
 
   
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
     <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
   
 
-    <script type="text/javascript" src="/js/src/even.js?v=2.2.x"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=2.2.x"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
 
   </body>
 </html>

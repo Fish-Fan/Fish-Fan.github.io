@@ -10,6 +10,11 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
 
 
   <meta name="description" content="Java面向对象2"/>
@@ -17,61 +22,30 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="Java, Welcome abroad" />
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Welcome abroad">
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.2.x" />
+
+
+  <link rel="alternate" href="/default" title="Welcome abroad">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
 
 
 
 <link rel="canonical" href="http://yoursite.com/2017/10/16/Java面向对象2/"/>
 
 
-<meta name="description" content="内部类
-常规内部类
-
-
-只有内部类可以声明为 private，常规类只可以被声明为 public和protected
-内部类可以访问外部类私有域的成员变量
-内部类不允许有静态方法和变量">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java面向对象2">
-<meta property="og:url" content="http://yoursite.com/2017/10/16/Java面向对象2/index.html">
-<meta property="og:site_name" content="Welcome abroad">
-<meta property="og:description" content="内部类
-常规内部类
-
-
-只有内部类可以声明为 private，常规类只可以被声明为 public和protected
-内部类可以访问外部类私有域的成员变量
-内部类不允许有静态方法和变量">
-<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-16%20%E4%B8%8B%E5%8D%888.46.31.png">
-<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-16%20%E4%B8%8B%E5%8D%888.54.41.png">
-<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/IMG_3840.JPG">
-<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/IMG_3841.JPG">
-<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-27%20%E4%B8%8B%E5%8D%884.20.40.png">
-<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/IMG_3842.JPG">
-<meta property="og:updated_time" content="2017-10-27T09:30:21.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java面向对象2">
-<meta name="twitter:description" content="内部类
-常规内部类
-
-
-只有内部类可以声明为 private，常规类只可以被声明为 public和protected
-内部类可以访问外部类私有域的成员变量
-内部类不允许有静态方法和变量">
-<meta name="twitter:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-16%20%E4%B8%8B%E5%8D%888.46.31.png">
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
 
 
 
@@ -80,41 +54,86 @@
 
 
 
-
-<script type="text/javascript">
-  var themeConfig = {
-    search: {
-      enable: true,
-      path: "/search.xml",
-    },
-    navbar: {
-      enable: true
-    },
-    fancybox: {
-      enable: true
-    },
-    toc: {
-      enable: true
-    },
-  };
-</script>
-
-
-
   
 
 
 
-    <title> Java面向对象2 · Welcome abroad </title>
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> Java面向对象2 - Welcome abroad </title>
   </head>
 
-  <body>
-    <div class="container">
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Welcome abroad</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">Welcome abroad</a>
 </div>
 
-<nav class="site-nav">
+<nav class="site-navbar">
   
     <ul id="menu" class="menu">
       
@@ -122,7 +141,7 @@
           <a class="menu-item-link" href="/">
             
             
-              Home
+              首页
             
           </a>
         </li>
@@ -131,7 +150,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              Archives
+              归档
             
           </a>
         </li>
@@ -140,61 +159,15 @@
           <a class="menu-item-link" href="/tags">
             
             
-              Tags
+              标签
             
           </a>
-        </li>
-      
-      
-        <li class="menu-search">
-          <form>
-            <i class="iconfont icon-search" id="open-search"></i>
-            <input type="text" class="search-input" id="search-input" />
-            <i class="iconfont icon-close" id="close-search"></i>
-          </form>
         </li>
       
     </ul>
   
 </nav>
 
-<div class="mobile-navbar">
-  <div class="mobile-header">
-    <div class="mobile-header-logo">
-      <a href="/." class="logo">Welcome abroad</a>
-    </div>
-
-    <div class="mobile-header-icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-  <nav class="mobile-menu">
-    
-      <a class="mobile-menu-item" href="/">
-        
-        
-          Home
-        
-      </a>
-    
-      <a class="mobile-menu-item" href="/archives/">
-        
-        
-          Archives
-        
-      </a>
-    
-      <a class="mobile-menu-item" href="/tags">
-        
-        
-          Tags
-        
-      </a>
-    
-  </nav>
-</div>
       </header>
 
       <main id="main" class="main">
@@ -212,8 +185,10 @@
 
       <div class="post-meta">
         <span class="post-time">
-          Oct 16, 2017
+          2017-10-16
         </span>
+        
+        
       </div>
     </header>
 
@@ -229,23 +204,25 @@
 
     <div class="post-content">
       
-        <h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><ol>
-<li>常规内部类<br><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-16%20%E4%B8%8B%E5%8D%888.46.31.png" alt="常规内部类的组成"></li>
-</ol>
+        <p>使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑<br>$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a}. $$</p>
+<p>$$<br>x \href{why-equal.html}{=} y^2 + 1<br>$$</p>
+<h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><ol>
+<li><p>常规内部类<br><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-16%20%E4%B8%8B%E5%8D%888.46.31.png" alt="常规内部类的组成"></p>
 <ul>
 <li>只有内部类可以声明为 <strong>private</strong>，常规类只可以被声明为 <strong>public和protected</strong></li>
 <li>内部类可以访问外部类私有域的成员变量</li>
 <li>内部类不允许有静态方法和变量<a id="more"></a>
 </li>
 </ul>
-<ol>
-<li>静态内部类</li>
-</ol>
+</li>
+<li><p>静态内部类</p>
 <ul>
 <li>静态内部类不允许访问外围类对象</li>
 <li>静态内部类可以有静态方法和静态变量</li>
 <li>声明在接口中的内部类自动成为static和public类</li>
 </ul>
+</li>
+</ol>
 <h3 id="Java异常层次"><a href="#Java异常层次" class="headerlink" title="Java异常层次"></a>Java异常层次</h3><p><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-16%20%E4%B8%8B%E5%8D%888.54.41.png" alt="Java异常层次"></p>
 <h3 id="超类和子类的异常"><a href="#超类和子类的异常" class="headerlink" title="超类和子类的异常"></a>超类和子类的异常</h3><ul>
 <li>如果在子类中覆盖了超类的一个方法，子类方法中声明的受查异常不能比超类中声明的异常更通用(应该抛出更具体的异常)</li>
@@ -384,12 +361,13 @@
 
     
       <footer class="post-footer">
-        <div class="post-tags">
-          
-            <a href="/tags/Java/">Java</a>
-          
-        </div>
-
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Java/">Java</a>
+            
+          </div>
+        
         
         
   <nav class="post-nav">
@@ -405,6 +383,7 @@
 
       </footer>
     
+
   </article>
 
 
@@ -414,7 +393,8 @@
     
   </div>
 
-        </div>  
+
+        </div>
       </main>
 
       <footer id="footer" class="footer">
@@ -445,6 +425,9 @@
     
     
     
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
   </div>
 
 
@@ -452,7 +435,7 @@
   <span class="power-by">
     由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
-  
+  <span class="division">|</span>
   <span class="theme-info">
     主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
@@ -472,6 +455,7 @@
     <span class="author">Johnny.R</span>
   </span>
 </div>
+
       </footer>
 
       <div class="back-to-top" id="back-to-top">
@@ -480,6 +464,8 @@
     </div>
 
     
+  
+
 
 
     
@@ -494,11 +480,16 @@
   
 
   
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
     <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
   
 
-    <script type="text/javascript" src="/js/src/even.js?v=2.2.x"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=2.2.x"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
 
   </body>
 </html>

@@ -10,6 +10,11 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
 
 
   <meta name="description" content="Java基本程序设计结构"/>
@@ -17,47 +22,30 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="Java, Welcome abroad" />
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Welcome abroad">
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.2.x" />
+
+
+  <link rel="alternate" href="/default" title="Welcome abroad">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
 
 
 
 <link rel="canonical" href="http://yoursite.com/2017/09/19/Java基本程序设计结构/"/>
 
 
-<meta name="description" content="文件命名
-源代码的文件名必须和 公共类 的名字相同
-一个Java文件只能有一个 public类
-如果文件不止一个类，且没有 public类，那么Java文件命名没有限制">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java基本程序设计结构">
-<meta property="og:url" content="http://yoursite.com/2017/09/19/Java基本程序设计结构/index.html">
-<meta property="og:site_name" content="Welcome abroad">
-<meta property="og:description" content="文件命名
-源代码的文件名必须和 公共类 的名字相同
-一个Java文件只能有一个 public类
-如果文件不止一个类，且没有 public类，那么Java文件命名没有限制">
-<meta property="og:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-19%20%E4%B8%8B%E5%8D%887.36.59.png">
-<meta property="og:updated_time" content="2017-09-19T12:00:38.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java基本程序设计结构">
-<meta name="twitter:description" content="文件命名
-源代码的文件名必须和 公共类 的名字相同
-一个Java文件只能有一个 public类
-如果文件不止一个类，且没有 public类，那么Java文件命名没有限制">
-<meta name="twitter:image" content="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-19%20%E4%B8%8B%E5%8D%887.36.59.png">
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
 
 
 
@@ -66,41 +54,86 @@
 
 
 
-
-<script type="text/javascript">
-  var themeConfig = {
-    search: {
-      enable: true,
-      path: "/search.xml",
-    },
-    navbar: {
-      enable: true
-    },
-    fancybox: {
-      enable: true
-    },
-    toc: {
-      enable: true
-    },
-  };
-</script>
-
-
-
   
 
 
 
-    <title> Java基本程序设计结构 · Welcome abroad </title>
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> Java基本程序设计结构 - Welcome abroad </title>
   </head>
 
-  <body>
-    <div class="container">
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Welcome abroad</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">Welcome abroad</a>
 </div>
 
-<nav class="site-nav">
+<nav class="site-navbar">
   
     <ul id="menu" class="menu">
       
@@ -108,7 +141,7 @@
           <a class="menu-item-link" href="/">
             
             
-              Home
+              首页
             
           </a>
         </li>
@@ -117,7 +150,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              Archives
+              归档
             
           </a>
         </li>
@@ -126,61 +159,15 @@
           <a class="menu-item-link" href="/tags">
             
             
-              Tags
+              标签
             
           </a>
-        </li>
-      
-      
-        <li class="menu-search">
-          <form>
-            <i class="iconfont icon-search" id="open-search"></i>
-            <input type="text" class="search-input" id="search-input" />
-            <i class="iconfont icon-close" id="close-search"></i>
-          </form>
         </li>
       
     </ul>
   
 </nav>
 
-<div class="mobile-navbar">
-  <div class="mobile-header">
-    <div class="mobile-header-logo">
-      <a href="/." class="logo">Welcome abroad</a>
-    </div>
-
-    <div class="mobile-header-icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-  <nav class="mobile-menu">
-    
-      <a class="mobile-menu-item" href="/">
-        
-        
-          Home
-        
-      </a>
-    
-      <a class="mobile-menu-item" href="/archives/">
-        
-        
-          Archives
-        
-      </a>
-    
-      <a class="mobile-menu-item" href="/tags">
-        
-        
-          Tags
-        
-      </a>
-    
-  </nav>
-</div>
       </header>
 
       <main id="main" class="main">
@@ -198,8 +185,10 @@
 
       <div class="post-meta">
         <span class="post-time">
-          Sep 19, 2017
+          2017-09-19
         </span>
+        
+        
       </div>
     </header>
 
@@ -228,26 +217,85 @@
 <h3 id="Java数据类型"><a href="#Java数据类型" class="headerlink" title="Java数据类型"></a>Java数据类型</h3><ol>
 <li>4种整型</li>
 </ol>
-<ul>
-<li>long    8byte     贼长</li>
-<li>int     4byte     -20亿~20亿</li>
-<li>short   2byte     -3万~3万</li>
-<li>byte    1byte     -128~127</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>大小</th>
+<th>数值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>1byte</td>
+<td>-128-127</td>
+</tr>
+<tr>
+<td>short</td>
+<td>2byte</td>
+<td>-3万~3万</td>
+</tr>
+<tr>
+<td>int</td>
+<td>4byte</td>
+<td>-20亿~20亿</td>
+</tr>
+<tr>
+<td>long</td>
+<td>8byte</td>
+<td>贼长</td>
+</tr>
+</tbody>
+</table>
 <p>Java程序必须保证在所有机器上都能运行一致，所以各种数据类型的取值必须固定。<br>C和C++的类型大小和平台有关。</p>
 <ol>
 <li>两种浮点</li>
 </ol>
-<ul>
-<li>float   4byte     6~7位</li>
-<li>double  8byte     15位</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>大小</th>
+<th>数值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>float</td>
+<td>4byte</td>
+<td>6~7位</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8byte</td>
+<td>15位</td>
+</tr>
+</tbody>
+</table>
 <p>三个特殊的浮点数值:</p>
-<ul>
-<li>正无穷大 -&gt; Double.POSITIVE_INFINITY</li>
-<li>负无穷大 -&gt; Doubel.NEGATIVE_INFINITY</li>
-<li>NaN     -&gt; Double.NEGATIVE_INFINITY</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正无穷大</td>
+<td>Double.POSITIVE_INFINITY</td>
+</tr>
+<tr>
+<td>负无穷大</td>
+<td>Doubel.NEGATIVE_INFINITY</td>
+</tr>
+<tr>
+<td>NaN</td>
+<td>Double.NEGATIVE_INFINITY</td>
+</tr>
+</tbody>
+</table>
 <p>检查“非数值”的数:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Double.isNaN(x);</div></pre></td></tr></table></figure></p>
 <ol>
 <li>char类型</li>
@@ -302,12 +350,13 @@
 
     
       <footer class="post-footer">
-        <div class="post-tags">
-          
-            <a href="/tags/Java/">Java</a>
-          
-        </div>
-
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Java/">Java</a>
+            
+          </div>
+        
         
         
   <nav class="post-nav">
@@ -329,6 +378,7 @@
 
       </footer>
     
+
   </article>
 
 
@@ -338,7 +388,8 @@
     
   </div>
 
-        </div>  
+
+        </div>
       </main>
 
       <footer id="footer" class="footer">
@@ -369,6 +420,9 @@
     
     
     
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
   </div>
 
 
@@ -376,7 +430,7 @@
   <span class="power-by">
     由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
-  
+  <span class="division">|</span>
   <span class="theme-info">
     主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
@@ -396,6 +450,7 @@
     <span class="author">Johnny.R</span>
   </span>
 </div>
+
       </footer>
 
       <div class="back-to-top" id="back-to-top">
@@ -404,6 +459,8 @@
     </div>
 
     
+  
+
 
 
     
@@ -418,11 +475,16 @@
   
 
   
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
     <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
   
 
-    <script type="text/javascript" src="/js/src/even.js?v=2.2.x"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=2.2.x"></script>
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
 
   </body>
 </html>
