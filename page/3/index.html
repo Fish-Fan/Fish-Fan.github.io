@@ -98,7 +98,7 @@
         <li class="mobile-menu-item">
           
           
-            首页
+            Home
           
         </li>
       </a>
@@ -107,7 +107,7 @@
         <li class="mobile-menu-item">
           
           
-            归档
+            Archives
           
         </li>
       </a>
@@ -116,7 +116,7 @@
         <li class="mobile-menu-item">
           
           
-            标签
+            Tags
           
         </li>
       </a>
@@ -137,7 +137,7 @@
           <a class="menu-item-link" href="/">
             
             
-              首页
+              Home
             
           </a>
         </li>
@@ -146,7 +146,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              归档
+              Archives
             
           </a>
         </li>
@@ -155,7 +155,7 @@
           <a class="menu-item-link" href="/tags">
             
             
-              标签
+              Tags
             
           </a>
         </li>
@@ -253,7 +253,7 @@
 <h3 id="通过构造器注入"><a href="#通过构造器注入" class="headerlink" title="通过构造器注入"></a>通过构造器注入</h3><p>在 <strong>springTest.xml</strong> 中配置：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;bean id="duke" class="类的完全限定名"&gt;</div><div class="line">  &lt;constructor-arg value="15"&gt;</div><div class="line">  &lt;!--如果需要传入引用对象--&gt;</div><div class="line">  &lt;constructor-arg ref="引用对象在xml中的id"</div><div class="line">&lt;/bean&gt;</div></pre></td></tr></table></figure></p>
 <p><strong>main</strong> 方法中配置:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ApplicationContext ctx = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"springTest.xml"</span>);</div><div class="line">        User user = (User) ctx.getBean(<span class="string">"tom"</span>);</div><div class="line">        user.sayAge();</div></pre></td></tr></table></figure></p>
           <div class="read-more">
-            <a href="/2017/03/02/Spring-装配Bean/" class="read-more-link">阅读更多</a>
+            <a href="/2017/03/02/Spring-装配Bean/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -305,7 +305,7 @@
 <li><p>tomcat命令</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> ./startup.sh</div><div class="line">./shutdown.sh</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2017/02/24/linux命令/" class="read-more-link">阅读更多</a>
+            <a href="/2017/02/24/linux命令/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -352,7 +352,7 @@
 </li>
 </ol>
           <div class="read-more">
-            <a href="/2017/02/24/JDBC笔记/" class="read-more-link">阅读更多</a>
+            <a href="/2017/02/24/JDBC笔记/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -405,7 +405,7 @@
 <li>WEB-INF文件夹下可建一个lib文件夹，用来存放项目相关jar包</li>
 <li>index.jsp单独放置在WEB-INF的直接目录下，其他文件位于另外所建views文件夹下。
           <div class="read-more">
-            <a href="/2017/02/24/JSP笔记/" class="read-more-link">阅读更多</a>
+            <a href="/2017/02/24/JSP笔记/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -449,7 +449,7 @@
         
           <h3 id="定位问题中的display"><a href="#定位问题中的display" class="headerlink" title="定位问题中的display"></a>定位问题中的display</h3><p><strong>display</strong> 为 <strong>block</strong> 时，默认宽度是100%，一旦我们将它设置为 <strong>inline-block</strong> 那么它的宽度将由内部的内容来决定或者我们也可以手动来为其设置宽度。<br>同样，当我们让一个元素 <strong>浮动起来</strong> 的时候，其宽度也会由内部的内容来决定（也可以进行手动设置），由于元素浮动，必然会导致父元素高度宽度为 <strong>0</strong>，我们这时候就需要给父元素加上 <strong>overflow:hidden</strong> 了，但是加上去之后，浮出来的部分如果超出父元素，就会被隐藏，我们经常会看到网页当中的一些 <strong>hover</strong> 效果就是鼠标放上去之后里面的内容是溢出父元素的，如果想实现这种效果，那么我们肯定就不能再使用 <strong>overflow:hidden</strong> 了，也就是不能使用浮动布局了，只能由 <strong>position</strong> 定位来进行实现。<br>
           <div class="read-more">
-            <a href="/2016/09/29/页面布局需要牢记的常识/" class="read-more-link">阅读更多</a>
+            <a href="/2016/09/29/页面布局需要牢记的常识/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -495,7 +495,7 @@
 <h3 id="多行文字垂直居中"><a href="#多行文字垂直居中" class="headerlink" title="多行文字垂直居中"></a>多行文字垂直居中</h3><ul>
 <li><strong>文字外部容器高度不固定</strong> : 给多行文字上下设置 <strong>padding</strong> 值即可。<br>以下是实现代码和效果图。
           <div class="read-more">
-            <a href="/2016/09/22/关于一些垂直居中问题的解决方法/" class="read-more-link">阅读更多</a>
+            <a href="/2016/09/22/关于一些垂直居中问题的解决方法/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -539,7 +539,7 @@
         
           <h2 id="outerWidth-和width-的区别"><a href="#outerWidth-和width-的区别" class="headerlink" title="outerWidth()和width()的区别"></a>outerWidth()和width()的区别</h2><p><strong>outerWidth(includeMargin)</strong> : 获取元素集合中第一个元素的当前计算宽度值。包括这个元素的 <strong>padding</strong>,<strong>border</strong>,如果 <strong>includeMargin</strong> 的值被设置为 <strong>true</strong>,那么 <strong>margin</strong> 的值也将被计算在宽度之内。<strong>includeMargin</strong> 的值默认为 <strong>false</strong>。该方法不适用于 <strong>window</strong> 和 <strong>document</strong> 对象。<br>
           <div class="read-more">
-            <a href="/2016/09/11/outerWidth-和width-的区别/" class="read-more-link">阅读更多</a>
+            <a href="/2016/09/11/outerWidth-和width-的区别/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -584,7 +584,7 @@
           <p><strong>screenX,screenY</strong> : 顾名思义，就是鼠标相对于 <strong>屏幕</strong> 的坐标位置是多少。</p>
 <p><strong>clientX,clientY</strong> : 鼠标相对于客户端区的坐标位置是多少。客户端区指的就是你浏览器的内容区（除去任何与你浏览的网页无关的东西，比如导航栏，工具栏，URL），无论你的页面怎样滚动，客户端区就那么大（就是那么一个框），其坐标值是不会随着页面的滚动而发生变化的。这一点跟 <strong>screenX,screenY</strong> 有点类似，可以放在一起记忆。<br>
           <div class="read-more">
-            <a href="/2016/09/10/几种鼠标位置方法的区别/" class="read-more-link">阅读更多</a>
+            <a href="/2016/09/10/几种鼠标位置方法的区别/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -644,12 +644,12 @@
     
       <a class="prev" href="/page/2/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text">上一页</span>
+        <span class="prev-text">Prev</span>
       </a>
     
     
       <a class="next" href="/page/4/">
-        <span class="next-text">下一页</span>
+        <span class="next-text">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -698,11 +698,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    主题 - 
+    Theme - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
