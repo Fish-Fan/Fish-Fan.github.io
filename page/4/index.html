@@ -177,6 +177,88 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2016/09/10/inArray-查找元素在数组中的索引值/">$.inArray()查找元素在数组中的索引值</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-09-10
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h2 id="inArray-查找元素在数组中的索引值"><a href="#inArray-查找元素在数组中的索引值" class="headerlink" title="$.inArray()查找元素在数组中的索引值"></a>$.inArray()查找元素在数组中的索引值</h2><p><strong>$.inArray()</strong> : 在数组中查找指定值并返回它的索引（如果没有找到，则返回-1）。语法格式为<code>jQuery.inArray( value, array [, fromIndex ] )</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="string">"Tom"</span>,<span class="string">"Marry"</span>];</div><div class="line"><span class="keyword">var</span> index = $.inArray(<span class="number">2</span>,arr);</div><div class="line"><span class="built_in">console</span>.log(index);</div><div class="line"><span class="comment">//1</span></div><div class="line">index = $.inArray(<span class="string">"Tom"</span>,arr);</div><div class="line"><span class="built_in">console</span>.log(index);</div><div class="line"><span class="comment">//2</span></div><div class="line"><span class="comment">//这里传入了第三个参数formIndex,数组索引值，表示从哪里在开始查找。默认值是0，这将查找整个数组。这里会从数组索引值为3的位置查找“Tom”</span></div><div class="line">index = $.inArray(<span class="string">"Tom"</span>,arr,<span class="number">3</span>);</div><div class="line"><span class="built_in">console</span>.log(index);</div><div class="line"><span class="comment">//-1</span></div></pre></td></tr></table></figure>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/09/10/grep-过滤数组元素/">$.grep()过滤数组元素</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-09-10
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h2 id="grep-过滤数组元素"><a href="#grep-过滤数组元素" class="headerlink" title="$.grep()过滤数组元素"></a>$.grep()过滤数组元素</h2><p><strong>$.grep()</strong> : 查找满足过滤函数的数组元素，原始数组不受影响。语法格式为<code>jQuery.grep( array, function(elementOfArray, indexInArray) [, invert ] )</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"><span class="keyword">var</span> newArr = $.grep(arr,<span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</div><div class="line">  <span class="comment">//返回数组中大于3的元素</span></div><div class="line">  <span class="keyword">return</span> val &gt; <span class="number">3</span>;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(newArr);</div><div class="line"><span class="comment">//4,5</span></div><div class="line">newArr = $.grep(arr,<span class="function"><span class="keyword">function</span>(<span class="params">val,index</span>)</span>&#123;</div><div class="line">  <span class="comment">//返回数组中值大于3且索引值大于3的数</span></div><div class="line">  <span class="keyword">return</span> val &gt; <span class="number">3</span> &amp;&amp; index &gt; <span class="number">3</span>;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(newArr);</div><div class="line"><span class="comment">//5</span></div><div class="line">newArr = $.grep(arr,<span class="function"><span class="keyword">function</span>(<span class="params">val,index</span>)</span>&#123;</div><div class="line">  <span class="comment">//invert参数如果没有设置或者设置为false,那么返回由true项组成的数组，这里设置了invert的值为true,返回由false项组成的数组，也就是返回数组中元素大于等于4的元素。</span></div><div class="line">  <span class="keyword">return</span> val &lt; <span class="number">4</span>;</div><div class="line">&#125;,<span class="literal">true</span>);</div><div class="line"><span class="built_in">console</span>.log(newArr);</div><div class="line"><span class="comment">//4,5</span></div></pre></td></tr></table></figure>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2016/09/08/each-和-each/">$.each()和.each()</a>
         
       </h1>
@@ -514,94 +596,6 @@
           <h2 id="第七章-函数表达式"><a href="#第七章-函数表达式" class="headerlink" title="第七章 函数表达式"></a>第七章 函数表达式</h2><h3 id="1-定义函数的两种方法-："><a href="#1-定义函数的两种方法-：" class="headerlink" title="1. 定义函数的两种方法 ："></a>1. 定义函数的两种方法 ：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//函数声明法</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">"Hi!"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//关于函数声明法，他的一个重要特征就是函数声明提升，即在执行代码之前会先读取函数声明，意味着我们可以把函数声明放在调用它语句的后面</span></div><div class="line"><span class="comment">//函数表达式</span></div><div class="line"><span class="keyword">var</span> sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">"Hi!"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">//关于两者的区别</span></div><div class="line"><span class="comment">//这样做会报错</span></div><div class="line"><span class="keyword">if</span>(condition)&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Hi"</span>!);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Yo!"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//但这样就不会</span></div><div class="line"><span class="keyword">if</span>(condition)&#123;</div><div class="line">    sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	   alert(<span class="string">"Hi"</span>!);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span>&#123;</div><div class="line">    sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Yo!"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="read-more">
             <a href="/2016/08/29/第七章-函数表达式/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/08/27/JavaScript-第六章/">JavaScript 第六章</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2016-08-27
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="第六章-面向对象程序设计"><a href="#第六章-面向对象程序设计" class="headerlink" title="第六章 面向对象程序设计"></a>第六章 面向对象程序设计</h2><h3 id="1-理解对象"><a href="#1-理解对象" class="headerlink" title="1. 理解对象 :"></a>1. 理解对象 :</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建对象的第一种方法</span></div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">person.name = <span class="string">"Jack"</span>;</div><div class="line">person.age = <span class="number">29</span>;</div><div class="line">person.job = <span class="string">"Software Enjineer"</span>;</div><div class="line">person.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.name);</div><div class="line">&#125;;</div><div class="line"><span class="comment">//创建对象的第二种方法（常用的方法）</span></div><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  name: <span class="string">"Jack"</span>,</div><div class="line">  age: <span class="number">29</span>,</div><div class="line">  job: <span class="string">"Software Enjineer"</span>,</div><div class="line">  sayName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">alert(<span class="keyword">this</span>.name);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          <div class="read-more">
-            <a href="/2016/08/27/JavaScript-第六章/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/08/26/JavaScript-第五章/">JavaScript 第五章</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2016-08-26
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="第五章-引用类型"><a href="#第五章-引用类型" class="headerlink" title="第五章 引用类型"></a>第五章 引用类型</h2><h4 id="引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。"><a href="#引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。" class="headerlink" title="引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。"></a>引用类型是一种数据结构，用于将数据和功能组合在一起，他也常被称为类（但是并不是类）。</h4><h3 id="1-创建对象的两种方法"><a href="#1-创建对象的两种方法" class="headerlink" title="1. 创建对象的两种方法 :"></a>1. 创建对象的两种方法 :</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用object类型</span></div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();<span class="comment">//等价于var person = &#123;&#125;;</span></div><div class="line">person.name = <span class="string">"Jack"</span>;</div><div class="line">person.age = <span class="number">29</span>;</div><div class="line"><span class="comment">//使用对象字面量表示法（优点是使用大量属性时无需重复写对象名）</span></div><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  name : <span class="string">"Jack"</span>,</div><div class="line">  age : <span class="number">29</span></div><div class="line">&#125;<span class="comment">//注意属性之间用逗号隔开，最后一个属性后面没有逗号</span></div><div class="line"><span class="comment">//另外在使用对象字面量表示法时，属性名也可以使用字符串(这样属性名就变成可读的哦)</span></div><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  <span class="string">"name"</span> : <span class="string">"Jack"</span>,</div><div class="line">  <span class="string">"age"</span> : <span class="number">29</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          <div class="read-more">
-            <a href="/2016/08/26/JavaScript-第五章/" class="read-more-link">阅读更多</a>
           </div>
         
       
