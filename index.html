@@ -98,7 +98,7 @@
         <li class="mobile-menu-item">
           
           
-            Home
+            首页
           
         </li>
       </a>
@@ -107,7 +107,7 @@
         <li class="mobile-menu-item">
           
           
-            Archives
+            归档
           
         </li>
       </a>
@@ -116,7 +116,7 @@
         <li class="mobile-menu-item">
           
           
-            Tags
+            标签
           
         </li>
       </a>
@@ -137,7 +137,7 @@
           <a class="menu-item-link" href="/">
             
             
-              Home
+              首页
             
           </a>
         </li>
@@ -146,7 +146,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              Archives
+              归档
             
           </a>
         </li>
@@ -155,7 +155,7 @@
           <a class="menu-item-link" href="/tags">
             
             
-              Tags
+              标签
             
           </a>
         </li>
@@ -203,7 +203,7 @@
         
           <h2 id="Spring常用的注解"><a href="#Spring常用的注解" class="headerlink" title="Spring常用的注解"></a>Spring常用的注解</h2><h3 id="1-RequestMapping"><a href="#1-RequestMapping" class="headerlink" title="1.@RequestMapping"></a>1.@RequestMapping</h3><p>一个请求到达 dispatchServlet 之后，dispatchServlet 将根据 RequestMapping 来查找谁来处理这个请求，具体查找过程由 HandlerMapping 和 HandlerAdapter 来实现。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(method = RequestMethod.GET,value = <span class="string">"/hello"</span>, produces = <span class="string">"text/html;charset=UTF-8"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">hello</span><span class="params">()</span> </span>&#123;</div><div class="line">        ModelAndView modelAndView = <span class="keyword">new</span> ModelAndView();</div><div class="line">        modelAndView.addObject(<span class="string">"message"</span>,<span class="string">"hello world"</span>);</div><div class="line">        modelAndView.setViewName(<span class="string">"welcome"</span>);</div><div class="line">        <span class="keyword">return</span> modelAndView;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
           <div class="read-more">
-            <a href="/2018/01/05/springMVC/" class="read-more-link">Read more..</a>
+            <a href="/2018/01/05/springMVC/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -278,7 +278,7 @@
 </table>
 <p>本文节选了邻接多重表的实现。虽然网上有很多实现，但是大多数并没有删除操作，这里给出了删除操作的实现，如果有更好的方法欢迎提出。<br>
           <div class="read-more">
-            <a href="/2017/12/09/邻接多重表-包含删除操作-Java/" class="read-more-link">Read more..</a>
+            <a href="/2017/12/09/邻接多重表-包含删除操作-Java/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -373,7 +373,7 @@
 <li>内部类可以访问外部类私有域的成员变量</li>
 <li>内部类不允许有静态方法和变量
           <div class="read-more">
-            <a href="/2017/10/16/Java面向对象2/" class="read-more-link">Read more..</a>
+            <a href="/2017/10/16/Java面向对象2/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -419,7 +419,7 @@
 <li>从形式上看，封装将数据和行为组合在一个包中，并对对象的使用者隐藏了数据的实现方式</li>
 <li>实现封装的关键在于绝对不能让类中的方法直接访问其他类的实例域，程序仅通过对象的方法同对象的数据进行交互
           <div class="read-more">
-            <a href="/2017/09/19/Java面向对象/" class="read-more-link">Read more..</a>
+            <a href="/2017/09/19/Java面向对象/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -466,7 +466,7 @@
 <li>一个Java文件只能有一个 <strong>public类</strong></li>
 <li>如果文件不止一个类，且没有 <strong>public类</strong>，那么Java文件命名没有限制
           <div class="read-more">
-            <a href="/2017/09/19/Java基本程序设计结构/" class="read-more-link">Read more..</a>
+            <a href="/2017/09/19/Java基本程序设计结构/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -513,7 +513,7 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">  String a = <span class="string">"a"</span>;</div><div class="line">  String b = <span class="string">"b"</span>;</div><div class="line">  String c = <span class="string">"c"</span>;</div><div class="line"></div><div class="line">  <span class="keyword">long</span> start = System.currentTimeMillis();</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">100000000</span>;i++) &#123;</div><div class="line">    String str = a + b + c;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  System.out.println(<span class="string">"加号运算符-&gt; "</span> + (System.currentTimeMillis() - start) + <span class="string">" ms"</span>);</div><div class="line"></div><div class="line">  start = System.currentTimeMillis();</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">100000000</span>;i++) &#123;</div><div class="line">    StringBuffer str = <span class="keyword">new</span> StringBuffer();</div><div class="line">    str.append(a);</div><div class="line">    str.append(b);</div><div class="line">    str.append(c);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  System.out.println(<span class="string">"StringBuffer-&gt; "</span> + (System.currentTimeMillis() - start) + <span class="string">" ms"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2017/09/16/Java字符串优化/" class="read-more-link">Read more..</a>
+            <a href="/2017/09/16/Java字符串优化/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -608,7 +608,7 @@
         
           <h3 id="用户账号"><a href="#用户账号" class="headerlink" title="用户账号"></a>用户账号</h3><p>与用户账号相关的两个文件:<br> /etc/passwd 和 /etc/shadow<br>
           <div class="read-more">
-            <a href="/2017/09/13/Linux用户账号与分组/" class="read-more-link">Read more..</a>
+            <a href="/2017/09/13/Linux用户账号与分组/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -657,7 +657,7 @@
 <li>如果得到一个Enter符号(CR),就尝试执行该命令</li>
 <li>“#”号后面为注释
           <div class="read-more">
-            <a href="/2017/09/10/Linux的Shell-Script/" class="read-more-link">Read more..</a>
+            <a href="/2017/09/10/Linux的Shell-Script/" class="read-more-link">阅读更多</a>
           </div>
         
       
@@ -677,7 +677,7 @@
     
     
       <a class="next" href="/page/2/">
-        <span class="next-text">Next</span>
+        <span class="next-text">下一页</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -726,11 +726,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme - 
+    主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
