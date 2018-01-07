@@ -102,7 +102,7 @@
         <li class="mobile-menu-item">
           
           
-            首页
+            Home
           
         </li>
       </a>
@@ -111,7 +111,7 @@
         <li class="mobile-menu-item">
           
           
-            归档
+            Archives
           
         </li>
       </a>
@@ -120,7 +120,7 @@
         <li class="mobile-menu-item">
           
           
-            标签
+            Tags
           
         </li>
       </a>
@@ -141,7 +141,7 @@
           <a class="menu-item-link" href="/">
             
             
-              首页
+              Home
             
           </a>
         </li>
@@ -150,7 +150,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              归档
+              Archives
             
           </a>
         </li>
@@ -159,7 +159,7 @@
           <a class="menu-item-link" href="/tags">
             
             
-              标签
+              Tags
             
           </a>
         </li>
@@ -195,9 +195,9 @@
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
+    <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring常用的注解"><span class="toc-text">Spring常用的注解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-RequestMapping"><span class="toc-text">1.@RequestMapping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-GetMapping"><span class="toc-text">2.@GetMapping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-PostMapping"><span class="toc-text">3.@PostMapping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-RequestParam"><span class="toc-text">4.@RequestParam</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-ResponseBody"><span class="toc-text">5.@ResponseBody</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-PathVariable"><span class="toc-text">6.@PathVariable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-ModelAttribute"><span class="toc-text">7.@ModelAttribute</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-SessionAttributes"><span class="toc-text">8.SessionAttributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-DateTimeFormat-NumberFormat"><span class="toc-text">9.@DateTimeFormat @NumberFormat</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring常用的注解"><span class="toc-text">Spring常用的注解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-RequestMapping"><span class="toc-text">1.@RequestMapping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-GetMapping"><span class="toc-text">2.@GetMapping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-PostMapping"><span class="toc-text">3.@PostMapping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-RequestParam"><span class="toc-text">4.@RequestParam</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-ResponseBody"><span class="toc-text">5.@ResponseBody</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-PathVariable"><span class="toc-text">6.@PathVariable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-ModelAttribute"><span class="toc-text">7.@ModelAttribute</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-SessionAttributes"><span class="toc-text">8.SessionAttributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-DateTimeFormat-NumberFormat"><span class="toc-text">9.@DateTimeFormat @NumberFormat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据校验-Valid"><span class="toc-text">数据校验@Valid</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -229,6 +229,13 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Controller</span></div><div class="line"><span class="meta">@SessionAttributes</span>(<span class="string">"user"</span>)</div><div class="line"><span class="comment">//可以指定多值</span></div><div class="line"><span class="comment">//@SessionAttributes(value=&#123;"user1","user2"&#125;)</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line">  <span class="meta">@GetMapping</span>(<span class="string">"/testsession"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">testSession</span><span class="params">(Model model)</span> </span>&#123;</div><div class="line">        User user = <span class="keyword">new</span> User(<span class="string">"Jetty"</span>,<span class="string">"111"</span>);</div><div class="line">        <span class="comment">//发现user属性被装入的model中，立即将user对象同步至session中</span></div><div class="line">        model.addAttribute(<span class="string">"user"</span>,user);</div><div class="line">        <span class="keyword">return</span> <span class="string">"test/session"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/getsession"</span>)</div><div class="line">    <span class="comment">//取出session中的user属性</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSession</span><span class="params">(@SessionAttribute(<span class="string">"user"</span>)</span> User user) </span>&#123;</div><div class="line">        System.out.println(user);</div><div class="line">        <span class="keyword">return</span> <span class="string">"test/session"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="9-DateTimeFormat-NumberFormat"><a href="#9-DateTimeFormat-NumberFormat" class="headerlink" title="9.@DateTimeFormat @NumberFormat"></a>9.@DateTimeFormat @NumberFormat</h3><p>SpringMVC不仅能将请求数据转换为一个对象，还可以根据pojo中包含上述两个注解的属性完成数据的格式化。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line">  <span class="comment">//省略诸多属性</span></div><div class="line"></div><div class="line">  <span class="comment">//将请求参数中的String类型自动转换为Date类型</span></div><div class="line">  <span class="comment">//需导入joda-time包</span></div><div class="line">  <span class="meta">@DateTimeFormat</span>(pattern = <span class="string">"yyyy-MM-dd"</span>)</div><div class="line">  <span class="keyword">private</span> Date loginTime;</div><div class="line"></div><div class="line">  <span class="comment">//将请求参数中的String类型自动转换为long类型</span></div><div class="line">  <span class="meta">@NumberFormat</span>(pattern = <span class="string">"#,###.##"</span>)</div><div class="line">  <span class="keyword">private</span> <span class="keyword">long</span> salary;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="数据校验-Valid"><a href="#数据校验-Valid" class="headerlink" title="数据校验@Valid"></a>数据校验@Valid</h3><p>SpringMVC可以对请求传过来的参数进行校验，JSR-303(或更高)是Java为Bean数据合法性校验提供的框架，Spring本身没有提供JSR-303的实现，需要依赖第三方的JSR-303的实现(如Hibernate Validator).<br>依赖的包</p>
+<ul>
+<li>validation-api-1.0.0</li>
+<li>hibernate-validator-4.2.0</li>
+<li>slf4j-api-1.7.7</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line">//pojo类</div><div class="line">public class User &#123;</div><div class="line">  //正则表达式验证，message为校验失败的自定义信息</div><div class="line">  @Pattern(regexp = "w&#123;4,30&#125;",message = "用户名必须为4-30个字符")</div><div class="line">    private String username;</div><div class="line"></div><div class="line">    @Pattern(regexp = "w&#123;3,16&#125;",message = "密码长度为3-16个字符")</div><div class="line">    private String password;</div><div class="line"></div><div class="line">    @Min(value = 8,message = "年龄介于8-100之间")</div><div class="line">    @Max(value = 100)</div><div class="line">    private int age;</div><div class="line"></div><div class="line">    //getter and setter...</div><div class="line">&#125;</div><div class="line"></div><div class="line">//controller类</div><div class="line">@GetMapping("/tag/register")</div><div class="line">    public String register(Model model) &#123;</div><div class="line">        User user = new User();</div><div class="line">        model.addAttribute("user",user);</div><div class="line">        return "tag/register";</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @PostMapping("/tag/register")</div><div class="line">    public String afterRegister(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) &#123;</div><div class="line">        //数据校验失败</div><div class="line">        if(bindingResult.hasErrors()) &#123;</div><div class="line">            return "tag/register";</div><div class="line">        &#125;</div><div class="line">        return "tag/registersuc";</div><div class="line">    &#125;</div><div class="line"></div><div class="line">//jsp</div><div class="line">//添加两个标签</div><div class="line">&lt;%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %&gt;</div><div class="line">&lt;%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %&gt;</div><div class="line"></div><div class="line">&lt;form:form ModelAttribute="user"&gt;</div><div class="line">    &lt;spring:bind path="username"&gt;</div><div class="line">          //如果该属性校验失败，添加has-error的class属性</div><div class="line">          &lt;div class="form-group $&#123;status.error ? "has-error" : ""&#125;"&gt;</div><div class="line">              &lt;label for=""&gt;用户名: &lt;/label&gt;</div><div class="line">              //校验规则在这里显示</div><div class="line">              &lt;form:errors path="username" cssClass="text-danger" /&gt;</div><div class="line">              &lt;form:input path="username" cssClass="form-control"/&gt;</div><div class="line">          &lt;/div&gt;</div><div class="line">      &lt;/spring:bind&gt;</div><div class="line"></div><div class="line">      &lt;spring:bind path="password"&gt;</div><div class="line">          &lt;div class="form-group $&#123;status.error ? "has-error" : ""&#125;"&gt;</div><div class="line">              &lt;label for=""&gt;密码: &lt;/label&gt;</div><div class="line">              //校验规则在这里显示</div><div class="line">              &lt;form:errors path="password" cssClass="text-danger" /&gt;</div><div class="line">              &lt;form:password path="password" cssClass="form-control"/&gt;</div><div class="line">          &lt;/div&gt;</div><div class="line">      &lt;/spring:bind&gt;</div><div class="line">&lt;/form:form&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -243,7 +250,7 @@
       
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
-    <label class="reward-button" for="reward">赞赏支持</label>
+    <label class="reward-button" for="reward">Reward</label>
     <div class="qr-code">
       
       
@@ -277,7 +284,7 @@
     
       <a class="next" href="/2017/12/09/邻接多重表-包含删除操作-Java/">
         <span class="next-text nav-default">邻接多重表(包含删除操作)Java</span>
-        <span class="prev-text nav-mobile">下一篇</span>
+        <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -335,11 +342,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    主题 - 
+    Theme - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
