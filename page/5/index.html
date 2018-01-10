@@ -177,6 +177,51 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2016/08/29/第八章-BOM/">第八章 BOM</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-08-29
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="第八章-BOM"><a href="#第八章-BOM" class="headerlink" title="第八章 BOM"></a>第八章 BOM</h2><h3 id="1-window对象"><a href="#1-window对象" class="headerlink" title="1. window对象 :"></a>1. window对象 :</h3><p>BOM的核心对象是 <strong>window</strong>,他表示浏览器的一个实例。在浏览器中，<strong>window</strong> 对象有双重角色，它既是通过JavaScript访问浏览器窗口的一个接口，又是ECMAScript规定的 <strong>Global</strong> 对象。这意味着在网页中定义的任何一个对象，变量，函数，都以 <strong>window</strong> 作为其 <strong>Global</strong> 对象。</p>
+<h3 id="2-全局作用域"><a href="#2-全局作用域" class="headerlink" title="2. 全局作用域 :"></a>2. 全局作用域 :</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> age = <span class="number">29</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayAge</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.age);</div><div class="line">&#125;</div><div class="line">alert(<span class="built_in">window</span>.age);     <span class="comment">//29</span></div><div class="line">sayAge();              <span class="comment">//29</span></div><div class="line"><span class="built_in">window</span>.sayAge();       <span class="comment">//29</span></div></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2016/08/29/第八章-BOM/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2016/08/29/第七章-函数表达式/">第七章 函数表达式</a>
         
       </h1>

@@ -177,6 +177,51 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2016/09/10/几种鼠标位置方法的区别/">几种鼠标位置方法的区别</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-09-10
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p><strong>screenX,screenY</strong> : 顾名思义，就是鼠标相对于 <strong>屏幕</strong> 的坐标位置是多少。</p>
+<p><strong>clientX,clientY</strong> : 鼠标相对于客户端区的坐标位置是多少。客户端区指的就是你浏览器的内容区（除去任何与你浏览的网页无关的东西，比如导航栏，工具栏，URL），无论你的页面怎样滚动，客户端区就那么大（就是那么一个框），其坐标值是不会随着页面的滚动而发生变化的。这一点跟 <strong>screenX,screenY</strong> 有点类似，可以放在一起记忆。<br>
+          <div class="read-more">
+            <a href="/2016/09/10/几种鼠标位置方法的区别/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2016/09/10/平滑滚动到页面的某个锚点/">平滑滚动到页面的某个锚点</a>
         
       </h1>
@@ -547,51 +592,6 @@
 <h3 id="1-节点层次"><a href="#1-节点层次" class="headerlink" title="1.节点层次 :"></a>1.节点层次 :</h3><p>DOM可以将任何HTML或XML文档描绘成一个由多层次节点构成的结构。节点分为几种不同的类型，每种类型分别表示文档中不同的信息或标记。每个节点都有各自的特点，数据和方法，另外节点也与其他节点存在联系。节点之间构成了层次，而所有页面标记则表现为一个特定节点为根节点的树形结构。以下面HTML为例 :<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Sample Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
           <div class="read-more">
             <a href="/2016/08/29/第九章-DOM/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/08/29/第八章-BOM/">第八章 BOM</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2016-08-29
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="第八章-BOM"><a href="#第八章-BOM" class="headerlink" title="第八章 BOM"></a>第八章 BOM</h2><h3 id="1-window对象"><a href="#1-window对象" class="headerlink" title="1. window对象 :"></a>1. window对象 :</h3><p>BOM的核心对象是 <strong>window</strong>,他表示浏览器的一个实例。在浏览器中，<strong>window</strong> 对象有双重角色，它既是通过JavaScript访问浏览器窗口的一个接口，又是ECMAScript规定的 <strong>Global</strong> 对象。这意味着在网页中定义的任何一个对象，变量，函数，都以 <strong>window</strong> 作为其 <strong>Global</strong> 对象。</p>
-<h3 id="2-全局作用域"><a href="#2-全局作用域" class="headerlink" title="2. 全局作用域 :"></a>2. 全局作用域 :</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> age = <span class="number">29</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayAge</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.age);</div><div class="line">&#125;</div><div class="line">alert(<span class="built_in">window</span>.age);     <span class="comment">//29</span></div><div class="line">sayAge();              <span class="comment">//29</span></div><div class="line"><span class="built_in">window</span>.sayAge();       <span class="comment">//29</span></div></pre></td></tr></table></figure>
-          <div class="read-more">
-            <a href="/2016/08/29/第八章-BOM/" class="read-more-link">阅读更多</a>
           </div>
         
       
