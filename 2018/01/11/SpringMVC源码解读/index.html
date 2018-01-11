@@ -17,12 +17,12 @@
 
 
 
-  <meta name="description" content="对未来新添加的节点绑定事件"/>
+  <meta name="description" content="SpringMVC源码解读"/>
 
 
 
 
-  <meta name="keywords" content="jQuery, Welcome abroad" />
+  <meta name="keywords" content="Spring, Welcome abroad" />
 
 
 
@@ -42,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/2016/09/06/对未来新添加的节点绑定事件/"/>
+<link rel="canonical" href="http://yoursite.com/2018/01/11/SpringMVC源码解读/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -81,7 +81,7 @@
 
 
 
-    <title> 对未来新添加的节点绑定事件 - Welcome abroad </title>
+    <title> SpringMVC源码解读 - Welcome abroad </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -179,13 +179,13 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          对未来新添加的节点绑定事件
+          SpringMVC源码解读
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2016-09-06
+          2018-01-11
         </span>
         
         
@@ -197,20 +197,23 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#为未来新添加的节点绑定事件"><span class="toc-text">为未来新添加的节点绑定事件</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#从web-xml开始"><span class="toc-text">从web.xml开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DispatchServlet继承关系"><span class="toc-text">DispatchServlet继承关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请求和响应"><span class="toc-text">请求和响应</span></a></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <h3 id="为未来新添加的节点绑定事件"><a href="#为未来新添加的节点绑定事件" class="headerlink" title="为未来新添加的节点绑定事件"></a>为未来新添加的节点绑定事件</h3><p>以下例子只能通过点击第一个 <strong>p元素</strong> 来创建节点，点击 <strong>新生成的p元素</strong> 是不会有反应的。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>点击创建一个新的p元素<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".container p"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="keyword">this</span>).after(<span class="string">"&lt;p&gt;点击创建一个新的p元素&lt;/p&gt;"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>使用 <strong>on()方法</strong> 或者 <strong>delegate()方法</strong> 来为未来节点绑定事件。<br>推荐使用 <strong>on()方法</strong> ,因为自jQuery1.7版本起，delegate方法被on方法所取代。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用on方法</span></div><div class="line">$(<span class="string">".container"</span>).on(<span class="string">"click"</span>,<span class="string">"p"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="keyword">this</span>).after(<span class="string">"&lt;p&gt;点击创建一个新的p元素&lt;/p&gt;"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用delegate方法</span></div><div class="line">$(<span class="string">".container"</span>).delegate(<span class="string">"p"</span>,<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="keyword">this</span>).after(<span class="string">"&lt;p&gt;点击创建一个新的p元素&lt;/p&gt;"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+        <h3 id="从web-xml开始"><a href="#从web-xml开始" class="headerlink" title="从web.xml开始"></a>从web.xml开始</h3><p>我们在写SpringMVC项目时都需要在web.xml配置一个listener,我们就从这个listenser开始，看看内部究竟发生了什么。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.context.ContextLoaderListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">listener</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>首先我们来到ContextLoaderListener.java，容器在启动的时候会执行一些代码，如下即为启动时执行的代码。</p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/contextLoaderListener.png" alt="ContextLoaderListener.java"></p>
+<p>内部调用了initWebApplicationContext()方法，接下来我们来查看这个方法内部的执行。</p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/contextLoader.png" alt="ContextLoad.java"></p>
+<p>通过查看源码得到监听器主要干的事情就是加载ApplicationContext和WebApplicationContext。</p>
+<h3 id="DispatchServlet继承关系"><a href="#DispatchServlet继承关系" class="headerlink" title="DispatchServlet继承关系"></a>DispatchServlet继承关系</h3><p><img src="http://ok2crkjlq.bkt.clouddn.com/servlet%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png" alt="DispatchServlet继承关系"></p>
+<h3 id="请求和响应"><a href="#请求和响应" class="headerlink" title="请求和响应"></a>请求和响应</h3><p>我们先来建立一个请求，接下来一步一步查看SpringMVC是怎么把我们的请求交给对应的handler，并生成响应的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Controller</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestController</span> </span>&#123;</div><div class="line">  <span class="meta">@GetMapping</span>(<span class="string">"/test/path/&#123;id&#125;"</span>)</div><div class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">pathHandler</span><span class="params">(@RequestParam(<span class="string">"a"</span>)</span> String str,</span></div><div class="line">                            @<span class="title">PathVariable</span><span class="params">(<span class="string">"id"</span>)</span> Integer id,</div><div class="line">                            Model model) &#123;</div><div class="line">    model.addAttribute(<span class="string">"a"</span>,str);</div><div class="line">    model.addAttribute(<span class="string">"id"</span>,id);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>请求的URL:<br>localhost:8080/test/path/123<br>我们从容器开始说，容器启动的时候，我们配置了一个监听器listener，它主要的工作就是负责加载两个上下文(ApplicationContext和WebApplicationContext)。<br>接下来由于我们在web.xml中设置了dispatchServlet随着容器的启动而启动,启动过程中会执行servlet的init()方法。<br><img src="http://ok2crkjlq.bkt.clouddn.com/httpServletBean.init.png" alt="HttpServletBean.init()"><br>我们在浏览器的地址栏输入了一个路径，也可能是我们点击了一个按钮，这个按钮指向了一个链接，容器</p>
 
       
     </div>
@@ -248,7 +251,7 @@
         
           <div class="post-tags">
             
-              <a href="/tags/jQuery/">jQuery</a>
+              <a href="/tags/Spring/">Spring</a>
             
           </div>
         
@@ -256,15 +259,9 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2016/09/06/mouse事件的区别/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">mouse事件的区别</span>
-        <span class="prev-text nav-mobile">Prev</span>
-      </a>
     
-    
-      <a class="next" href="/2016/09/06/jQuery知识体系/">
-        <span class="next-text nav-default">jQuery知识体系</span>
+      <a class="next" href="/2018/01/10/SpringMVC文件上传/">
+        <span class="next-text nav-default">SpringMVC文件上传</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>

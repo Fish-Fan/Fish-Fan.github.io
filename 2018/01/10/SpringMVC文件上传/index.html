@@ -102,7 +102,7 @@
         <li class="mobile-menu-item">
           
           
-            首页
+            Home
           
         </li>
       </a>
@@ -111,7 +111,7 @@
         <li class="mobile-menu-item">
           
           
-            归档
+            Archives
           
         </li>
       </a>
@@ -120,7 +120,7 @@
         <li class="mobile-menu-item">
           
           
-            标签
+            Tags
           
         </li>
       </a>
@@ -141,7 +141,7 @@
           <a class="menu-item-link" href="/">
             
             
-              首页
+              Home
             
           </a>
         </li>
@@ -150,7 +150,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              归档
+              Archives
             
           </a>
         </li>
@@ -159,7 +159,7 @@
           <a class="menu-item-link" href="/tags">
             
             
-              标签
+              Tags
             
           </a>
         </li>
@@ -195,7 +195,7 @@
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
+    <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存放在静态资源区"><span class="toc-text">存放在静态资源区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存放在服务器"><span class="toc-text">存放在服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#延伸部分-文件的查看及下载"><span class="toc-text">延伸部分(文件的查看及下载)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#upload-jsp"><span class="toc-text">upload.jsp</span></a></li></ol>
     </div>
@@ -224,7 +224,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="meta">@PostMapping</span>(<span class="string">"/upload/disk"</span>)</div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">writeToDisk</span><span class="params">(HttpServletRequest request,</span></span></div><div class="line">                          @RequestParam(<span class="string">"fileName"</span>) MultipartFile file,</div><div class="line">                          RedirectAttributes redirectAttributes) &#123;</div><div class="line">  <span class="keyword">if</span>(!file.isEmpty()) &#123;</div><div class="line">    <span class="comment">//获取源文件名</span></div><div class="line">    String fileName = file.getOriginalFileName();</div><div class="line">    <span class="comment">//获取保存文件文件夹路径</span></div><div class="line">    String path = <span class="string">"/Users/mac/Desktop/imgtemp/"</span>;</div><div class="line">    <span class="comment">//新建文件</span></div><div class="line">    File file1 = <span class="keyword">new</span> File(path,fileName);</div><div class="line">    <span class="comment">//写入文件</span></div><div class="line">    file.transferTo(file1);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line">...</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="延伸部分-文件的查看及下载"><a href="#延伸部分-文件的查看及下载" class="headerlink" title="延伸部分(文件的查看及下载)"></a>延伸部分(文件的查看及下载)</h3><p>由于响应是要以流的形式传递文件，我们需要正确的设置响应的MIMIE类型才能被浏览器正确的解析，应用程序文件的默认MIMIE类型为 <strong>application/octet-stream</strong>，MIME设置为该值后，浏览器不会自动执行或询问执行这类文件，会以对待附件的形式直接将文件下载至本地。</p>
+<h3 id="延伸部分-文件的查看及下载"><a href="#延伸部分-文件的查看及下载" class="headerlink" title="延伸部分(文件的查看及下载)"></a>延伸部分(文件的查看及下载)</h3><p>由于响应是要以流的形式传递文件，我们需要正确的设置响应的MIMIE类型才能被浏览器正确的解析。MIME就是告诉浏览器接收的数据是什么类型，这样浏览器才知道该如何显示这些数据。应用程序文件的默认MIMIE类型为 <strong>application/octet-stream</strong>，MIME设置为该值后，浏览器不会自动执行或询问执行这类文件，会以对待附件的形式直接将文件下载至本地。</p>
 <p>更多关于MIMIE的解读请查看<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types" target="_blank" rel="external">这篇文章</a></p>
 <p>如果我们如果想自定义下载文件的名字，那么就需要设置Content-Disposition消息。<br>Content-Disposition 消息头指示回复的内容该以何种形式展示，是以内联的形式（即网页或者页面的一部分），还是以附件的形式下载并保存到本地。</p>
 <p>更过关于Content-Disposition的解读请查看<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Disposition" target="_blank" rel="external">这篇文章</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="meta">@GetMapping</span>(<span class="string">"/download/byDefault"</span>)</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getImgByDefault</span><span class="params">(@RequestParam String fileName,</span></span></div><div class="line">                            @RequestParam(required=<span class="keyword">false</span>,defaultValue=<span class="string">""</span>) String saveName),</div><div class="line">                            HttpServletResponse response &#123;</div><div class="line">    <span class="keyword">if</span>(StringUtils.isEmpty(fileName)) &#123;</div><div class="line">      response.sendError(<span class="number">404</span>);</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//文件存放的路径</span></div><div class="line">    String path = <span class="string">"/Users/mac/Desktop/imgtemp/"</span>;</div><div class="line">    <span class="comment">//新建文件</span></div><div class="line">    File file = <span class="keyword">new</span> File(path,fileName);</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(!file.exists()) &#123;</div><div class="line">      response.sendError(<span class="number">404</span>);</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//如果请求参数saveName不为空,进行文件的下载</span></div><div class="line">    <span class="keyword">if</span>(!StringUtils.isEmpty(saveName)) &#123;</div><div class="line">      <span class="comment">//设置响应长度</span></div><div class="line">      response.setContentLength((<span class="keyword">int</span>)file.length());</div><div class="line">      <span class="comment">//设置响应的MIME类型为application/octet-stream</span></div><div class="line">      response.setContentType(MediaType.APPLICATION_OCTET_STREAM_VALUE);</div><div class="line"></div><div class="line">      saveName = <span class="keyword">new</span> String(saveName.getBytes(<span class="string">"UTF-8"</span>),<span class="string">"ISO8859-1"</span>);</div><div class="line">      <span class="comment">//设置content-disposition为attachment;fileName=saveName</span></div><div class="line">      response.setHeader(HttpHeaders.CONTENT_DISPOSITION, <span class="string">"attachment; filename=\""</span>+saveName+<span class="string">"\""</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//读取文件</span></div><div class="line">    InputStream is = <span class="keyword">new</span> FileInputStream(file);</div><div class="line">    OutputStream os = response.getOutputStream();</div><div class="line">    <span class="comment">//将文件以流的形式输出</span></div><div class="line">    IOUtils.copy(is,os);</div><div class="line">    os.flush();</div><div class="line">    os.close();</div><div class="line">    is.close();</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -245,7 +245,7 @@
       
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
-    <label class="reward-button" for="reward">赞赏支持</label>
+    <label class="reward-button" for="reward">Reward</label>
     <div class="qr-code">
       
       
@@ -276,10 +276,16 @@
         
   <nav class="post-nav">
     
+      <a class="prev" href="/2018/01/11/SpringMVC源码解读/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">SpringMVC源码解读</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
     
       <a class="next" href="/2018/01/05/springMVC/">
         <span class="next-text nav-default">SpringMVC</span>
-        <span class="prev-text nav-mobile">下一篇</span>
+        <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -337,11 +343,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    主题 - 
+    Theme - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 

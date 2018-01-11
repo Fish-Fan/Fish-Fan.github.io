@@ -98,7 +98,7 @@
         <li class="mobile-menu-item">
           
           
-            首页
+            Home
           
         </li>
       </a>
@@ -107,7 +107,7 @@
         <li class="mobile-menu-item">
           
           
-            归档
+            Archives
           
         </li>
       </a>
@@ -116,7 +116,7 @@
         <li class="mobile-menu-item">
           
           
-            标签
+            Tags
           
         </li>
       </a>
@@ -137,7 +137,7 @@
           <a class="menu-item-link" href="/">
             
             
-              首页
+              Home
             
           </a>
         </li>
@@ -146,7 +146,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              归档
+              Archives
             
           </a>
         </li>
@@ -155,7 +155,7 @@
           <a class="menu-item-link" href="/tags">
             
             
-              标签
+              Tags
             
           </a>
         </li>
@@ -171,6 +171,50 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts">
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2016/09/11/outerWidth-和width-的区别/">outerWidth()和width()的区别</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-09-11
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="outerWidth-和width-的区别"><a href="#outerWidth-和width-的区别" class="headerlink" title="outerWidth()和width()的区别"></a>outerWidth()和width()的区别</h2><p><strong>outerWidth(includeMargin)</strong> : 获取元素集合中第一个元素的当前计算宽度值。包括这个元素的 <strong>padding</strong>,<strong>border</strong>,如果 <strong>includeMargin</strong> 的值被设置为 <strong>true</strong>,那么 <strong>margin</strong> 的值也将被计算在宽度之内。<strong>includeMargin</strong> 的值默认为 <strong>false</strong>。该方法不适用于 <strong>window</strong> 和 <strong>document</strong> 对象。<br>
+          <div class="read-more">
+            <a href="/2016/09/11/outerWidth-和width-的区别/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
     
       
   <article class="post">
@@ -204,7 +248,7 @@
           <p><strong>screenX,screenY</strong> : 顾名思义，就是鼠标相对于 <strong>屏幕</strong> 的坐标位置是多少。</p>
 <p><strong>clientX,clientY</strong> : 鼠标相对于客户端区的坐标位置是多少。客户端区指的就是你浏览器的内容区（除去任何与你浏览的网页无关的东西，比如导航栏，工具栏，URL），无论你的页面怎样滚动，客户端区就那么大（就是那么一个框），其坐标值是不会随着页面的滚动而发生变化的。这一点跟 <strong>screenX,screenY</strong> 有点类似，可以放在一起记忆。<br>
           <div class="read-more">
-            <a href="/2016/09/10/几种鼠标位置方法的区别/" class="read-more-link">阅读更多</a>
+            <a href="/2016/09/10/几种鼠标位置方法的区别/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -371,7 +415,7 @@
           <h2 id="each-和-each"><a href="#each-和-each" class="headerlink" title="$.each()和.each()"></a>$.each()和.each()</h2><p><strong>$.each()</strong> : 可以循环遍历任何集合，比如对象和数组。语法格式为 <code>jQuery.each( collection, callback(indexInArray, valueOfElement) )。</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">"张三"</span>,<span class="string">"李四"</span>,<span class="string">"王五"</span>,<span class="string">"赵六"</span>];</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  name : <span class="string">"张三"</span>,</div><div class="line">  age : <span class="number">28</span>,</div><div class="line">  sex : <span class="string">"男"</span>,</div><div class="line">  country : <span class="string">"中国"</span>,</div><div class="line">  city : <span class="string">"上海"</span></div><div class="line">&#125;;</div><div class="line">$.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">index,val</span>)</span>&#123;</div><div class="line">  $(<span class="string">"#div"</span>).append(<span class="string">"该数组第"</span> + index + <span class="string">"个元素是"</span> + val + <span class="string">"&lt;br&gt;"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//该数组第0个元素是张三</span></div><div class="line"><span class="comment">//该数组第1个元素是李四</span></div><div class="line"><span class="comment">//该数组第2个元素是王五</span></div><div class="line"><span class="comment">//该数组第3个元素是赵六</span></div><div class="line">$.each(obj,<span class="function"><span class="keyword">function</span>(<span class="params">i,val</span>)</span>&#123;</div><div class="line">  $(<span class="string">"#obj"</span>).append(<span class="string">"属性"</span> + i + <span class="string">"的值是"</span> + val + <span class="string">"&lt;br&gt;"</span>);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//属性name的值是张三</span></div><div class="line"><span class="comment">//属性age的值是28</span></div><div class="line"><span class="comment">//属性sex的值是男</span></div><div class="line"><span class="comment">//属性country的值是中国</span></div><div class="line"><span class="comment">//属性city的值是上海</span></div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2016/09/08/each-和-each/" class="read-more-link">阅读更多</a>
+            <a href="/2016/09/08/each-和-each/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -458,7 +502,7 @@
 </li>
 <li><p><strong>mouseenter</strong> : 在鼠标移动到选取的元素上时触发事件。</p>
           <div class="read-more">
-            <a href="/2016/09/06/mouse事件的区别/" class="read-more-link">阅读更多</a>
+            <a href="/2016/09/06/mouse事件的区别/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -506,7 +550,7 @@
 <p>使用 <strong>on()方法</strong> 或者 <strong>delegate()方法</strong> 来为未来节点绑定事件。<br>推荐使用 <strong>on()方法</strong> ,因为自jQuery1.7版本起，delegate方法被on方法所取代。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用on方法</span></div><div class="line">$(<span class="string">".container"</span>).on(<span class="string">"click"</span>,<span class="string">"p"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="keyword">this</span>).after(<span class="string">"&lt;p&gt;点击创建一个新的p元素&lt;/p&gt;"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2016/09/06/对未来新添加的节点绑定事件/" class="read-more-link">阅读更多</a>
+            <a href="/2016/09/06/对未来新添加的节点绑定事件/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -559,51 +603,6 @@
   </article>
 
     
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/08/29/第九章-DOM/">第九章 DOM</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2016-08-29
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="第九章-DOM"><a href="#第九章-DOM" class="headerlink" title="第九章 DOM"></a>第九章 DOM</h2><p>DOM（文档对象模型）是针对HTML和XML文档的一个API（应用程序编程接口)。DOM描绘了一个层次化的节点树，允许开发人员添加，移除和修改页面的一部分，DOM脱胎于Netscape及微软公司创始的DHTML(动态HTML)，但现在它已经成为表现和操作页面标记的真正的跨平台、语言中立的方式。</p>
-<h3 id="1-节点层次"><a href="#1-节点层次" class="headerlink" title="1.节点层次 :"></a>1.节点层次 :</h3><p>DOM可以将任何HTML或XML文档描绘成一个由多层次节点构成的结构。节点分为几种不同的类型，每种类型分别表示文档中不同的信息或标记。每个节点都有各自的特点，数据和方法，另外节点也与其他节点存在联系。节点之间构成了层次，而所有页面标记则表现为一个特定节点为根节点的树形结构。以下面HTML为例 :<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Sample Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
-          <div class="read-more">
-            <a href="/2016/08/29/第九章-DOM/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
   </section>
 
   
@@ -611,12 +610,12 @@
     
       <a class="prev" href="/page/3/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text">上一页</span>
+        <span class="prev-text">Prev</span>
       </a>
     
     
       <a class="next" href="/page/5/">
-        <span class="next-text">下一页</span>
+        <span class="next-text">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -665,11 +664,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    主题 - 
+    Theme - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
