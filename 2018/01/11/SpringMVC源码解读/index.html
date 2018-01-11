@@ -102,7 +102,7 @@
         <li class="mobile-menu-item">
           
           
-            Home
+            首页
           
         </li>
       </a>
@@ -111,7 +111,7 @@
         <li class="mobile-menu-item">
           
           
-            Archives
+            归档
           
         </li>
       </a>
@@ -120,7 +120,7 @@
         <li class="mobile-menu-item">
           
           
-            Tags
+            标签
           
         </li>
       </a>
@@ -141,7 +141,7 @@
           <a class="menu-item-link" href="/">
             
             
-              Home
+              首页
             
           </a>
         </li>
@@ -150,7 +150,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              Archives
+              归档
             
           </a>
         </li>
@@ -159,7 +159,7 @@
           <a class="menu-item-link" href="/tags">
             
             
-              Tags
+              标签
             
           </a>
         </li>
@@ -195,9 +195,9 @@
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
+    <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#从web-xml开始"><span class="toc-text">从web.xml开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DispatchServlet继承关系"><span class="toc-text">DispatchServlet继承关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请求和响应"><span class="toc-text">请求和响应</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#从web-xml开始"><span class="toc-text">从web.xml开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DispatchServlet继承关系"><span class="toc-text">DispatchServlet继承关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DispatchServlet的初始化"><span class="toc-text">DispatchServlet的初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请求和响应"><span class="toc-text">请求和响应</span></a></li></ol>
     </div>
   </div>
 
@@ -211,6 +211,10 @@
 <p><img src="http://ok2crkjlq.bkt.clouddn.com/contextLoader.png" alt="ContextLoad.java"></p>
 <p>通过查看源码得到监听器主要干的事情就是加载ApplicationContext和WebApplicationContext。</p>
 <h3 id="DispatchServlet继承关系"><a href="#DispatchServlet继承关系" class="headerlink" title="DispatchServlet继承关系"></a>DispatchServlet继承关系</h3><p><img src="http://ok2crkjlq.bkt.clouddn.com/servlet%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png" alt="DispatchServlet继承关系"></p>
+<h3 id="DispatchServlet的初始化"><a href="#DispatchServlet的初始化" class="headerlink" title="DispatchServlet的初始化"></a>DispatchServlet的初始化</h3><p>我们在web.xml中只配置了一个servlet，那就是DispatchServlet，容器在启动的时候会对所有的servlet进行初始化，调用servlet的init()方法。<br>考虑到我们上图中的继承关系，会先调用HttpServletBean的init()方法。</p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/httpServletBean.init.png" alt="HttpServletBean.init()"></p>
+<p>注意最后一行的initServletBean()方法，该方法的作用是初始化子类FramworkServlet.</p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/frameworkServlet.initServletBean.png" alt="FramworkServlet.initServletBean()"></p>
 <h3 id="请求和响应"><a href="#请求和响应" class="headerlink" title="请求和响应"></a>请求和响应</h3><p>我们先来建立一个请求，接下来一步一步查看SpringMVC是怎么把我们的请求交给对应的handler，并生成响应的。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Controller</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestController</span> </span>&#123;</div><div class="line">  <span class="meta">@GetMapping</span>(<span class="string">"/test/path/&#123;id&#125;"</span>)</div><div class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">pathHandler</span><span class="params">(@RequestParam(<span class="string">"a"</span>)</span> String str,</span></div><div class="line">                            @<span class="title">PathVariable</span><span class="params">(<span class="string">"id"</span>)</span> Integer id,</div><div class="line">                            Model model) &#123;</div><div class="line">    model.addAttribute(<span class="string">"a"</span>,str);</div><div class="line">    model.addAttribute(<span class="string">"id"</span>,id);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>请求的URL:<br>localhost:8080/test/path/123<br>我们从容器开始说，容器启动的时候，我们配置了一个监听器listener，它主要的工作就是负责加载两个上下文(ApplicationContext和WebApplicationContext)。<br>接下来由于我们在web.xml中设置了dispatchServlet随着容器的启动而启动,启动过程中会执行servlet的init()方法。<br><img src="http://ok2crkjlq.bkt.clouddn.com/httpServletBean.init.png" alt="HttpServletBean.init()"><br>我们在浏览器的地址栏输入了一个路径，也可能是我们点击了一个按钮，这个按钮指向了一个链接，容器</p>
@@ -228,7 +232,7 @@
       
   <div class="post-reward">
     <input type="checkbox" name="reward" id="reward" hidden />
-    <label class="reward-button" for="reward">Reward</label>
+    <label class="reward-button" for="reward">赞赏支持</label>
     <div class="qr-code">
       
       
@@ -262,7 +266,7 @@
     
       <a class="next" href="/2018/01/10/SpringMVC文件上传/">
         <span class="next-text nav-default">SpringMVC文件上传</span>
-        <span class="prev-text nav-mobile">Next</span>
+        <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -320,11 +324,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Theme - 
+    主题 - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
