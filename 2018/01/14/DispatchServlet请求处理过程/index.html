@@ -17,8 +17,12 @@
 
 
 
+  <meta name="description" content="DispatchServlet请求处理过程"/>
 
 
+
+
+  <meta name="keywords" content="Spring, Welcome abroad" />
 
 
 
@@ -38,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/"/>
+<link rel="canonical" href="http://yoursite.com/2018/01/14/DispatchServlet请求处理过程/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -77,7 +81,7 @@
 
 
 
-    <title> Welcome abroad </title>
+    <title> DispatchServlet请求处理过程 - Welcome abroad </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -170,207 +174,12 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2018/01/17/垃圾收集器和内存分配策略/">垃圾收集器和内存分配策略</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-01-17
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h3 id="可达性分析算法"><a href="#可达性分析算法" class="headerlink" title="可达性分析算法"></a>可达性分析算法</h3><p><img src="http://ok2crkjlq.bkt.clouddn.com/jvm4" alt="可达性算法图解"></p>
-<p>当一个对象到GC Roots没有任何引用链(用图论的话说，就是从GC Roots节点触发到某个节点不可达)时，则证明此对象是不可用的。也就是说该对象是可回收的。</p>
-<p>什么是GC Roots?</p>
-<p>在Java语言中，可作为GC Roots的对象包括下面几种。</p>
-<ul>
-<li>虚拟机栈(栈帧中的本地变量表)中引用的对象</li>
-<li>方法区中类静态属性引用的对象</li>
-<li>方法区中常量引用的对象</li>
-<li>本地方法栈中JNI(即一般所说的Native方法)引用的对象</li>
-</ul>
-<h3 id="对象何时宣告死亡"><a href="#对象何时宣告死亡" class="headerlink" title="对象何时宣告死亡"></a>对象何时宣告死亡</h3><p>要真正宣告一个对象死亡，至少需要经历两次标记过程：</p>
-<ol>
-<li><p>如果对象在经历一次可达性分析之后发现没有与 GC Roots 相连接的引用链，那么他将会被第一次标记。</p>
-</li>
-<li><p>如果这个对象被判定有必要执行 finalize() 方法，那么这个方法将会被放置在一个叫做 F-Queue 的队列中，并在稍后由一个虚拟机建立的，低优先级的 Finalizer 线程去执行它。稍后GC将对 F-Queue 中的对象进行第二次小规模标记。</p>
-</li>
-</ol>
-<p>两次标记成功之后，GC便会将这个对象收回，对象宣告死亡。</p>
-<p>那么第一次被标记之后有没有办法逃脱GC回收呢？</p>
-<p>答案是有的，在进入 F-Queue 中时或者已经在队列中的这一段时间内，只要重新与引用链上的任何一个对象建立联系即可。</p>
-<h3 id="回收方法区-永久代"><a href="#回收方法区-永久代" class="headerlink" title="回收方法区(永久代)"></a>回收方法区(永久代)</h3><p>在堆中，尤其是在新生代中，常规应用进行一次垃圾收集一般可以回收70%-90%的空间，但是在永久代垃圾回收率却远低于此。</p>
-<p>永久代垃圾回收主要负责两部分内容：</p>
-<ol>
-<li><p>废弃常量<br>没人用则进行回收</p>
-</li>
-<li><p>回收无用类<br> 判断一个常量是否需要回收比较简单，但是回收一个类需要满足下面三个条件。</p>
-<ul>
-<li>该类所有的实例已经被回收，也就是Java堆中不存在该类的任何实例</li>
-<li>加载该类的类加载器已经被回收</li>
-<li>该类对应的java.lang.Class对象没有在任何地方被使用，无法在任何地方通过反射调用该类的方法。</li>
-</ul>
-</li>
-</ol>
-<p>回收永久代的常用场景：</p>
-<p>在大量使用反射，动态代理，CGLib等框架，动态生成JSP以及OSGi这类频繁自定义ClassLoader的场景都需要虚拟机具备类卸载功能，以保证永久代不会发生内存溢出。</p>
-<h3 id="垃圾收集算法"><a href="#垃圾收集算法" class="headerlink" title="垃圾收集算法"></a>垃圾收集算法</h3><ol>
-<li>标记–清楚算法</li>
-</ol>
-<p>标记过程前面已经介绍过，一个对象需要经历两次标记的过程才能被确定为可回收的对象，清除时直接释放原对象所占的内存空间即可。</p>
-<p>这样做的问题也随之而来，会带来内存碎片，这将导致如果突然加载一个大的对象将会导致内存溢出的问题。</p>
-<p>另外该算法还存在效率问题，标记和清除两个过程的效率都不够高。</p>
-<ol>
-<li>复制算法</li>
-</ol>
-<p>复制算法为解决效率问题而生，它将内存划分为两块相等的空间，每次只使用其中一块，当这一块内存用完之后，就将这块内存中还存活的对象复制到另外一块内存中，再把该内存块中的内存全部释放掉。</p>
-<p>该算法顺手也把内存碎片的问题给解决了，但是该算法付出的代价也很大–将内存缩小了一半。</p>
-<p>然而，很多商业虚拟机采用该算法回收新生代的对象，他们在使用该算法的时候，并不会按照一比一的比例去划分内存，而是按照8:1:1的比例将内存划分为3个部分，这三个部分分别对应新生代的Eden,From Survivor,To Survivor区。</p>
-<p>每次使用时，只使用其中的Eden和From Survivor区，也就是说每次只使用内存的90%的容量。当GC时，将Eden和From Survivor中还存活的对象存放在To Survivor区中，当To Survivor区中内存不足以存放下所有新生代存活的对象时，需要依赖其他内存进行分配担保(这里指老年代)。</p>
-<p>分配担保–即新生代发生GC时，虚拟机会先检查老年代最大可用的连续空间是否大于新生代所有对象总空间。</p>
-<ol>
-<li>标记–整理算法</li>
-</ol>
-<p>该算法是标记过程与前两种无异，但是后续步骤是让所用存活对象都向一端移动，然后将存活的对象按地址大小进行排列，最后将大于队列末端的地址全部释放掉。</p>
-<p>该算法很适合对老年代进行GC。</p>
-<ol>
-<li>分代收集算法<br>对新生代采用复制算法，对老年代采用标记–整理算法。</li>
-</ol>
-<h3 id="HptSpot算法实现"><a href="#HptSpot算法实现" class="headerlink" title="HptSpot算法实现"></a>HptSpot算法实现</h3><ol>
-<li>枚举根节点</li>
-</ol>
-<p>从可达性分析中从GC Roots节点找引用链这个操作为例，可作为GC Roots的节点主要是全局性的引用(例如常量和静态属性)与执行上下文(例如栈帧中的变量表)，现在很多应用仅仅方法区就有数百兆，如果逐个检查这里面的引用，必然耗费很多时间。</p>
-<p>枚举根节点就是解决如何找到GC Roots的问题。</p>
-<p>使用一组称为OopMap的数据结构来达到这个目的。</p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/01/17/对象创建的过程/">对象创建的过程</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-01-17
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h3 id="类何时被加载"><a href="#类何时被加载" class="headerlink" title="类何时被加载"></a>类何时被加载</h3><p>虚拟机在碰到一条 new(或getstatic,putstatic,invokestatic) 指令时，会先去常量池中查看是否有该类的符号引用，并且检查这个类是否已被加载，解析和初始化，如果没有，那么就会执行这个类的加载过程。</p>
-<p>以下说明5中主动初始化的场景，除此之外，所有引用类的方法不会触发初始化，成为被动引用。</p>
-          <div class="read-more">
-            <a href="/2018/01/17/对象创建的过程/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/01/17/Java内存区域/">Java内存区域</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-01-17
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h3 id="运行区简介"><a href="#运行区简介" class="headerlink" title="运行区简介"></a>运行区简介</h3><p><a href="http://blog.csdn.net/top_code/article/details/51288529">图片来源于</a></p>
-<p><img src="http://ok2crkjlq.bkt.clouddn.com/jvm1" alt="Java虚拟机运行时数据区"></p>
-<p>运行时数据区各部分说明:<br>蓝色部分为所有线程共享的数据区，白色部分为线程私有的数据区</p>
-          <div class="read-more">
-            <a href="/2018/01/17/Java内存区域/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/01/14/DispatchServlet请求处理过程/">DispatchServlet请求处理过程</a>
+          DispatchServlet请求处理过程
         
       </h1>
 
@@ -385,14 +194,17 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#DispatchServlet的service"><span class="toc-text">DispatchServlet的service()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DispatchServlet的doGet-等方法"><span class="toc-text">DispatchServlet的doGet()等方法</span></a></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        
-        
-
-        
-          <h3 id="DispatchServlet的service"><a href="#DispatchServlet的service" class="headerlink" title="DispatchServlet的service()"></a>DispatchServlet的service()</h3><p>一个请求是从一个客户端发出，经过容器然后将请求交与合适的servlet，servlet调用service()方法来处理这个请求。<br>如下是 DispatchServlet 继承关系图。</p>
+        <h3 id="DispatchServlet的service"><a href="#DispatchServlet的service" class="headerlink" title="DispatchServlet的service()"></a>DispatchServlet的service()</h3><p>一个请求是从一个客户端发出，经过容器然后将请求交与合适的servlet，servlet调用service()方法来处理这个请求。<br>如下是 DispatchServlet 继承关系图。</p>
 <p><img src="http://ok2crkjlq.bkt.clouddn.com/servlet%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB.png" alt="dispatchServlet继承关系"></p>
 <p>我们主要关心上图中各类的 service() 方法。看看 DispatchServlet 中的 service() 方法来自哪里。</p>
 <ul>
@@ -470,341 +282,77 @@
 </li>
 </ol>
 
-        
       
     </div>
 
     
-
-    
-
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/01/11/SpringMVC源码解读/">DispatchServlet初始化</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-01-11
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
       
-        
-        
-          
-        
 
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden />
+    <label class="reward-button" for="reward">赞赏支持</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/weixin.jpg" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="/image/reward/alipay.jpg" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
         
-          <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>本文分为两大板块</p>
-<ul>
-<li><p>监听器ContextLoaderListener源码分析</p>
-</li>
-<li><p>DispatchServlet初始化源码分析</p>
-</li>
-</ul>
-          <div class="read-more">
-            <a href="/2018/01/11/SpringMVC源码解读/" class="read-more-link">阅读更多</a>
+          <div class="post-tags">
+            
+              <a href="/tags/Spring/">Spring</a>
+            
           </div>
         
-      
-    </div>
-
+        
+        
+  <nav class="post-nav">
     
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/01/10/SpringMVC文件上传/">SpringMVC文件上传</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-01-10
-        </span>
-        
-        
-      </div>
-    </header>
-
+      <a class="prev" href="/2018/01/17/Java内存区域/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Java内存区域</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>谈到文件上传，首先要说业务逻辑，<strong>如果上传的文件大家都可以看(比如广告或者首页的banner)等，那么我们就把图片放在静态资源区(与css,js一样的位置)中</strong>，<strong>如果文件是受保护的(像用户只能查看自己上传的照片)，那么我们就把它存放在服务器中的某个专门存放图片的位置。</strong><br>本例分别展示了存放在两个位置的上传文件的方法，上传之后，作为延伸，还添加了查看上传的文件以及下载已经上传的文件的功能。<br>
-          <div class="read-more">
-            <a href="/2018/01/10/SpringMVC文件上传/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/01/05/springMVC/">SpringMVC</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-01-05
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="Spring常用的注解"><a href="#Spring常用的注解" class="headerlink" title="Spring常用的注解"></a>Spring常用的注解</h2><h3 id="1-RequestMapping"><a href="#1-RequestMapping" class="headerlink" title="1.@RequestMapping"></a>1.@RequestMapping</h3><p>一个请求到达 dispatchServlet 之后，dispatchServlet 将根据 RequestMapping 来查找谁来处理这个请求，具体查找过程由 HandlerMapping 和 HandlerAdapter 来实现。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(method = RequestMethod.GET,value = <span class="string">"/hello"</span>, produces = <span class="string">"text/html;charset=UTF-8"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">hello</span><span class="params">()</span> </span>&#123;</div><div class="line">        ModelAndView modelAndView = <span class="keyword">new</span> ModelAndView();</div><div class="line">        modelAndView.addObject(<span class="string">"message"</span>,<span class="string">"hello world"</span>);</div><div class="line">        modelAndView.setViewName(<span class="string">"welcome"</span>);</div><div class="line">        <span class="keyword">return</span> modelAndView;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-          <div class="read-more">
-            <a href="/2018/01/05/springMVC/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/12/09/邻接多重表-包含删除操作-Java/">邻接多重表(包含删除操作)Java</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-09
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <table>
-<thead>
-<tr>
-<th></th>
-<th>优点</th>
-<th>缺点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>邻接矩阵</td>
-<td>实现简单，能同时求任意顶点的出度和入度</td>
-<td>在存储稀疏图时会造成空间浪费</td>
-</tr>
-<tr>
-<td>邻接表</td>
-<td>使用数组链表实现，不会造成空间浪费</td>
-<td>不能同时求出任意顶点的出度和入度， 除非同时构建邻接表和逆邻接表，对边 进行操作时需要操作两次</td>
-</tr>
-<tr>
-<td>十字链表</td>
-<td>使用数组链表实现，不会造成空间浪费 同时可以求出某个顶点的入度和出度</td>
-<td>对边进行操作时需要操作两次</td>
-</tr>
-<tr>
-<td>邻接多重表</td>
-<td>对边的操作进行了优化，操作边的次数由两次 减少到了一次</td>
-<td>删除操作较为复杂</td>
-</tr>
-</tbody>
-</table>
-<p>本文节选了邻接多重表的实现。虽然网上有很多实现，但是大多数并没有删除操作，这里给出了删除操作的实现，如果有更好的方法欢迎提出。<br>
-          <div class="read-more">
-            <a href="/2017/12/09/邻接多重表-包含删除操作-Java/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/11/10/JavaCurrency锁的实现/">JavaCurrency锁的实现</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-11-10
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h3 id="读写锁-ReentrantReadWriteLock"><a href="#读写锁-ReentrantReadWriteLock" class="headerlink" title="读写锁(ReentrantReadWriteLock)"></a>读写锁(ReentrantReadWriteLock)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">tryAcquire</span><span class="params">(<span class="keyword">int</span> acquires)</span> </span>&#123;</div><div class="line"></div><div class="line">           Thread current = Thread.currentThread();</div><div class="line">           <span class="keyword">int</span> c = getState();</div><div class="line">           <span class="keyword">int</span> w = exclusiveCount(c);</div><div class="line">           <span class="keyword">if</span> (c != <span class="number">0</span>) &#123;</div><div class="line">             <span class="comment">//如果c!=0 &amp;&amp; w==0 ,那么肯定存在读锁，直接返回false</span></div><div class="line">             <span class="comment">//如果c!=0 &amp;&amp; w!=0 ，那么肯定不存在读锁，只需判断当前写锁是否是当前线程即可</span></div><div class="line">               <span class="keyword">if</span> (w == <span class="number">0</span> || current != getExclusiveOwnerThread())</div><div class="line">                   <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">               <span class="keyword">if</span> (w + exclusiveCount(acquires) &gt; MAX_COUNT)</div><div class="line">                   <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">"Maximum lock count exceeded"</span>);</div><div class="line">               <span class="comment">//上述判断全部通过，肯定是重入锁</span></div><div class="line">               setState(c + acquires);</div><div class="line">               <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">           &#125;</div><div class="line">           <span class="keyword">if</span> (writerShouldBlock() ||</div><div class="line">               !compareAndSetState(c, c + acquires))</div><div class="line">               <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">           setExclusiveOwnerThread(current);</div><div class="line">           <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">       &#125;</div></pre></td></tr></table></figure>
-<h3 id="ConcurrentLinkedQueue"><a href="#ConcurrentLinkedQueue" class="headerlink" title="ConcurrentLinkedQueue"></a>ConcurrentLinkedQueue</h3><ol>
-<li>入队 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">offer</span><span class="params">(E e)</span> </span>&#123;</div><div class="line">    checkNotNull(e);</div><div class="line">    <span class="keyword">final</span> Node&lt;E&gt; newNode = <span class="keyword">new</span> Node&lt;E&gt;(e);</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (Node&lt;E&gt; t = tail, p = t;;) &#123;</div><div class="line">        Node&lt;E&gt; q = p.next;</div><div class="line">        <span class="keyword">if</span> (q == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="comment">// p是尾节点</span></div><div class="line">            <span class="keyword">if</span> (p.casNext(<span class="keyword">null</span>, newNode)) &#123;</div><div class="line">                <span class="comment">// Successful CAS is the linearization point</span></div><div class="line">                <span class="comment">// for e to become an element of this queue,</span></div><div class="line">                <span class="comment">// and for newNode to become "live".</span></div><div class="line">                <span class="keyword">if</span> (p != t) <span class="comment">// hop two nodes at a time</span></div><div class="line">                    casTail(t, newNode);  <span class="comment">// Failure is OK.</span></div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="comment">// Lost CAS race to another thread; re-read next</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p == q)</div><div class="line">            <span class="comment">// We have fallen off list.  If tail is unchanged, it</span></div><div class="line">            <span class="comment">// will also be off-list, in which case we need to</span></div><div class="line">            <span class="comment">// jump to head, from which all live nodes are always</span></div><div class="line">            <span class="comment">// reachable.  Else the new tail is a better bet.</span></div><div class="line">            p = (t != (t = tail)) ? t : head;</div><div class="line">        <span class="keyword">else</span></div><div class="line">            <span class="comment">// Check for tail updates after two hops.</span></div><div class="line">            p = (p != t &amp;&amp; t != (t = tail)) ? t : q;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/10/16/Java面向对象2/">Java面向对象2</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-10-16
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑<br>$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a}. $$</p>
-<p>$$<br>x \href{why-equal.html}{=} y^2 + 1<br>$$</p>
-<h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><ol>
-<li><p>常规内部类<br><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-16%20%E4%B8%8B%E5%8D%888.46.31.png" alt="常规内部类的组成"></p>
-<ul>
-<li>只有内部类可以声明为 <strong>private</strong>，常规类只可以被声明为 <strong>public和protected</strong></li>
-<li>内部类可以访问外部类私有域的成员变量</li>
-<li>内部类不允许有静态方法和变量
-          <div class="read-more">
-            <a href="/2017/10/16/Java面向对象2/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
-    
-      <a class="next" href="/page/2/">
-        <span class="next-text">下一页</span>
+      <a class="next" href="/2018/01/11/SpringMVC源码解读/">
+        <span class="next-text nav-default">DispatchServlet初始化</span>
+        <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
+
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -876,6 +424,8 @@
     </div>
 
     
+  
+
 
 
     

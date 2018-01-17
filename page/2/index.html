@@ -177,6 +177,197 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2017/09/19/Java面向对象/">Java面向对象</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-09-19
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><ul>
+<li>从形式上看，封装将数据和行为组合在一个包中，并对对象的使用者隐藏了数据的实现方式</li>
+<li>实现封装的关键在于绝对不能让类中的方法直接访问其他类的实例域，程序仅通过对象的方法同对象的数据进行交互
+          <div class="read-more">
+            <a href="/2017/09/19/Java面向对象/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/09/19/Java基本程序设计结构/">Java基本程序设计结构</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-09-19
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="文件命名"><a href="#文件命名" class="headerlink" title="文件命名"></a>文件命名</h3><ul>
+<li>源代码的文件名必须和 <strong>公共类</strong> 的名字相同</li>
+<li>一个Java文件只能有一个 <strong>public类</strong></li>
+<li>如果文件不止一个类，且没有 <strong>public类</strong>，那么Java文件命名没有限制
+          <div class="read-more">
+            <a href="/2017/09/19/Java基本程序设计结构/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/09/16/Java字符串优化/">Java字符串优化</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-09-16
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="加号运算符优于StringBuffer的情况"><a href="#加号运算符优于StringBuffer的情况" class="headerlink" title="加号运算符优于StringBuffer的情况"></a>加号运算符优于StringBuffer的情况</h3><ul>
+<li>代码:</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">  String a = <span class="string">"a"</span>;</div><div class="line">  String b = <span class="string">"b"</span>;</div><div class="line">  String c = <span class="string">"c"</span>;</div><div class="line"></div><div class="line">  <span class="keyword">long</span> start = System.currentTimeMillis();</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">100000000</span>;i++) &#123;</div><div class="line">    String str = a + b + c;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  System.out.println(<span class="string">"加号运算符-&gt; "</span> + (System.currentTimeMillis() - start) + <span class="string">" ms"</span>);</div><div class="line"></div><div class="line">  start = System.currentTimeMillis();</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">100000000</span>;i++) &#123;</div><div class="line">    StringBuffer str = <span class="keyword">new</span> StringBuffer();</div><div class="line">    str.append(a);</div><div class="line">    str.append(b);</div><div class="line">    str.append(c);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  System.out.println(<span class="string">"StringBuffer-&gt; "</span> + (System.currentTimeMillis() - start) + <span class="string">" ms"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <div class="read-more">
+            <a href="/2017/09/16/Java字符串优化/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/09/13/Linux进程/">Linux进程</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-09-13
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h3 id="程序和进程"><a href="#程序和进程" class="headerlink" title="程序和进程"></a>程序和进程</h3><p>eg: /bin/bash 为程序，我们每个人登录时都会运行该程序，运行该程序系统就会产生进程<br>如下图所示(图片来源于鸟哥的私房菜)</p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/program_process.gif" alt="图片来源于鸟哥的私房菜"></p>
+<h3 id="父进程与子进程之间的调用"><a href="#父进程与子进程之间的调用" class="headerlink" title="父进程与子进程之间的调用"></a>父进程与子进程之间的调用</h3><p>Linux的进程调用通常称为 <strong>fork-and-exec</strong> 流程，进程都会通过父进程以复制(fork)的方式产生一个一模一样的子进程，然后被复制出来的子进程再以exec的方式执行实际要进行的程序，最终称为一个子进程的存在<br>如下图所示(图片来源于鸟哥的私房菜)</p>
+<p><img src="http://ok2crkjlq.bkt.clouddn.com/fork-and-exec.gif" alt="图片来源于鸟哥的私房菜"></p>
+<h3 id="进程查看"><a href="#进程查看" class="headerlink" title="进程查看"></a>进程查看</h3><ol>
+<li><p>静态查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">查看自己的bash相关进程</div><div class="line">ps <span class="_">-l</span></div><div class="line">查看系统所有进程</div><div class="line">ps aux</div></pre></td></tr></table></figure>
+</li>
+<li><p>动态查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">top</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2017/09/13/Linux用户账号与分组/">Linux用户账号与分组</a>
         
       </h1>
@@ -449,187 +640,6 @@
 <li>分区的最小单位为柱面
           <div class="read-more">
             <a href="/2017/09/02/Linux-权限及目录/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/08/10/zookeeper集群配置/">zookeeper集群配置</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-08-10
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line">1. 在vmware中克隆虚拟机(开启Root账号并配置JDK)</div><div class="line">2. 将虚拟机的IP地址设置为静态</div><div class="line">	vim /etc/network/interfaces</div><div class="line">	-----------------------------------</div><div class="line">	iface ens33 inet static</div><div class="line">	address 192.168.135.136</div><div class="line">	netmask 255.255.255.0</div><div class="line">	gateway 192.168.135.2</div><div class="line">3. 修改DNS服务器</div><div class="line">	vim /etc/resolv.conf</div><div class="line">	-----------------------------------</div><div class="line">	nameserver 223.5.5.5</div><div class="line">4. 重启网络</div><div class="line">	/etc/init.d/networking restart</div><div class="line">5. 将zookeeper拷贝到/usr/local</div><div class="line">	mv zookeeper-3.4.9 /user/local</div><div class="line">6. 将zookeeper文件夹进行重命名</div><div class="line">	cd /usr/local</div><div class="line">	mv zookeeper-3.4.9 zk</div><div class="line">7. 在zookeeper的文件夹中创建data文件夹</div><div class="line">	cd /zk</div><div class="line">	mkdir data</div><div class="line">8. 修改zookeeper的配置文件</div><div class="line">	cd conf</div><div class="line">	cp zoo_sample.cfg zoo.cfg</div><div class="line">	vim zoo.cfg</div><div class="line">	-----------------------------</div><div class="line">	dataDir=/usr/local/zk/data</div><div class="line">9. 启动zookeeper</div><div class="line">	cd bin</div><div class="line">	zkServer.sh start</div><div class="line">10. 查看zk的状态</div><div class="line">	zkServer.sh status</div><div class="line">11. 查看zk的进程号</div><div class="line">	jps</div><div class="line">12. 停止zk</div><div class="line">	zkServer.sh stop</div><div class="line">13. 伪分布式的zk</div><div class="line">	zk    2181   2888  3888   2069</div><div class="line">	zk-2  2182   2889  3889   2106 (L)</div><div class="line">	zk-3  2183   2890  3890	  2157</div><div class="line">14. 在data目录中创建myid文件，内容为zk服务的id（1，2，3）</div><div class="line">	cd data</div><div class="line">	touch myid</div><div class="line">	vim myid</div><div class="line">	---------------</div><div class="line">	1</div><div class="line">15. 去zk的配置文件中开启集群模式</div><div class="line">	cd conf</div><div class="line">	vim zoo.cfg</div><div class="line">	---------------------------------</div><div class="line">	server.1=127.0.0.1:2888:3888</div><div class="line">	server.2=127.0.0.1:2889:3889</div><div class="line">	server.3=127.0.0.1:2890:3890</div><div class="line"></div><div class="line">	127.0.0.1是zk所在服务器的ip地址，2888是和leader沟通的端口，3888是选举端口</div><div class="line">16. 设置Linux的开机启动zk集群</div><div class="line">	vim /etc/rc.local</div><div class="line">	------------------------------</div><div class="line">	export JAVA_HOME=/usr/local/jdk8</div><div class="line">	/usr/local/zk/bin/zkServer.sh start</div><div class="line">	/usr/local/zk-2/bin/zkServer.sh start</div><div class="line">	/usr/local/zk-3/bin/zkServer.sh start</div><div class="line">17. 将dubbo-admin项目打包成war</div><div class="line">18. 将war放入到tomcat的webapps目录中</div><div class="line">	mv dubbo-admin /usr/local/tomcat8/webapps</div><div class="line">19. 给tomcat的bin目录添加执行权限</div><div class="line">	chmod -R u+x bin</div><div class="line">20. 启动tomcat</div><div class="line">	cd bin</div><div class="line">	startup.sh</div><div class="line">21. 关闭tomcat</div><div class="line">	cd bin</div><div class="line">	shupdown.sh</div><div class="line">22. 修改duboo-admin的配置文件dubbo.properties</div><div class="line">	vim duboo.properties</div><div class="line">	-----------------------</div><div class="line">	dubbo.registry.address=zookeeper://192.168.135.136:2181?backup=192.168.135.136:2182,192.168.135.136:2183</div><div class="line">23. 启动tomcat</div><div class="line">24. 让tomcat随操作系统启动</div><div class="line">	vim /etc/rc.local</div><div class="line">	-----------------------------</div><div class="line">	/usr/local/tomcat8/bin/startup.sh</div></pre></td></tr></table></figure>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/08/08/搭建dubbo项目/">搭建dubbo项目</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-08-08
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p><img src="http://ok2crkjlq.bkt.clouddn.com/dubbo-architecture.jpg" alt="dubbo架构"></p>
-<ul>
-<li>服务容器负责启动，加载，运行服务提供者</li>
-<li>服务提供者在启动时，向注册中心注册自己提供的服务</li>
-<li>服务消费者在启动时，向注册中心订阅自己需要的服务
-          <div class="read-more">
-            <a href="/2017/08/08/搭建dubbo项目/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/08/05/hibernate笔记/">hibernate笔记</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-08-05
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="一对一"><a href="#一对一" class="headerlink" title="一对一"></a>一对一</h2><h3 id="一对一主键关联"><a href="#一对一主键关联" class="headerlink" title="一对一主键关联"></a>一对一主键关联</h3><p>1.XML配置</p>
-<ul>
-<li>必须双向关联</li>
-<li>被关联方主键生成策略为外键生成策略</li>
-<li>被关联方one-to-one需设置constrained=“true”约束
-          <div class="read-more">
-            <a href="/2017/08/05/hibernate笔记/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/07/26/Mybatis延迟加载及二级缓存问题/">Mybatis延迟加载及二级缓存问题</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-07-26
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="延迟加载"><a href="#延迟加载" class="headerlink" title="延迟加载"></a>延迟加载</h2><p>延迟加载处理的是N+1性能问题，所谓N+1性能问题指的是映射集合(resultMap)内存在级联时，我们需要的数据少于数据库查出来的数据。这样就会造成数据库多查出来的数据白白被浪费掉，同时也加大了数据库那边的负担，这是我们最不希望看到的。<br>Mybatis为此引入了延迟加载。<br>
-          <div class="read-more">
-            <a href="/2017/07/26/Mybatis延迟加载及二级缓存问题/" class="read-more-link">阅读更多</a>
           </div>
         
       
