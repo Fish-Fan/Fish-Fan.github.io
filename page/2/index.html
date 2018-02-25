@@ -98,7 +98,7 @@
         <li class="mobile-menu-item">
           
           
-            首页
+            Home
           
         </li>
       </a>
@@ -107,7 +107,7 @@
         <li class="mobile-menu-item">
           
           
-            归档
+            Archives
           
         </li>
       </a>
@@ -116,7 +116,7 @@
         <li class="mobile-menu-item">
           
           
-            标签
+            Tags
           
         </li>
       </a>
@@ -137,7 +137,7 @@
           <a class="menu-item-link" href="/">
             
             
-              首页
+              Home
             
           </a>
         </li>
@@ -146,7 +146,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              归档
+              Archives
             
           </a>
         </li>
@@ -155,7 +155,7 @@
           <a class="menu-item-link" href="/tags">
             
             
-              标签
+              Tags
             
           </a>
         </li>
@@ -171,6 +171,176 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts">
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/12/09/邻接多重表-包含删除操作-Java/">邻接多重表(包含删除操作)Java</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-12-09
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <table>
+<thead>
+<tr>
+<th></th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>邻接矩阵</td>
+<td>实现简单，能同时求任意顶点的出度和入度</td>
+<td>在存储稀疏图时会造成空间浪费</td>
+</tr>
+<tr>
+<td>邻接表</td>
+<td>使用数组链表实现，不会造成空间浪费</td>
+<td>不能同时求出任意顶点的出度和入度， 除非同时构建邻接表和逆邻接表，对边 进行操作时需要操作两次</td>
+</tr>
+<tr>
+<td>十字链表</td>
+<td>使用数组链表实现，不会造成空间浪费 同时可以求出某个顶点的入度和出度</td>
+<td>对边进行操作时需要操作两次</td>
+</tr>
+<tr>
+<td>邻接多重表</td>
+<td>对边的操作进行了优化，操作边的次数由两次 减少到了一次</td>
+<td>删除操作较为复杂</td>
+</tr>
+</tbody>
+</table>
+<p>本文节选了邻接多重表的实现。虽然网上有很多实现，但是大多数并没有删除操作，这里给出了删除操作的实现，如果有更好的方法欢迎提出。<br>
+          <div class="read-more">
+            <a href="/2017/12/09/邻接多重表-包含删除操作-Java/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/11/10/JavaCurrency锁的实现/">JavaCurrency锁的实现</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-11-10
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h3 id="读写锁-ReentrantReadWriteLock"><a href="#读写锁-ReentrantReadWriteLock" class="headerlink" title="读写锁(ReentrantReadWriteLock)"></a>读写锁(ReentrantReadWriteLock)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">tryAcquire</span><span class="params">(<span class="keyword">int</span> acquires)</span> </span>&#123;</div><div class="line"></div><div class="line">           Thread current = Thread.currentThread();</div><div class="line">           <span class="keyword">int</span> c = getState();</div><div class="line">           <span class="keyword">int</span> w = exclusiveCount(c);</div><div class="line">           <span class="keyword">if</span> (c != <span class="number">0</span>) &#123;</div><div class="line">             <span class="comment">//如果c!=0 &amp;&amp; w==0 ,那么肯定存在读锁，直接返回false</span></div><div class="line">             <span class="comment">//如果c!=0 &amp;&amp; w!=0 ，那么肯定不存在读锁，只需判断当前写锁是否是当前线程即可</span></div><div class="line">               <span class="keyword">if</span> (w == <span class="number">0</span> || current != getExclusiveOwnerThread())</div><div class="line">                   <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">               <span class="keyword">if</span> (w + exclusiveCount(acquires) &gt; MAX_COUNT)</div><div class="line">                   <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">"Maximum lock count exceeded"</span>);</div><div class="line">               <span class="comment">//上述判断全部通过，肯定是重入锁</span></div><div class="line">               setState(c + acquires);</div><div class="line">               <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">           &#125;</div><div class="line">           <span class="keyword">if</span> (writerShouldBlock() ||</div><div class="line">               !compareAndSetState(c, c + acquires))</div><div class="line">               <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">           setExclusiveOwnerThread(current);</div><div class="line">           <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">       &#125;</div></pre></td></tr></table></figure>
+<h3 id="ConcurrentLinkedQueue"><a href="#ConcurrentLinkedQueue" class="headerlink" title="ConcurrentLinkedQueue"></a>ConcurrentLinkedQueue</h3><ol>
+<li>入队 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">offer</span><span class="params">(E e)</span> </span>&#123;</div><div class="line">    checkNotNull(e);</div><div class="line">    <span class="keyword">final</span> Node&lt;E&gt; newNode = <span class="keyword">new</span> Node&lt;E&gt;(e);</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (Node&lt;E&gt; t = tail, p = t;;) &#123;</div><div class="line">        Node&lt;E&gt; q = p.next;</div><div class="line">        <span class="keyword">if</span> (q == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="comment">// p是尾节点</span></div><div class="line">            <span class="keyword">if</span> (p.casNext(<span class="keyword">null</span>, newNode)) &#123;</div><div class="line">                <span class="comment">// Successful CAS is the linearization point</span></div><div class="line">                <span class="comment">// for e to become an element of this queue,</span></div><div class="line">                <span class="comment">// and for newNode to become "live".</span></div><div class="line">                <span class="keyword">if</span> (p != t) <span class="comment">// hop two nodes at a time</span></div><div class="line">                    casTail(t, newNode);  <span class="comment">// Failure is OK.</span></div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="comment">// Lost CAS race to another thread; re-read next</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p == q)</div><div class="line">            <span class="comment">// We have fallen off list.  If tail is unchanged, it</span></div><div class="line">            <span class="comment">// will also be off-list, in which case we need to</span></div><div class="line">            <span class="comment">// jump to head, from which all live nodes are always</span></div><div class="line">            <span class="comment">// reachable.  Else the new tail is a better bet.</span></div><div class="line">            p = (t != (t = tail)) ? t : head;</div><div class="line">        <span class="keyword">else</span></div><div class="line">            <span class="comment">// Check for tail updates after two hops.</span></div><div class="line">            p = (p != t &amp;&amp; t != (t = tail)) ? t : q;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2017/10/16/Java面向对象2/">Java面向对象2</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-10-16
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑<br>$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a}. $$</p>
+<p>$$<br>x \href{why-equal.html}{=} y^2 + 1<br>$$</p>
+<h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><ol>
+<li><p>常规内部类<br><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-16%20%E4%B8%8B%E5%8D%888.46.31.png" alt="常规内部类的组成"></p>
+<ul>
+<li>只有内部类可以声明为 <strong>private</strong>，常规类只可以被声明为 <strong>public和protected</strong></li>
+<li>内部类可以访问外部类私有域的成员变量</li>
+<li>内部类不允许有静态方法和变量
+          <div class="read-more">
+            <a href="/2017/10/16/Java面向对象2/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
     
       
   <article class="post">
@@ -205,7 +375,7 @@
 <li>从形式上看，封装将数据和行为组合在一个包中，并对对象的使用者隐藏了数据的实现方式</li>
 <li>实现封装的关键在于绝对不能让类中的方法直接访问其他类的实例域，程序仅通过对象的方法同对象的数据进行交互
           <div class="read-more">
-            <a href="/2017/09/19/Java面向对象/" class="read-more-link">阅读更多</a>
+            <a href="/2017/09/19/Java面向对象/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -252,7 +422,7 @@
 <li>一个Java文件只能有一个 <strong>public类</strong></li>
 <li>如果文件不止一个类，且没有 <strong>public类</strong>，那么Java文件命名没有限制
           <div class="read-more">
-            <a href="/2017/09/19/Java基本程序设计结构/" class="read-more-link">阅读更多</a>
+            <a href="/2017/09/19/Java基本程序设计结构/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -299,7 +469,7 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">  String a = <span class="string">"a"</span>;</div><div class="line">  String b = <span class="string">"b"</span>;</div><div class="line">  String c = <span class="string">"c"</span>;</div><div class="line"></div><div class="line">  <span class="keyword">long</span> start = System.currentTimeMillis();</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">100000000</span>;i++) &#123;</div><div class="line">    String str = a + b + c;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  System.out.println(<span class="string">"加号运算符-&gt; "</span> + (System.currentTimeMillis() - start) + <span class="string">" ms"</span>);</div><div class="line"></div><div class="line">  start = System.currentTimeMillis();</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">100000000</span>;i++) &#123;</div><div class="line">    StringBuffer str = <span class="keyword">new</span> StringBuffer();</div><div class="line">    str.append(a);</div><div class="line">    str.append(b);</div><div class="line">    str.append(c);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  System.out.println(<span class="string">"StringBuffer-&gt; "</span> + (System.currentTimeMillis() - start) + <span class="string">" ms"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2017/09/16/Java字符串优化/" class="read-more-link">阅读更多</a>
+            <a href="/2017/09/16/Java字符串优化/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -394,7 +564,7 @@
         
           <h3 id="用户账号"><a href="#用户账号" class="headerlink" title="用户账号"></a>用户账号</h3><p>与用户账号相关的两个文件:<br> /etc/passwd 和 /etc/shadow<br>
           <div class="read-more">
-            <a href="/2017/09/13/Linux用户账号与分组/" class="read-more-link">阅读更多</a>
+            <a href="/2017/09/13/Linux用户账号与分组/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -443,7 +613,7 @@
 <li>如果得到一个Enter符号(CR),就尝试执行该命令</li>
 <li>“#”号后面为注释
           <div class="read-more">
-            <a href="/2017/09/10/Linux的Shell-Script/" class="read-more-link">阅读更多</a>
+            <a href="/2017/09/10/Linux的Shell-Script/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -493,153 +663,7 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">eg: <span class="built_in">echo</span> <span class="variable">$PATH</span> | cut <span class="_">-d</span> <span class="string">':'</span> <span class="_">-f</span> 5</div><div class="line">eg: <span class="built_in">export</span> | cut -c 12-</div></pre></td></tr></table></figure>
           <div class="read-more">
-            <a href="/2017/09/07/Linux管道命令/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/09/06/bash的使用/">bash的使用</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-09-06
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h3 id="什么是bash"><a href="#什么是bash" class="headerlink" title="什么是bash"></a>什么是bash</h3><p>  在知道这个问题的答案之前需要先知道什么是shell,shell可以从以下几点来描述:</p>
-<ul>
-<li>shell将我们输入的命令与操作系统内核通信，然后内核控制硬件执行某些操作</li>
-<li>shell是给用户操作系统的接口，shell可以调用其他应用程序(如chmod,chown,vi等)来调用内核工作</li>
-<li>shell有多个版本，Linux使用的版本为”Bourne Again SHell”,简称 <strong>bash</strong>
-          <div class="read-more">
-            <a href="/2017/09/06/bash的使用/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/09/03/Linux文件查找和压缩/">Linux文件查找和压缩</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-09-03
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h3 id="查找命令"><a href="#查找命令" class="headerlink" title="查找命令"></a>查找命令</h3><p>查找命令的完整文件名可用 <strong>which</strong> 或 <strong>type</strong>，这两个命令都是通过PATH变量来查找文件名</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">which</span> ifconfig</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">type</span> ifconfig</div></pre></td></tr></table></figure>
-          <div class="read-more">
-            <a href="/2017/09/03/Linux文件查找和压缩/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/09/02/Linux-权限及目录/">Linux-权限及目录</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-09-02
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h3 id="磁盘的组成"><a href="#磁盘的组成" class="headerlink" title="磁盘的组成"></a>磁盘的组成</h3><ol>
-<li>主要由盘片，机械手臂，磁头和主轴马达组成</li>
-<li>盘片可分出扇区和柱面两个单位，扇区每个为 <strong>512bytes</strong></li>
-<li>每个磁盘的第一个扇区非常重要，记录了两个功能<ul>
-<li>主引导分区(Master Boot Record),安装引导加载程序，大小为 <strong>446bytes</strong></li>
-<li>分区表(partition table),记录硬盘分区状况，分区表有以下几个要点<ul>
-<li>硬盘默认的分区表仅能写入四组分区信息</li>
-<li>四组分区信息我们称为主(master)和扩展(extend)分区，扩展分区只能有 <strong>一个</strong>，且扩展分区又可分为逻辑分区(无个数限制)</li>
-<li>分区的最小单位为柱面
-          <div class="read-more">
-            <a href="/2017/09/02/Linux-权限及目录/" class="read-more-link">阅读更多</a>
+            <a href="/2017/09/07/Linux管道命令/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -659,12 +683,12 @@
     
       <a class="prev" href="/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text">上一页</span>
+        <span class="prev-text">Prev</span>
       </a>
     
     
       <a class="next" href="/page/3/">
-        <span class="next-text">下一页</span>
+        <span class="next-text">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -713,11 +737,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    主题 - 
+    Theme - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 

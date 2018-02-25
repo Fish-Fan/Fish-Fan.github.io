@@ -98,7 +98,7 @@
         <li class="mobile-menu-item">
           
           
-            首页
+            Home
           
         </li>
       </a>
@@ -107,7 +107,7 @@
         <li class="mobile-menu-item">
           
           
-            归档
+            Archives
           
         </li>
       </a>
@@ -116,7 +116,7 @@
         <li class="mobile-menu-item">
           
           
-            标签
+            Tags
           
         </li>
       </a>
@@ -137,7 +137,7 @@
           <a class="menu-item-link" href="/">
             
             
-              首页
+              Home
             
           </a>
         </li>
@@ -146,7 +146,7 @@
           <a class="menu-item-link" href="/archives/">
             
             
-              归档
+              Archives
             
           </a>
         </li>
@@ -155,7 +155,7 @@
           <a class="menu-item-link" href="/tags">
             
             
-              标签
+              Tags
             
           </a>
         </li>
@@ -171,6 +171,162 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts">
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/02/25/简单的AOP框架搭建/">简单的AOP框架搭建</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-02-25
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>今年寒假已经接近尾声，寒假给自己定下的目标–完成一个简单的MVC框架也已经快完成了，在实现一些进阶的功能，比如AOP时，逐渐有了自己的理解，特此写下，帮助自己日后复习。<br>本文的代码参考&lt;&lt;架构探险 从零开始写javaweb框架&gt;&gt;这本书。</p>
+<p>完整代码请移步我的 <a href="https://github.com/Fish-Fan/BabyFramework">github</a><br>
+          <div class="read-more">
+            <a href="/2018/02/25/简单的AOP框架搭建/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/02/12/Java动态代理/">Java动态代理</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-02-12
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Java语言本身是具有动态性的，在我们平时使用中，存在两种动态代理，分别是出自官方之手的JDK动态代理，一种是出自民间的CGLib(Code Generation Library)。<br>
+          <div class="read-more">
+            <a href="/2018/02/12/Java动态代理/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/01/18/Java并发笔记/">Java并发笔记</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-01-18
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h3 id="并发机制底层实现原理"><a href="#并发机制底层实现原理" class="headerlink" title="并发机制底层实现原理"></a>并发机制底层实现原理</h3><ol>
+<li><p>什么是volatile<br>volatile是轻量级的synchronized，它在多处理器开发中保证了共享变量的“可见性”，所谓“可见性”，就是指一个线程修改该共享变量时，其余线程能够立即读取到该共享变量最新的值。</p>
+</li>
+<li><p>什么是CAS操作<br>循环执行某操作，直到某操作的结果和预期结果一样。</p>
+</li>
+<li><p>CAS实现原子操作的三大问题</p>
+<ul>
+<li><p>ABA问题：一个值原来是A，后来又变成了B，最后又变成了A，这时使用CAS检查时发现值没有变化，但是实际上已经发生了变化，这就是ABA问题。<br>解决方法是加一个版本标记，每次对值进行操作是版本号+1，最后执行CAS检查的时候不仅要检查值，还要检查版本号是否相同。</p>
+</li>
+<li><p>循环时间长开销大</p>
+</li>
+<li><p>只能保证一个共享变量的原子操作</p>
+</li>
+</ul>
+</li>
+<li><p>happen-before原则<br>要求前一个操作执行的结果必须对后一个操作可见，且前一个操作按顺序排在第二个操作之前。</p>
+</li>
+<li><p>顺序一致性内存模型<br>同一时刻只能有一个线程访问全局内存。</p>
+</li>
+<li><p>volatile变量的特性</p>
+<ul>
+<li><p>可见性：对一个volatile变量的读，总是能看到任意线程对volatile变量最后的写入。</p>
+</li>
+<li><p>原子性：对任意单个volatile变量的读/写具有原子性，但是对volatile++这种复合操作没有原子性</p>
+</li>
+</ul>
+</li>
+</ol>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
     
       
   <article class="post">
@@ -306,7 +462,7 @@
           <h3 id="类何时被加载"><a href="#类何时被加载" class="headerlink" title="类何时被加载"></a>类何时被加载</h3><p>虚拟机在碰到一条 new(或getstatic,putstatic,invokestatic) 指令时，会先去常量池中查看是否有该类的符号引用，并且检查这个类是否已被加载，解析和初始化，如果没有，那么就会执行这个类的加载过程。</p>
 <p>以下说明5中主动初始化的场景，除此之外，所有引用类的方法不会触发初始化，成为被动引用。</p>
           <div class="read-more">
-            <a href="/2018/01/17/对象创建的过程/" class="read-more-link">阅读更多</a>
+            <a href="/2018/01/17/对象创建的过程/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -352,7 +508,7 @@
 <p><img src="http://ok2crkjlq.bkt.clouddn.com/jvm1" alt="Java虚拟机运行时数据区"></p>
 <p>运行时数据区各部分说明:<br>蓝色部分为所有线程共享的数据区，白色部分为线程私有的数据区</p>
           <div class="read-more">
-            <a href="/2018/01/17/Java内存区域/" class="read-more-link">阅读更多</a>
+            <a href="/2018/01/17/Java内存区域/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -518,7 +674,7 @@
 </li>
 </ul>
           <div class="read-more">
-            <a href="/2018/01/11/SpringMVC源码解读/" class="read-more-link">阅读更多</a>
+            <a href="/2018/01/11/SpringMVC源码解读/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -562,7 +718,7 @@
         
           <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>谈到文件上传，首先要说业务逻辑，<strong>如果上传的文件大家都可以看(比如广告或者首页的banner)等，那么我们就把图片放在静态资源区(与css,js一样的位置)中</strong>，<strong>如果文件是受保护的(像用户只能查看自己上传的照片)，那么我们就把它存放在服务器中的某个专门存放图片的位置。</strong><br>本例分别展示了存放在两个位置的上传文件的方法，上传之后，作为延伸，还添加了查看上传的文件以及下载已经上传的文件的功能。<br>
           <div class="read-more">
-            <a href="/2018/01/10/SpringMVC文件上传/" class="read-more-link">阅读更多</a>
+            <a href="/2018/01/10/SpringMVC文件上传/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -606,177 +762,7 @@
         
           <h2 id="Spring常用的注解"><a href="#Spring常用的注解" class="headerlink" title="Spring常用的注解"></a>Spring常用的注解</h2><h3 id="1-RequestMapping"><a href="#1-RequestMapping" class="headerlink" title="1.@RequestMapping"></a>1.@RequestMapping</h3><p>一个请求到达 dispatchServlet 之后，dispatchServlet 将根据 RequestMapping 来查找谁来处理这个请求，具体查找过程由 HandlerMapping 和 HandlerAdapter 来实现。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(method = RequestMethod.GET,value = <span class="string">"/hello"</span>, produces = <span class="string">"text/html;charset=UTF-8"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">hello</span><span class="params">()</span> </span>&#123;</div><div class="line">        ModelAndView modelAndView = <span class="keyword">new</span> ModelAndView();</div><div class="line">        modelAndView.addObject(<span class="string">"message"</span>,<span class="string">"hello world"</span>);</div><div class="line">        modelAndView.setViewName(<span class="string">"welcome"</span>);</div><div class="line">        <span class="keyword">return</span> modelAndView;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
           <div class="read-more">
-            <a href="/2018/01/05/springMVC/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/12/09/邻接多重表-包含删除操作-Java/">邻接多重表(包含删除操作)Java</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-09
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <table>
-<thead>
-<tr>
-<th></th>
-<th>优点</th>
-<th>缺点</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>邻接矩阵</td>
-<td>实现简单，能同时求任意顶点的出度和入度</td>
-<td>在存储稀疏图时会造成空间浪费</td>
-</tr>
-<tr>
-<td>邻接表</td>
-<td>使用数组链表实现，不会造成空间浪费</td>
-<td>不能同时求出任意顶点的出度和入度， 除非同时构建邻接表和逆邻接表，对边 进行操作时需要操作两次</td>
-</tr>
-<tr>
-<td>十字链表</td>
-<td>使用数组链表实现，不会造成空间浪费 同时可以求出某个顶点的入度和出度</td>
-<td>对边进行操作时需要操作两次</td>
-</tr>
-<tr>
-<td>邻接多重表</td>
-<td>对边的操作进行了优化，操作边的次数由两次 减少到了一次</td>
-<td>删除操作较为复杂</td>
-</tr>
-</tbody>
-</table>
-<p>本文节选了邻接多重表的实现。虽然网上有很多实现，但是大多数并没有删除操作，这里给出了删除操作的实现，如果有更好的方法欢迎提出。<br>
-          <div class="read-more">
-            <a href="/2017/12/09/邻接多重表-包含删除操作-Java/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/11/10/JavaCurrency锁的实现/">JavaCurrency锁的实现</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-11-10
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h3 id="读写锁-ReentrantReadWriteLock"><a href="#读写锁-ReentrantReadWriteLock" class="headerlink" title="读写锁(ReentrantReadWriteLock)"></a>读写锁(ReentrantReadWriteLock)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">tryAcquire</span><span class="params">(<span class="keyword">int</span> acquires)</span> </span>&#123;</div><div class="line"></div><div class="line">           Thread current = Thread.currentThread();</div><div class="line">           <span class="keyword">int</span> c = getState();</div><div class="line">           <span class="keyword">int</span> w = exclusiveCount(c);</div><div class="line">           <span class="keyword">if</span> (c != <span class="number">0</span>) &#123;</div><div class="line">             <span class="comment">//如果c!=0 &amp;&amp; w==0 ,那么肯定存在读锁，直接返回false</span></div><div class="line">             <span class="comment">//如果c!=0 &amp;&amp; w!=0 ，那么肯定不存在读锁，只需判断当前写锁是否是当前线程即可</span></div><div class="line">               <span class="keyword">if</span> (w == <span class="number">0</span> || current != getExclusiveOwnerThread())</div><div class="line">                   <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">               <span class="keyword">if</span> (w + exclusiveCount(acquires) &gt; MAX_COUNT)</div><div class="line">                   <span class="keyword">throw</span> <span class="keyword">new</span> Error(<span class="string">"Maximum lock count exceeded"</span>);</div><div class="line">               <span class="comment">//上述判断全部通过，肯定是重入锁</span></div><div class="line">               setState(c + acquires);</div><div class="line">               <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">           &#125;</div><div class="line">           <span class="keyword">if</span> (writerShouldBlock() ||</div><div class="line">               !compareAndSetState(c, c + acquires))</div><div class="line">               <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">           setExclusiveOwnerThread(current);</div><div class="line">           <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">       &#125;</div></pre></td></tr></table></figure>
-<h3 id="ConcurrentLinkedQueue"><a href="#ConcurrentLinkedQueue" class="headerlink" title="ConcurrentLinkedQueue"></a>ConcurrentLinkedQueue</h3><ol>
-<li>入队 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">offer</span><span class="params">(E e)</span> </span>&#123;</div><div class="line">    checkNotNull(e);</div><div class="line">    <span class="keyword">final</span> Node&lt;E&gt; newNode = <span class="keyword">new</span> Node&lt;E&gt;(e);</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (Node&lt;E&gt; t = tail, p = t;;) &#123;</div><div class="line">        Node&lt;E&gt; q = p.next;</div><div class="line">        <span class="keyword">if</span> (q == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="comment">// p是尾节点</span></div><div class="line">            <span class="keyword">if</span> (p.casNext(<span class="keyword">null</span>, newNode)) &#123;</div><div class="line">                <span class="comment">// Successful CAS is the linearization point</span></div><div class="line">                <span class="comment">// for e to become an element of this queue,</span></div><div class="line">                <span class="comment">// and for newNode to become "live".</span></div><div class="line">                <span class="keyword">if</span> (p != t) <span class="comment">// hop two nodes at a time</span></div><div class="line">                    casTail(t, newNode);  <span class="comment">// Failure is OK.</span></div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="comment">// Lost CAS race to another thread; re-read next</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p == q)</div><div class="line">            <span class="comment">// We have fallen off list.  If tail is unchanged, it</span></div><div class="line">            <span class="comment">// will also be off-list, in which case we need to</span></div><div class="line">            <span class="comment">// jump to head, from which all live nodes are always</span></div><div class="line">            <span class="comment">// reachable.  Else the new tail is a better bet.</span></div><div class="line">            p = (t != (t = tail)) ? t : head;</div><div class="line">        <span class="keyword">else</span></div><div class="line">            <span class="comment">// Check for tail updates after two hops.</span></div><div class="line">            p = (p != t &amp;&amp; t != (t = tail)) ? t : q;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/10/16/Java面向对象2/">Java面向对象2</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-10-16
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑<br>$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a}. $$</p>
-<p>$$<br>x \href{why-equal.html}{=} y^2 + 1<br>$$</p>
-<h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><ol>
-<li><p>常规内部类<br><img src="http://ok2crkjlq.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-16%20%E4%B8%8B%E5%8D%888.46.31.png" alt="常规内部类的组成"></p>
-<ul>
-<li>只有内部类可以声明为 <strong>private</strong>，常规类只可以被声明为 <strong>public和protected</strong></li>
-<li>内部类可以访问外部类私有域的成员变量</li>
-<li>内部类不允许有静态方法和变量
-          <div class="read-more">
-            <a href="/2017/10/16/Java面向对象2/" class="read-more-link">阅读更多</a>
+            <a href="/2018/01/05/springMVC/" class="read-more-link">Read more..</a>
           </div>
         
       
@@ -796,7 +782,7 @@
     
     
       <a class="next" href="/page/2/">
-        <span class="next-text">下一页</span>
+        <span class="next-text">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -845,11 +831,11 @@
 
 <div class="copyright">
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    主题 - 
+    Theme - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
