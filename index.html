@@ -177,6 +177,51 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/03/05/从输入网址到最后网页呈现发生了什么/">从输入网址到最后网页呈现发生了什么</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-03-05
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>本文参考<a href="https://mp.weixin.qq.com/s/3_DZKSP492uq9RfQ3eW4_A">刘欣老师运营的公众号码农翻身</a>和<a href="https://www.jianshu.com/p/ecdc9abb13d5">这位简友的文章</a></p>
+<h3 id="获取IP地址"><a href="#获取IP地址" class="headerlink" title="获取IP地址"></a>获取IP地址</h3><p>当新买的网卡插上电脑时，该电脑是没有IP地址的，需要通过发送 DHCP 请求向 DHCP 服务器要一个IP地址，这样电脑才能上网。<br>
+          <div class="read-more">
+            <a href="/2018/03/05/从输入网址到最后网页呈现发生了什么/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/02/25/简单的AOP框架搭建/">简单的AOP框架搭建</a>
         
       </h1>
@@ -719,50 +764,6 @@
           <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>谈到文件上传，首先要说业务逻辑，<strong>如果上传的文件大家都可以看(比如广告或者首页的banner)等，那么我们就把图片放在静态资源区(与css,js一样的位置)中</strong>，<strong>如果文件是受保护的(像用户只能查看自己上传的照片)，那么我们就把它存放在服务器中的某个专门存放图片的位置。</strong><br>本例分别展示了存放在两个位置的上传文件的方法，上传之后，作为延伸，还添加了查看上传的文件以及下载已经上传的文件的功能。<br>
           <div class="read-more">
             <a href="/2018/01/10/SpringMVC文件上传/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/01/05/springMVC/">SpringMVC</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-01-05
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="Spring常用的注解"><a href="#Spring常用的注解" class="headerlink" title="Spring常用的注解"></a>Spring常用的注解</h2><h3 id="1-RequestMapping"><a href="#1-RequestMapping" class="headerlink" title="1.@RequestMapping"></a>1.@RequestMapping</h3><p>一个请求到达 dispatchServlet 之后，dispatchServlet 将根据 RequestMapping 来查找谁来处理这个请求，具体查找过程由 HandlerMapping 和 HandlerAdapter 来实现。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(method = RequestMethod.GET,value = <span class="string">"/hello"</span>, produces = <span class="string">"text/html;charset=UTF-8"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">hello</span><span class="params">()</span> </span>&#123;</div><div class="line">        ModelAndView modelAndView = <span class="keyword">new</span> ModelAndView();</div><div class="line">        modelAndView.addObject(<span class="string">"message"</span>,<span class="string">"hello world"</span>);</div><div class="line">        modelAndView.setViewName(<span class="string">"welcome"</span>);</div><div class="line">        <span class="keyword">return</span> modelAndView;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-          <div class="read-more">
-            <a href="/2018/01/05/springMVC/" class="read-more-link">Read more..</a>
           </div>
         
       

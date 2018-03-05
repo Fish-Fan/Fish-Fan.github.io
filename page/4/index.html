@@ -177,6 +177,56 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2017/03/06/面向切面的Spring/">面向切面的Spring</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-03-06
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="定义AOP术语"><a href="#定义AOP术语" class="headerlink" title="定义AOP术语"></a>定义AOP术语</h2><h3 id="通知"><a href="#通知" class="headerlink" title="通知"></a>通知</h3><p>通知定义了切面是什么以及何时使用切面。Spring切面可以应用5种类型的通知:</p>
+<ol>
+<li><strong>Before</strong>: 在方法被调用之前通知</li>
+<li><strong>After</strong>: 在方法完成之后调用通知，无论方法是否执行成功</li>
+<li><strong>After-returning</strong>: 在方法成功执行之后调用通知</li>
+<li><strong>After-throwing</strong>: 在方法抛出异常之后调用通知</li>
+<li><strong>Around</strong>: 通知包裹了被通知的方法，在被通知的方法调用之前和调用之后执行自定义行为<h3 id="连接点"><a href="#连接点" class="headerlink" title="连接点"></a>连接点</h3>连接点是在应用执行过程中 <strong>能够插入切面的一个点</strong>，这个点可以是调用方法时，抛出异常时，甚至是修改一个字段时。切面代码可以利用这些点插入到应用的正常流程之中，并添加新的行为。
+          <div class="read-more">
+            <a href="/2017/03/06/面向切面的Spring/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2017/03/03/HTML第一次总结/">HTML第一次总结</a>
         
       </h1>
@@ -586,46 +636,6 @@
           <div class="read-more">
             <a href="/2016/09/10/几种鼠标位置方法的区别/" class="read-more-link">Read more..</a>
           </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2016/09/10/平滑滚动到页面的某个锚点/">平滑滚动到页面的某个锚点</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2016-09-10
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h2 id="编写scrollTo函数来实现平滑滚动到页面的某个锚点"><a href="#编写scrollTo函数来实现平滑滚动到页面的某个锚点" class="headerlink" title="编写scrollTo函数来实现平滑滚动到页面的某个锚点"></a>编写scrollTo函数来实现平滑滚动到页面的某个锚点</h2><p>这是自己做的一个<a href="http://www.fanyank.com/scrollTo/index.html" target="_blank" rel="external">demo</a>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">$.scrollTo = <span class="function"><span class="keyword">function</span>(<span class="params">selectDom,scrollTime</span>)</span>&#123;</div><div class="line">   $(selectDom).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="comment">//获取要滚动到的节点</span></div><div class="line">       <span class="keyword">var</span> scrollToDom = $(<span class="keyword">this</span>).attr(<span class="string">"page-scroll"</span>);</div><div class="line">       <span class="comment">//添加动画</span></div><div class="line">       $(<span class="string">"html,body"</span>).animate(&#123;</div><div class="line">           <span class="comment">//获取要滚动到的节点距文档(document)顶部的位置</span></div><div class="line">           scrollTop:$(scrollToDom).offset().top</div><div class="line"></div><div class="line">       &#125;,</div><div class="line">               <span class="comment">//定义动画执行的时间</span></div><div class="line">               scrollTime</div><div class="line">       );</div><div class="line">   &#125;);</div><div class="line">&#125;;</div><div class="line">$.scrollTo(<span class="string">"#navbar a"</span>,<span class="number">1000</span>);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
-
         
       
     </div>
